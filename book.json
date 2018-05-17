@@ -1,0 +1,13 @@
+{
+    "title": "技术博客",
+    "description": "一些学习记录",
+    "author": "jackchen",
+    "output.name": "site",
+    "language": "zh-hans",
+    "gitbook": "3.2.3",
+    "root": ".",
+    "plugins": [
+      "ace"
+    ]
+
+}
