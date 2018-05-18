@@ -1,0 +1,700 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>RxJava(3/3) · 技术博客</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="jackchen">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../fangkj/" />
+    
+    
+    <link rel="prev" href="rxjava2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    个人简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../gitbook/">
+            
+                <a href="../gitbook/">
+            
+                    
+                    Gitbook
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../gitbook/create.html">
+            
+                <a href="../gitbook/create.html">
+            
+                    
+                    Gitbook各系统搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../gitbook/use.html">
+            
+                <a href="../gitbook/use.html">
+            
+                    
+                    Gitbook基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../gerrit/">
+            
+                <a href="../gerrit/">
+            
+                    
+                    Gerrit
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../gerrit/ubuntu_build.html">
+            
+                <a href="../gerrit/ubuntu_build.html">
+            
+                    
+                    Gerrit+Ubuntu搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../gerrit/centos_build.html">
+            
+                <a href="../gerrit/centos_build.html">
+            
+                    
+                    Gerrit+CentOS搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../gerrit/use.html">
+            
+                <a href="../gerrit/use.html">
+            
+                    
+                    Git基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="README.md">
+            
+                <span>
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="adb_cmd.html">
+            
+                <a href="adb_cmd.html">
+            
+                    
+                    adb命令集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="remake.md">
+            
+                <span>
+            
+                    
+                    android反编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="rxjava1.html">
+            
+                <a href="rxjava1.html">
+            
+                    
+                    RxJava(1/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="rxjava2.html">
+            
+                <a href="rxjava2.html">
+            
+                    
+                    RxJava(2/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.5" data-path="rxjava3.html">
+            
+                <a href="rxjava3.html">
+            
+                    
+                    RxJava(3/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../fangkj/">
+            
+                <a href="../fangkj/">
+            
+                    
+                    访客机
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >RxJava(3/3)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="rxjava&#xFF08;33&#xFF09;">RxJava&#xFF08;3/3&#xFF09;</h1>
+<h2 id="&#x7EBF;&#x7A0B;&#x63A7;&#x5236;&#xFF1A;scheduler-&#x4E8C;">&#x7EBF;&#x7A0B;&#x63A7;&#x5236;&#xFF1A;Scheduler (&#x4E8C;)</h2>
+<p>&#x9664;&#x4E86;&#x7075;&#x6D3B;&#x7684;&#x53D8;&#x6362;&#xFF0C;RxJava &#x53E6;&#x4E00;&#x4E2A;&#x725B;&#x903C;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x5C31;&#x662F;&#x7EBF;&#x7A0B;&#x7684;&#x81EA;&#x7531;&#x63A7;&#x5236;&#x3002;</p>
+<p>1) Scheduler &#x7684; API (&#x4E8C;)</p>
+<p>&#x524D;&#x9762;&#x8BB2;&#x5230;&#x4E86;&#xFF0C;&#x53EF;&#x4EE5;&#x5229;&#x7528; subscribeOn() &#x7ED3;&#x5408; observeOn() &#x6765;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x63A7;&#x5236;&#xFF0C;&#x8BA9;&#x4E8B;&#x4EF6;&#x7684;&#x4EA7;&#x751F;&#x548C;&#x6D88;&#x8D39;&#x53D1;&#x751F;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x7EBF;&#x7A0B;&#x3002;&#x53EF;&#x662F;&#x5728;&#x4E86;&#x89E3;&#x4E86; map() flatMap() &#x7B49;&#x53D8;&#x6362;&#x65B9;&#x6CD5;&#x540E;&#xFF0C;&#x6709;&#x4E9B;&#x597D;&#x4E8B;&#x7684;&#xFF08;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x5F53;&#x521D;&#x521A;&#x63A5;&#x89E6; RxJava &#x65F6;&#x7684;&#x6211;&#xFF09;&#x5C31;&#x95EE;&#x4E86;&#xFF1A;&#x80FD;&#x4E0D;&#x80FD;&#x591A;&#x5207;&#x6362;&#x51E0;&#x6B21;&#x7EBF;&#x7A0B;&#xFF1F;</p>
+<p>&#x7B54;&#x6848;&#x662F;&#xFF1A;&#x80FD;&#x3002;&#x56E0;&#x4E3A; observeOn() &#x6307;&#x5B9A;&#x7684;&#x662F; Subscriber &#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x800C;&#x8FD9;&#x4E2A; Subscriber &#x5E76;&#x4E0D;&#x662F;&#xFF08;&#x4E25;&#x683C;&#x8BF4;&#x5E94;&#x8BE5;&#x4E3A;&#x300E;&#x4E0D;&#x4E00;&#x5B9A;&#x662F;&#x300F;&#xFF0C;&#x4F46;&#x8FD9;&#x91CC;&#x4E0D;&#x59A8;&#x7406;&#x89E3;&#x4E3A;&#x300E;&#x4E0D;&#x662F;&#x300F;&#xFF09;subscribe() &#x53C2;&#x6570;&#x4E2D;&#x7684; Subscriber &#xFF0C;&#x800C;&#x662F; observeOn() &#x6267;&#x884C;&#x65F6;&#x7684;&#x5F53;&#x524D; Observable &#x6240;&#x5BF9;&#x5E94;&#x7684; Subscriber &#xFF0C;&#x5373;&#x5B83;&#x7684;&#x76F4;&#x63A5;&#x4E0B;&#x7EA7; Subscriber &#x3002;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;observeOn() &#x6307;&#x5B9A;&#x7684;&#x662F;&#x5B83;&#x4E4B;&#x540E;&#x7684;&#x64CD;&#x4F5C;&#x6240;&#x5728;&#x7684;&#x7EBF;&#x7A0B;&#x3002;&#x56E0;&#x6B64;&#x5982;&#x679C;&#x6709;&#x591A;&#x6B21;&#x5207;&#x6362;&#x7EBF;&#x7A0B;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x53EA;&#x8981;&#x5728;&#x6BCF;&#x4E2A;&#x60F3;&#x8981;&#x5207;&#x6362;&#x7EBF;&#x7A0B;&#x7684;&#x4F4D;&#x7F6E;&#x8C03;&#x7528;&#x4E00;&#x6B21; observeOn() &#x5373;&#x53EF;&#x3002;&#x4E0A;&#x4EE3;&#x7801;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">Observable.just(1, 2, 3, 4) // IO &#x7EBF;&#x7A0B;&#xFF0C;&#x7531; subscribeOn() &#x6307;&#x5B9A;
+    .subscribeOn(Schedulers.io())
+    .observeOn(Schedulers.newThread())
+    .map(mapOperator) // &#x65B0;&#x7EBF;&#x7A0B;&#xFF0C;&#x7531; observeOn() &#x6307;&#x5B9A;
+    .observeOn(Schedulers.io())
+    .map(mapOperator2) // IO &#x7EBF;&#x7A0B;&#xFF0C;&#x7531; observeOn() &#x6307;&#x5B9A;
+    .observeOn(AndroidSchedulers.mainThread)
+    .subscribe(subscriber);  // Android &#x4E3B;&#x7EBF;&#x7A0B;&#xFF0C;&#x7531; observeOn() &#x6307;&#x5B9A;<br></div></div>
+
+
+<p>&#x5982;&#x4E0A;&#xFF0C;&#x901A;&#x8FC7; observeOn() &#x7684;&#x591A;&#x6B21;&#x8C03;&#x7528;&#xFF0C;&#x7A0B;&#x5E8F;&#x5B9E;&#x73B0;&#x4E86;&#x7EBF;&#x7A0B;&#x7684;&#x591A;&#x6B21;&#x5207;&#x6362;&#x3002;</p>
+<p>&#x4E0D;&#x8FC7;&#xFF0C;&#x4E0D;&#x540C;&#x4E8E; observeOn() &#xFF0C; subscribeOn() &#x7684;&#x4F4D;&#x7F6E;&#x653E;&#x5728;&#x54EA;&#x91CC;&#x90FD;&#x53EF;&#x4EE5;&#xFF0C;&#x4F46;&#x5B83;&#x662F;&#x53EA;&#x80FD;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#x7684;&#x3002;</p>
+<p>&#x53C8;&#x6709;&#x597D;&#x4E8B;&#x7684;&#xFF08;&#x5176;&#x5B9E;&#x8FD8;&#x662F;&#x5F53;&#x521D;&#x7684;&#x6211;&#xFF09;&#x95EE;&#x4E86;&#xFF1A;&#x5982;&#x679C;&#x6211;&#x975E;&#x8981;&#x8C03;&#x7528;&#x591A;&#x6B21; subscribeOn() &#x5462;&#xFF1F;&#x4F1A;&#x6709;&#x4EC0;&#x4E48;&#x6548;&#x679C;&#xFF1F;</p>
+<p>&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x5148;&#x653E;&#x7740;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x662F;&#x4ECE; RxJava &#x7EBF;&#x7A0B;&#x63A7;&#x5236;&#x7684;&#x539F;&#x7406;&#x8BF4;&#x8D77;&#x5427;&#x3002;</p>
+<p>2) Scheduler &#x7684;&#x539F;&#x7406;&#xFF08;&#x4E8C;&#xFF09;</p>
+<p>&#x5176;&#x5B9E;&#xFF0C; subscribeOn() &#x548C; observeOn() &#x7684;&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#xFF0C;&#x4E5F;&#x662F;&#x7528;&#x7684; lift()&#x3002;&#x5177;&#x4F53;&#x770B;&#x56FE;&#xFF08;&#x4E0D;&#x540C;&#x989C;&#x8272;&#x7684;&#x7BAD;&#x5934;&#x8868;&#x793A;&#x4E0D;&#x540C;&#x7684;&#x7EBF;&#x7A0B;&#xFF09;&#xFF1A;</p>
+<p>subscribeOn() &#x539F;&#x7406;&#x56FE;&#xFF1A;</p>
+<p><img src="http://ww4.sinaimg.cn/mw1024/52eb2279jw1f2rxcynbsuj20ha0d7wg2.jpg" alt="image1"></p>
+<p>observeOn() &#x539F;&#x7406;&#x56FE;&#xFF1A;</p>
+<p><img src="http://ww4.sinaimg.cn/mw1024/52eb2279jw1f2rxd05lttj20hj0cyabl.jpg" alt="image2"></p>
+<p>&#x4ECE;&#x56FE;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;subscribeOn() &#x548C; observeOn() &#x90FD;&#x505A;&#x4E86;&#x7EBF;&#x7A0B;&#x5207;&#x6362;&#x7684;&#x5DE5;&#x4F5C;&#xFF08;&#x56FE;&#x4E2D;&#x7684; &quot;schedule...&quot; &#x90E8;&#x4F4D;&#xFF09;&#x3002;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C; subscribeOn() &#x7684;&#x7EBF;&#x7A0B;&#x5207;&#x6362;&#x53D1;&#x751F;&#x5728; OnSubscribe &#x4E2D;&#xFF0C;&#x5373;&#x5728;&#x5B83;&#x901A;&#x77E5;&#x4E0A;&#x4E00;&#x7EA7; OnSubscribe &#x65F6;&#xFF0C;&#x8FD9;&#x65F6;&#x4E8B;&#x4EF6;&#x8FD8;&#x6CA1;&#x6709;&#x5F00;&#x59CB;&#x53D1;&#x9001;&#xFF0C;&#x56E0;&#x6B64; subscribeOn() &#x7684;&#x7EBF;&#x7A0B;&#x63A7;&#x5236;&#x53EF;&#x4EE5;&#x4ECE;&#x4E8B;&#x4EF6;&#x53D1;&#x51FA;&#x7684;&#x5F00;&#x7AEF;&#x5C31;&#x9020;&#x6210;&#x5F71;&#x54CD;&#xFF1B;&#x800C; observeOn() &#x7684;&#x7EBF;&#x7A0B;&#x5207;&#x6362;&#x5219;&#x53D1;&#x751F;&#x5728;&#x5B83;&#x5185;&#x5EFA;&#x7684; Subscriber &#x4E2D;&#xFF0C;&#x5373;&#x53D1;&#x751F;&#x5728;&#x5B83;&#x5373;&#x5C06;&#x7ED9;&#x4E0B;&#x4E00;&#x7EA7; Subscriber &#x53D1;&#x9001;&#x4E8B;&#x4EF6;&#x65F6;&#xFF0C;&#x56E0;&#x6B64; observeOn() &#x63A7;&#x5236;&#x7684;&#x662F;&#x5B83;&#x540E;&#x9762;&#x7684;&#x7EBF;&#x7A0B;&#x3002;</p>
+<p>&#x6700;&#x540E;&#xFF0C;&#x6211;&#x7528;&#x4E00;&#x5F20;&#x56FE;&#x6765;&#x89E3;&#x91CA;&#x5F53;&#x591A;&#x4E2A; subscribeOn() &#x548C; observeOn() &#x6DF7;&#x5408;&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x7EBF;&#x7A0B;&#x8C03;&#x5EA6;&#x662F;&#x600E;&#x4E48;&#x53D1;&#x751F;&#x7684;&#xFF08;&#x7531;&#x4E8E;&#x56FE;&#x4E2D;&#x5BF9;&#x8C61;&#x8F83;&#x591A;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;&#x4E0A;&#x9762;&#x7684;&#x56FE;&#x5BF9;&#x7ED3;&#x6784;&#x505A;&#x4E86;&#x4E00;&#x4E9B;&#x7B80;&#x5316;&#x8C03;&#x6574;&#xFF09;&#xFF1A;</p>
+<p><img src="http://ww1.sinaimg.cn/mw1024/52eb2279jw1f2rxd1vl7xj20hd0hzq6e.jpg" alt="image3"></p>
+<p>&#x56FE;&#x4E2D;&#x5171;&#x6709; 5 &#x5904;&#x542B;&#x6709;&#x5BF9;&#x4E8B;&#x4EF6;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x7531;&#x56FE;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x2460;&#x548C;&#x2461;&#x4E24;&#x5904;&#x53D7;&#x7B2C;&#x4E00;&#x4E2A; subscribeOn() &#x5F71;&#x54CD;&#xFF0C;&#x8FD0;&#x884C;&#x5728;&#x7EA2;&#x8272;&#x7EBF;&#x7A0B;&#xFF1B;&#x2462;&#x548C;&#x2463;&#x5904;&#x53D7;&#x7B2C;&#x4E00;&#x4E2A; observeOn() &#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x8FD0;&#x884C;&#x5728;&#x7EFF;&#x8272;&#x7EBF;&#x7A0B;&#xFF1B;&#x2464;&#x5904;&#x53D7;&#x7B2C;&#x4E8C;&#x4E2A; onserveOn() &#x5F71;&#x54CD;&#xFF0C;&#x8FD0;&#x884C;&#x5728;&#x7D2B;&#x8272;&#x7EBF;&#x7A0B;&#xFF1B;&#x800C;&#x7B2C;&#x4E8C;&#x4E2A; subscribeOn() &#xFF0C;&#x7531;&#x4E8E;&#x5728;&#x901A;&#x77E5;&#x8FC7;&#x7A0B;&#x4E2D;&#x7EBF;&#x7A0B;&#x5C31;&#x88AB;&#x7B2C;&#x4E00;&#x4E2A; subscribeOn() &#x622A;&#x65AD;&#xFF0C;&#x56E0;&#x6B64;&#x5BF9;&#x6574;&#x4E2A;&#x6D41;&#x7A0B;&#x5E76;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5F71;&#x54CD;&#x3002;&#x8FD9;&#x91CC;&#x4E5F;&#x5C31;&#x56DE;&#x7B54;&#x4E86;&#x524D;&#x9762;&#x7684;&#x95EE;&#x9898;&#xFF1A;&#x5F53;&#x4F7F;&#x7528;&#x4E86;&#x591A;&#x4E2A; subscribeOn() &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EA;&#x6709;&#x7B2C;&#x4E00;&#x4E2A; subscribeOn() &#x8D77;&#x4F5C;&#x7528;&#x3002;</p>
+<p>3) &#x5EF6;&#x4F38;: doOnSubscribe()</p>
+<p>&#x7136;&#x800C;&#xFF0C;&#x867D;&#x7136;&#x8D85;&#x8FC7;&#x4E00;&#x4E2A;&#x7684; subscribeOn() &#x5BF9;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7684;&#x6D41;&#x7A0B;&#x6CA1;&#x6709;&#x5F71;&#x54CD;&#xFF0C;&#x4F46;&#x5728;&#x6D41;&#x7A0B;&#x4E4B;&#x524D;&#x5374;&#x662F;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x7684;&#x3002;</p>
+<p>&#x5728;&#x524D;&#x9762;&#x8BB2; Subscriber &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x63D0;&#x5230;&#x8FC7; Subscriber &#x7684; onStart() &#x53EF;&#x4EE5;&#x7528;&#x4F5C;&#x6D41;&#x7A0B;&#x5F00;&#x59CB;&#x524D;&#x7684;&#x521D;&#x59CB;&#x5316;&#x3002;&#x7136;&#x800C; onStart() &#x7531;&#x4E8E;&#x5728; subscribe() &#x53D1;&#x751F;&#x65F6;&#x5C31;&#x88AB;&#x8C03;&#x7528;&#x4E86;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x80FD;&#x6307;&#x5B9A;&#x7EBF;&#x7A0B;&#xFF0C;&#x800C;&#x662F;&#x53EA;&#x80FD;&#x6267;&#x884C;&#x5728; subscribe() &#x88AB;&#x8C03;&#x7528;&#x65F6;&#x7684;&#x7EBF;&#x7A0B;&#x3002;&#x8FD9;&#x5C31;&#x5BFC;&#x81F4;&#x5982;&#x679C; onStart() &#x4E2D;&#x542B;&#x6709;&#x5BF9;&#x7EBF;&#x7A0B;&#x6709;&#x8981;&#x6C42;&#x7684;&#x4EE3;&#x7801;&#xFF08;&#x4F8B;&#x5982;&#x5728;&#x754C;&#x9762;&#x4E0A;&#x663E;&#x793A;&#x4E00;&#x4E2A; ProgressBar&#xFF0C;&#x8FD9;&#x5FC5;&#x987B;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#xFF09;&#xFF0C;&#x5C06;&#x4F1A;&#x6709;&#x7EBF;&#x7A0B;&#x975E;&#x6CD5;&#x7684;&#x98CE;&#x9669;&#xFF0C;&#x56E0;&#x4E3A;&#x6709;&#x65F6;&#x4F60;&#x65E0;&#x6CD5;&#x9884;&#x6D4B; subscribe() &#x5C06;&#x4F1A;&#x5728;&#x4EC0;&#x4E48;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x800C;&#x4E0E; Subscriber.onStart() &#x76F8;&#x5BF9;&#x5E94;&#x7684;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5; Observable.doOnSubscribe() &#x3002;&#x5B83;&#x548C; Subscriber.onStart() &#x540C;&#x6837;&#x662F;&#x5728; subscribe() &#x8C03;&#x7528;&#x540E;&#x800C;&#x4E14;&#x5728;&#x4E8B;&#x4EF6;&#x53D1;&#x9001;&#x524D;&#x6267;&#x884C;&#xFF0C;&#x4F46;&#x533A;&#x522B;&#x5728;&#x4E8E;&#x5B83;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x7EBF;&#x7A0B;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C; doOnSubscribe() &#x6267;&#x884C;&#x5728; subscribe() &#x53D1;&#x751F;&#x7684;&#x7EBF;&#x7A0B;&#xFF1B;&#x800C;&#x5982;&#x679C;&#x5728; doOnSubscribe() &#x4E4B;&#x540E;&#x6709; subscribeOn() &#x7684;&#x8BDD;&#xFF0C;&#x5B83;&#x5C06;&#x6267;&#x884C;&#x5728;&#x79BB;&#x5B83;&#x6700;&#x8FD1;&#x7684; subscribeOn() &#x6240;&#x6307;&#x5B9A;&#x7684;&#x7EBF;&#x7A0B;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">Observable.create(onSubscribe)
+    .subscribeOn(Schedulers.io())
+    .doOnSubscribe(new Action0() {
+        @Override
+        public void call() {
+            progressBar.setVisibility(View.VISIBLE); // &#x9700;&#x8981;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x6267;&#x884C;
+        }
+    })
+    .subscribeOn(AndroidSchedulers.mainThread()) // &#x6307;&#x5B9A;&#x4E3B;&#x7EBF;&#x7A0B;
+    .observeOn(AndroidSchedulers.mainThread())
+    .subscribe(subscriber);<br></div></div>
+
+<p>&#x4E0A;&#xFF0C;&#x5728; doOnSubscribe()&#x7684;&#x540E;&#x9762;&#x8DDF;&#x4E00;&#x4E2A; subscribeOn() &#xFF0C;&#x5C31;&#x80FD;&#x6307;&#x5B9A;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#x7684;&#x7EBF;&#x7A0B;&#x4E86;&#x3002;</p>
+<h2 id="rxjava-&#x7684;&#x9002;&#x7528;&#x573A;&#x666F;&#x548C;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;">RxJava &#x7684;&#x9002;&#x7528;&#x573A;&#x666F;&#x548C;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;</h2>
+<h3 id="&#x4E0E;-retrofit-&#x7684;&#x7ED3;&#x5408;">&#x4E0E; Retrofit &#x7684;&#x7ED3;&#x5408;</h3>
+<pre><code>Retrofit &#x662F; Square &#x7684;&#x4E00;&#x4E2A;&#x8457;&#x540D;&#x7684;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x5E93;&#x3002;
+&#x6CA1;&#x6709;&#x7528;&#x8FC7; Retrofit &#x7684;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x8DF3;&#x8FC7;&#x8FD9;&#x4E00;&#x5C0F;&#x8282;&#x4E5F;&#x6CA1;&#x5173;&#x7CFB;&#xFF0C;&#x6211;&#x4E3E;&#x7684;&#x6BCF;&#x79CD;&#x573A;&#x666F;&#x90FD;&#x53EA;&#x662F;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;
+&#x800C;&#x4E14;&#x4F8B;&#x5B50;&#x4E4B;&#x95F4;&#x5E76;&#x65E0;&#x524D;&#x540E;&#x5173;&#x8054;&#xFF0C;&#x53EA;&#x662F;&#x4E2A;&#x629B;&#x7816;&#x5F15;&#x7389;&#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x8DF3;&#x8FC7;&#x8FD9;&#x91CC;&#x770B;&#x522B;&#x7684;&#x573A;&#x666F;&#x4E5F;&#x53EF;&#x4EE5;&#x7684;&#x3002;
+</code></pre><p>Retrofit &#x9664;&#x4E86;&#x63D0;&#x4F9B;&#x4E86;&#x4F20;&#x7EDF;&#x7684; Callback &#x5F62;&#x5F0F;&#x7684; API&#xFF0C;&#x8FD8;&#x6709; RxJava &#x7248;&#x672C;&#x7684; Observable &#x5F62;&#x5F0F; API&#x3002;&#x4E0B;&#x9762;&#x6211;&#x7528;&#x5BF9;&#x6BD4;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x4ECB;&#x7ECD; Retrofit &#x7684; RxJava &#x7248; API &#x548C;&#x4F20;&#x7EDF;&#x7248;&#x672C;&#x7684;&#x533A;&#x522B;&#x3002;</p>
+<p>&#x4EE5;&#x83B7;&#x53D6;&#x4E00;&#x4E2A; User &#x5BF9;&#x8C61;&#x7684;&#x63A5;&#x53E3;&#x4F5C;&#x4E3A;&#x4F8B;&#x5B50;&#x3002;&#x4F7F;&#x7528;Retrofit &#x7684;&#x4F20;&#x7EDF; API&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7528;&#x8FD9;&#x6837;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5B9A;&#x4E49;&#x8BF7;&#x6C42;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@GET(&quot;/user&quot;)
+public void getUser(@Query(&quot;userId&quot;) String userId, Callback&lt;User&gt; callback);<br></div></div>
+
+<p>&#x5728;&#x7A0B;&#x5E8F;&#x7684;&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C; Retrofit &#x4F1A;&#x628A;&#x81EA;&#x52A8;&#x628A;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x5E76;&#x751F;&#x6210;&#x4EE3;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x5F00;&#x53D1;&#x8005;&#x5C31;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x83B7;&#x53D6;&#x7279;&#x5B9A;&#x7528;&#x6237;&#x5E76;&#x5904;&#x7406;&#x54CD;&#x5E94;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">getUser(userId, new Callback&lt;User&gt;() {
+    @Override
+    public void success(User user) {
+        userView.setUser(user);
+    }
+
+    @Override
+    public void failure(RetrofitError error) {
+        // Error handling
+        ...
+    }
+};<br></div></div>
+
+<p>&#x800C;&#x4F7F;&#x7528; RxJava &#x5F62;&#x5F0F;&#x7684; API&#xFF0C;&#x5B9A;&#x4E49;&#x540C;&#x6837;&#x7684;&#x8BF7;&#x6C42;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@GET(&quot;/user&quot;)
+public Observable&lt;User&gt; getUser(@Query(&quot;userId&quot;) String userId);<br></div></div>
+
+<p>&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">getUser(userId)
+    .observeOn(AndroidSchedulers.mainThread())
+    .subscribe(new Observer&lt;User&gt;() {
+        @Override
+        public void onNext(User user) {
+            userView.setUser(user);
+        }
+
+        @Override
+        public void onCompleted() {
+        }
+
+        @Override
+        public void onError(Throwable error) {
+            // Error handling
+            ...
+        }
+    });<br></div></div>
+
+<p>&#x770B;&#x5230;&#x533A;&#x522B;&#x4E86;&#x5417;&#xFF1F;</p>
+<p>&#x5F53; RxJava &#x5F62;&#x5F0F;&#x7684;&#x65F6;&#x5019;&#xFF0C;Retrofit &#x628A;&#x8BF7;&#x6C42;&#x5C01;&#x88C5;&#x8FDB; Observable &#xFF0C;&#x5728;&#x8BF7;&#x6C42;&#x7ED3;&#x675F;&#x540E;&#x8C03;&#x7528; onNext() &#x6216;&#x5728;&#x8BF7;&#x6C42;&#x5931;&#x8D25;&#x540E;&#x8C03;&#x7528; onError()&#x3002;</p>
+<p>&#x5BF9;&#x6BD4;&#x6765;&#x770B;&#xFF0C; Callback &#x5F62;&#x5F0F;&#x548C; Observable &#x5F62;&#x5F0F;&#x957F;&#x5F97;&#x4E0D;&#x592A;&#x4E00;&#x6837;&#xFF0C;&#x4F46;&#x672C;&#x8D28;&#x90FD;&#x5DEE;&#x4E0D;&#x591A;&#xFF0C;&#x800C;&#x4E14;&#x5728;&#x7EC6;&#x8282;&#x4E0A; Observable &#x5F62;&#x5F0F;&#x4F3C;&#x4E4E;&#x8FD8;&#x6BD4; Callback &#x5F62;&#x5F0F;&#x8981;&#x5DEE;&#x70B9;&#x3002;&#x90A3; Retrofit &#x4E3A;&#x4EC0;&#x4E48;&#x8FD8;&#x8981;&#x63D0;&#x4F9B; RxJava &#x7684;&#x652F;&#x6301;&#x5462;&#xFF1F;</p>
+<p>&#x56E0;&#x4E3A;&#x5B83;&#x597D;&#x7528;&#x554A;&#xFF01;&#x4ECE;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x770B;&#x4E0D;&#x51FA;&#x6765;&#x662F;&#x56E0;&#x4E3A;&#x8FD9;&#x53EA;&#x662F;&#x6700;&#x7B80;&#x5355;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x800C;&#x4E00;&#x65E6;&#x60C5;&#x666F;&#x590D;&#x6742;&#x8D77;&#x6765;&#xFF0C; Callback &#x5F62;&#x5F0F;&#x9A6C;&#x4E0A;&#x5C31;&#x4F1A;&#x5F00;&#x59CB;&#x8BA9;&#x4EBA;&#x5934;&#x75BC;&#x3002;&#x6BD4;&#x5982;&#xFF1A;</p>
+<p>&#x5047;&#x8BBE;&#x8FD9;&#x4E48;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#xFF1A;&#x4F60;&#x7684;&#x7A0B;&#x5E8F;&#x53D6;&#x5230;&#x7684; User &#x5E76;&#x4E0D;&#x5E94;&#x8BE5;&#x76F4;&#x63A5;&#x663E;&#x793A;&#xFF0C;&#x800C;&#x662F;&#x9700;&#x8981;&#x5148;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6BD4;&#x5BF9;&#x548C;&#x4FEE;&#x6B63;&#x540E;&#x518D;&#x663E;&#x793A;&#x3002;&#x4F7F;&#x7528; Callback &#x65B9;&#x5F0F;&#x5927;&#x6982;&#x53EF;&#x4EE5;&#x8FD9;&#x4E48;&#x5199;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">getUser(userId, new Callback&lt;User&gt;() {
+    @Override
+    public void success(User user) {
+        processUser(user); // &#x5C1D;&#x8BD5;&#x4FEE;&#x6B63; User &#x6570;&#x636E;
+        userView.setUser(user);
+    }
+
+    @Override
+    public void failure(RetrofitError error) {
+        // Error handling
+        ...
+    }
+};<br></div></div>
+
+<p>&#x6709;&#x95EE;&#x9898;&#x5417;&#xFF1F;</p>
+<p>&#x5F88;&#x7B80;&#x4FBF;&#xFF0C;&#x4F46;&#x4E0D;&#x8981;&#x8FD9;&#x6837;&#x505A;&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#xFF1F;&#x56E0;&#x4E3A;&#x8FD9;&#x6837;&#x505A;&#x4F1A;&#x5F71;&#x54CD;&#x6027;&#x80FD;&#x3002;&#x6570;&#x636E;&#x5E93;&#x7684;&#x64CD;&#x4F5C;&#x5F88;&#x91CD;&#xFF0C;&#x4E00;&#x6B21;&#x8BFB;&#x5199;&#x64CD;&#x4F5C;&#x82B1;&#x8D39; 10~20ms &#x662F;&#x5F88;&#x5E38;&#x89C1;&#x7684;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x8017;&#x65F6;&#x5F88;&#x5BB9;&#x6613;&#x9020;&#x6210;&#x754C;&#x9762;&#x7684;&#x5361;&#x987F;&#x3002;&#x6240;&#x4EE5;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5982;&#x679C;&#x53EF;&#x4EE5;&#x7684;&#x8BDD;&#x4E00;&#x5B9A;&#x8981;&#x907F;&#x514D;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E2D;&#x5904;&#x7406;&#x6570;&#x636E;&#x5E93;&#x3002;&#x6240;&#x4EE5;&#x4E3A;&#x4E86;&#x63D0;&#x5347;&#x6027;&#x80FD;&#xFF0C;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x4F18;&#x5316;&#x4E00;&#x4E0B;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">getUser(userId, new Callback&lt;User&gt;() {
+    @Override
+    public void success(User user) {
+        new Thread() {
+            @Override
+            public void run() {
+                processUser(user); // &#x5C1D;&#x8BD5;&#x4FEE;&#x6B63; User &#x6570;&#x636E;
+                runOnUiThread(new Runnable() { // &#x5207;&#x56DE; UI &#x7EBF;&#x7A0B;
+                    @Override
+                    public void run() {
+                        userView.setUser(user);
+                    }
+                });
+            }).start();
+    }
+
+    @Override
+    public void failure(RetrofitError error) {
+        // Error handling
+        ...
+    }
+};<br></div></div>
+
+<p>&#x6027;&#x80FD;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#xFF0C;&#x4F46;&#x2026;&#x2026;&#x8FD9;&#x4EE3;&#x7801;&#x5B9E;&#x5728;&#x662F;&#x592A;&#x4E71;&#x4E86;&#xFF0C;&#x8FF7;&#x4E4B;&#x7F29;&#x8FDB;&#x554A;&#xFF01;&#x6742;&#x4E71;&#x7684;&#x4EE3;&#x7801;&#x5F80;&#x5F80;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;&#x7F8E;&#x89C2;&#x95EE;&#x9898;&#xFF0C;&#x56E0;&#x4E3A;&#x4EE3;&#x7801;&#x8D8A;&#x4E71;&#x5F80;&#x5F80;&#x5C31;&#x8D8A;&#x96BE;&#x8BFB;&#x61C2;&#xFF0C;&#x800C;&#x5982;&#x679C;&#x9879;&#x76EE;&#x4E2D;&#x5145;&#x65A5;&#x7740;&#x6742;&#x4E71;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x65E0;&#x7591;&#x4F1A;&#x964D;&#x4F4E;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#xFF0C;&#x9020;&#x6210;&#x56E2;&#x961F;&#x5F00;&#x53D1;&#x6548;&#x7387;&#x7684;&#x964D;&#x4F4E;&#x548C;&#x51FA;&#x9519;&#x7387;&#x7684;&#x5347;&#x9AD8;&#x3002;</p>
+<p>&#x8FD9;&#x65F6;&#x5019;&#xFF0C;&#x5982;&#x679C;&#x7528; RxJava &#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x5C31;&#x597D;&#x529E;&#x591A;&#x4E86;&#x3002; RxJava &#x5F62;&#x5F0F;&#x7684;&#x4EE3;&#x7801;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">getUser(userId)
+    .doOnNext(new Action1&lt;User&gt;() {
+        @Override
+        public void call(User user) {
+            processUser(user);
+        })
+    .observeOn(AndroidSchedulers.mainThread())
+    .subscribe(new Observer&lt;User&gt;() {
+        @Override
+        public void onNext(User user) {
+            userView.setUser(user);
+        }
+
+        @Override
+        public void onCompleted() {
+        }
+
+        @Override
+        public void onError(Throwable error) {
+            // Error handling
+            ...
+        }
+    });<br></div></div>
+
+<p>&#x540E;&#x53F0;&#x4EE3;&#x7801;&#x548C;&#x524D;&#x53F0;&#x4EE3;&#x7801;&#x5168;&#x90FD;&#x5199;&#x5728;&#x4E00;&#x6761;&#x94FE;&#x4E2D;&#xFF0C;&#x660E;&#x663E;&#x6E05;&#x6670;&#x4E86;&#x5F88;&#x591A;&#x3002;</p>
+<p>&#x518D;&#x4E3E;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;&#x5047;&#x8BBE; /user &#x63A5;&#x53E3;&#x5E76;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#xFF0C;&#x800C;&#x9700;&#x8981;&#x586B;&#x5165;&#x4E00;&#x4E2A;&#x5728;&#x7EBF;&#x83B7;&#x53D6;&#x7684; token &#xFF0C;&#x4EE3;&#x7801;&#x5E94;&#x8BE5;&#x600E;&#x4E48;&#x5199;&#xFF1F;</p>
+<p>Callback &#x65B9;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5D4C;&#x5957;&#x7684; Callback&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@GET(&quot;/token&quot;)
+public void getToken(Callback&lt;String&gt; callback);
+
+@GET(&quot;/user&quot;)
+public void getUser(@Query(&quot;token&quot;) String token, @Query(&quot;userId&quot;) String userId, Callback&lt;User&gt; callback);
+
+...
+
+getToken(new Callback&lt;String&gt;() {
+    @Override
+    public void success(String token) {
+        getUser(token, userId, new Callback&lt;User&gt;() {
+            @Override
+            public void success(User user) {
+                userView.setUser(user);
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                // Error handling
+                ...
+            }
+        };
+    }
+
+    @Override
+    public void failure(RetrofitError error) {
+        // Error handling
+        ...
+    }
+});<br></div></div>
+
+<p>&#x5012;&#x662F;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x6027;&#x80FD;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x662F;&#x8FF7;&#x4E4B;&#x7F29;&#x8FDB;&#x6BC1;&#x4E00;&#x751F;&#xFF0C;&#x4F60;&#x61C2;&#x6211;&#x4E5F;&#x61C2;&#xFF0C;&#x505A;&#x8FC7;&#x5927;&#x9879;&#x76EE;&#x7684;&#x4EBA;&#x5E94;&#x8BE5;&#x66F4;&#x61C2;&#x3002;</p>
+<p>&#x800C;&#x4F7F;&#x7528; RxJava &#x7684;&#x8BDD;&#xFF0C;&#x4EE3;&#x7801;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@GET(&quot;/token&quot;)
+public Observable&lt;String&gt; getToken();
+
+@GET(&quot;/user&quot;)
+public Observable&lt;User&gt; getUser(@Query(&quot;token&quot;) String token, @Query(&quot;userId&quot;) String userId);
+
+...
+
+getToken()
+    .flatMap(new Func1&lt;String, Observable&lt;User&gt;&gt;() {
+        @Override
+        public Observable&lt;User&gt; onNext(String token) {
+            return getUser(token, userId);
+        })
+    .observeOn(AndroidSchedulers.mainThread())
+    .subscribe(new Observer&lt;User&gt;() {
+        @Override
+        public void onNext(User user) {
+            userView.setUser(user);
+        }
+
+        @Override
+        public void onCompleted() {
+        }
+
+        @Override
+        public void onError(Throwable error) {
+            // Error handling
+            ...
+        }
+    });<br></div></div>
+
+<p>&#x7528;&#x4E00;&#x4E2A; flatMap() &#x5C31;&#x641E;&#x5B9A;&#x4E86;&#x903B;&#x8F91;&#xFF0C;&#x4F9D;&#x7136;&#x662F;&#x4E00;&#x6761;&#x94FE;&#x3002;&#x770B;&#x7740;&#x5C31;&#x5F88;&#x723D;&#xFF0C;&#x662F;&#x5427;&#xFF1F;</p>
+<h3 id="rxbinding">RxBinding</h3>
+<p>RxBinding &#x662F; Jake Wharton &#x7684;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;&#x5E93;&#xFF0C;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x5957;&#x5728; Android &#x5E73;&#x53F0;&#x4E0A;&#x7684;&#x57FA;&#x4E8E; RxJava &#x7684; Binding API&#x3002;&#x6240;&#x8C13; Binding&#xFF0C;&#x5C31;&#x662F;&#x7C7B;&#x4F3C;&#x8BBE;&#x7F6E; OnClickListener &#x3001;&#x8BBE;&#x7F6E; TextWatcher &#x8FD9;&#x6837;&#x7684;&#x6CE8;&#x518C;&#x7ED1;&#x5B9A;&#x5BF9;&#x8C61;&#x7684; API&#x3002;</p>
+<p>&#x4E3E;&#x4E2A;&#x8BBE;&#x7F6E;&#x70B9;&#x51FB;&#x76D1;&#x542C;&#x7684;&#x4F8B;&#x5B50;&#x3002;&#x4F7F;&#x7528; RxBinding &#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x7528;&#x8FD9;&#x6837;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x8BBE;&#x7F6E;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">Button button = ...;
+RxView.clickEvents(button) // &#x4EE5; Observable &#x5F62;&#x5F0F;&#x6765;&#x53CD;&#x9988;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;
+    .subscribe(new Action1&lt;ViewClickEvent&gt;() {
+        @Override
+        public void call(ViewClickEvent event) {
+            // Click handling
+        }
+    });<br></div></div>
+
+<p>&#x770B;&#x8D77;&#x6765;&#x9664;&#x4E86;&#x5F62;&#x5F0F;&#x53D8;&#x4E86;&#x6CA1;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#xFF0C;&#x5B9E;&#x8D28;&#x4E0A;&#x4E5F;&#x662F;&#x8FD9;&#x6837;&#x3002;&#x751A;&#x81F3;&#x5982;&#x679C;&#x4F60;&#x770B;&#x4E00;&#x4E0B;&#x5B83;&#x7684;&#x6E90;&#x7801;&#xFF0C;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#x5B83;&#x8FDE;&#x5B9E;&#x73B0;&#x90FD;&#x6CA1;&#x4EC0;&#x4E48;&#x60CA;&#x559C;&#xFF1A;&#x5B83;&#x7684;&#x5185;&#x90E8;&#x662F;&#x76F4;&#x63A5;&#x7528;&#x4E00;&#x4E2A;&#x5305;&#x88F9;&#x7740;&#x7684; setOnClickListener() &#x6765;&#x5B9E;&#x73B0;&#x7684;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x4EC5;&#x4EC5;&#x8FD9;&#x4E00;&#x4E2A;&#x5F62;&#x5F0F;&#x7684;&#x6539;&#x53D8;&#xFF0C;&#x5374;&#x6070;&#x597D;&#x5C31;&#x662F; RxBinding &#x7684;&#x76EE;&#x7684;&#xFF1A;&#x6269;&#x5C55;&#x6027;&#x3002;&#x901A;&#x8FC7; RxBinding &#x628A;&#x70B9;&#x51FB;&#x76D1;&#x542C;&#x8F6C;&#x6362;&#x6210; Observable &#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x6709;&#x4E86;&#x5BF9;&#x5B83;&#x8FDB;&#x884C;&#x6269;&#x5C55;&#x7684;&#x53EF;&#x80FD;&#x3002;&#x6269;&#x5C55;&#x7684;&#x65B9;&#x5F0F;&#x6709;&#x5F88;&#x591A;&#xFF0C;&#x6839;&#x636E;&#x9700;&#x6C42;&#x800C;&#x5B9A;&#x3002;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x662F;&#x524D;&#x9762;&#x63D0;&#x5230;&#x8FC7;&#x7684; throttleFirst() &#xFF0C;&#x7528;&#x4E8E;&#x53BB;&#x6296;&#x52A8;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x6D88;&#x9664;&#x624B;&#x6296;&#x5BFC;&#x81F4;&#x7684;&#x5FEB;&#x901F;&#x8FDE;&#x73AF;&#x70B9;&#x51FB;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">RxView.clickEvents(button)
+    .throttleFirst(500, TimeUnit.MILLISECONDS)
+    .subscribe(clickAction);<br></div></div>
+
+<h3 id="&#x5404;&#x79CD;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;">&#x5404;&#x79CD;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;</h3>
+<p>&#x524D;&#x9762;&#x4E3E;&#x7684; Retrofit &#x548C; RxBinding &#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x662F;&#x4E24;&#x4E2A;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x73B0;&#x6210;&#x7684; Observable &#x7684;&#x5E93;&#x3002;&#x800C;&#x5982;&#x679C;&#x4F60;&#x6709;&#x67D0;&#x4E9B;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x65E0;&#x6CD5;&#x7528;&#x8FD9;&#x4E9B;&#x5E93;&#x6765;&#x81EA;&#x52A8;&#x751F;&#x6210; Observable&#xFF0C;&#x4E5F;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x5199;&#x3002;&#x4F8B;&#x5982;&#x6570;&#x636E;&#x5E93;&#x7684;&#x8BFB;&#x5199;&#x3001;&#x5927;&#x56FE;&#x7247;&#x7684;&#x8F7D;&#x5165;&#x3001;&#x6587;&#x4EF6;&#x538B;&#x7F29;/&#x89E3;&#x538B;&#x7B49;&#x5404;&#x79CD;&#x9700;&#x8981;&#x653E;&#x5728;&#x540E;&#x53F0;&#x5DE5;&#x4F5C;&#x7684;&#x8017;&#x65F6;&#x64CD;&#x4F5C;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x7528; RxJava &#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x6709;&#x4E86;&#x4E4B;&#x524D;&#x51E0;&#x7AE0;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x8FD9;&#x91CC;&#x5E94;&#x8BE5;&#x4E0D;&#x7528;&#x518D;&#x4E3E;&#x4F8B;&#x4E86;&#x3002;</p>
+<h3 id="rxbus">RxBus</h3>
+<p>RxBus &#x540D;&#x5B57;&#x770B;&#x8D77;&#x6765;&#x50CF;&#x4E00;&#x4E2A;&#x5E93;&#xFF0C;&#x4F46;&#x5B83;&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x5E93;&#xFF0C;&#x800C;&#x662F;&#x4E00;&#x79CD;&#x6A21;&#x5F0F;&#xFF0C;&#x5B83;&#x7684;&#x601D;&#x60F3;&#x662F;&#x4F7F;&#x7528; RxJava &#x6765;&#x5B9E;&#x73B0;&#x4E86; EventBus &#xFF0C;&#x800C;&#x8BA9;&#x4F60;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x4F7F;&#x7528; Otto &#x6216;&#x8005; GreenRobot &#x7684; EventBus&#x3002;&#x81F3;&#x4E8E;&#x4EC0;&#x4E48;&#x662F; RxBus&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x3002;&#x987A;&#x4FBF;&#x8BF4;&#x4E00;&#x53E5;&#xFF0C;Flipboard &#x5DF2;&#x7ECF;&#x7528; RxBus &#x66FF;&#x6362;&#x6389;&#x4E86; Otto &#xFF0C;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#x6CA1;&#x6709;&#x4E0D;&#x826F;&#x53CD;&#x5E94;&#x3002;</p>
+<h2 id="&#x6700;&#x540E;">&#x6700;&#x540E;</h2>
+<p>&#x5BF9;&#x4E8E; Android &#x5F00;&#x53D1;&#x8005;&#x6765;&#x8BF4;&#xFF0C; RxJava &#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x96BE;&#x4E0A;&#x624B;&#x7684;&#x5E93;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x5BF9;&#x4E8E; Android &#x5F00;&#x53D1;&#x8005;&#x6765;&#x8BF4;&#x6709;&#x592A;&#x591A;&#x964C;&#x751F;&#x7684;&#x6982;&#x5FF5;&#x4E86;&#x3002;&#x53EF;&#x662F;&#x5B83;&#x771F;&#x7684;&#x5F88;&#x725B;&#x903C;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="rxjava2.html" class="navigation navigation-prev " aria-label="Previous page: RxJava(2/3)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../fangkj/" class="navigation navigation-next " aria-label="Next page: 访客机">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"RxJava(3/3)","level":"1.4.5","depth":2,"next":{"title":"访客机","level":"1.5","depth":1,"path":"fangkj/README.MD","ref":"fangkj/README.MD","articles":[]},"previous":{"title":"RxJava(2/3)","level":"1.4.4","depth":2,"path":"android/rxjava2.md","ref":"android/rxjava2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ace"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/rxjava3.md","mtime":"2018-05-18T02:31:58.286Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-18T02:32:51.268Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
