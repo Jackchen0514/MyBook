@@ -35,3 +35,58 @@ Install with NPM
 $ npm install gitbook-cli -g
 ```
 
+## 安装插件
+
+左侧章节目录可折叠
+插件地址： https://plugins.gitbook.com/plugin/toggle-chapters
+
+安装：
+```
+$ npm install gitbook-plugin-toggle-chapters
+```
+
+add this to book.json :
+```
+{
+   "plugins": ["toggle-chapters"]
+}
+```
+
+为文字加上底色
+插件地址： https://plugins.gitbook.com/plugin/emphasize
+
+add this to book.json :
+```
+"plugins": [
+    "emphasize"
+]
+```
+
+使用如下：
+
+```
+This text is {% em %}highlighted !{% endem %}
+
+This text is {% em %}highlighted with **markdown**!{% endem %}
+
+This text is {% em type="green" %}highlighted in green!{% endem %}
+
+This text is {% em type="red" %}highlighted in red!{% endem %}
+
+This text is {% em color="#ff0000" %}highlighted with a custom color!{% endem %}
+```
+
+支持ace
+
+插件地址： https://plugins.gitbook.com/plugin/ace
+
+add this to book.json :
+```
+"plugins": [
+    "ace"
+]
+```
+
+
+
+

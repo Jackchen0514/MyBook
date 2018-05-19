@@ -21,7 +21,7 @@ gitbook init
 ovirt-branding.md  README.md  SUMMARY.md
 ```
 
-1 README.md，简单的电子书介绍。
+1 android.md，简单的电子书介绍。
 
 ```
 # 简介
@@ -57,5 +57,6 @@ ovirt-branding.md  README.md  SUMMARY.md
     "direction": "ltr"
 }
 ```
+
 
 
