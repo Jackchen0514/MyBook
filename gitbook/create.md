@@ -30,6 +30,21 @@ npm install gitbook-cli -g
 
 ## Ubuntu + GitBook搭建
 
+### 安装Node.js
+```
+wget https://nodejs.org/dist/v5.4.1/node-v5.4.1.tar.gz
+tar zxvf node-v5.4.1.tar.gz
+cd node-v5.4.1
+./configure
+sudo make
+sudo make install
+```
+
+### 查看 node.js 是否安装成功
+```
+node -v
+```
+
 Install with NPM
 ```
 $ npm install gitbook-cli -g
