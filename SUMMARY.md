@@ -4,7 +4,7 @@
 * [Gitbook..](gitbook/README.md)
 	* [Gitbook各系统搭建](gitbook/create.md)
 	* [Gitbook基本使用](gitbook/use.md)
-* [Gerrit..](gerrit/README.md)
+* [Gerrit + Git..](gerrit/README.md)
     * [Gerrit+Ubuntu搭建](gerrit/ubuntu_build.md)
     * [Gerrit+CentOS搭建](gerrit/centos_build.md)
 	* [Git基本操作](gerrit/use.md)
