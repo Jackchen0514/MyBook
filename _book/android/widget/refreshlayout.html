@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Retrofit.. · 技术博客</title>
+        <title>SwipeRefreshLayout1 · 技术博客</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="retrofit1.html" />
+    <link rel="next" href="swipeRefreshlayout.html" />
     
     
-    <link rel="prev" href="../okhttp/okhttp1.html" />
+    <link rel="prev" href="readme.html" />
     
 
     </head>
@@ -343,9 +343,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.5" data-path="retrofit.html">
+        <li class="chapter " data-level="1.4.5" data-path="../retrofit/retrofit.html">
             
-                <a href="retrofit.html">
+                <a href="../retrofit/retrofit.html">
             
                     
                     Retrofit..
@@ -357,9 +357,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.5.1" data-path="retrofit1.html">
+        <li class="chapter " data-level="1.4.5.1" data-path="../retrofit/retrofit1.html">
             
-                <a href="retrofit1.html">
+                <a href="../retrofit/retrofit1.html">
             
                     
                     Retrofit(1/3)
@@ -375,9 +375,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.6" data-path="../widget/readme.html">
+        <li class="chapter " data-level="1.4.6" data-path="readme.html">
             
-                <a href="../widget/readme.html">
+                <a href="readme.html">
             
                     
                     widget..
@@ -389,9 +389,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.6.1" data-path="../widget/refreshlayout.html">
+        <li class="chapter active" data-level="1.4.6.1" data-path="refreshlayout.html">
             
-                <a href="../widget/refreshlayout.html">
+                <a href="refreshlayout.html">
             
                     
                     SwipeRefreshLayout1
@@ -402,9 +402,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.6.2" data-path="../widget/swipeRefreshlayout.html">
+        <li class="chapter " data-level="1.4.6.2" data-path="swipeRefreshlayout.html">
             
-                <a href="../widget/swipeRefreshlayout.html">
+                <a href="swipeRefreshlayout.html">
             
                     
                     SwipeRefreshLayout2
@@ -500,7 +500,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Retrofit..</a>
+        <a href="../.." >SwipeRefreshLayout1</a>
     </h1>
 </div>
 
@@ -515,7 +515,99 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="retrofit">Retrofit</h1>
+                                <h1 id="swiperefreshlayout">SwipeRefreshLayout</h1>
+<h2 id="api">API</h2>
+<h2 id="&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h2>
+<ul>
+<li><strong>&#x5E03;&#x5C40;&#x6587;&#x4EF6;</strong></li>
+</ul>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot; &gt;
+    &lt;android.support.v4.widget.SwipeRefreshLayout
+        android:id=&quot;@+id/id_swipe_ly&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot; &gt;
+        &lt;ListView
+            android:id=&quot;@+id/id_listview&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;match_parent&quot; &gt;
+        &lt;/ListView&gt;
+    &lt;/android.support.v4.widget.SwipeRefreshLayout&gt;
+&lt;/RelativeLayout&gt;<br></div></div>
+
+
+
+<ul>
+<li><strong>MainActivity</strong></li>
+</ul>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefreshListener
+{
+
+    private static final int REFRESH_COMPLETE = 0X110;
+    private SwipeRefreshLayout mSwipeLayout;
+    private ListView mListView;
+    private ArrayAdapter&lt;String&gt; mAdapter;
+    private List&lt;String&gt; mDatas = new ArrayList&lt;String&gt;(Arrays.asList(&quot;Java&quot;, &quot;Javascript&quot;, &quot;C++&quot;, &quot;Ruby&quot;, &quot;Json&quot;,
+            &quot;HTML&quot;));
+
+    private Handler mHandler = new Handler()
+    {
+        public void handleMessage(android.os.Message msg)
+        {
+            switch (msg.what)
+            {
+            case REFRESH_COMPLETE:
+                mDatas.addAll(Arrays.asList(&quot;Lucene&quot;, &quot;Canvas&quot;, &quot;Bitmap&quot;));
+                mAdapter.notifyDataSetChanged();
+                mSwipeLayout.setRefreshing(false);
+                break;
+
+            }
+        };
+    };
+
+    @SuppressLint(&quot;InlinedApi&quot;)
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mListView = (ListView) findViewById(R.id.id_listview);
+        mSwipeLayout = (SwipeRefreshLayout) findViewById(R.id.id_swipe_ly);
+
+        mSwipeLayout.setOnRefreshListener(this);
+        mSwipeLayout.setColorScheme(android.R.color.holo_blue_bright, android.R.color.holo_green_light,
+                android.R.color.holo_orange_light, android.R.color.holo_red_light);
+        mAdapter = new ArrayAdapter&lt;String&gt;(this, android.R.layout.simple_list_item_1, mDatas);
+        mListView.setAdapter(mAdapter);
+
+    }
+
+    public void onRefresh()
+    {
+        // Log.e(&quot;xxx&quot;, Thread.currentThread().getName());
+        // UI Thread
+
+        mHandler.sendEmptyMessageDelayed(REFRESH_COMPLETE, 2000);
+
+    }
+}<br></div></div>
+
+
 
                                 
                                 </section>
@@ -543,12 +635,12 @@
 
             
                 
-                <a href="../okhttp/okhttp1.html" class="navigation navigation-prev " aria-label="Previous page: Okhttp缓存详解">
+                <a href="readme.html" class="navigation navigation-prev " aria-label="Previous page: widget..">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="retrofit1.html" class="navigation navigation-next " aria-label="Next page: Retrofit(1/3)">
+                <a href="swipeRefreshlayout.html" class="navigation navigation-next " aria-label="Next page: SwipeRefreshLayout2">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -559,7 +651,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Retrofit..","level":"1.4.5","depth":2,"next":{"title":"Retrofit(1/3)","level":"1.4.5.1","depth":3,"path":"android/retrofit/retrofit1.md","ref":"android/retrofit/retrofit1.md","articles":[]},"previous":{"title":"Okhttp缓存详解","level":"1.4.4.1","depth":3,"path":"android/okhttp/okhttp1.md","ref":"android/okhttp/okhttp1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/retrofit/retrofit.md","mtime":"2018-05-19T05:41:21.912Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-23T06:31:21.511Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SwipeRefreshLayout1","level":"1.4.6.1","depth":3,"next":{"title":"SwipeRefreshLayout2","level":"1.4.6.2","depth":3,"path":"android/widget/swipeRefreshlayout.md","ref":"android/widget/swipeRefreshlayout.md","articles":[]},"previous":{"title":"widget..","level":"1.4.6","depth":2,"path":"android/widget/readme.md","ref":"android/widget/readme.md","articles":[{"title":"SwipeRefreshLayout1","level":"1.4.6.1","depth":3,"path":"android/widget/refreshlayout.md","ref":"android/widget/refreshlayout.md","articles":[]},{"title":"SwipeRefreshLayout2","level":"1.4.6.2","depth":3,"path":"android/widget/swipeRefreshlayout.md","ref":"android/widget/swipeRefreshlayout.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/widget/refreshlayout.md","mtime":"2018-05-23T06:29:25.885Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-23T06:31:21.511Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
