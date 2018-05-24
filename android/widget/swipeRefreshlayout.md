@@ -7,7 +7,7 @@
 
 |图1|图2|
 |:--|:--|
-|![](http://img.blog.csdn.net/20150127120706062)|![](http://img.blog.csdn.net/20150127121649015)|
+|![image](http://img.blog.csdn.net/20150127120706062)|![image](http://img.blog.csdn.net/20150127121649015)|
 
  1.将需要下拉刷新的空间包裹起来
 

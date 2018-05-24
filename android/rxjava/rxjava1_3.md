@@ -1,4 +1,4 @@
-# RxJava（3/3）
+# RxJava1.x（3/3）
 
 ## 线程控制：Scheduler (二)
 
