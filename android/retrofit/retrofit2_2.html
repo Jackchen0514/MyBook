@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>widget.. · 技术博客</title>
+        <title>Retrofit(2/3) · 技术博客</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="refreshlayout.html" />
+    <link rel="next" href="retrofit1&2.html" />
     
     
-    <link rel="prev" href="../retrofit/retrofit1&2.html" />
+    <link rel="prev" href="retrofit2_1.html" />
     
 
     </head>
@@ -401,9 +401,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.6" data-path="../retrofit/retrofit.html">
+        <li class="chapter " data-level="1.4.6" data-path="retrofit.html">
             
-                <a href="../retrofit/retrofit.html">
+                <a href="retrofit.html">
             
                     
                     Retrofit..
@@ -415,9 +415,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.6.1" data-path="../retrofit/retrofit2_1.html">
+        <li class="chapter " data-level="1.4.6.1" data-path="retrofit2_1.html">
             
-                <a href="../retrofit/retrofit2_1.html">
+                <a href="retrofit2_1.html">
             
                     
                     Retrofit(1/3)
@@ -428,9 +428,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.6.2" data-path="../retrofit/retrofit2_2.html">
+        <li class="chapter active" data-level="1.4.6.2" data-path="retrofit2_2.html">
             
-                <a href="../retrofit/retrofit2_2.html">
+                <a href="retrofit2_2.html">
             
                     
                     Retrofit(2/3)
@@ -441,9 +441,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.6.3" data-path="../retrofit/retrofit1&2.html">
+        <li class="chapter " data-level="1.4.6.3" data-path="retrofit1&2.html">
             
-                <a href="../retrofit/retrofit1&2.html">
+                <a href="retrofit1&2.html">
             
                     
                     Retrofit1.x&2.x
@@ -459,9 +459,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.7" data-path="readme.html">
+        <li class="chapter " data-level="1.4.7" data-path="../widget/readme.html">
             
-                <a href="readme.html">
+                <a href="../widget/readme.html">
             
                     
                     widget..
@@ -473,9 +473,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.7.1" data-path="refreshlayout.html">
+        <li class="chapter " data-level="1.4.7.1" data-path="../widget/refreshlayout.html">
             
-                <a href="refreshlayout.html">
+                <a href="../widget/refreshlayout.html">
             
                     
                     SwipeRefreshLayout1
@@ -486,9 +486,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.7.2" data-path="swipeRefreshlayout.html">
+        <li class="chapter " data-level="1.4.7.2" data-path="../widget/swipeRefreshlayout.html">
             
-                <a href="swipeRefreshlayout.html">
+                <a href="../widget/swipeRefreshlayout.html">
             
                     
                     SwipeRefreshLayout2
@@ -584,7 +584,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >widget..</a>
+        <a href="../.." >Retrofit(2/3)</a>
     </h1>
 </div>
 
@@ -599,7 +599,70 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="widget">widget</h1>
+                                <h1 id="retrofit2x23">Retrofit2.x(2/3)</h1>
+<h2 id="&#x5F00;&#x542F;retrofit2&#x4E4B;&#x65C5;">&#x5F00;&#x542F;Retrofit2&#x4E4B;&#x65C5;</h2>
+<h3 id="&#x6DFB;&#x52A0;&#x4F9D;&#x8D56;">&#x6DFB;&#x52A0;&#x4F9D;&#x8D56;</h3>
+<pre><code>compile &apos;com.squareup.retrofit2:retrofit:2.1.0&apos;
+compile &apos;com.squareup.retrofit2:converter-gson:2.1.0&apos;
+compile &apos;com.squareup.retrofit2:adapter-rxjava:2.1.0&apos;
+//&#x65E5;&#x5FD7;&#x62E6;&#x622A;&#x5668;
+compile &apos;com.squareup.okhttp3:logging-interceptor:3.5.0&apos;
+compile &apos;io.reactivex:rxjava:1.2.4&apos;
+compile &apos;io.reactivex:rxandroid:1.2.1&apos;
+compile &apos;org.ligboy.retrofit2:converter-fastjson-android:2.1.0&apos;
+</code></pre><h3 id="&#x6CE8;&#x89E3;">&#x6CE8;&#x89E3;</h3>
+<p>retrofit&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x6CE8;&#x89E3;&#x6765;&#x7B80;&#x5316;&#x8BF7;&#x6C42;&#xFF0C;&#x5927;&#x4F53;&#x5206;&#x4E3A;&#x4EE5;&#x4E0B;&#x51E0;&#x7C7B;&#xFF1A;</p>
+<ol>
+<li>&#x7528;&#x4E8E;&#x6807;&#x6CE8;&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;&#x7684;&#x6CE8;&#x89E3;</li>
+<li>&#x7528;&#x4E8E;&#x6807;&#x8BB0;&#x8BF7;&#x6C42;&#x5934;&#x7684;&#x6CE8;&#x89E3;</li>
+<li>&#x7528;&#x4E8E;&#x6807;&#x8BB0;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x7684;&#x6CE8;&#x89E3;</li>
+<li>&#x7528;&#x4E8E;&#x6807;&#x8BB0;&#x8BF7;&#x6C42;&#x548C;&#x54CD;&#x5E94;&#x683C;&#x5F0F;&#x7684;&#x6CE8;&#x89E3;</li>
+</ol>
+<h3 id="&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;&#x6CE8;&#x89E3;">&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;&#x6CE8;&#x89E3;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x6CE8;&#x89E3;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">@GET</td>
+<td style="text-align:left">get&#x8BF7;&#x6C42;</td>
+</tr>
+<tr>
+<td style="text-align:left">@POST</td>
+<td style="text-align:left">post&#x8BF7;&#x6C42;</td>
+</tr>
+<tr>
+<td style="text-align:left">@PUT</td>
+<td style="text-align:left">put&#x8BF7;&#x6C42;</td>
+</tr>
+<tr>
+<td style="text-align:left">@DELETE</td>
+<td style="text-align:left">delete&#x8BF7;&#x6C42;</td>
+</tr>
+<tr>
+<td style="text-align:left">@PATCH</td>
+<td style="text-align:left">patch&#x8BF7;&#x6C42;&#xFF0C;&#x8BE5;&#x8BF7;&#x6C42;&#x662F;&#x5BF9;put&#x8BF7;&#x6C42;&#x7684;&#x8865;&#x5145;&#xFF0C;&#x7528;&#x4E8E;&#x66F4;&#x65B0;&#x5C40;&#x90E8;&#x8D44;&#x6E90;</td>
+</tr>
+<tr>
+<td style="text-align:left">@HEAD</td>
+<td style="text-align:left">head&#x8BF7;&#x6C42;</td>
+</tr>
+<tr>
+<td style="text-align:left">@OPTIONS</td>
+<td style="text-align:left">option&#x8BF7;&#x6C42;</td>
+</tr>
+<tr>
+<td style="text-align:left">@HTTP</td>
+<td style="text-align:left">&#x901A;&#x7528;&#x6CE8;&#x89E3;,&#x53EF;&#x4EE5;&#x66FF;&#x6362;&#x4EE5;&#x4E0A;&#x6240;&#x6709;&#x7684;&#x6CE8;&#x89E3;&#xFF0C;&#x5176;&#x62E5;&#x6709;&#x4E09;&#x4E2A;&#x5C5E;&#x6027;&#xFF1A;method&#xFF0C;path&#xFF0C;hasBody</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h2>
+<p>[1] <a href="https://www.jianshu.com/p/73216939806a" target="_blank">https://www.jianshu.com/p/73216939806a</a></p>
 
                                 
                                 </section>
@@ -627,12 +690,12 @@
 
             
                 
-                <a href="../retrofit/retrofit1&2.html" class="navigation navigation-prev " aria-label="Previous page: Retrofit1.x&2.x">
+                <a href="retrofit2_1.html" class="navigation navigation-prev " aria-label="Previous page: Retrofit(1/3)">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="refreshlayout.html" class="navigation navigation-next " aria-label="Next page: SwipeRefreshLayout1">
+                <a href="retrofit1&2.html" class="navigation navigation-next " aria-label="Next page: Retrofit1.x&2.x">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -643,7 +706,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"widget..","level":"1.4.7","depth":2,"next":{"title":"SwipeRefreshLayout1","level":"1.4.7.1","depth":3,"path":"android/widget/refreshlayout.md","ref":"android/widget/refreshlayout.md","articles":[]},"previous":{"title":"Retrofit1.x&2.x","level":"1.4.6.3","depth":3,"path":"android/retrofit/retrofit1&2.md","ref":"android/retrofit/retrofit1&2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/widget/readme.md","mtime":"2018-05-23T00:59:59.749Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-24T08:23:01.065Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Retrofit(2/3)","level":"1.4.6.2","depth":3,"next":{"title":"Retrofit1.x&2.x","level":"1.4.6.3","depth":3,"path":"android/retrofit/retrofit1&2.md","ref":"android/retrofit/retrofit1&2.md","articles":[]},"previous":{"title":"Retrofit(1/3)","level":"1.4.6.1","depth":3,"path":"android/retrofit/retrofit2_1.md","ref":"android/retrofit/retrofit2_1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/retrofit/retrofit2_2.md","mtime":"2018-05-24T08:07:39.967Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-24T08:23:01.065Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
