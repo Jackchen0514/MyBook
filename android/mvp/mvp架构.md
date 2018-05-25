@@ -9,27 +9,154 @@ Presenter层来完成。
 
 ## MVP理论知识
 
-在MVP架构中跟MVC类似的同样也分为三层。
+随着UI创建技术的功能日益增强，UI层也履行着越来越多的职责。为了更好地细分视图(View)与模型(Model)的功能，让View专注于处理数据的可视化以及与用户的交互，同时让Model只关系数据的处理，基于MVC概念的MVP(Model-View-Presenter)模式应运而生。
 
-Activity和Fragment视为View层，负责处理UI。
+在MVP模式里通常包含4个要素：
 
-Presenter为业务处理层， 既能调用UI逻辑， 又能请求数据， 该层为纯Java类， 不涉及任何的Android API。
+(1) `View`: 负责绘制UI元素， 与用户进行交互（Activity， Fragment）;
 
-Model层中包含着具体的数据请求， 数据源。
+(2) `View interface`: 需要View实现的接口，View通过View Interface与Presenter进行交互， 降低耦合， 方便进行单元测试；
 
-三层之间调用顺序为view->presenter->model, 为了调用安全着想**不可反向调用！不可跨级调用！**
+(3) `Model`: 负责存储、检索、操纵数据(有时也实现一个Model interface用来降低耦合)；
 
-那Model层如何反馈给Presenter层呢？Presenter又是如何操控View层呢？看图：
+(4) `Presenter`:作为View与Model交互的中间纽带，处理与用户交互的负责逻辑
 
-![image](http://www.jcodecraeer.com/uploads/userup/13953/1G020140036-F40-0.png)
 
-上图中说明了低层的不会直接给上一层做反馈，而是通过 View 、 Callback 为上级做出了反馈，这样就解决了请求数据与更新界面的异步操作。上图中 View 和 Callback 都是以接口的形式存在的，其中 View 是经典 MVP 架构中定义的，Callback 是我自己加的。
+## 利用MVP进行Android开发的例子
 
-View 中定义了 Activity 的具体操作，主要是些将请求到的数据在界面中更新之类的。
+- **首先我们需要一个UserBean， 用来保存用户信息**
 
-Callback 中定义了请求数据时反馈的各种状态：成功、失败、异常等。
+{%ace edit=true lang='java'%}
 
+package com.example.xinsi.myapplication.bean;
+
+public class UserBean {
+    private String mFirstName;
+    private String mLastName;
+
+    public UserBean(String firstName, String lastName) {
+        this.mFirstName = firstName;
+        this.mLastName = lastName;
+    }
+
+    public String getFirstName() {
+        return mFirstName;
+    }
+
+    public String getLastName() {
+        return mLastName;
+    }
+}
+
+
+{%endace%}
+
+
+- **再来看看View接口**
+
+根据需求可知，View可以对ID、FirstName、LastName这三个EditText进行读操作，对FirstName和LastName进行写的操作，由此定义IUserView接口：
+
+{%ace edit=true lang='java'%}
+
+public interface IUserView {
+       int getID();
+       String getFristName();
+       String getLastName();
+       void setFirstName (String firstName);
+       void setLastName (String lastName);
+}
+
+{%endace%}
+
+- **Model接口**
+
+同样，Model也需要对这三个字段进行读写操作，并存储在某个载体内（这不是我们所关心的，可以存在内存、文件、数据库或者远程服务器，但对于Presenter及View无影响)，定义IUserModel接口：
+
+{%ace edit=true lang='java'%}
+
+public interface IUserModel {
+       void setID (int id);
+       void setFirstName (String firstName);
+       void setLastName (String lastName);
+       int getID();
+       UserBean load (int id);//通过id读取user信息,返回一个UserBean
+}
+
+{%endace%}
+
+- **Presenter**
+
+至此，Presenter就能通过接口与View及Model进行交互
+
+{%ace edit=true lang='java'%}
+
+public class UserPresenter {
+       private IUserView mUserView ;
+       private IUserModel mUserModel ;
+
+       public UserPresenter (IUserView view) {
+             mUserView = view;
+             mUserModel = new UserModel ();
+       }
+
+       public void saveUser( int id , String firstName , String lastName) {
+             mUserModel .setID (id );
+             mUserModel .setFirstName (firstName );
+             mUserModel .setLastName (lastName );
+       }
+
+       public void loadUser( int id ) {
+             UserBean user = mUserModel .load (id );
+             mUserrView .setFirstName (user .getFirstName ());//通过调用IUserView的方法来更新显示
+             mUserView .setLastName (user .getLastName ());
+       }
+}
+
+{%endace%}
+
+- **UserActivity**
+
+UserActivity实现了IUserView及View.OnClickListener接口，同时有一个UserPresenter成员变量
+
+{%ace edit=true lang='java'%}
+
+public class UserActivity extends Activity implements OnClickListener ,
+             IUserView {
+
+       private EditText mFirstNameEditText , mLastNameEditText , mIdEditText ;
+       private Button mSaveButton , mLoadButton ;
+       private UserPresenter mUserPresenter ;
+
+{%endace%}
+
+
+重写了OnClick方法：
+
+{%ace edit=true lang='java'%}
+
+@Override
+       public void onClick(View v) {
+             // TODO Auto-generated method stub
+             switch ( v. getId()) {
+             case R .id .saveButton :
+                   mUserPresenter .saveUser (getID (), getFristName (),
+                               getLastName ());
+                   break ;
+             case R .id .loadButton :
+                   mUserPresenter .loadUser (getID ());
+                   break ;
+             default :
+                   break ;
+             }
+       }
+
+{%endace%}
+
+
+可以看到，View只负责处理与用户进行交互，并把数据相关的逻辑操作都扔给了Presenter去做。而Presenter调用Model处理完数据之后，再通过IUserView更新View显示的信息。
 
 ## 参考
 
 [1] http://www.jcodecraeer.com/a/anzhuokaifa/2017/1020/8625.html
+
+[2] https://blog.csdn.net/vector_yi/article/details/24719873?utm_source=tuicool
