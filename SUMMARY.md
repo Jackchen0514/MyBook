@@ -28,6 +28,8 @@
     * [widget..](android/widget/readme.md)
         * [SwipeRefreshLayout1](android/widget/refreshlayout.md)
         * [SwipeRefreshLayout2](android/widget/swipeRefreshlayout.md)
+    * [Camera..](android/camera/readme.md)
+        * [Camera开发(一)](android/camera/camera.md)
 * [Http..](Http/readme.md)
     * [Restful架构详解](Http/restful.md)
 * [访客机](fangkj/README.MD)
