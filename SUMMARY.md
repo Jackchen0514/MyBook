@@ -32,4 +32,6 @@
         * [Camera开发(一)](android/camera/camera.md)
 * [Http..](Http/readme.md)
     * [Restful架构详解](Http/restful.md)
+* [Linux](Linux/readme.md)
+* [Nginx](nginx/readme.md)
 * [访客机](fangkj/README.MD)
