@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>OkHttp.. · 技术博客</title>
+        <title>android反编译 · 技术博客</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="okhttp1.html" />
+    <link rel="next" href="../mvp/readme.html" />
     
     
-    <link rel="prev" href="../rxjava/rxjava1&2.html" />
+    <link rel="prev" href="../adb_cmd.html" />
     
 
     </head>
@@ -240,9 +240,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../remake/remake1.html">
+        <li class="chapter active" data-level="1.4.2" data-path="remake1.html">
             
-                <a href="../remake/remake1.html">
+                <a href="remake1.html">
             
                     
                     android反编译
@@ -427,9 +427,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.6" data-path="readme.html">
+        <li class="chapter " data-level="1.4.6" data-path="../okhttp/readme.html">
             
-                <a href="readme.html">
+                <a href="../okhttp/readme.html">
             
                     
                     OkHttp..
@@ -441,9 +441,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.6.1" data-path="okhttp1.html">
+        <li class="chapter " data-level="1.4.6.1" data-path="../okhttp/okhttp1.html">
             
-                <a href="okhttp1.html">
+                <a href="../okhttp/okhttp1.html">
             
                     
                     Okhttp缓存详解
@@ -700,7 +700,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >OkHttp..</a>
+        <a href="../.." >android反编译</a>
     </h1>
 </div>
 
@@ -715,7 +715,55 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="okhttp">okhttp</h1>
+                                <h1 id="jadx">Jadx</h1>
+<h2 id="&#x6E90;&#x7801;&#x7F16;&#x8BD1;">&#x6E90;&#x7801;&#x7F16;&#x8BD1;</h2>
+<p>Java 8 JDK &#x6216;&#x8005;&#x66F4;&#x9AD8;&#x7248;&#x672C;</p>
+<pre><code>git clone https://github.com/skylot/jadx.git
+cd jadx
+./gradlew dist
+</code></pre><p>(on Windows, use <code>gradlew.bat</code> instead of <code>./gradlew</code>)</p>
+<h2 id="&#x8FD0;&#x884C;">&#x8FD0;&#x884C;</h2>
+<pre><code>cd build/jadx/
+bin/jadx -d out lib/jadx-core-*.jar
+# or
+bin/jadx-gui lib/jadx-core-*.jar
+</code></pre><h2 id="&#x4F7F;&#x7528;&#x8BF4;&#x660E;">&#x4F7F;&#x7528;&#x8BF4;&#x660E;</h2>
+<pre><code>jadx[-gui] [options] &lt;input file&gt; (.dex, .apk, .jar or .class)
+options:
+ -d,  --output-dir           - output directory
+ -ds, --output-dir-src       - output directory for sources
+ -dr, --output-dir-res       - output directory for resources
+ -j,  --threads-count        - processing threads count
+ -r,  --no-res               - do not decode resources
+ -s,  --no-src               - do not decompile source code
+ -e,  --export-gradle        - save as android gradle project
+      --show-bad-code        - show inconsistent code (incorrectly decompiled)
+      --no-imports           - disable use of imports, always write entire package name
+      --no-replace-consts    - don&apos;t replace constant value with matching constant field
+      --escape-unicode       - escape non latin characters in strings (with \u)
+      --deobf                - activate deobfuscation
+      --deobf-min            - min length of name
+      --deobf-max            - max length of name
+      --deobf-rewrite-cfg    - force to save deobfuscation map
+      --deobf-use-sourcename - use source file name as class name alias
+      --cfg                  - save methods control flow graph to dot file
+      --raw-cfg              - save methods control flow graph (use raw instructions)
+ -f,  --fallback             - make simple dump (using goto instead of &apos;if&apos;, &apos;for&apos;, etc)
+ -v,  --verbose              - verbose output
+ -h,  --help                 - print this help
+Example:
+ jadx -d out classes.dex
+</code></pre><h2 id="out-of-memory">Out of memory</h2>
+<ul>
+<li><p>Reduce processing threads count (-j option)</p>
+</li>
+<li><p>Increase maximum java heap size:</p>
+<ul>
+<li>command line (example for linux): JAVA_OPTS=&quot;-Xmx4G&quot; jadx -j 1 some.apk</li>
+<li>edit &apos;jadx&apos; script (jadx.bat on Windows) and setup bigger heap size: DEFAULT_JVM_OPTS=&quot;-Xmx2500M&quot;</li>
+</ul>
+</li>
+</ul>
 
                                 
                                 </section>
@@ -743,12 +791,12 @@
 
             
                 
-                <a href="../rxjava/rxjava1&2.html" class="navigation navigation-prev " aria-label="Previous page: RxJava1.x&2.x">
+                <a href="../adb_cmd.html" class="navigation navigation-prev " aria-label="Previous page: adb命令集">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="okhttp1.html" class="navigation navigation-next " aria-label="Next page: Okhttp缓存详解">
+                <a href="../mvp/readme.html" class="navigation navigation-next " aria-label="Next page: Mvp..">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -759,7 +807,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"OkHttp..","level":"1.4.6","depth":2,"next":{"title":"Okhttp缓存详解","level":"1.4.6.1","depth":3,"path":"android/okhttp/okhttp1.md","ref":"android/okhttp/okhttp1.md","articles":[]},"previous":{"title":"RxJava1.x&2.x","level":"1.4.5.5","depth":3,"path":"android/rxjava/rxjava1&2.md","ref":"android/rxjava/rxjava1&2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/okhttp/readme.md","mtime":"2018-05-22T07:56:55.269Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-30T08:15:16.502Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"android反编译","level":"1.4.2","depth":2,"next":{"title":"Mvp..","level":"1.4.3","depth":2,"path":"android/mvp/readme.md","ref":"android/mvp/readme.md","articles":[{"title":"Mvp架构","level":"1.4.3.1","depth":3,"path":"android/mvp/mvp架构.md","ref":"android/mvp/mvp架构.md","articles":[]}]},"previous":{"title":"adb命令集","level":"1.4.1","depth":2,"path":"android/adb_cmd.md","ref":"android/adb_cmd.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/remake/remake1.md","mtime":"2018-05-30T08:12:01.328Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-30T08:15:16.502Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
