@@ -10,7 +10,7 @@
 	* [Git基本操作](gerrit/use.md)
 * [Android..](android/android.md)
     * [adb命令集](android/adb_cmd.md)
-    * [android反编译](android/remake.md)
+    * [android反编译](android/remake/remake1.md)
     * [Mvp..](android/mvp/readme.md)
         * [Mvp架构](android/mvp/mvp架构.md)
     * [Dagger..](android/dagger/readme.md)
