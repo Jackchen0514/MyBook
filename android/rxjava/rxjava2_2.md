@@ -51,6 +51,8 @@ Observable.just(1, 2, 3, 4) // IO 线程，由 subscribeOn() 指定
 
 ```
 compile 'com.squareup.retrofit2:retrofit:2.0.1'
+compile 'com.squareup.retrofit2:converter-gson:+'
+compile 'com.squareup.retrofit2:adapter-rxjava:+'
 
 ```
 
@@ -150,4 +152,6 @@ public interface BaseHttpApi{
 这么处理岂不是快哉。对于lamada，刚开始可能都是各种不习惯，不过用习惯了就会发现代码各种简洁（我最近也在适应中）。
 
 
+## 参考
 
+https://www.jianshu.com/p/cc19cc9f4a36
