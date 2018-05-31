@@ -10,7 +10,7 @@ subscribeOn是指上游发送事件的线程。说白了也就是子线程。
 举个例子：
 
 {%ace edit=true lang='java'%}
-
+//
 Observable.just(1, 2, 3, 4) // IO 线程，由 subscribeOn() 指定
     .subscribeOn(Schedulers.io())
     .observeOn(Schedulers.newThread())
@@ -19,7 +19,8 @@ Observable.just(1, 2, 3, 4) // IO 线程，由 subscribeOn() 指定
     .map(mapOperator2) // IO 线程，由 observeOn() 指定
     .observeOn(AndroidSchedulers.mainThread)
     .subscribe(subscriber);  // Android 主线程，由 observeOn() 指定
-
+//
+//
 {%endace%}
 
 在RxJava中，已经内置了很多线程选项供我们选择，例如：
@@ -61,8 +62,8 @@ compile 'com.squareup.retrofit2:retrofit:2.0.1'
     private static OkHttpClient mOkHttpClient;
     private static Converter.Factory gsonConverterFactory = GsonConverterFactory.create();
     private static CallAdapter.Factory rxJavaCallAdapterFactory = RxJavaCallAdapterFactory.create();
-     public static BaseHttpApi getObserve() {
-​
+    public static BaseHttpApi getObserve() {
+
         if (baseHttpApi == null) {
             Retrofit retrofit = new Retrofit.Builder()
                     .addConverterFactory(gsonConverterFactory)
@@ -73,7 +74,7 @@ compile 'com.squareup.retrofit2:retrofit:2.0.1'
             baseHttpApi = retrofit.create(BaseHttpApi.class);
        }
         return baseHttpApi;
-​
+
     }
 
 {%endace%}
@@ -103,14 +104,14 @@ public interface BaseHttpApi{
                 .subscribe(new Observer<ServiceReward>() {
                     @Override
                     public void onCompleted() {
-​
+
                     }
-​
+
                     @Override
                     public void onError(Throwable e) {
-​
+
                     }
-​
+
                     @Override
                     public void onNext(ServiceReward serviceReward) {
                         parseOrderDetail(serviceReward);

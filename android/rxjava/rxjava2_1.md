@@ -47,19 +47,19 @@ Observer<String> observer = new Observer<String>() {
         Log.i(TAG, "onSubscribe: " + d);
         result += "onSubscribe: " + d + "\n";
     }
-​
+
     @Override
     public void onNext(String string) {
         Log.i(TAG, "onNext: " + string);
         result += "onNext: " + string + "\n";
     }
-​
+
     @Override
     public void onError(Throwable e) {
         Log.i(TAG, "onError: " + e);
         result += "onError: " + e + "\n";
     }
-​
+
     @Override
     public void onComplete() {
         Log.i(TAG, "onComplete: ");
