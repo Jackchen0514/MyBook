@@ -538,6 +538,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.4.7.4" data-path="../retrofit/retrofit2.x&RxJava2.x.html">
+            
+                <a href="../retrofit/retrofit2.x&RxJava2.x.html">
+            
+                    
+                    Retrofit2.x+RxJava2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -784,6 +797,8 @@ Observable.just(1, 2, 3, 4) // IO &#x7EBF;&#x7A0B;&#xFF0C;&#x7531; subscribeOn()
 &#x4E5F;&#x5C31;&#x662F;&#x8BF4;Retrofit &#x9664;&#x4E86;&#x63D0;&#x4F9B;&#x4E86;&#x4F20;&#x7EDF;&#x7684; <code>Callback</code> &#x5F62;&#x5F0F;&#x7684; API&#xFF0C;&#x8FD8;&#x6709; RxJava &#x7248;&#x672C;&#x7684; <code>Observable</code> &#x5F62;&#x5F0F; API&#x3002;</p>
 <p>&#x5982;&#x679C;&#x9700;&#x8981;&#x4F7F;&#x7528;retrofit&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;gradle&#x7684;&#x914D;&#x7F6E;&#x52A0;&#x4E0A;&#x8FD9;&#x53E5;&#xFF1A;</p>
 <pre><code>compile &apos;com.squareup.retrofit2:retrofit:2.0.1&apos;
+compile &apos;com.squareup.retrofit2:converter-gson:+&apos;
+compile &apos;com.squareup.retrofit2:adapter-rxjava:+&apos;
 </code></pre><p>&#x8BDD;&#x4E0D;&#x591A;&#x8BF4;&#xFF0C;&#x76F4;&#x63A5;&#x4E0A;&#x4F8B;&#x5B50;&#xFF1A;</p>
 <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">private static OkHttpClient mOkHttpClient;
     private static Converter.Factory gsonConverterFactory = GsonConverterFactory.create();
@@ -852,6 +867,8 @@ Observable.just(1, 2, 3, 4) // IO &#x7EBF;&#x7A0B;&#xFF0C;&#x7531; subscribeOn()
                  },throwable -&gt;{do something when net error...});<br></div></div>
 
 <p>&#x8FD9;&#x4E48;&#x5904;&#x7406;&#x5C82;&#x4E0D;&#x662F;&#x5FEB;&#x54C9;&#x3002;&#x5BF9;&#x4E8E;lamada&#xFF0C;&#x521A;&#x5F00;&#x59CB;&#x53EF;&#x80FD;&#x90FD;&#x662F;&#x5404;&#x79CD;&#x4E0D;&#x4E60;&#x60EF;&#xFF0C;&#x4E0D;&#x8FC7;&#x7528;&#x4E60;&#x60EF;&#x4E86;&#x5C31;&#x4F1A;&#x53D1;&#x73B0;&#x4EE3;&#x7801;&#x5404;&#x79CD;&#x7B80;&#x6D01;&#xFF08;&#x6211;&#x6700;&#x8FD1;&#x4E5F;&#x5728;&#x9002;&#x5E94;&#x4E2D;&#xFF09;&#x3002;</p>
+<h2 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h2>
+<p><a href="https://www.jianshu.com/p/cc19cc9f4a36" target="_blank">https://www.jianshu.com/p/cc19cc9f4a36</a></p>
 
                                 
                                 </section>
@@ -895,7 +912,7 @@ Observable.just(1, 2, 3, 4) // IO &#x7EBF;&#x7A0B;&#xFF0C;&#x7531; subscribeOn()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"RxJava2.x(2/2)","level":"1.4.5.5","depth":3,"next":{"title":"RxJava1.x&2.x","level":"1.4.5.6","depth":3,"path":"android/rxjava/rxjava1&2.md","ref":"android/rxjava/rxjava1&2.md","articles":[]},"previous":{"title":"RxJava2.x(1/2)","level":"1.4.5.4","depth":3,"path":"android/rxjava/rxjava2_1.md","ref":"android/rxjava/rxjava2_1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/rxjava/rxjava2_2.md","mtime":"2018-05-31T06:25:07.330Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-31T06:25:25.682Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"RxJava2.x(2/2)","level":"1.4.5.5","depth":3,"next":{"title":"RxJava1.x&2.x","level":"1.4.5.6","depth":3,"path":"android/rxjava/rxjava1&2.md","ref":"android/rxjava/rxjava1&2.md","articles":[]},"previous":{"title":"RxJava2.x(1/2)","level":"1.4.5.4","depth":3,"path":"android/rxjava/rxjava2_1.md","ref":"android/rxjava/rxjava2_1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/rxjava/rxjava2_2.md","mtime":"2018-05-31T06:40:54.771Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-31T07:07:44.917Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
