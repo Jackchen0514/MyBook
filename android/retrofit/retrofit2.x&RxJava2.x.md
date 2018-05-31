@@ -146,3 +146,7 @@ Observable<Shot[]> getObservable() {
 }
 
 {%endace%}
+
+## 参考
+
+[1] https://www.jianshu.com/p/cc19cc9f4a36

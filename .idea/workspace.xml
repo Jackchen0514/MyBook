@@ -2,52 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de97163e-d830-4b78-8e61-0bef565ba3ae" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/SUMMARY.md" afterPath="$PROJECT_DIR$/SUMMARY.md" />
-      <change beforePath="$PROJECT_DIR$/_book/.idea/workspace.xml" afterPath="$PROJECT_DIR$/_book/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/_book/Http/readme.html" afterPath="$PROJECT_DIR$/_book/Http/readme.html" />
-      <change beforePath="$PROJECT_DIR$/_book/Http/restful.html" afterPath="$PROJECT_DIR$/_book/Http/restful.html" />
-      <change beforePath="$PROJECT_DIR$/_book/Linux/readme.html" afterPath="$PROJECT_DIR$/_book/Linux/readme.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/adb_cmd.html" afterPath="$PROJECT_DIR$/_book/android/adb_cmd.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/android.html" afterPath="$PROJECT_DIR$/_book/android/android.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/camera/camera.html" afterPath="$PROJECT_DIR$/_book/android/camera/camera.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/camera/readme.html" afterPath="$PROJECT_DIR$/_book/android/camera/readme.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/dagger/dagger1.html" afterPath="$PROJECT_DIR$/_book/android/dagger/dagger1.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/dagger/dagger2.html" afterPath="$PROJECT_DIR$/_book/android/dagger/dagger2.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/dagger/dagger3.html" afterPath="$PROJECT_DIR$/_book/android/dagger/dagger3.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/dagger/readme.html" afterPath="$PROJECT_DIR$/_book/android/dagger/readme.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/mvp/mvp架构.html" afterPath="$PROJECT_DIR$/_book/android/mvp/mvp架构.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/mvp/readme.html" afterPath="$PROJECT_DIR$/_book/android/mvp/readme.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/okhttp/okhttp1.html" afterPath="$PROJECT_DIR$/_book/android/okhttp/okhttp1.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/okhttp/readme.html" afterPath="$PROJECT_DIR$/_book/android/okhttp/readme.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/remake/remake1.html" afterPath="$PROJECT_DIR$/_book/android/remake/remake1.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/retrofit/retrofit.html" afterPath="$PROJECT_DIR$/_book/android/retrofit/retrofit.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/retrofit/retrofit1&amp;2.html" afterPath="$PROJECT_DIR$/_book/android/retrofit/retrofit1&amp;2.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/retrofit/retrofit2_1.html" afterPath="$PROJECT_DIR$/_book/android/retrofit/retrofit2_1.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/retrofit/retrofit2_2.html" afterPath="$PROJECT_DIR$/_book/android/retrofit/retrofit2_2.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/rxjava/rxjava.html" afterPath="$PROJECT_DIR$/_book/android/rxjava/rxjava.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/rxjava/rxjava1&amp;2.html" afterPath="$PROJECT_DIR$/_book/android/rxjava/rxjava1&amp;2.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/rxjava/rxjava1_1.html" afterPath="$PROJECT_DIR$/_book/android/rxjava/rxjava1_1.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/rxjava/rxjava1_2.html" afterPath="$PROJECT_DIR$/_book/android/rxjava/rxjava1_2.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/rxjava/rxjava1_3.html" afterPath="$PROJECT_DIR$/_book/android/rxjava/rxjava1_3.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/rxjava/rxjava2_1.html" afterPath="$PROJECT_DIR$/_book/android/rxjava/rxjava2_1.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/rxjava/rxjava2_2.html" afterPath="$PROJECT_DIR$/_book/android/rxjava/rxjava2_2.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/rxjava/rxjava_backpressure.html" afterPath="$PROJECT_DIR$/_book/android/rxjava/rxjava_backpressure.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/widget/readme.html" afterPath="$PROJECT_DIR$/_book/android/widget/readme.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/widget/refreshlayout.html" afterPath="$PROJECT_DIR$/_book/android/widget/refreshlayout.html" />
-      <change beforePath="$PROJECT_DIR$/_book/android/widget/swipeRefreshlayout.html" afterPath="$PROJECT_DIR$/_book/android/widget/swipeRefreshlayout.html" />
-      <change beforePath="$PROJECT_DIR$/_book/fangkj/index.html" afterPath="$PROJECT_DIR$/_book/fangkj/index.html" />
-      <change beforePath="$PROJECT_DIR$/_book/gerrit/centos_build.html" afterPath="$PROJECT_DIR$/_book/gerrit/centos_build.html" />
-      <change beforePath="$PROJECT_DIR$/_book/gerrit/index.html" afterPath="$PROJECT_DIR$/_book/gerrit/index.html" />
-      <change beforePath="$PROJECT_DIR$/_book/gerrit/ubuntu_build.html" afterPath="$PROJECT_DIR$/_book/gerrit/ubuntu_build.html" />
-      <change beforePath="$PROJECT_DIR$/_book/gerrit/use.html" afterPath="$PROJECT_DIR$/_book/gerrit/use.html" />
-      <change beforePath="$PROJECT_DIR$/_book/gitbook/create.html" afterPath="$PROJECT_DIR$/_book/gitbook/create.html" />
-      <change beforePath="$PROJECT_DIR$/_book/gitbook/index.html" afterPath="$PROJECT_DIR$/_book/gitbook/index.html" />
-      <change beforePath="$PROJECT_DIR$/_book/gitbook/use.html" afterPath="$PROJECT_DIR$/_book/gitbook/use.html" />
-      <change beforePath="$PROJECT_DIR$/_book/index.html" afterPath="$PROJECT_DIR$/_book/index.html" />
-      <change beforePath="$PROJECT_DIR$/_book/nginx/readme.html" afterPath="$PROJECT_DIR$/_book/nginx/readme.html" />
-      <change beforePath="$PROJECT_DIR$/_book/search_index.json" afterPath="$PROJECT_DIR$/_book/search_index.json" />
-      <change beforePath="$PROJECT_DIR$/android/rxjava/rxjava2_2.md" afterPath="$PROJECT_DIR$/android/rxjava/rxjava2_2.md" />
+      <change beforePath="$PROJECT_DIR$/android/retrofit/retrofit2.x&amp;RxJava2.x.md" afterPath="$PROJECT_DIR$/android/retrofit/retrofit2.x&amp;RxJava2.x.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -167,8 +122,8 @@
         <entry file="file://$PROJECT_DIR$/android/retrofit/retrofit2.x&amp;RxJava2.x.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="514">
-                <caret line="138" column="3" lean-forward="false" selection-start-line="138" selection-start-column="3" selection-end-line="138" selection-end-column="3" />
+              <first_editor relative-caret-position="316">
+                <caret line="127" column="5" lean-forward="true" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
                 <folding />
               </first_editor>
               <second_editor>
@@ -274,14 +229,14 @@
         <option value="$PROJECT_DIR$/android/rxjava/rxjava_backpressure.md" />
         <option value="$PROJECT_DIR$/android/rxjava/rxjava2_1.md" />
         <option value="$PROJECT_DIR$/android/rxjava/rxjava2_2.md" />
-        <option value="$PROJECT_DIR$/android/retrofit/retrofit2.x&amp;RxJava2.x.md" />
         <option value="$PROJECT_DIR$/SUMMARY.md" />
+        <option value="$PROJECT_DIR$/android/retrofit/retrofit2.x&amp;RxJava2.x.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="146" />
-    <option name="y" value="77" />
+    <option name="x" value="-442" />
+    <option name="y" value="812" />
     <option name="width" value="1616" />
     <option name="height" value="982" />
   </component>
@@ -353,7 +308,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/android-architecture-todo-mvp-dagger/todoapp" />
+    <property name="last_opened_file_path" value="$USER_HOME$/DribbblApp" />
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -484,7 +439,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="146" y="77" width="1616" height="982" extended-state="0" />
+    <frame x="-442" y="812" width="1616" height="982" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1062,8 +1017,8 @@
     <entry file="file://$PROJECT_DIR$/android/retrofit/retrofit2.x&amp;RxJava2.x.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="514">
-            <caret line="138" column="3" lean-forward="false" selection-start-line="138" selection-start-column="3" selection-end-line="138" selection-end-column="3" />
+          <first_editor relative-caret-position="316">
+            <caret line="127" column="5" lean-forward="true" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
             <folding />
           </first_editor>
           <second_editor>
