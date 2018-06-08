@@ -1,0 +1,1270 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>BackPressure · 技术博客</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="jackchen">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="rxpermisson.html" />
+    
+    
+    <link rel="prev" href="rxjava1&2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    个人简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../gitbook/">
+            
+                <a href="../../gitbook/">
+            
+                    
+                    Gitbook..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../gitbook/create.html">
+            
+                <a href="../../gitbook/create.html">
+            
+                    
+                    Gitbook各系统搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../gitbook/use.html">
+            
+                <a href="../../gitbook/use.html">
+            
+                    
+                    Gitbook基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../gerrit/">
+            
+                <a href="../../gerrit/">
+            
+                    
+                    Gerrit + Git..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../gerrit/ubuntu_build.html">
+            
+                <a href="../../gerrit/ubuntu_build.html">
+            
+                    
+                    Gerrit+Ubuntu搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../gerrit/centos_build.html">
+            
+                <a href="../../gerrit/centos_build.html">
+            
+                    
+                    Gerrit+CentOS搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../gerrit/use.html">
+            
+                <a href="../../gerrit/use.html">
+            
+                    
+                    Git基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../android.html">
+            
+                <a href="../android.html">
+            
+                    
+                    Android..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../adb_cmd.html">
+            
+                <a href="../adb_cmd.html">
+            
+                    
+                    adb命令集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../remake/remake1.html">
+            
+                <a href="../remake/remake1.html">
+            
+                    
+                    android反编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../mvp/readme.html">
+            
+                <a href="../mvp/readme.html">
+            
+                    
+                    Mvp..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../mvp/mvp架构.html">
+            
+                <a href="../mvp/mvp架构.html">
+            
+                    
+                    Mvp架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../dagger/readme.html">
+            
+                <a href="../dagger/readme.html">
+            
+                    
+                    Dagger..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="../dagger/dagger1.html">
+            
+                <a href="../dagger/dagger1.html">
+            
+                    
+                    Dagger2(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="../dagger/dagger2.html">
+            
+                <a href="../dagger/dagger2.html">
+            
+                    
+                    Dagger2(二)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="../dagger/dagger3.html">
+            
+                <a href="../dagger/dagger3.html">
+            
+                    
+                    Dagger2(三)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="rxjava.html">
+            
+                <a href="rxjava.html">
+            
+                    
+                    RxJava..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="rxjava1_1.html">
+            
+                <a href="rxjava1_1.html">
+            
+                    
+                    RxJava1.x(1/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="rxjava1_2.html">
+            
+                <a href="rxjava1_2.html">
+            
+                    
+                    RxJava1.x(2/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="rxjava1_3.html">
+            
+                <a href="rxjava1_3.html">
+            
+                    
+                    RxJava1.x(3/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.4" data-path="rxjava2_1.html">
+            
+                <a href="rxjava2_1.html">
+            
+                    
+                    RxJava2.x(1/2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.5" data-path="rxjava2_2.html">
+            
+                <a href="rxjava2_2.html">
+            
+                    
+                    RxJava2.x(2/2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.6" data-path="rxjava1&2.html">
+            
+                <a href="rxjava1&2.html">
+            
+                    
+                    RxJava1.x&2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.5.7" data-path="rxjava_backpressure.html">
+            
+                <a href="rxjava_backpressure.html">
+            
+                    
+                    BackPressure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.8" data-path="rxpermisson.html">
+            
+                <a href="rxpermisson.html">
+            
+                    
+                    RxPermisson
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../okhttp/readme.html">
+            
+                <a href="../okhttp/readme.html">
+            
+                    
+                    OkHttp..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="../okhttp/okhttp1.html">
+            
+                <a href="../okhttp/okhttp1.html">
+            
+                    
+                    Okhttp缓存详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../retrofit/retrofit.html">
+            
+                <a href="../retrofit/retrofit.html">
+            
+                    
+                    Retrofit..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.7.1" data-path="../retrofit/retrofit2_1.html">
+            
+                <a href="../retrofit/retrofit2_1.html">
+            
+                    
+                    Retrofit(1/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2" data-path="../retrofit/retrofit2_2.html">
+            
+                <a href="../retrofit/retrofit2_2.html">
+            
+                    
+                    Retrofit(2/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.3" data-path="../retrofit/retrofit1&2.html">
+            
+                <a href="../retrofit/retrofit1&2.html">
+            
+                    
+                    Retrofit1.x&2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.4" >
+            
+                <a target="_blank" href="andhttps://www.jianshu.com/p/14a9828a12a8roid/retrofit/retrofit2.x&RxJava2.x.md">
+            
+                    
+                    Retrofit2.x+RxJava2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../widget/readme.html">
+            
+                <a href="../widget/readme.html">
+            
+                    
+                    widget..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.8.1" data-path="../widget/refreshlayout.html">
+            
+                <a href="../widget/refreshlayout.html">
+            
+                    
+                    SwipeRefreshLayout1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.2" data-path="../widget/swipeRefreshlayout.html">
+            
+                <a href="../widget/swipeRefreshlayout.html">
+            
+                    
+                    SwipeRefreshLayout2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../camera/readme.html">
+            
+                <a href="../camera/readme.html">
+            
+                    
+                    Camera..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.9.1" data-path="../camera/camera.html">
+            
+                <a href="../camera/camera.html">
+            
+                    
+                    Camera开发(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.2" data-path="../camera/camera1.html">
+            
+                <a href="../camera/camera1.html">
+            
+                    
+                    Camera开发(二)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../react-native/readme.html">
+            
+                <a href="../react-native/readme.html">
+            
+                    
+                    ReactNative..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.10.1" data-path="../react-native/react-native1.html">
+            
+                <a href="../react-native/react-native1.html">
+            
+                    
+                    react-native(1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../Http/readme.html">
+            
+                <a href="../../Http/readme.html">
+            
+                    
+                    Http..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../Http/restful.html">
+            
+                <a href="../../Http/restful.html">
+            
+                    
+                    Restful架构详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../Linux/readme.html">
+            
+                <a href="../../Linux/readme.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../nginx/readme.html">
+            
+                <a href="../../nginx/readme.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../fangkj/">
+            
+                <a href="../../fangkj/">
+            
+                    
+                    访客机
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >BackPressure</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="rxjava----backpressure">Rxjava -- Backpressure</h1>
+<h2 id="&#x4ECE;&#x573A;&#x666F;&#x51FA;&#x53D1;">&#x4ECE;&#x573A;&#x666F;&#x51FA;&#x53D1;</h2>
+<p>RxJava&#x662F;&#x4E00;&#x4E2A;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x67B6;&#x6784;&#xFF0C;&#x5F53;&#x8FD9;&#x4E2A;&#x67B6;&#x6784;&#x4E2D;&#x88AB;&#x89C2;&#x5BDF;&#x8005;(Observable)&#x548C;&#x89C2;&#x5BDF;&#x8005;(Subscriber)&#x5904;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x7EBF;&#x7A0B;&#x73AF;&#x5883;&#x4E2D;&#x65F6;&#xFF0C;&#x7531;&#x4E8E;&#x8005;&#x5404;&#x81EA;&#x7684;&#x5DE5;&#x4F5C;&#x91CF;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x5BFC;&#x81F4;&#x5B83;&#x4EEC;&#x4EA7;&#x751F;&#x4E8B;&#x4EF6;&#x548C;&#x5904;&#x7406;&#x4E8B;&#x4EF6;&#x7684;&#x901F;&#x5EA6;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x8FD9;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#xFF1A;</p>
+<ul>
+<li><p>&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x4EA7;&#x751F;&#x4E8B;&#x4EF6;&#x6162;&#x4E00;&#x4E9B;&#xFF0C;&#x89C2;&#x5BDF;&#x8005;&#x5904;&#x7406;&#x4E8B;&#x4EF6;&#x5F88;&#x5FEB;&#x3002;&#x90A3;&#x4E48;&#x89C2;&#x5BDF;&#x8005;&#x5C31;&#x4F1A;&#x7B49;&#x7740;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x53D1;&#x9001;&#x4E8B;&#x4EF6;&#xFF0C;&#xFF08;&#x597D;&#x6BD4;&#x89C2;&#x5BDF;&#x8005;&#x5728;&#x7B49;&#x7C73;&#x4E0B;&#x9505;&#xFF0C;&#x7A0B;&#x5E8F;&#x7B49;&#x5F85;&#xFF0C;&#x8FD9;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#xFF09;&#x3002;</p>
+</li>
+<li><p>&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x4EA7;&#x751F;&#x4E8B;&#x4EF6;&#x7684;&#x901F;&#x5EA6;&#x5F88;&#x5FEB;&#xFF0C;&#x800C;&#x89C2;&#x5BDF;&#x8005;&#x5904;&#x7406;&#x5F88;&#x6162;&#x3002;&#x90A3;&#x5C31;&#x51FA;&#x95EE;&#x9898;&#x4E86;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x4F5C;&#x5904;&#x7406;&#x7684;&#x8BDD;&#xFF0C;&#x4E8B;&#x4EF6;&#x4F1A;&#x5806;&#x79EF;&#x8D77;&#x6765;&#xFF0C;&#x6700;&#x7EC8;&#x6324;&#x7206;&#x4F60;&#x7684;&#x5185;&#x5B58;&#xFF0C;&#x5BFC;&#x81F4;&#x7A0B;&#x5E8F;&#x5D29;&#x6E83;&#x3002;&#xFF08;&#x597D;&#x6BD4;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x751F;&#x4EA7;&#x7684;&#x5927;&#x7C73;&#x6CA1;&#x4EBA;&#x5403;&#xFF0C;&#x5806;&#x79EF;&#x6700;&#x540E;&#x5C31;&#x4F1A;&#x70C2;&#x6389;&#xFF09;&#x3002;</p>
+</li>
+</ul>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x7528;&#x4EE3;&#x7801;&#x6F14;&#x793A;&#x4E00;&#x4E0B;&#x8FD9;&#x79CD;&#x5D29;&#x6E83;&#x7684;&#x573A;&#x666F;:</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">//&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E2D;&#xFF0C;&#x6BCF;1ms&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;
+Observable.interval(1, TimeUnit.MILLISECONDS)
+//.subscribeOn(Schedulers.newThread())
+//&#x5C06;&#x89C2;&#x5BDF;&#x8005;&#x7684;&#x5DE5;&#x4F5C;&#x653E;&#x5728;&#x65B0;&#x7EBF;&#x7A0B;&#x73AF;&#x5883;&#x4E2D;
+
+.observeOn(Schedulers.newThread())
+//&#x89C2;&#x5BDF;&#x8005;&#x5904;&#x7406;&#x6BCF;1000ms&#x624D;&#x5904;&#x7406;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;
+.subscribe(new Action1() {
+
+@Override
+public void call(Long aLong) {
+try {
+Thread.sleep(1000);
+} catch (InterruptedException e) {
+e.printStackTrace();
+}
+Log.w(&quot;TAG&quot;,&quot;----&gt;&quot;+aLong);
+}
+});<br></div></div>
+
+
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x53D1;&#x9001;&#x4E8B;&#x4EF6;&#x7684;&#x901F;&#x5EA6;&#x662F;&#x89C2;&#x5BDF;&#x8005;&#x5904;&#x7406;&#x901F;&#x5EA6;&#x7684;1000&#x500D;</p>
+<p>&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x8FD0;&#x884C;&#x4E4B;&#x540E;&#xFF1A;</p>
+<pre><code>...
+Caused by: rx.exceptions.MissingBackpressureException
+...
+...
+</code></pre><p>&#x629B;&#x51FA;MissingBackpressureException&#x5F80;&#x5F80;&#x5C31;&#x662F;&#x56E0;&#x4E3A;&#xFF0C;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x53D1;&#x9001;&#x4E8B;&#x4EF6;&#x7684;&#x901F;&#x5EA6;&#x592A;&#x5FEB;&#xFF0C;&#x800C;&#x89C2;&#x5BDF;&#x8005;&#x5904;&#x7406;&#x592A;&#x6162;&#xFF0C;&#x800C;&#x4E14;&#x4F60;&#x8FD8;&#x6CA1;&#x6709;&#x505A;&#x76F8;&#x5E94;&#x63AA;&#x65BD;&#xFF0C;&#x6240;&#x4EE5;&#x62A5;&#x5F02;&#x5E38;&#x3002;</p>
+<p>&#x800C;&#x8FD9;&#x4E2A;MissingBackpressureException&#x5F02;&#x5E38;&#x91CC;&#x9762;&#x5C31;&#x5305;&#x542B;&#x4E86;Backpressure&#x8FD9;&#x4E2A;&#x5355;&#x8BCD;&#xFF0C;&#x770B;&#x6765;&#x80CC;&#x538B;&#x80AF;&#x5B9A;&#x548C;&#x8FD9;&#x79CD;&#x5F02;&#x5E38;&#x60C5;&#x51B5;&#x6709;&#x5173;&#x7CFB;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#x80CC;&#x538B;&#xFF08;Backpressure&#xFF09;&#x5230;&#x5E95;&#x662F;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;</p>
+<h2 id="&#x5173;&#x4E8E;&#x80CC;&#x538B;backpressure">&#x5173;&#x4E8E;&#x80CC;&#x538B;(Backpressure)</h2>
+<p>&#x80CC;&#x538B;&#x662F;&#x6307;&#x5728;&#x5F02;&#x6B65;&#x573A;&#x666F;&#x4E2D;&#xFF0C;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x53D1;&#x9001;&#x4E8B;&#x4EF6;&#x901F;&#x5EA6;&#x8FDC;&#x5FEB;&#x4E8E;&#x89C2;&#x5BDF;&#x8005;&#x7684;&#x5904;&#x7406;&#x901F;&#x5EA6;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E00;&#x79CD;&#x544A;&#x8BC9;&#x4E0A;&#x6E38;&#x7684;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x964D;&#x4F4E;&#x53D1;&#x9001;&#x901F;&#x5EA6;&#x7684;&#x7B56;&#x7565;</p>
+<p>&#x7B80;&#x800C;&#x8A00;&#x4E4B;&#xFF0C;&#x80CC;&#x538B;&#x662F;&#x6D41;&#x901F;&#x63A7;&#x5236;&#x7684;&#x4E00;&#x79CD;&#x7B56;&#x7565;&#x3002;</p>
+<p>&#x9700;&#x8981;&#x5F3A;&#x8C03;&#x4E24;&#x70B9;&#xFF1A;</p>
+<ul>
+<li><p>&#x80CC;&#x538B;&#x7B56;&#x7565;&#x7684;&#x4E00;&#x4E2A;&#x524D;&#x63D0;&#x662F;&#x5F02;&#x6B65;&#x73AF;&#x5883;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x548C;&#x89C2;&#x5BDF;&#x8005;&#x5904;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x7EBF;&#x7A0B;&#x73AF;&#x5883;&#x4E2D;&#x3002;</p>
+</li>
+<li><p>&#x80CC;&#x538B;&#xFF08;Backpressure&#xFF09;&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x50CF;flatMap&#x4E00;&#x6837;&#x53EF;&#x4EE5;&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x7684;&#x64CD;&#x4F5C;&#x7B26;&#xFF0C;&#x4ED6;&#x53EA;&#x662F;&#x4E00;&#x79CD;&#x63A7;&#x5236;&#x4E8B;&#x4EF6;&#x6D41;&#x901F;&#x7684;&#x7B56;&#x7565;&#x3002;</p>
+</li>
+</ul>
+<p>&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x518D;&#x56DE;&#x770B;&#x4E0A;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x5F02;&#x5E38;&#x5C31;&#x5F88;&#x597D;&#x7406;&#x89E3;&#x4E86;&#xFF0C;&#x5C31;&#x662F;&#x5F53;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x53D1;&#x9001;&#x4E8B;&#x4EF6;&#x901F;&#x5EA6;&#x8FC7;&#x5FEB;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x505A;&#x6D41;&#x901F;&#x63A7;&#x5236;&#xFF0C;&#x5BFC;&#x81F4;&#x4E86;&#x5F02;&#x5E38;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#x80CC;&#x538B;&#xFF08;Backpressure&#xFF09;&#x7B56;&#x7565;&#x5177;&#x4F53;&#x662F;&#x54EA;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x6D41;&#x901F;&#x63A7;&#x5236;&#x7684;&#x5462;&#xFF1F;</p>
+<h2 id="&#x54CD;&#x5E94;&#x5F0F;&#x62C9;&#x53D6;&#xFF08;reactive-pull&#xFF09;">&#x54CD;&#x5E94;&#x5F0F;&#x62C9;&#x53D6;&#xFF08;reactive pull&#xFF09;</h2>
+<p>&#x5728;RxJava&#x7684;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x578B;&#x4E2D;&#xFF0C;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x662F;&#x4E3B;&#x52A8;&#x7684;&#x63A8;&#x9001;&#x6570;&#x636E;&#x7ED9;&#x89C2;&#x5BDF;&#x8005;&#xFF0C;&#x89C2;&#x5BDF;&#x8005;&#x662F;&#x88AB;&#x52A8;&#x63A5;&#x6536;&#x7684;&#x3002;&#x800C;&#x54CD;&#x5E94;&#x5F0F;&#x62C9;&#x53D6;&#x5219;&#x53CD;&#x8FC7;&#x6765;&#xFF0C;&#x89C2;&#x5BDF;&#x8005;&#x4E3B;&#x52A8;&#x4ECE;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x90A3;&#x91CC;&#x53BB;&#x62C9;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x53D8;&#x6210;&#x88AB;&#x52A8;&#x7684;&#x7B49;&#x5F85;&#x901A;&#x77E5;&#x518D;&#x53D1;&#x9001;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x7ED3;&#x6784;&#x793A;&#x610F;&#x56FE;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="https://pic4.zhimg.com/80/v2-437f4c6e00172de4c28c8cb8dd796836_hd.jpg" alt="image"></p>
+<p>&#x89C2;&#x5BDF;&#x8005;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x81EA;&#x8EAB;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x6309;&#x9700;&#x62C9;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x88AB;&#x52A8;&#x63A5;&#x6536;&#xFF08;&#x4E5F;&#x5C31;&#x76F8;&#x5F53;&#x4E8E;&#x544A;&#x8BC9;&#x4E0A;&#x6E38;&#x89C2;&#x5BDF;&#x8005;&#x628A;&#x901F;&#x5EA6;&#x6162;&#x4E0B;&#x6765;&#xFF09;&#xFF0C;&#x6700;&#x7EC8;&#x5B9E;&#x73B0;&#x4E86;&#x4E0A;&#x6E38;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x53D1;&#x9001;&#x4E8B;&#x4EF6;&#x7684;&#x901F;&#x5EA6;&#x7684;&#x63A7;&#x5236;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x80CC;&#x538B;&#x7684;&#x7B56;&#x7565;&#x3002;</p>
+<p>&#x4EE3;&#x7801;&#x5B9E;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">//&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x5C06;&#x4EA7;&#x751F;100000&#x4E2A;&#x4E8B;&#x4EF6;
+Observable observable=Observable.range(1,100000);
+class MySubscriber extends Subscriber&lt;T&gt; {
+    @Override
+    public void onStart() {
+    //&#x4E00;&#x5B9A;&#x8981;&#x5728;onStart&#x4E2D;&#x901A;&#x77E5;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x5148;&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;
+      request(1);
+    }
+
+    @Override
+    public void onCompleted() {
+        ...
+    }
+
+    @Override
+    public void onError(Throwable e) {
+        ...
+    }
+
+    @Override
+    public void onNext(T n) {
+        ...
+        ...
+        //&#x5904;&#x7406;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#xFF0C;&#x5728;&#x901A;&#x77E5;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x53D1;&#x9001;&#x4E0B;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;
+        request(1);
+    }
+}
+
+observable.observeOn(Schedulers.newThread())
+            .subscribe(MySubscriber);<br></div></div>
+
+<p>&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x4F20;&#x9012;&#x4E8B;&#x4EF6;&#x5F00;&#x59CB;&#x524D;&#x7684;onstart()&#x4E2D;&#xFF0C;&#x8C03;&#x7528;&#x4E86;request(1)&#xFF0C;&#x901A;&#x77E5;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x5148;&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x5728;onNext()&#x4E2D;&#x5904;&#x7406;&#x5B8C;&#x4E8B;&#x4EF6;&#xFF0C;&#x518D;&#x6B21;&#x8C03;&#x7528;request(1)&#xFF0C;&#x901A;&#x77E5;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x53D1;&#x9001;&#x4E0B;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;....</p>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#x5728;onNext()&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x6700;&#x597D;&#x6700;&#x540E;&#x518D;&#x8C03;&#x7528;request()&#x65B9;&#x6CD5;.</p>
+</blockquote>
+<p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x53D6;&#x6D88;&#x8FD9;&#x79CD;backpressure &#x7B56;&#x7565;&#xFF0C;&#x8C03;&#x7528;quest(Long.MAX_VALUE)&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x9700;&#x8981;&#x8C03;&#x7528;request(n)&#x65B9;&#x6CD5;&#x53BB;&#x62C9;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x7A0B;&#x5E8F;&#x4F9D;&#x7136;&#x80FD;&#x5B8C;&#x7F8E;&#x8FD0;&#x884C;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;range --&gt; observeOn,&#x8FD9;&#x4E00;&#x6BB5;&#x4E2D;&#x95F4;&#x8FC7;&#x7A0B;&#x672C;&#x8EAB;&#x5C31;&#x662F;&#x54CD;&#x5E94;&#x5F0F;&#x62C9;&#x53D6;&#x6570;&#x636E;&#xFF0C;observeOn&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x7B26;&#x5185;&#x90E8;&#x6709;&#x4E00;&#x4E2A;&#x7F13;&#x51B2;&#x533A;&#xFF0C;Android&#x73AF;&#x5883;&#x4E0B;&#x957F;&#x5EA6;&#x662F;16&#xFF0C;&#x5B83;&#x4F1A;&#x544A;&#x8BC9;range&#x6700;&#x591A;&#x53D1;&#x9001;16&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;&#x5145;&#x6EE1;&#x7F13;&#x51B2;&#x533A;&#x5373;&#x53EF;&#x3002;&#x4E0D;&#x8FC7;&#x8BDD;&#x8BF4;&#x56DE;&#x6765;&#xFF0C;&#x5728;&#x89C2;&#x5BDF;&#x8005;&#x4E2D;&#x4F7F;&#x7528;request(n)&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x4F7F;&#x80CC;&#x538B;&#x7684;&#x7B56;&#x7565;&#x8868;&#x73B0;&#x5F97;&#x66F4;&#x52A0;&#x76F4;&#x89C2;&#xFF0C;&#x66F4;&#x4FBF;&#x4E8E;&#x7406;&#x89E3;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x8DB3;&#x591F;&#x7EC6;&#x5FC3;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;&#xFF0C;&#x5728;&#x5F00;&#x5934;&#x5C55;&#x793A;&#x5F02;&#x5E38;&#x60C5;&#x51B5;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x662F;interval&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x7B26;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x4E86;range&#x64CD;&#x4F5C;&#x7B26;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;</p>
+<p>&#x8FD9;&#x662F;&#x56E0;&#x4E3A;interval&#x64CD;&#x4F5C;&#x7B26;&#x672C;&#x8EAB;&#x5E76;&#x4E0D;&#x652F;&#x6301;&#x80CC;&#x538B;&#x7B56;&#x7565;&#xFF0C;&#x5B83;&#x5E76;&#x4E0D;&#x54CD;&#x5E94;request(n)&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5B83;&#x53D1;&#x9001;&#x4E8B;&#x4EF6;&#x7684;&#x901F;&#x5EA6;&#x662F;&#x4E0D;&#x53D7;&#x63A7;&#x5236;&#x7684;&#xFF0C;&#x800C;range&#x8FD9;&#x7C7B;&#x64CD;&#x4F5C;&#x7B26;&#x662F;&#x652F;&#x6301;&#x80CC;&#x538B;&#x7684;&#xFF0C;&#x5B83;&#x53D1;&#x9001;&#x4E8B;&#x4EF6;&#x7684;&#x901F;&#x5EA6;&#x53EF;&#x4EE5;&#x88AB;&#x63A7;&#x5236;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#x5230;&#x5E95;&#x4EC0;&#x4E48;&#x6837;&#x7684;Observable&#x662F;&#x652F;&#x6301;&#x80CC;&#x538B;&#x7684;&#x5462;&#xFF1F;</p>
+<h2 id="hot-and-cold-observables">Hot and Cold Observables</h2>
+<p>&#x9700;&#x8981;&#x8BF4;&#x660E;&#x7684;&#x65F6;&#xFF0C;Hot Observables &#x548C;cold Observables&#x5E76;&#x4E0D;&#x662F;&#x4E25;&#x683C;&#x7684;&#x6982;&#x5FF5;&#x533A;&#x5206;&#xFF0C;&#x5B83;&#x53EA;&#x662F;&#x5BF9;&#x4E8E;&#x4E24;&#x7C7B;Observable&#x5F62;&#x8C61;&#x7684;&#x63CF;&#x8FF0;</p>
+<ul>
+<li><p>Cold Observables&#xFF1A;&#x6307;&#x7684;&#x662F;&#x90A3;&#x4E9B;&#x5728;&#x8BA2;&#x9605;&#x4E4B;&#x540E;&#x624D;&#x5F00;&#x59CB;&#x53D1;&#x9001;&#x4E8B;&#x4EF6;&#x7684;Observable&#xFF08;&#x6BCF;&#x4E2A;Subscriber&#x90FD;&#x80FD;&#x63A5;&#x6536;&#x5230;&#x5B8C;&#x6574;&#x7684;&#x4E8B;&#x4EF6;&#xFF09;&#x3002;</p>
+</li>
+<li><p>Hot Observables:&#x6307;&#x7684;&#x662F;&#x90A3;&#x4E9B;&#x5728;&#x521B;&#x5EFA;&#x4E86;Observable&#x4E4B;&#x540E;&#xFF0C;&#xFF08;&#x4E0D;&#x7BA1;&#x662F;&#x5426;&#x8BA2;&#x9605;&#xFF09;&#x5C31;&#x5F00;&#x59CB;&#x53D1;&#x9001;&#x4E8B;&#x4EF6;&#x7684;Observable</p>
+</li>
+</ul>
+<blockquote>
+<p>&#x5176;&#x5B9E;&#x4E5F;&#x6709;&#x521B;&#x5EFA;&#x4E86;Observable&#x4E4B;&#x540E;&#x8C03;&#x7528;&#x8BF8;&#x5982;publish()&#x65B9;&#x6CD5;&#x5C31;&#x53EF;&#x4EE5;&#x5F00;&#x59CB;&#x53D1;&#x9001;&#x4E8B;&#x4EF6;&#x7684;,&#x8FD9;&#x91CC;&#x54B1;&#x4EEC;&#x6682;&#x4E14;&#x5FFD;&#x7565;&#x3002;</p>
+</blockquote>
+<p>&#x6211;&#x4EEC;&#x4E00;&#x822C;&#x4F7F;&#x7528;&#x7684;&#x90FD;&#x662F;Cold Observable&#xFF0C;&#x9664;&#x975E;&#x7279;&#x6B8A;&#x9700;&#x6C42;&#xFF0C;&#x624D;&#x4F1A;&#x4F7F;&#x7528;Hot Observable,&#x5728;&#x8FD9;&#x91CC;&#xFF0C;Hot Observable&#x8FD9;&#x4E00;&#x7C7B;&#x662F;&#x4E0D;&#x652F;&#x6301;&#x80CC;&#x538B;&#x7684;&#xFF0C;&#x800C;&#x662F;Cold Observable&#x8FD9;&#x4E00;&#x7C7B;&#x4E2D;&#x4E5F;&#x6709;&#x4E00;&#x90E8;&#x5206;&#x5E76;&#x4E0D;&#x652F;&#x6301;&#x80CC;&#x538B;&#xFF08;&#x6BD4;&#x5982;interval&#xFF0C;timer&#x7B49;&#x64CD;&#x4F5C;&#x7B26;&#x521B;&#x5EFA;&#x7684;Observable&#xFF09;&#x3002;</p>
+<p>&#x61F5;&#x903C;&#x4E86;&#x5427;?</p>
+<blockquote>
+<p>Tips: &#x90FD;&#x662F;Observable&#xFF0C;&#x7ED3;&#x679C;&#x6709;&#x7684;&#x652F;&#x6301;&#x80CC;&#x538B;&#xFF0C;&#x6709;&#x7684;&#x4E0D;&#x652F;&#x6301;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;RxJava1.X&#x7684;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x3002;&#x5728;2.0&#x4E2D;&#xFF0C;&#x8FD9;&#x79CD;&#x95EE;&#x9898;&#x5DF2;&#x7ECF;&#x89E3;&#x51B3;&#x4E86;&#xFF0C;&#x4EE5;&#x540E;&#x8C08;&#x5230;2.0&#x65F6;&#x518D;&#x7EC6;&#x8BF4;&#x3002;</p>
+</blockquote>
+<p>&#x5728;&#x90A3;&#x4E9B;&#x4E0D;&#x652F;&#x6301;&#x80CC;&#x538B;&#x7B56;&#x7565;&#x7684;&#x64CD;&#x4F5C;&#x7B26;&#x4E2D;&#x4F7F;&#x7528;&#x54CD;&#x5E94;&#x5F0F;&#x62C9;&#x53D6;&#x6570;&#x636E;&#x7684;&#x8BDD;&#xFF0C;&#x8FD8;&#x662F;&#x4F1A;&#x629B;&#x51FA;MissingBackpressureException&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#xFF0C;&#x4E0D;&#x652F;&#x6301;&#x80CC;&#x538B;&#x7684;Observevable&#x5982;&#x4F55;&#x505A;&#x6D41;&#x901F;&#x63A7;&#x5236;&#x5462;&#xFF1F;</p>
+<h2 id="&#x6D41;&#x901F;&#x63A7;&#x5236;&#x76F8;&#x5173;&#x7684;&#x64CD;&#x4F5C;&#x7B26;">&#x6D41;&#x901F;&#x63A7;&#x5236;&#x76F8;&#x5173;&#x7684;&#x64CD;&#x4F5C;&#x7B26;</h2>
+<ul>
+<li><strong>&#x8FC7;&#x6EE4;(&#x629B;&#x5F03;)</strong></li>
+</ul>
+<p>&#x5C31;&#x662F;&#x867D;&#x7136;&#x751F;&#x4EA7;&#x8005;&#x4EA7;&#x751F;&#x4E8B;&#x4EF6;&#x7684;&#x901F;&#x5EA6;&#x5F88;&#x5FEB;&#xFF0C;&#x4F46;&#x662F;&#x628A;&#x5927;&#x90E8;&#x5206;&#x7684;&#x4E8B;&#x4EF6;&#x90FD;&#x76F4;&#x63A5;&#x8FC7;&#x6EE4;&#xFF08;&#x6D6A;&#x8D39;&#xFF09;&#x6389;&#xFF0C;&#x4ECE;&#x800C;&#x95F4;&#x63A5;&#x7684;&#x964D;&#x4F4E;&#x4E8B;&#x4EF6;&#x53D1;&#x9001;&#x7684;&#x901F;&#x5EA6;&#x3002;</p>
+<p>&#x76F8;&#x5173;&#x7C7B;&#x4F3C;&#x7684;&#x64CD;&#x4F5C;&#x7B26;&#xFF1A;Sample&#xFF0C;ThrottleFirst....
+&#x4EE5;sample&#x4E3A;&#x4F8B;&#xFF0C;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">Observable.interval(1, TimeUnit.MILLISECONDS)
+
+                .observeOn(Schedulers.newThread())
+                //&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x7B26;&#x7B80;&#x5355;&#x7406;&#x89E3;&#x5C31;&#x662F;&#x6BCF;&#x9694;200ms&#x53D1;&#x9001;&#x91CC;&#x65F6;&#x95F4;&#x70B9;&#x6700;&#x8FD1;&#x90A3;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;
+                //&#x5176;&#x4ED6;&#x7684;&#x4E8B;&#x4EF6;&#x6D6A;&#x8D39;&#x6389;
+                  .sample(200,TimeUnit.MILLISECONDS)
+                  .subscribe(new Action1() {
+                      @Override
+                      public void call(Long aLong) {
+                          try {
+                              Thread.sleep(200);
+                          } catch (InterruptedException e) {
+                              e.printStackTrace();
+                          }
+                          Log.w(&quot;TAG&quot;,&quot;----&gt;&quot;+aLong);
+                      }
+                  });<br></div></div>
+
+<p>&#x8FD9;&#x662F;&#x4EE5;&#x6740;&#x654C;&#x4E00;&#x5343;&#xFF0C;&#x81EA;&#x635F;&#x516B;&#x767E;&#x7684;&#x65B9;&#x5F0F;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x56E0;&#x4E3A;&#x629B;&#x5F03;&#x4E86;&#x7EDD;&#x5927;&#x90E8;&#x5206;&#x7684;&#x4E8B;&#x4EF6;&#xFF0C;&#x800C;&#x5728;&#x6211;&#x4EEC;&#x4F7F;&#x7528;RxJava &#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x5B9A;&#x4E49;&#x7684;Observable&#x4EA7;&#x751F;&#x7684;&#x4E8B;&#x4EF6;&#x53EF;&#x80FD;&#x90FD;&#x662F;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;&#xFF0C;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#x4E0D;&#x4F1A;&#x629B;&#x5F03;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x79CD;&#x65B9;&#x6848;&#x6709;&#x5B83;&#x7684;&#x7F3A;&#x9677;&#x3002;</p>
+<ul>
+<li><strong>&#x7F13;&#x5B58;</strong></li>
+</ul>
+<p>&#x5C31;&#x662F;&#x867D;&#x7136;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x53D1;&#x9001;&#x4E8B;&#x4EF6;&#x901F;&#x5EA6;&#x5F88;&#x5FEB;&#xFF0C;&#x89C2;&#x5BDF;&#x8005;&#x5904;&#x7406;&#x4E0D;&#x8FC7;&#x6765;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x5148;&#x7F13;&#x5B58;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x7136;&#x540E;&#x6162;&#x6162;&#x8BFB;&#x3002;</p>
+<p>&#x76F8;&#x5173;&#x7C7B;&#x4F3C;&#x7684;&#x64CD;&#x4F5C;&#x7B26;&#xFF1A;buffer&#xFF0C;window...
+&#x4EE5;buffer&#x4E3A;&#x4F8B;&#xFF0C;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">Observable.interval(1, TimeUnit.MILLISECONDS)
+
+                .observeOn(Schedulers.newThread())
+                //&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x7B26;&#x7B80;&#x5355;&#x7406;&#x89E3;&#x5C31;&#x662F;&#x628A;100&#x6BEB;&#x79D2;&#x5185;&#x7684;&#x4E8B;&#x4EF6;&#x6253;&#x5305;&#x6210;list&#x53D1;&#x9001;
+                .buffer(100,TimeUnit.MILLISECONDS)
+                  .subscribe(new Action1&gt;() {
+                      @Override
+                      public void call(List aLong) {
+                          try {
+                              Thread.sleep(1000);
+                          } catch (InterruptedException e) {
+                              e.printStackTrace();
+                          }
+                          Log.w(&quot;TAG&quot;,&quot;----&gt;&quot;+aLong.size());
+                      }
+                  });<br></div></div>
+
+<h2 id="&#x4E24;&#x4E2A;&#x7279;&#x6B8A;&#x64CD;&#x4F5C;&#x7B26;">&#x4E24;&#x4E2A;&#x7279;&#x6B8A;&#x64CD;&#x4F5C;&#x7B26;</h2>
+<p>&#x5BF9;&#x4E8E;&#x4E0D;&#x652F;&#x6301;&#x80CC;&#x538B;&#x7684;Observable&#x9664;&#x4E86;&#x4F7F;&#x7528;&#x4E0A;&#x8FF0;&#x4E24;&#x7C7B;&#x751F;&#x786C;&#x7684;&#x64CD;&#x4F5C;&#x7B26;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x66F4;&#x597D;&#x7684;&#x9009;&#x62E9;&#xFF1A;</p>
+<p><strong>onBackpressurebuffer</strong>, <strong>onBackpressureDrop</strong></p>
+<ul>
+<li><p><code>onBackpressurebuffer</code>&#xFF1A;&#x628A;observable&#x53D1;&#x9001;&#x51FA;&#x6765;&#x7684;&#x4E8B;&#x4EF6;&#x505A;&#x7F13;&#x5B58;&#xFF0C;&#x5F53;request&#x65B9;&#x6CD5;&#x88AB;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7ED9;&#x4E0B;&#x5C42;&#x6D41;&#x53D1;&#x9001;&#x4E00;&#x4E2A;item(&#x5982;&#x679C;&#x7ED9;&#x8FD9;&#x4E2A;&#x7F13;&#x5B58;&#x533A;&#x8BBE;&#x7F6E;&#x4E86;&#x5927;&#x5C0F;&#xFF0C;&#x90A3;&#x4E48;&#x8D85;&#x8FC7;&#x4E86;&#x8FD9;&#x4E2A;&#x5927;&#x5C0F;&#x5C31;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;)&#x3002;</p>
+</li>
+<li><p><code>onBackpressureDrop</code>&#xFF1A;&#x5C06;observable&#x53D1;&#x9001;&#x7684;&#x4E8B;&#x4EF6;&#x629B;&#x5F03;&#x6389;&#xFF0C;&#x76F4;&#x5230;subscriber&#x518D;&#x6B21;&#x8C03;&#x7528;request&#xFF08;n&#xFF09;&#x65B9;&#x6CD5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x53D1;&#x9001;&#x7ED9;&#x5B83;&#x8FD9;&#x4E4B;&#x540E;&#x7684;n&#x4E2A;&#x4E8B;&#x4EF6;&#x3002;</p>
+</li>
+</ul>
+<p>&#x4E0B;&#x9762;&#xFF0C;&#x6211;&#x4EEC;&#x4EE5;onBackpressureDrop&#x4E3A;&#x4F8B;&#x8BF4;&#x8BF4;&#x7528;&#x6CD5;:</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">Observable.interval(1, TimeUnit.MILLISECONDS)
+                .onBackpressureDrop()
+                .observeOn(Schedulers.newThread())
+               .subscribe(new Subscriber() {
+
+                    @Override
+                    public void onStart() {
+                        Log.w(&quot;TAG&quot;,&quot;start&quot;);
+//                        request(1);
+                    }
+
+                    @Override
+                      public void onCompleted() {
+
+                      }
+                      @Override
+                      public void onError(Throwable e) {
+                            Log.e(&quot;ERROR&quot;,e.toString());
+                      }
+
+                      @Override
+                      public void onNext(Long aLong) {
+                          Log.w(&quot;TAG&quot;,&quot;----&gt;&quot;+aLong);
+                          try {
+                              Thread.sleep(100);
+                          } catch (InterruptedException e) {
+                              e.printStackTrace();
+                          }
+                      }
+                  });<br></div></div>
+
+<p>&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x7684;&#x8F93;&#x51FA;&#xFF1A;</p>
+<pre><code>W/TAG: start
+W/TAG: ----&gt;0
+W/TAG: ----&gt;1
+W/TAG: ----&gt;2
+W/TAG: ----&gt;3
+W/TAG: ----&gt;4
+W/TAG: ----&gt;5
+W/TAG: ----&gt;6
+W/TAG: ----&gt;7
+W/TAG: ----&gt;8
+W/TAG: ----&gt;9
+W/TAG: ----&gt;10
+W/TAG: ----&gt;11
+W/TAG: ----&gt;12
+W/TAG: ----&gt;13
+W/TAG: ----&gt;14
+W/TAG: ----&gt;15
+W/TAG: ----&gt;1218
+W/TAG: ----&gt;1219
+W/TAG: ----&gt;1220
+...
+</code></pre><p>&#x4E4B;&#x6240;&#x4EE5;&#x51FA;&#x73B0;0-15&#x8FD9;&#x6837;&#x8FDE;&#x8D2F;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5C31;&#x662F;&#x662F;&#x56E0;&#x4E3A;observeOn&#x64CD;&#x4F5C;&#x7B26;&#x5185;&#x90E8;&#x6709;&#x4E00;&#x4E2A;&#x957F;&#x5EA6;&#x4E3A;16&#x7684;&#x7F13;&#x5B58;&#x533A;&#xFF0C;&#x5B83;&#x4F1A;&#x9996;&#x5148;&#x8BF7;&#x6C42;16&#x4E2A;&#x4E8B;&#x4EF6;&#x7F13;&#x5B58;&#x8D77;&#x6765;....</p>
+<p>&#x4F60;&#x53EF;&#x80FD;&#x4F1A;&#x89C9;&#x5F97;&#x8FD9;&#x4E24;&#x4E2A;&#x64CD;&#x4F5C;&#x7B26;&#x548C;&#x4E0A;&#x9762;&#x8BB2;&#x7684;&#x8FC7;&#x6EE4;&#x548C;&#x7F13;&#x5B58;&#x5F88;&#x7C7B;&#x4F3C;&#xFF0C;&#x786E;&#x5B9E;&#xFF0C;&#x529F;&#x80FD;&#x4E0A;&#x662F;&#x6709;&#x4E9B;&#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E24;&#x4E2A;&#x64CD;&#x4F5C;&#x7B26;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x591A;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x90A3;&#x5C31;&#x662F;<strong>&#x53EF;&#x4EE5;&#x54CD;&#x5E94;&#x4E0B;&#x6E38;&#x89C2;&#x5BDF;&#x8005;&#x7684;request(n)&#x65B9;&#x6CD5;&#x4E86;</strong>&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;<strong>&#x4F7F;&#x7528;&#x4E86;&#x8FD9;&#x4E24;&#x79CD;&#x64CD;&#x4F5C;&#x7B26;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA9;&#x539F;&#x672C;&#x4E0D;&#x652F;&#x6301;&#x80CC;&#x538B;&#x7684;Observable&#x201C;&#x652F;&#x6301;&#x201D;&#x80CC;&#x538B;&#x4E86;&#x3002;</strong></p>
+<h2 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h2>
+<ul>
+<li><p>&#x80CC;&#x538B;&#x662F;&#x4E00;&#x79CD;&#x7B56;&#x7565;&#xFF0C;&#x5177;&#x4F53;&#x63AA;&#x65BD;&#x662F;&#x4E0B;&#x6E38;&#x89C2;&#x5BDF;&#x8005;&#x901A;&#x77E5;&#x4E0A;&#x6E38;&#x7684;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x53D1;&#x9001;&#x4E8B;&#x4EF6;</p>
+</li>
+<li><p>&#x80CC;&#x538B;&#x7B56;&#x7565;&#x5F88;&#x597D;&#x7684;&#x89E3;&#x51B3;&#x4E86;&#x5F02;&#x6B65;&#x73AF;&#x5883;&#x4E0B;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x548C;&#x89C2;&#x5BDF;&#x8005;&#x901F;&#x5EA6;&#x4E0D;&#x4E00;&#x81F4;&#x7684;&#x95EE;&#x9898;</p>
+</li>
+<li><p>&#x5728;RxJava1.X&#x4E2D;&#xFF0C;&#x540C;&#x6837;&#x662F;Observable&#xFF0C;&#x6709;&#x7684;&#x4E0D;&#x652F;&#x6301;&#x80CC;&#x538B;&#x7B56;&#x7565;&#xFF0C;&#x5BFC;&#x81F4;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x663E;&#x5F97;&#x7279;&#x522B;&#x9EBB;&#x70E6;&#xFF0C;&#x51FA;&#x4E86;&#x95EE;&#x9898;&#x4E5F;&#x5F88;&#x96BE;&#x6392;&#x67E5;&#xFF0C;&#x4F7F;&#x5F97;RxJava&#x7684;&#x5B66;&#x4E60;&#x66F2;&#x7EBF;&#x53D8;&#x5F97;&#x5341;&#x4EFD;&#x9661;&#x5CED;&#x3002;</p>
+</li>
+</ul>
+<p>&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x5E76;&#x4E0D;&#x662F;&#x4E3A;&#x4E86;&#x8BA9;&#x4F60;&#x5B66;&#x4E60;&#x5728;RxJava1.0&#x4E2D;&#x4F7F;&#x7528;&#x80CC;&#x538B;&#xFF08;&#x5982;&#x679C;&#x4F60;&#x4E4B;&#x524D;&#x4E0D;&#x4E86;&#x89E3;&#x80CC;&#x538B;&#x7684;&#x8BDD;&#xFF09;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;1.0&#x4E2D;&#xFF0C;&#x80CC;&#x538B;&#x7684;&#x8BBE;&#x8BA1;&#x5E76;&#x4E0D;&#x5341;&#x5206;&#x5B8C;&#x7F8E;&#x3002;&#x800C;&#x662F;&#x5E0C;&#x671B;&#x4F60;&#x5BF9;&#x80CC;&#x538B;&#x6709;&#x4E00;&#x4E2A;&#x5168;&#x9762;&#x6E05;&#x6670;&#x7684;&#x8BA4;&#x8BC6;&#xFF0C;&#x5BF9;&#x4E8E;&#x5B83;&#x5728;RxJava1.0&#x4E2D;&#x7684;&#x8BBE;&#x8BA1;&#x7F3A;&#x9677;&#x6709;&#x6240;&#x4E86;&#x89E3;&#x5373;&#x53EF;&#x3002;&#x56E0;&#x4E3A;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x672C;&#x8EAB;&#x662F;&#x4E3A;&#x4E86;2.0&#x505A;&#x4E00;&#x4E2A;&#x94FA;&#x57AB;&#xFF0C;&#x540E;&#x7EED;&#x7684;&#x6587;&#x7AE0;&#x4E2D;&#x6211;&#x4F1A;&#x7EE7;&#x7EED;&#x8C08;&#x5230;&#x80CC;&#x538B;&#x548C;&#x4F7F;&#x7528;&#x80CC;&#x538B;&#x7684;&#x6B63;&#x786E;&#x59FF;&#x52BF;&#x3002;</p>
+<h1 id="rxjava2">Rxjava2</h1>
+<h2 id="&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;">&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;</h2>
+<p>&#x8FD9;&#x6B21;&#x66F4;&#x65B0;&#x4E2D;&#xFF0C;&#x51FA;&#x73B0;&#x4E86;&#x4E24;&#x79CD;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#xFF1A;</p>
+<ul>
+<li><p>Observable(&#x88AB;&#x89C2;&#x5BDF;&#x8005;)/Observer&#xFF08;&#x89C2;&#x5BDF;&#x8005;&#xFF09;</p>
+</li>
+<li><p>Flowable(&#x88AB;&#x89C2;&#x5BDF;&#x8005;)/Subscriber(&#x89C2;&#x5BDF;&#x8005;)</p>
+</li>
+</ul>
+<p><img src="https://pic3.zhimg.com/80/v2-b6a6da8d2b90129984268ff5db4e9ebb_hd.jpg" alt="image"></p>
+<p>RxJava2.X&#x4E2D;&#xFF0C;<code>Observeable&#x7528;&#x4E8E;&#x8BA2;&#x9605;Observer</code>&#xFF0C;&#x662F;&#x4E0D;&#x652F;&#x6301;&#x80CC;&#x538B;&#x7684;&#xFF0C;&#x800C;<code>Flowable&#x7528;&#x4E8E;&#x8BA2;&#x9605;Subscriber</code>&#xFF0C;&#x662F;&#x652F;&#x6301;&#x80CC;&#x538B;(Backpressure)&#x7684;&#x3002;</p>
+<h3 id="observableobserver">Observable/Observer</h3>
+<p>Observable&#x6B63;&#x5E38;&#x7528;&#x6CD5;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">Observable mObservable=Observable.create(new ObservableOnSubscribe&lt;Integer&gt;() {
+            @Override
+            public void subscribe(ObservableEmitter&lt;Integer&gt; e) throws Exception {
+                e.onNext(1);
+                e.onNext(2);
+                e.onComplete();
+            }
+        });
+
+Observer mObserver=new Observer&lt;Integer&gt;() {
+            //&#x8FD9;&#x662F;&#x65B0;&#x52A0;&#x5165;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x8BA2;&#x9605;&#x540E;&#x53D1;&#x9001;&#x6570;&#x636E;&#x4E4B;&#x524D;&#xFF0C;
+            //&#x56DE;&#x9996;&#x5148;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x800C;Disposable&#x53EF;&#x7528;&#x4E8E;&#x53D6;&#x6D88;&#x8BA2;&#x9605;
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(Integer value) {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        };
+
+mObservable.subscribe(mObserver);<br></div></div>
+
+<p>&#x8FD9;&#x79CD;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x578B;&#x662F;&#x4E0D;&#x652F;&#x6301;&#x80CC;&#x538B;&#x7684;&#x3002;</p>
+<p>&#x5565;&#x53EB;&#x4E0D;&#x652F;&#x6301;&#x80CC;&#x538B;&#x5462;&#xFF1F;</p>
+<p>&#x5F53;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x5FEB;&#x901F;&#x53D1;&#x9001;&#x5927;&#x91CF;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x4E0B;&#x6E38;&#x4E0D;&#x4F1A;&#x505A;&#x5176;&#x4ED6;&#x5904;&#x7406;&#xFF0C;&#x5373;&#x4F7F;&#x6570;&#x636E;&#x5927;&#x91CF;&#x5806;&#x79EF;&#xFF0C;&#x8C03;&#x7528;&#x94FE;&#x4E5F;&#x4E0D;&#x4F1A;&#x62A5;MissingBackpressureException,&#x6D88;&#x8017;&#x5185;&#x5B58;&#x8FC7;&#x5927;&#x53EA;&#x4F1A;OOM</p>
+<p>&#x6211;&#x5728;&#x6D4B;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5FEB;&#x901F;&#x53D1;&#x9001;&#x4E86;100000&#x4E2A;&#x6574;&#x5F62;&#x6570;&#x636E;&#xFF0C;&#x4E0B;&#x6E38;&#x5EF6;&#x8FDF;&#x63A5;&#x6536;&#xFF0C;&#x7ED3;&#x679C;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x7684;&#x6570;&#x636E;&#x5168;&#x90E8;&#x53D1;&#x9001;&#x51FA;&#x53BB;&#x4E86;&#xFF0C;&#x5185;&#x5B58;&#x786E;&#x5B9E;&#x660E;&#x663E;&#x589E;&#x52A0;&#x4E86;&#xFF0C;&#x9057;&#x61BE;&#x7684;&#x662F;&#x6CA1;&#x6709;OOM&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x4F7F;&#x7528;Observable/Observer&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8003;&#x8651;&#x7684;&#x662F;&#xFF0C;&#x6570;&#x636E;&#x91CF;&#x662F;&#x4E0D;&#x662F;&#x5F88;&#x5927;(&#x5B98;&#x65B9;&#x7ED9;&#x51FA;&#x4EE5;1000&#x4E2A;&#x4E8B;&#x4EF6;&#x4E3A;&#x5206;&#x754C;&#x7EBF;&#xFF0C;&#x4EC5;&#x4F9B;&#x5404;&#x4F4D;&#x53C2;&#x8003;)</p>
+<h3 id="flowablesubscriber">Flowable/Subscriber</h3>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">Flowable.range(0,10)
+    .subscribe(new Subscriber&lt;Integer&gt;() {
+        Subscription sub;
+        //&#x5F53;&#x8BA2;&#x9605;&#x540E;&#xFF0C;&#x4F1A;&#x9996;&#x5148;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x76F8;&#x5F53;&#x4E8E;onStart()&#xFF0C;
+        //&#x4F20;&#x5165;&#x7684;Subscription s&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#x6216;&#x8005;&#x53D6;&#x6D88;&#x8BA2;&#x9605;
+        @Override
+        public void onSubscribe(Subscription s) {
+            Log.w(&quot;TAG&quot;,&quot;onsubscribe start&quot;);
+            sub=s;
+            sub.request(1);
+            Log.w(&quot;TAG&quot;,&quot;onsubscribe end&quot;);
+        }
+
+        @Override
+        public void onNext(Integer o) {
+            Log.w(&quot;TAG&quot;,&quot;onNext---&gt;&quot;+o);
+            sub.request(1);
+        }
+        @Override
+        public void onError(Throwable t) {
+            t.printStackTrace();
+        }
+        @Override
+        public void onComplete() {
+            Log.w(&quot;TAG&quot;,&quot;onComplete&quot;);
+        }
+    });
+
+{%endace%
+
+&#x8F93;&#x51FA;&#x5982;&#x4E0B;&#xFF1A;
+
+```
+onsubscribe start
+onNext---&gt;0
+onNext---&gt;1
+onNext---&gt;2
+...
+onNext---&gt;10
+onComplete
+onsubscribe end
+```
+
+Flowable&#x662F;&#x652F;&#x6301;&#x80CC;&#x538B;&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x4E00;&#x822C;&#x800C;&#x8A00;&#xFF0C;&#x4E0A;&#x6E38;&#x7684;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x4F1A;&#x54CD;&#x5E94;&#x4E0B;&#x6E38;&#x89C2;&#x5BDF;&#x8005;&#x7684;&#x6570;&#x636E;&#x8BF7;&#x6C42;&#xFF0C;&#x4E0B;&#x6E38;&#x8C03;&#x7528;request(n)&#x6765;&#x544A;&#x8BC9;&#x4E0A;&#x6E38;&#x53D1;&#x9001;&#x591A;&#x5C11;&#x4E2A;&#x6570;&#x636E;&#x3002;&#x8FD9;&#x6837;&#x907F;&#x514D;&#x4E86;&#x5927;&#x91CF;&#x6570;&#x636E;&#x5806;&#x79EF;&#x5728;&#x8C03;&#x7528;&#x94FE;&#x4E0A;&#xFF0C;&#x4F7F;&#x5185;&#x5B58;&#x4E00;&#x76F4;&#x5904;&#x4E8E;&#x8F83;&#x4F4E;&#x6C34;&#x5E73;&#x3002;
+
+&#x5F53;&#x7136;&#xFF0C;Flowable&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;creat()&#x6765;&#x521B;&#x5EFA;:
+
+{%ace edit=true lang=&apos;java&apos;%}
+
+    Flowable.create(new FlowableOnSubscribe&lt;Integer&gt;() {
+        @Override
+        public void subscribe(FlowableEmitter&lt;Integer&gt; e) throws Exception {
+            e.onNext(1);
+            e.onNext(2);
+            e.onNext(3);
+            e.onNext(4);
+            e.onComplete();
+        }
+    }
+    //&#x9700;&#x8981;&#x6307;&#x5B9A;&#x80CC;&#x538B;&#x7B56;&#x7565;
+    , BackpressureStrategy.BUFFER);<br></div></div>
+
+<p>Flowable&#x867D;&#x7136;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;create()&#x6765;&#x521B;&#x5EFA;&#xFF0C;&#x4F46;&#x662F;&#x4F60;&#x5FC5;&#x987B;&#x6307;&#x5B9A;&#x80CC;&#x538B;&#x7684;&#x7B56;&#x7565;&#xFF0C;&#x4EE5;&#x4FDD;&#x8BC1;&#x4F60;&#x521B;&#x5EFA;&#x7684;Flowable&#x662F;&#x652F;&#x6301;&#x80CC;&#x538B;&#x7684;&#xFF08;&#x8FD9;&#x4E2A;&#x5728;1.0&#x7684;&#x65F6;&#x5019;&#x5C31;&#x5F88;&#x96BE;&#x4FDD;&#x8BC1;&#xFF0C;&#x53EF;&#x4EE5;&#x8BF4;RxJava2.0&#x6536;&#x7D27;&#x4E86;create()&#x7684;&#x6743;&#x9650;&#xFF09;&#x3002;</p>
+<p>&#x6839;&#x636E;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7684;&#x7ED3;&#x679C;&#x8F93;&#x51FA;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x8C03;&#x7528;subscription.request(n)&#x65B9;&#x6CD5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E0D;&#x7B49;onSubscribe()&#x4E2D;&#x540E;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6267;&#x884C;&#xFF0C;&#x5C31;&#x4F1A;&#x7ACB;&#x523B;&#x6267;&#x884C;&#x5230;onNext&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5728;onNext&#x65B9;&#x6CD5;&#x4E2D;&#x4F7F;&#x7528;&#x5230;&#x9700;&#x8981;&#x521D;&#x59CB;&#x5316;&#x7684;&#x7C7B;&#x65F6;&#xFF0C;&#x5E94;&#x5F53;&#x5C3D;&#x91CF;&#x5728;subscription.request(n)&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x4E4B;&#x524D;&#x505A;&#x597D;&#x521D;&#x59CB;&#x5316;&#x7684;&#x5DE5;&#x4F5C;;</p>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x8FD9;&#x4E5F;&#x4E0D;&#x662F;&#x7EDD;&#x5BF9;&#x7684;&#xFF0C;&#x6211;&#x5728;&#x6D4B;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#x53D1;&#x73B0;&#xFF0C;&#x901A;&#x8FC7;create&#xFF08;&#xFF09;&#x81EA;&#x5B9A;&#x4E49;Flowable&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5373;&#x4F7F;&#x8C03;&#x7528;&#x4E86;subscription.request(n)&#x65B9;&#x6CD5;&#xFF0C;&#x4E5F;&#x4F1A;&#x7B49;onSubscribe&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#x4E2D;&#x540E;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x90FD;&#x6267;&#x884C;&#x5B8C;&#x4E4B;&#x540E;&#xFF0C;&#x624D;&#x5F00;&#x59CB;&#x8C03;&#x7528;onNext&#x3002;</p>
+<blockquote>
+<p>TIPS: &#x5C3D;&#x53EF;&#x80FD;&#x786E;&#x4FDD;&#x5728;request&#xFF08;&#xFF09;&#x4E4B;&#x524D;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x4E86;&#x6240;&#x6709;&#x7684;&#x521D;&#x59CB;&#x5316;&#x5DE5;&#x4F5C;&#xFF0C;&#x5426;&#x5219;&#x5C31;&#x6709;&#x7A7A;&#x6307;&#x9488;&#x7684;&#x98CE;&#x9669;&#x3002;</p>
+</blockquote>
+<h2 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h2>
+<p>&#x3010;1&#x3011; <a href="https://zhuanlan.zhihu.com/p/24473022?refer=dreawer" target="_blank">https://zhuanlan.zhihu.com/p/24473022?refer=dreawer</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="rxjava1&2.html" class="navigation navigation-prev " aria-label="Previous page: RxJava1.x&2.x">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="rxpermisson.html" class="navigation navigation-next " aria-label="Next page: RxPermisson">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"BackPressure","level":"1.4.5.7","depth":3,"next":{"title":"RxPermisson","level":"1.4.5.8","depth":3,"path":"android/rxjava/rxpermisson.md","ref":"android/rxjava/rxpermisson.md","articles":[]},"previous":{"title":"RxJava1.x&2.x","level":"1.4.5.6","depth":3,"path":"android/rxjava/rxjava1&2.md","ref":"android/rxjava/rxjava1&2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/rxjava/rxjava_backpressure.md","mtime":"2018-06-06T12:00:44.772Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-08T10:22:41.676Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
