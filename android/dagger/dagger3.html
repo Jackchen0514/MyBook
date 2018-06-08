@@ -1,0 +1,1210 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Dagger2(三) · 技术博客</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="jackchen">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../rxjava/rxjava.html" />
+    
+    
+    <link rel="prev" href="dagger2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    个人简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../gitbook/">
+            
+                <a href="../../gitbook/">
+            
+                    
+                    Gitbook..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../gitbook/create.html">
+            
+                <a href="../../gitbook/create.html">
+            
+                    
+                    Gitbook各系统搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../gitbook/use.html">
+            
+                <a href="../../gitbook/use.html">
+            
+                    
+                    Gitbook基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../gerrit/">
+            
+                <a href="../../gerrit/">
+            
+                    
+                    Gerrit + Git..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../gerrit/ubuntu_build.html">
+            
+                <a href="../../gerrit/ubuntu_build.html">
+            
+                    
+                    Gerrit+Ubuntu搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../gerrit/centos_build.html">
+            
+                <a href="../../gerrit/centos_build.html">
+            
+                    
+                    Gerrit+CentOS搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../gerrit/use.html">
+            
+                <a href="../../gerrit/use.html">
+            
+                    
+                    Git基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../android.html">
+            
+                <a href="../android.html">
+            
+                    
+                    Android..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../adb_cmd.html">
+            
+                <a href="../adb_cmd.html">
+            
+                    
+                    adb命令集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../remake/remake1.html">
+            
+                <a href="../remake/remake1.html">
+            
+                    
+                    android反编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../mvp/readme.html">
+            
+                <a href="../mvp/readme.html">
+            
+                    
+                    Mvp..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../mvp/mvp架构.html">
+            
+                <a href="../mvp/mvp架构.html">
+            
+                    
+                    Mvp架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    Dagger..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="dagger1.html">
+            
+                <a href="dagger1.html">
+            
+                    
+                    Dagger2(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="dagger2.html">
+            
+                <a href="dagger2.html">
+            
+                    
+                    Dagger2(二)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.4.3" data-path="dagger3.html">
+            
+                <a href="dagger3.html">
+            
+                    
+                    Dagger2(三)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../rxjava/rxjava.html">
+            
+                <a href="../rxjava/rxjava.html">
+            
+                    
+                    RxJava..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="../rxjava/rxjava1_1.html">
+            
+                <a href="../rxjava/rxjava1_1.html">
+            
+                    
+                    RxJava1.x(1/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="../rxjava/rxjava1_2.html">
+            
+                <a href="../rxjava/rxjava1_2.html">
+            
+                    
+                    RxJava1.x(2/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="../rxjava/rxjava1_3.html">
+            
+                <a href="../rxjava/rxjava1_3.html">
+            
+                    
+                    RxJava1.x(3/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.4" data-path="../rxjava/rxjava2_1.html">
+            
+                <a href="../rxjava/rxjava2_1.html">
+            
+                    
+                    RxJava2.x(1/2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.5" data-path="../rxjava/rxjava2_2.html">
+            
+                <a href="../rxjava/rxjava2_2.html">
+            
+                    
+                    RxJava2.x(2/2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.6" data-path="../rxjava/rxjava1&2.html">
+            
+                <a href="../rxjava/rxjava1&2.html">
+            
+                    
+                    RxJava1.x&2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.7" data-path="../rxjava/rxjava_backpressure.html">
+            
+                <a href="../rxjava/rxjava_backpressure.html">
+            
+                    
+                    BackPressure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.8" data-path="../rxjava/rxpermisson.html">
+            
+                <a href="../rxjava/rxpermisson.html">
+            
+                    
+                    RxPermisson
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../okhttp/readme.html">
+            
+                <a href="../okhttp/readme.html">
+            
+                    
+                    OkHttp..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="../okhttp/okhttp1.html">
+            
+                <a href="../okhttp/okhttp1.html">
+            
+                    
+                    Okhttp缓存详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../retrofit/retrofit.html">
+            
+                <a href="../retrofit/retrofit.html">
+            
+                    
+                    Retrofit..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.7.1" data-path="../retrofit/retrofit2_1.html">
+            
+                <a href="../retrofit/retrofit2_1.html">
+            
+                    
+                    Retrofit(1/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2" data-path="../retrofit/retrofit2_2.html">
+            
+                <a href="../retrofit/retrofit2_2.html">
+            
+                    
+                    Retrofit(2/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.3" data-path="../retrofit/retrofit1&2.html">
+            
+                <a href="../retrofit/retrofit1&2.html">
+            
+                    
+                    Retrofit1.x&2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.4" data-path="../retrofit/retrofit2.x&RxJava2.x.html">
+            
+                <a href="../retrofit/retrofit2.x&RxJava2.x.html">
+            
+                    
+                    Retrofit2.x+RxJava2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../widget/readme.html">
+            
+                <a href="../widget/readme.html">
+            
+                    
+                    widget..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.8.1" data-path="../widget/refreshlayout.html">
+            
+                <a href="../widget/refreshlayout.html">
+            
+                    
+                    SwipeRefreshLayout1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.2" data-path="../widget/swipeRefreshlayout.html">
+            
+                <a href="../widget/swipeRefreshlayout.html">
+            
+                    
+                    SwipeRefreshLayout2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../camera/readme.html">
+            
+                <a href="../camera/readme.html">
+            
+                    
+                    Camera..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.9.1" data-path="../camera/camera.html">
+            
+                <a href="../camera/camera.html">
+            
+                    
+                    Camera开发(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.2" data-path="../camera/camera1.html">
+            
+                <a href="../camera/camera1.html">
+            
+                    
+                    Camera开发(二)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../react-native/readme.html">
+            
+                <a href="../react-native/readme.html">
+            
+                    
+                    ReactNative..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.10.1" data-path="../react-native/react-native1.html">
+            
+                <a href="../react-native/react-native1.html">
+            
+                    
+                    react-native(1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../Http/readme.html">
+            
+                <a href="../../Http/readme.html">
+            
+                    
+                    Http..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../Http/restful.html">
+            
+                <a href="../../Http/restful.html">
+            
+                    
+                    Restful架构详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../Linux/readme.html">
+            
+                <a href="../../Linux/readme.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../nginx/readme.html">
+            
+                <a href="../../nginx/readme.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../fangkj/">
+            
+                <a href="../../fangkj/">
+            
+                    
+                    访客机
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Dagger2(三)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="dagger2&#x4E09;">Dagger2(&#x4E09;)</h1>
+<h2 id="scope&#x548C;singleton">@Scope&#x548C;@Singleton</h2>
+<p>@Scope&#x662F;&#x7528;&#x6765;&#x7BA1;&#x7406;&#x4F9D;&#x8D56;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x7684;&#x3002;&#x5B83;&#x548C;@Qualifier&#x4E00;&#x6837;&#x662F;&#x7528;&#x6765;&#x81EA;&#x5B9A;&#x4E49;&#x6CE8;&#x89E3;&#x7684;&#xFF0C;&#x800C;@Singleton&#x5219;&#x662F;@Scope&#x7684;&#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;&#x3002;</p>
+<pre><code>/**
+ * Identifies a type that the injector only instantiates once. Not inherited.
+ *
+ * @see javax.inject.Scope @Scope
+ */
+
+ @Scope
+ @Documented
+ @Retention(RUNTIME)
+ public @interface Singleton {}
+</code></pre><p>Component&#x4F1A;&#x5E2E;&#x6211;&#x4EEC;&#x6CE8;&#x5165;&#x88AB;@Inject&#x6807;&#x8BB0;&#x7684;&#x4F9D;&#x8D56;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x6CE8;&#x5165;&#x591A;&#x4E2A;&#x3002;
+&#x4F46;&#x662F;&#x6BCF;&#x6B21;&#x6CE8;&#x5165;&#x90FD;&#x662F;&#x91CD;&#x65B0;new&#x4E86;&#x4E00;&#x4E2A;&#x4F9D;&#x8D56;&#x3002;&#x5982;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = &quot;MainActivity&quot;;
+
+    @Inject
+    Pot pot;
+
+    @Inject
+    Pot pot2;
+
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        DaggerMainActivityComponent.builder()
+                .potComponent(DaggerPotComponent.builder()
+                                .flowerComponent(DaggerFlowerComponent.create()).build())
+                .build().inject(this);
+
+        Log.d(TAG, &quot;pot = &quot; + pot.hashCode() +&quot;, pot2 = &quot; + pot2.hashCode());
+
+
+        String show = pot.show();
+        Toast.makeText(MainActivity.this, show, Toast.LENGTH_SHORT).show();
+
+    }
+}<br></div></div>
+
+<p>&#x6253;&#x5370;&#x7684;&#x5730;&#x5740;&#x503C;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x662F;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;</p>
+<pre><code>D/MainActivity: pot = com.aitsuki.architecture.pot.Pot@240f3ff5, pot2 = com.aitsuki.architecture.pot.Pot@2c79118a
+</code></pre><p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x9700;&#x8981;Pot&#x5BF9;&#x8C61;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x548C;app&#x76F8;&#x540C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5355;&#x4F8B;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x600E;&#x4E48;&#x505A;&#xFF1F;&#x8FD9;&#x65F6;&#x5019;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x5230;@Scope&#x6CE8;&#x89E3;&#x4E86;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x6765;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7684;@Scope&#x5B9E;&#x73B0;&#x2014;&#x2014;@Singleton
+&#x9700;&#x8981;&#x5728;@Provide&#x548C;@Component&#x4E2D;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x624D;&#x8D77;&#x4F5C;&#x7528;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x5462;&#xFF0C;&#x5F85;&#x4F1A;&#x4F1A;&#x8BF4;&#x660E;&#x3002;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@Module
+public class PotModule {
+
+    @Provides
+    @Singleton
+    Pot providePot(@RoseFlower Flower flower) {
+        return new Pot(flower);
+    }
+}<br></div></div>
+
+<p>-</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@Singleton
+@Component(modules = PotModule.class, dependencies = FlowerComponent.class)
+public interface PotComponent {
+    Pot getPot();
+}<br></div></div>
+
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x518D;&#x8FD0;&#x884C;&#x4E0B;&#x9879;&#x76EE;&#xFF0C;&#x62A5;&#x9519;&#x4E86;</p>
+<p>&#x90A3;&#x662F;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x7684;MainActivityComponent&#x4F9D;&#x8D56;PotComponent&#xFF0C;&#x800C;dagger2&#x89C4;&#x5B9A;&#x5B50;Component&#x4E5F;&#x5FC5;&#x987B;&#x6807;&#x6CE8;@Scope&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x4E0D;&#x80FD;&#x7ED9;MainActivityComponent&#x4E5F;&#x6807;&#x6CE8;@Singleton&#xFF0C;&#x5E76;&#x4E14;dagger2&#x4E5F;&#x4E0D;&#x5141;&#x8BB8;&#x3002;&#x56E0;&#x4E3A;&#x5355;&#x4F8B;&#x4F9D;&#x8D56;&#x5355;&#x4F8B;&#x662F;&#x4E0D;&#x7B26;&#x5408;&#x8BBE;&#x8BA1;&#x539F;&#x5219;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;@Scope&#x6CE8;&#x89E3;&#x3002;</p>
+<p>&#x5B9A;&#x4E49;Scope&#x662F;&#x540D;&#x5B57;&#x8981;&#x8D77;&#x5F97;&#x6709;&#x610F;&#x4E49;&#xFF0C;&#x80FD;&#x4E00;&#x773C;&#x5C31;&#x8BA9;&#x4F60;&#x770B;&#x51FA;&#x8FD9;&#x4E2A;Scope&#x6240;&#x89C4;&#x5B9A;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x3002;
+&#x6BD4;&#x5982;ActivityScope &#x6216;&#x8005;PerActivity&#xFF0C;&#x751F;&#x547D;&#x5468;&#x671F;&#x548C;Activity&#x76F8;&#x540C;&#x3002;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@Scope
+@Retention(RetentionPolicy.RUNTIME)
+public @interface ActivityScope {}<br></div></div>
+
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@ActivityScope
+@Component(dependencies = PotComponent.class)
+public interface MainActivityComponent {
+    void inject(MainActivity activity);
+}<br></div></div>
+
+<pre><code>D/MainActivity: pot = com.aitsuki.architecture.pot.Pot@240f3ff5, pot2 = com.aitsuki.architecture.pot.Pot@240f3ff5
+</code></pre><p>&#x8FD9;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x4E24;&#x4E2A;pot&#x5BF9;&#x8C61;&#x7684;&#x5730;&#x5740;&#x503C;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;@Scope&#x6CE8;&#x89E3;&#x8D77;&#x4F5C;&#x7528;&#x4E86;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#x6211;&#x518D;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;Activity&#xFF0C;&#x518D;&#x6B21;&#x6CE8;&#x5165;pot&#x6253;&#x5370;&#x5730;&#x5740;&#x503C;&#x3002;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">public class SecondActivity extends AppCompatActivity {
+
+    private static final String TAG = &quot;SecondActivity&quot;;
+
+    @Inject
+    Pot pot3;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        DaggerSecondActivityComponent.builder()
+                .potComponent(DaggerPotComponent.builder().flowerComponent(DaggerFlowerComponent.create()).build())
+                .build().inject(this);
+
+
+        Log.d(TAG, &quot;pot3 = &quot; + pot3);
+    }
+}<br></div></div>
+
+<p>-</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@ActivityScope
+@Component(dependencies = PotComponent.class)
+public interface SecondActivityComponent {
+    void inject(SecondActivity activity);
+}<br></div></div>
+
+
+<p>&#x5728;MainActivity&#x521D;&#x59CB;&#x5316;&#x65F6;&#x76F4;&#x63A5;&#x8DF3;&#x8F6C;&#x5230;SecondActivity</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = &quot;MainActivity&quot;;
+
+    @Inject
+    Pot pot;
+
+    @Inject
+    Pot pot2;
+
+
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        DaggerMainActivityComponent.builder()
+                .potComponent(DaggerPotComponent.builder()
+                                .flowerComponent(DaggerFlowerComponent.create()).build())
+                .build().inject(this);
+
+
+        Log.d(TAG, &quot;pot = &quot; + pot +&quot;, pot2 = &quot; + pot2);
+
+        String show = pot.show();
+
+        Toast.makeText(MainActivity.this, show, Toast.LENGTH_SHORT).show();
+
+        startActivity(new Intent(this, SecondActivity.class));
+    }
+}<br></div></div>
+
+
+<pre><code>D/MainActivity: pot = com.aitsuki.architecture.pot.Pot@240f3ff5, pot2 = com.aitsuki.architecture.pot.Pot@240f3ff5
+D/SecondActivity: pot3 = com.aitsuki.architecture.pot.Pot@1b7661c7
+</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x5728;SecondActivity&#x4E2D;&#xFF0C;Pot&#x5BF9;&#x8C61;&#x5730;&#x5740;&#x548C;MainActivity&#x4E2D;&#x7684;&#x4E0D;&#x4E00;&#x6837;&#x4E86;&#x3002;
+&#x4E3A;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;&#x4E0D;&#x662F;&#x53EB;@Singleton&#x4E48;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;&#x4E86;&#x5B83;Pot&#x8FD8;&#x4E0D;&#x662F;&#x5355;&#x4F8B;&#x7684;&#xFF0C;Dagger2&#x4F60;&#x9017;&#x6211;</p>
+<hr>
+<p>&#x90A3;&#x4E48;&#x73B0;&#x5728;&#x6211;&#x53EF;&#x4EE5;&#x8BF4;&#x8BF4;@Scope&#x7684;&#x4F5C;&#x7528;&#x4E86;&#xFF0C;&#x5B83;&#x7684;&#x4F5C;&#x7528;&#x53EA;&#x662F;&#x4FDD;&#x8BC1;&#x4F9D;&#x8D56;&#x5728;@Component&#x4E2D;&#x662F;&#x552F;&#x4E00;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x201C;&#x5C40;&#x90E8;&#x5355;&#x4F8B;&#x201D;</p>
+<p>@Scope&#x662F;&#x9700;&#x8981;&#x6210;&#x5BF9;&#x5B58;&#x5728;&#x7684;&#xFF0C;&#x5728;Module&#x7684;Provide&#x65B9;&#x6CD5;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;@Scope&#xFF0C;&#x90A3;&#x4E48;&#x5BF9;&#x5E94;&#x7684;Component&#x4E2D;&#x4E5F;&#x5FC5;&#x987B;&#x4F7F;&#x7528;@Scope&#x6CE8;&#x89E3;&#xFF0C;&#x5F53;&#x4E24;&#x8FB9;&#x7684;@Scope&#x540D;&#x5B57;&#x4E00;&#x6837;&#x65F6;&#xFF08;&#x6BD4;&#x5982;&#x540C;&#x4E3A;@Si
+ngleton&#xFF09;, &#x90A3;&#x4E48;&#x8BE5;Provide&#x65B9;&#x6CD5;&#x63D0;&#x4F9B;&#x7684;&#x4F9D;&#x8D56;&#x5C06;&#x4F1A;&#x5728;Component&#x4E2D;&#x4FDD;&#x6301;&#x201C;&#x5C40;&#x90E8;&#x5355;&#x4F8B;&#x201D;&#x3002;
+&#x800C;&#x5728;Component&#x4E2D;&#x6807;&#x6CE8;@Scope&#xFF0C;provide&#x65B9;&#x6CD5;&#x6CA1;&#x6709;&#x6807;&#x6CE8;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;Scope&#x5C31;&#x4E0D;&#x4F1A;&#x8D77;&#x4F5C;
+&#x7528;&#xFF0C;&#x800C;Component&#x4E0A;&#x7684;Scope&#x7684;&#x4F5C;&#x7528;&#x4E5F;&#x53EA;&#x662F;&#x4E3A;&#x4E86;&#x80FD;&#x987A;&#x5229;&#x901A;&#x8FC7;&#x7F16;&#x8BD1;&#xFF0C;&#x5C31;&#x50CF;&#x6211;&#x521A;&#x521A;&#x5B9A;&#x4E49;&#x7684;ActivityScope&#x4E00;&#x6837;&#x3002;</p>
+<p>@Singleton&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;@Scope&#xFF0C;&#x5B83;&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x50CF;&#x4E0A;&#x9762;&#x8BF4;&#x7684;&#x4E00;&#x6837;&#x3002;&#x4F46;&#x7531;&#x4E8E;&#x5B83;&#x662F;Dagger2&#x4E2D;&#x9ED8;&#x8BA4;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x6BD4;&#x6211;&#x4EEC;&#x81EA;&#x5B9A;&#x4E49;Scope&#x5BF9;&#x4E86;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#xFF0C;&#x5C31;&#x662F;&#x7F16;&#x8BD1;&#x68C0;&#x6D4B;&#xFF0C;&#x9632;&#x6B62;&#x6211;&#x4EEC;&#x4E0D;&#x89C4;&#x8303;&#x7684;&#x4F7F;&#x7528;Scope&#x6CE8;&#x89E3;&#xFF0C;&#x4EC5;&#x6B64;&#x800C;&#x5DF2;&#x3002;</p>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;Demo&#x4E2D;&#xFF0C;Pot&#x5BF9;&#x8C61;&#x5728;PotComponent&#x4E2D;&#x662F;&#x201C;&#x5C40;&#x90E8;&#x5355;&#x4F8B;&#x201D;&#x7684;&#x3002;
+&#x800C;&#x5230;&#x4E86;SecondActivity&#xFF0C;&#x56E0;&#x4E3A;&#x662F;&#x91CD;&#x65B0;Build&#x4E86;&#x4E00;&#x4E2A;PotComponent&#xFF0C;&#x6240;&#x4EE5;Pot&#x5BF9;&#x8C61;&#x7684;&#x5730;&#x5740;&#x503C;&#x4E5F;&#x5C31;&#x6539;&#x53D8;&#x4E86;&#x3002;</p>
+<p><strong>&#x90A3;&#x4E48;&#xFF0C;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x4F7F;&#x7528;Dagger2&#x5B9E;&#x73B0;&#x5355;&#x4F8B;&#x5462;&#xFF1F;</strong></p>
+<p>&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x505A;&#x5230;&#x4EE5;&#x4E0B;&#x4E24;&#x70B9;&#x5373;&#x53EF;&#x3002;</p>
+<ol>
+<li><p>&#x4F9D;&#x8D56;&#x5728;Component&#x4E2D;&#x662F;&#x5355;&#x4F8B;&#x7684;&#xFF08;&#x4F9B;&#x8BE5;&#x4F9D;&#x8D56;&#x7684;provide&#x65B9;&#x6CD5;&#x548C;&#x5BF9;&#x5E94;&#x7684;Component&#x7C7B;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x4E2A;Scope&#x6CE8;&#x89E3;&#x3002;&#xFF09;</p>
+</li>
+<li><p>&#x5BF9;&#x5E94;&#x7684;Component&#x5728;App&#x4E2D;&#x53EA;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x6B21;&#xFF0C;&#x6BCF;&#x6B21;&#x6CE8;&#x5165;&#x4F9D;&#x8D56;&#x90FD;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;Component&#x5BF9;&#x8C61;&#x3002;&#xFF08;&#x5728;Application&#x4E2D;&#x521B;&#x5EFA;&#x8BE5;Component&#xFF09;</p>
+</li>
+</ol>
+<p>&#x5982;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">public class App extends Application {
+
+    private PotComponent potComponent;
+
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        potComponent = DaggerPotComponent.builder()
+                .flowerComponent(DaggerFlowerComponent.create())
+                .build();
+    }
+
+    public PotComponent getPotComponent() {
+        return potComponent;
+    }
+}<br></div></div>
+
+
+<p>&#x7136;&#x540E;&#x4FEE;&#x6539;MainActivity&#x548C;SecondActivity&#x7684;Dagger&#x4EE3;&#x7801;&#x5982;&#x4E0B;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = &quot;MainActivity&quot;;
+
+    @Inject
+    Pot pot;
+
+    @Inject
+    Pot pot2;
+
+
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        DaggerMainActivityComponent.builder()
+                .potComponent(((App) getApplication()).getPotComponent())
+                .build().inject(this);
+
+        Log.d(TAG, &quot;pot = &quot; + pot +&quot;, pot2 = &quot; + pot2);
+
+        String show = pot.show();
+
+        Toast.makeText(MainActivity.this, show, Toast.LENGTH_SHORT).show();
+
+        startActivity(new Intent(this, SecondActivity.class));
+
+        }
+}<br></div></div>
+
+<p>-</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">public class SecondActivity extends AppCompatActivity {
+
+    private static final String TAG = &quot;SecondActivity&quot;;
+
+    @Inject
+    Pot pot3;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+
+        DaggerSecondActivityComponent.builder()
+                .potComponent(((App) getApplication()).getPotComponent())
+                .build().inject(this);
+
+        Log.d(TAG, &quot;pot3 = &quot; + pot3);
+    }
+}<br></div></div>
+
+<p>&#x8FD0;&#x884C;&#x540E;&#x7684;log&#x8F93;&#x51FA;</p>
+<pre><code>D/MainActivity: pot = com.aitsuki.architecture.pot.Pot@240f3ff5, pot2 = com.aitsuki.architecture.pot.Pot@240f3ff5
+D/SecondActivity: pot3 = com.aitsuki.architecture.pot.Pot@240f3ff5
+</code></pre><p>&#x73B0;&#x5728;Pot&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x5C31;&#x548C;app&#x76F8;&#x540C;&#x4E86;&#x3002;</p>
+<p>&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x8BD5;&#x8BD5;&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;@ApplicationScope&#xFF0C;&#x66FF;&#x6362;&#x6389;@Singleton&#xFF0C;&#x7ED3;&#x679C;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x6F14;&#x793A;&#x4E86;&#x3002;</p>
+<p>&#x7A0D;&#x5FAE;&#x603B;&#x7ED3;&#x4E0B;@Scope&#x6CE8;&#x89E3;&#xFF1A;</p>
+<p>Scope&#x662F;&#x7528;&#x6765;&#x7ED9;&#x5F00;&#x53D1;&#x8005;&#x7BA1;&#x7406;&#x4F9D;&#x8D56;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x7684;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x8BA9;&#x67D0;&#x4E2A;&#x4F9D;&#x8D56;&#x5728;Component&#x4E2D;&#x4FDD;&#x6301; &#x201C;&#x5C40;&#x90E8;&#x5355;&#x4F8B;&#x201D;&#xFF08;&#x552F;&#x4E00;&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x5C06;Component&#x4FDD;&#x5B58;&#x5728;Application&#x4E2D;&#x590D;&#x7528;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x8BA9;&#x8BE5;&#x4F9D;&#x8D56;&#x5728;app&#x4E2D;&#x4FDD;&#x6301;&#x5355;&#x4F8B;&#x3002;
+&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x81EA;&#x5B9A;&#x4E49;&#x4E0D;&#x540C;&#x7684;Scope&#x6CE8;&#x89E3;&#x6765;&#x6807;&#x8BB0;&#x8FD9;&#x4E2A;&#x4F9D;&#x8D56;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x6240;&#x4EE5;&#x547D;&#x540D;&#x662F;&#x9700;&#x8981;&#x614E;&#x91CD;&#x8003;&#x8651;&#x7684;&#x3002;</p>
+<p><strong>@Singleton&#x544A;&#x8BC9;&#x6211;&#x4EEC;&#x8FD9;&#x4E2A;&#x4F9D;&#x8D56;&#x65F6;&#x5355;&#x4F8B;&#x7684;</strong></p>
+<p><strong>@ActivityScope&#x544A;&#x8BC9;&#x6211;&#x4EEC;&#x8FD9;&#x4E2A;&#x4F9D;&#x8D56;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x548C;Activity&#x76F8;&#x540C;</strong></p>
+<p><strong>@FragmentScope&#x544A;&#x8BC9;&#x6211;&#x4EEC;&#x8FD9;&#x4E2A;&#x4F9D;&#x8D56;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x548C;Fragment&#x76F8;&#x540C;</strong></p>
+<p><strong>@xxxxScope &#x2026;&#x2026;</strong></p>
+<h2 id="mapkey&#x548C;lazy">MapKey&#x548C;Lazy</h2>
+<h3 id="mapkey">Mapkey</h3>
+<p>&#x8FD9;&#x4E2A;&#x6CE8;&#x89E3;&#x7528;&#x5728;&#x5B9A;&#x4E49;&#x4E00;&#x4E9B;&#x4F9D;&#x8D56;&#x96C6;&#x5408;&#xFF08;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;Maps&#x548C;Sets&#xFF09;&#x3002;&#x8BA9;&#x4F8B;&#x5B50;&#x4EE3;&#x7801;&#x81EA;&#x5DF1;&#x6765;&#x89E3;&#x91CA;&#x5427;&#xFF1A;</p>
+<p>&#x5B9A;&#x4E49;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@MapKey(unwrapValue = true)
+@interface TestKey {
+    String value();
+}<br></div></div>
+
+<p>&#x63D0;&#x4F9B;&#x4F9D;&#x8D56;:</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@Provides(type = Type.MAP)
+@TestKey(&quot;foo&quot;)
+String provideFooKey() {
+    return &quot;foo value&quot;;
+}
+
+@Provides(type = Type.MAP)
+@TestKey(&quot;bar&quot;)
+String provideBarKey() {
+    return &quot;bar value&quot;;
+}<br></div></div>
+
+<p>&#x4F7F;&#x7528;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@Inject
+Map&lt;String, String&gt; map;
+
+map.toString() // =&gt; &#x201E;{foo=foo value, bar=bar value}&#x201D;<br></div></div>
+
+<p>@MapKey&#x6CE8;&#x89E3;&#x76EE;&#x524D;&#x53EA;&#x63D0;&#x4F9B;&#x4E24;&#x79CD;&#x7C7B;&#x578B;-String&#x548C;Enum.</p>
+<h3 id="lazy">Lazy</h3>
+<p>Dagger2&#x8FD8;&#x652F;&#x6301;Lazy&#x6A21;&#x5F0F;&#xFF0C;&#x901A;&#x8FC7;Lazy&#x6A21;&#x62DF;&#x63D0;&#x4F9B;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;
+&#x5728;@Inject&#x7684;&#x65F6;&#x5019;&#x5E76;&#x4E0D;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x800C;&#x662F;&#x7B49;&#x5230;&#x4F60;&#x8981;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#xFF0C;
+&#x4E3B;&#x52A8;&#x8C03;&#x7528;&#x5176;.get&#x65B9;&#x6CD5;&#x6765;&#x83B7;&#x53D6;&#x5B9E;&#x4F8B;&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = &quot;MainActivity&quot;;
+
+    @Inject
+    Lazy&lt;Pot&gt; potLazy;
+
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        DaggerMainActivityComponent.builder()
+                .potComponent(((App) getApplication()).getPotComponent())
+                .build().inject(this);
+
+
+        Pot pot = potLazy.get();
+        String show = pot.show();
+        Toast.makeText(MainActivity.this, show, Toast.LENGTH_SHORT).show();
+
+        }
+}<br></div></div>
+
+<h2 id="&#x9879;&#x76EE;&#x5B9E;&#x6218;">&#x9879;&#x76EE;&#x5B9E;&#x6218;</h2>
+<p><a href="https://github.com/googlesamples/android-architecture/tree/todo-mvp-dagger/" target="_blank">https://github.com/googlesamples/android-architecture/tree/todo-mvp-dagger/</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="dagger2.html" class="navigation navigation-prev " aria-label="Previous page: Dagger2(二)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../rxjava/rxjava.html" class="navigation navigation-next " aria-label="Next page: RxJava..">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Dagger2(三)","level":"1.4.4.3","depth":3,"next":{"title":"RxJava..","level":"1.4.5","depth":2,"path":"android/rxjava/rxjava.md","ref":"android/rxjava/rxjava.md","articles":[{"title":"RxJava1.x(1/3)","level":"1.4.5.1","depth":3,"path":"android/rxjava/rxjava1_1.md","ref":"android/rxjava/rxjava1_1.md","articles":[]},{"title":"RxJava1.x(2/3)","level":"1.4.5.2","depth":3,"path":"android/rxjava/rxjava1_2.md","ref":"android/rxjava/rxjava1_2.md","articles":[]},{"title":"RxJava1.x(3/3)","level":"1.4.5.3","depth":3,"path":"android/rxjava/rxjava1_3.md","ref":"android/rxjava/rxjava1_3.md","articles":[]},{"title":"RxJava2.x(1/2)","level":"1.4.5.4","depth":3,"path":"android/rxjava/rxjava2_1.md","ref":"android/rxjava/rxjava2_1.md","articles":[]},{"title":"RxJava2.x(2/2)","level":"1.4.5.5","depth":3,"path":"android/rxjava/rxjava2_2.md","ref":"android/rxjava/rxjava2_2.md","articles":[]},{"title":"RxJava1.x&2.x","level":"1.4.5.6","depth":3,"path":"android/rxjava/rxjava1&2.md","ref":"android/rxjava/rxjava1&2.md","articles":[]},{"title":"BackPressure","level":"1.4.5.7","depth":3,"path":"android/rxjava/rxjava_backpressure.md","ref":"android/rxjava/rxjava_backpressure.md","articles":[]},{"title":"RxPermisson","level":"1.4.5.8","depth":3,"path":"android/rxjava/rxpermisson.md","ref":"android/rxjava/rxpermisson.md","articles":[]}]},"previous":{"title":"Dagger2(二)","level":"1.4.4.2","depth":3,"path":"android/dagger/dagger2.md","ref":"android/dagger/dagger2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/dagger/dagger3.md","mtime":"2018-06-06T12:00:44.772Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-08T10:51:23.081Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

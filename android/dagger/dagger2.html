@@ -1,0 +1,1315 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Dagger2(二) · 技术博客</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="jackchen">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="dagger3.html" />
+    
+    
+    <link rel="prev" href="dagger1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    个人简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../gitbook/">
+            
+                <a href="../../gitbook/">
+            
+                    
+                    Gitbook..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../gitbook/create.html">
+            
+                <a href="../../gitbook/create.html">
+            
+                    
+                    Gitbook各系统搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../gitbook/use.html">
+            
+                <a href="../../gitbook/use.html">
+            
+                    
+                    Gitbook基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../gerrit/">
+            
+                <a href="../../gerrit/">
+            
+                    
+                    Gerrit + Git..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../gerrit/ubuntu_build.html">
+            
+                <a href="../../gerrit/ubuntu_build.html">
+            
+                    
+                    Gerrit+Ubuntu搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../gerrit/centos_build.html">
+            
+                <a href="../../gerrit/centos_build.html">
+            
+                    
+                    Gerrit+CentOS搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../gerrit/use.html">
+            
+                <a href="../../gerrit/use.html">
+            
+                    
+                    Git基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../android.html">
+            
+                <a href="../android.html">
+            
+                    
+                    Android..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../adb_cmd.html">
+            
+                <a href="../adb_cmd.html">
+            
+                    
+                    adb命令集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../remake/remake1.html">
+            
+                <a href="../remake/remake1.html">
+            
+                    
+                    android反编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../mvp/readme.html">
+            
+                <a href="../mvp/readme.html">
+            
+                    
+                    Mvp..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../mvp/mvp架构.html">
+            
+                <a href="../mvp/mvp架构.html">
+            
+                    
+                    Mvp架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    Dagger..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="dagger1.html">
+            
+                <a href="dagger1.html">
+            
+                    
+                    Dagger2(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.4.2" data-path="dagger2.html">
+            
+                <a href="dagger2.html">
+            
+                    
+                    Dagger2(二)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="dagger3.html">
+            
+                <a href="dagger3.html">
+            
+                    
+                    Dagger2(三)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../rxjava/rxjava.html">
+            
+                <a href="../rxjava/rxjava.html">
+            
+                    
+                    RxJava..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="../rxjava/rxjava1_1.html">
+            
+                <a href="../rxjava/rxjava1_1.html">
+            
+                    
+                    RxJava1.x(1/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="../rxjava/rxjava1_2.html">
+            
+                <a href="../rxjava/rxjava1_2.html">
+            
+                    
+                    RxJava1.x(2/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="../rxjava/rxjava1_3.html">
+            
+                <a href="../rxjava/rxjava1_3.html">
+            
+                    
+                    RxJava1.x(3/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.4" data-path="../rxjava/rxjava2_1.html">
+            
+                <a href="../rxjava/rxjava2_1.html">
+            
+                    
+                    RxJava2.x(1/2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.5" data-path="../rxjava/rxjava2_2.html">
+            
+                <a href="../rxjava/rxjava2_2.html">
+            
+                    
+                    RxJava2.x(2/2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.6" data-path="../rxjava/rxjava1&2.html">
+            
+                <a href="../rxjava/rxjava1&2.html">
+            
+                    
+                    RxJava1.x&2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.7" data-path="../rxjava/rxjava_backpressure.html">
+            
+                <a href="../rxjava/rxjava_backpressure.html">
+            
+                    
+                    BackPressure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.8" data-path="../rxjava/rxpermisson.html">
+            
+                <a href="../rxjava/rxpermisson.html">
+            
+                    
+                    RxPermisson
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../okhttp/readme.html">
+            
+                <a href="../okhttp/readme.html">
+            
+                    
+                    OkHttp..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="../okhttp/okhttp1.html">
+            
+                <a href="../okhttp/okhttp1.html">
+            
+                    
+                    Okhttp缓存详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../retrofit/retrofit.html">
+            
+                <a href="../retrofit/retrofit.html">
+            
+                    
+                    Retrofit..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.7.1" data-path="../retrofit/retrofit2_1.html">
+            
+                <a href="../retrofit/retrofit2_1.html">
+            
+                    
+                    Retrofit(1/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2" data-path="../retrofit/retrofit2_2.html">
+            
+                <a href="../retrofit/retrofit2_2.html">
+            
+                    
+                    Retrofit(2/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.3" data-path="../retrofit/retrofit1&2.html">
+            
+                <a href="../retrofit/retrofit1&2.html">
+            
+                    
+                    Retrofit1.x&2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.4" data-path="../retrofit/retrofit2.x&RxJava2.x.html">
+            
+                <a href="../retrofit/retrofit2.x&RxJava2.x.html">
+            
+                    
+                    Retrofit2.x+RxJava2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../widget/readme.html">
+            
+                <a href="../widget/readme.html">
+            
+                    
+                    widget..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.8.1" data-path="../widget/refreshlayout.html">
+            
+                <a href="../widget/refreshlayout.html">
+            
+                    
+                    SwipeRefreshLayout1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.2" data-path="../widget/swipeRefreshlayout.html">
+            
+                <a href="../widget/swipeRefreshlayout.html">
+            
+                    
+                    SwipeRefreshLayout2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../camera/readme.html">
+            
+                <a href="../camera/readme.html">
+            
+                    
+                    Camera..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.9.1" data-path="../camera/camera.html">
+            
+                <a href="../camera/camera.html">
+            
+                    
+                    Camera开发(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.2" data-path="../camera/camera1.html">
+            
+                <a href="../camera/camera1.html">
+            
+                    
+                    Camera开发(二)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../react-native/readme.html">
+            
+                <a href="../react-native/readme.html">
+            
+                    
+                    ReactNative..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.10.1" data-path="../react-native/react-native1.html">
+            
+                <a href="../react-native/react-native1.html">
+            
+                    
+                    react-native(1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../Http/readme.html">
+            
+                <a href="../../Http/readme.html">
+            
+                    
+                    Http..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../Http/restful.html">
+            
+                <a href="../../Http/restful.html">
+            
+                    
+                    Restful架构详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../Linux/readme.html">
+            
+                <a href="../../Linux/readme.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../nginx/readme.html">
+            
+                <a href="../../nginx/readme.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../fangkj/">
+            
+                <a href="../../fangkj/">
+            
+                    
+                    访客机
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Dagger2(二)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="dagger2&#x4E8C;">Dagger2(&#x4E8C;)</h1>
+<h2 id="qualifier&#x548C;named">@Qualifier&#x548C;@Named</h2>
+<p>@Qualifier&#x662F;&#x9650;&#x5B9A;&#x7B26;&#xFF0C;&#x800C;@Named&#x5219;&#x662F;&#x57FA;&#x4E8E;String&#x7684;&#x9650;&#x5B9A;&#x7B26;&#x3002;</p>
+<p>&#x5F53;&#x6211;&#x6709;&#x4E24;&#x4E2A;&#x76F8;&#x540C;&#x7684;&#x4F9D;&#x8D56;&#xFF08;&#x90FD;&#x7EE7;&#x627F;&#x67D0;&#x4E00;&#x4E2A;&#x7236;&#x7C7B;&#x6216;&#x8005;&#x90FD;&#x662F;&#x5148;&#x67D0;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#xFF09;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x7ED9;&#x9AD8;&#x5C42;&#x65F6;&#xFF0C;&#x90A3;&#x4E48;&#x7A0B;&#x5E8F;&#x5C31;&#x4E0D;&#x77E5;&#x9053;&#x6211;&#x4EEC;&#x5230;&#x5E95;&#x8981;&#x63D0;&#x4F9B;&#x54EA;&#x4E00;&#x4E2A;&#x4F9D;&#x8D56;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x627E;&#x5230;&#x4E86;&#x4E24;&#x4E2A;&#x3002;
+&#x8FD9;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x9650;&#x5B9A;&#x7B26;&#x4E3A;&#x4E24;&#x4E2A;&#x4F9D;&#x8D56;&#x5206;&#x522B;&#x6253;&#x4E0A;&#x6807;&#x8BB0;&#xFF0C;&#x6307;&#x5B9A;&#x63D0;&#x4F9B;&#x67D0;&#x4E2A;&#x4F9D;&#x8D56;&#x3002;</p>
+<p>&#x63A5;&#x7740;&#x4E0A;&#x4E00;&#x4E2A;Demo&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;Module&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x7684;&#x4F9D;&#x8D56;&#x6709;&#x4E24;&#x4E2A;&#x3002;</p>
+<p>FlowerModule.java:</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">//FlowerModule.java
+
+@Module
+public class FlowerModule {
+
+    @Provides
+    Flower provideRose() {
+        return new Rose();
+    }
+
+    @Provides
+    Flower provideLily() {
+        return new Lily();
+    }
+}<br></div></div>
+
+
+<p><img src="https://upload-images.jianshu.io/upload_images/2202079-1c4a2b616d4e8781.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="image"></p>
+<p>&#x591A;&#x4E2A;Provider</p>
+<p>&#x8FD9;&#x65F6;&#x5019;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x5230;&#x9650;&#x5B9A;&#x7B26;&#x6765;&#x6307;&#x5B9A;&#x4F9D;&#x8D56;&#x4E86;&#xFF0C;&#x6211;&#x8FD9;&#x91CC;&#x7528;@Named&#x6765;&#x6F14;&#x793A;&#x3002;</p>
+<p>FlowerModule.java:</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">//FlowerModule.java
+
+@Module
+public class FlowerModule {
+
+    @Provides
+    @Named(&quot;Rose&quot;)
+    Flower provideRose() {
+        return new Rose();
+    }
+
+    @Provides
+    @Named(&quot;Lily&quot;)
+    Flower provideLily() {
+        return new Lily();
+    }
+}<br></div></div>
+
+<p>&#x6211;&#x4EEC;&#x662F;&#x901A;&#x8FC7;@Inject Pot&#x7684;&#x6784;&#x9020;&#x5668;&#x6CE8;&#x5165;Flower&#x4F9D;&#x8D56;&#x7684;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x7528;&#x5230;&#x9650;&#x5B9A;&#x7B26;&#x3002;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">public class Pot {
+
+    private Flower flower;
+
+    @Inject
+    public Pot(@Named(&quot;Rose&quot;) Flower flower) {
+        this.flower = flower;
+    }
+
+    public String show() {
+        return flower.whisper();
+    }
+}<br></div></div>
+
+<p>&#x800C;@Qualifier&#x7684;&#x4F5C;&#x7528;&#x548C;@Named&#x662F;&#x5B8C;&#x5168;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x4E0D;&#x8FC7;&#x66F4;&#x63A8;&#x8350;&#x4F7F;&#x7528;@Qualifier&#xFF0C;&#x56E0;&#x4E3A;@Named&#x9700;&#x8981;&#x624B;&#x5199;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5BB9;&#x6613;&#x51FA;&#x9519;&#x3002;</p>
+<p>@Qualifier&#x4E0D;&#x662F;&#x76F4;&#x63A5;&#x6CE8;&#x89E3;&#x5728;&#x5C5E;&#x6027;&#x4E0A;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x7528;&#x6765;&#x81EA;&#x5B9A;&#x4E49;&#x6CE8;&#x89E3;&#x7684;&#x3002;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@Qualifier
+@Retention(RetentionPolicy.RUNTIME)
+public @interface RoseFlower {}<br></div></div>
+
+<p>-</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@Qualifier
+@Retention(RetentionPolicy.RUNTIME)
+public @interface LilyFlower {}<br></div></div>
+
+<p>-</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@Module
+public class FlowerModule {
+
+    @Provides
+    @RoseFlower
+    Flower provideRose() {
+        return new Rose();
+    }
+
+    @Provides
+    @LilyFlower
+    Flower provideLily() {
+        return new Lily();
+    }
+}<br></div></div>
+
+<p>-</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">public class Pot {
+
+    private Flower flower;
+
+    @Inject
+    public Pot(@RoseFlower Flower flower) {
+        this.flower = flower;
+    }
+
+
+    public String show() {
+        return flower.whisper();
+    }
+}<br></div></div>
+
+<p>&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Module&#x6765;&#x7BA1;&#x7406;Pot&#x4F9D;&#x8D56;&#xFF0C;&#x5F53;&#x7136;&#x8FD8;&#x662F;&#x9700;&#x8981;@Qualifier&#x6307;&#x5B9A;&#x63D0;&#x4F9B;&#x54EA;&#x4E00;&#x4E2A;&#x4F9D;&#x8D56;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@Module
+public class PotModule {
+
+    @Provides
+    Pot providePot(@RoseFlower Flower flower) {
+        return new Pot(flower);
+    }
+}<br></div></div>
+
+<p>&#x7136;&#x540E;MainAcitivtyComponent&#x9700;&#x8981;&#x589E;&#x52A0;&#x4E00;&#x4E2A;Module</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@Component(modules = {FlowerModule.class, PotModule.class})
+public interface MainActivityComponent {
+    void inject(MainActivity activity);
+}<br></div></div>
+
+<h2 id="component&#x7684;dependence&#x548C;subcomponent">@Component&#x7684;dependence&#x548C;@SubComponent</h2>
+<p>&#x4E0A;&#x9762;&#x4E5F;&#x8BF4;&#x8FC7;&#xFF0C;Component&#x53EF;&#x4EE5;&#x4F9D;&#x8D56;&#x4E8E;&#x5176;&#x4ED6;Component&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;@Component&#x7684;dependence&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;@SubComponent&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5176;&#x4ED6;Component&#x7684;&#x4F9D;&#x8D56;&#x4E86;&#x3002;</p>
+<p>&#x5982;&#xFF1A;&#x6211;&#x4EEC;&#x4E5F;&#x7528;Component&#x6765;&#x7BA1;&#x7406;FlowerModule&#x548C;PotModule&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x7528;dependence&#x8054;&#x7CFB;&#x5404;&#x4E2A;Component&#x3002;
+&#x8FD9;&#x6B21;&#x6211;&#x5C31;&#x5C06;&#x4EE3;&#x7801;&#x8D34;&#x5B8C;&#x6574;&#x70B9;&#x5427;&#x3002;</p>
+<p>Flower.java:</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">//Flower.java
+
+public abstract class Flower {
+    public abstract String whisper();
+}<br></div></div>
+
+
+<p>Lily.java:</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">//Lily.java
+
+public class Lily extends Flower {
+
+    @Override
+    public String whisper() {
+        return &quot;&#x7EAF;&#x6D01;&quot;;
+    }
+}<br></div></div>
+
+
+
+<p>Rose.java:</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">//Rose.java
+
+public class Rose extends Flower {
+
+    @Override
+    public String whisper() {
+        return &quot;&#x70ED;&#x604B;&quot;;
+    }
+}<br></div></div>
+
+
+<p>FlowerModule.java:</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@Module
+public class FlowerModule {
+
+    @Provides
+    @RoseFlower
+    Flower provideRose() {
+        return new Rose();
+    }
+
+    @Provides
+    @LilyFlower
+    Flower provideLily() {
+        return new Lily();
+    }
+}<br></div></div>
+
+
+<p>Component&#x4E0A;&#x4E5F;&#x9700;&#x8981;&#x6307;&#x5B9A;@Qualifier</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@Component(modules = FlowerModule.class)
+public interface FlowerComponent {
+    @RoseFlower
+    Flower getRoseFlower();
+
+    @LilyFlower
+    Flower getLilyFlower();
+}<br></div></div>
+
+<p>-</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">public class Pot {
+
+    private Flower flower;
+
+    public Pot(Flower flower) {
+        this.flower = flower;
+    }
+
+    public String show() {
+        return flower.whisper();
+    }
+}<br></div></div>
+
+<p>PotModule&#x9700;&#x8981;&#x4F9D;&#x8D56;Flower&#xFF0C;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x5B50;&#x7C7B;&#x5B9E;&#x73B0;&#xFF0C;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;RoseFlower</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@Module
+public class PotModule {
+
+    @Provides
+    Pot providePot(@RoseFlower Flower flower) {
+        return new Pot(flower);
+    }
+}<br></div></div>
+
+<p>-</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@Component(modules = PotModule.class,dependencies = FlowerComponent.class)
+public interface PotComponent {
+    Pot getPot();
+}<br></div></div>
+
+<p>-</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@Component(dependencies = PotComponent.class)
+public interface MainActivityComponent {
+    void inject(MainActivity activity);
+}<br></div></div>
+
+
+<p>&#x800C;&#x5728;MainActivity&#x5219;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x5176;&#x4F9D;&#x8D56;&#x7684;Component</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">public class MainActivity extends AppCompatActivity {
+
+    @Inject
+    Pot pot;
+
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        DaggerMainActivityComponent.builder()
+                .potComponent(DaggerPotComponent.builder()
+                        .flowerComponent(DaggerFlowerComponent.create())
+                        .build())
+                .build().inject(this);
+
+        String show = pot.show();
+        Toast.makeText(MainActivity.this, show, Toast.LENGTH_SHORT).show();
+
+    }
+}<br></div></div>
+
+<p>&#x8FD9;&#x5C31;&#x662F;Component&#x7684;dependencies&#x7684;&#x7528;&#x6CD5;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;Component&#x4E0D;&#x9700;&#x8981;&#x91CD;&#x590D;&#x7684;&#x6307;&#x5B9A;Module&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F9D;&#x8D56;&#x5176;&#x5B83;Component&#x83B7;&#x5F97;&#x3002;</p>
+<p>&#x5206;&#x6790;&#x4E0B;&#x6E90;&#x7801;&#xFF0C;&#x770B;&#x4E0B;Component&#x7684;dependencies&#x505A;&#x4E86;&#x4EC0;&#x4E48;&#x4E8B;&#x60C5;&#x3002;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">public final class DaggerPotComponent implements PotComponent {
+  private Provider&lt;Flower&gt; getRoseFlowerProvider;
+
+  private Provider&lt;Pot&gt; providePotProvider;
+
+  private DaggerPotComponent(Builder builder) {
+
+    assert builder != null;
+    initialize(builder);
+  }
+
+  public static Builder builder() {
+    return new Builder();
+  }
+
+  @SuppressWarnings(&quot;unchecked&quot;)
+  private void initialize(final Builder builder) {
+    this.getRoseFlowerProvider =
+        new Factory&lt;Flower&gt;() {
+          private final FlowerComponent flowerComponent = builder.flowerComponent;
+
+          @Override
+          public Flower get() {
+            return Preconditions.checkNotNull(
+                flowerComponent.getRoseFlower(),
+                &quot;Cannot return null from a non-@Nullable component method&quot;);
+          }
+        };
+
+    this.providePotProvider =
+        PotModule_ProvidePotFactory.create(builder.potModule, getRoseFlowerProvider);
+  }
+
+
+  @Override
+  public Pot getPot() {
+    return providePotProvider.get();
+  }
+
+  public static final class Builder {
+    private PotModule potModule;
+
+    private FlowerComponent flowerComponent;
+
+    private Builder() {}
+
+    public PotComponent build() {
+      if (potModule == null) {
+        this.potModule = new PotModule();
+      }
+      if (flowerComponent == null) {
+        throw new IllegalStateException(FlowerComponent.class.getCanonicalName() + &quot; must be set&quot;);
+      }
+      return new DaggerPotComponent(this);
+    }
+
+    public Builder potModule(PotModule potModule) {
+      this.potModule = Preconditions.checkNotNull(potModule);
+      return this;
+    }
+
+    public Builder flowerComponent(FlowerComponent flowerComponent) {
+      this.flowerComponent = Preconditions.checkNotNull(flowerComponent);
+      return this;
+    }
+  }
+}<br></div></div>
+
+
+<p>PotComponent&#x4F9D;&#x8D56;FlowerComponent&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x5C06;FlowerComponent&#x7684;&#x5F15;&#x7528;&#x4F20;&#x9012;&#x7ED9;PotComponent&#xFF0C;&#x8FD9;&#x6837;PotComponent&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;FlowerComponent&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x4E86;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#x770B;getRoseFlowerProvider&#x8FD9;&#x4E2A;Provider&#xFF0C;&#x662F;&#x4ECE; flowerComponent.getRoseFlower()&#x83B7;&#x53D6;&#x5230;&#x7684;</p>
+<hr>
+<p>&#x5982;&#x679C;&#x4F7F;&#x7528;Subcomponent&#x7684;&#x8BDD;&#x5219;&#x662F;&#x8FD9;&#x4E48;&#x5199;&#xFF0C; &#x5176;&#x4ED6;&#x7C7B;&#x4E0D;&#x9700;&#x8981;&#x6539;&#x53D8;&#xFF0C;&#x53EA;&#x4FEE;&#x6539;Component&#x5373;&#x53EF;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@Component(modules = FlowerModule.class)
+public interface FlowerComponent {
+
+    PotComponent plus(PotModule potModule);
+}<br></div></div>
+
+<p>-</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@Subcomponent(modules = PotModule.class)
+public interface PotComponent {
+    MainActivityComponent plus();
+}<br></div></div>
+
+<p>-</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@Subcomponent
+public interface MainActivityComponent {
+    void inject(MainActivity activity);
+}<br></div></div>
+
+<p>-</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">public class MainActivity extends AppCompatActivity {
+
+    @Inject
+    Pot pot;
+
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+
+        DaggerFlowerComponent.create()
+                .plus(new PotModule())  // &#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;PotComponent
+                .plus()                 // &#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;MainActivityComponent
+                .inject(this);
+
+        String show = pot.show();
+        Toast.makeText(MainActivity.this, show, Toast.LENGTH_SHORT).show();
+    }
+}<br></div></div>
+
+<p>FlowerComponent&#x7BA1;&#x7406;&#x4E86;PotComponent&#x548C;MainActivityComponent&#xFF0C;&#x770B;&#x8D77;&#x6765;&#x4E0D;&#x7B26;&#x5408;&#x5E38;&#x7406;&#x3002;</p>
+<p>&#x5148;&#x6765;&#x8BF4;&#x8BF4;Component&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x7684;&#x7B2C;&#x4E09;&#x79CD;&#x5B9A;&#x4E49;&#x65B9;&#x5F0F;&#xFF08;&#x4E0A;&#x9762;&#x8BF4;&#x4E86;&#x4E24;&#x79CD;&#xFF09;&#x3002;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@Component
+class AComponpent {
+    XxxComponent plus(Module... modules)
+}<br></div></div>
+
+<p>-</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@Subcomponent(modules = xxxxx)
+class XxxComponent {
+
+}<br></div></div>
+
+<p>xxxComponent&#x662F;&#x8BE5;AComponpent&#x7684;&#x4F9D;&#x8D56;&#xFF0C;&#x88AB;@Subcomponent&#x6807;&#x6CE8;&#x3002;
+&#x800C;modules&#x53C2;&#x6570;&#x5219;&#x662F;xxxComponent&#x6307;&#x5B9A;&#x7684;Module&#x3002;</p>
+<p>&#x5728;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#x540E;&#xFF0C;Dagger2&#x751F;&#x6210;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;Subcomponent&#x6807;&#x8BB0;&#x7684;&#x7C7B;&#x662F;Componpent&#x7684;&#x5185;&#x90E8;&#x7C7B;&#x3002;
+&#x50CF;&#x4E0A;&#x9762;&#x7684;Demo&#xFF0C;MainActivityComponent&#x662F;PotComponent&#x7684;&#x5185;&#x90E8;&#x7C7B;&#xFF0C;&#x800C;PotComponent&#x53C8;&#x662F;FlowerComponent&#x7684;&#x5185;&#x90E8;&#x7C7B;&#x3002;</p>
+<hr>
+<p>&#x4F46;&#x662F;&#x7528;Subcomponent&#x600E;&#x4E48;&#x770B;&#x600E;&#x4E48;&#x522B;&#x626D;&#xFF0C;&#x5404;&#x4E2A;Component&#x4E4B;&#x95F4;&#x8054;&#x7CFB;&#x592A;&#x7D27;&#x5BC6;&#xFF0C;&#x4E0D;&#x592A;&#x9002;&#x5408;&#x6211;&#x4EEC;Demo&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x3002;
+<strong>&#x90A3;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x8BE5;&#x7528;@Subcomponent&#x5462;&#xFF1F;</strong>
+Subcomponent&#x662F;&#x4F5C;&#x4E3A;Component&#x7684;&#x62D3;&#x5C55;&#x7684;&#x65F6;&#x5019;&#x3002;
+&#x50CF;&#x6211;&#x5199;&#x7684;Demo&#x4E2D;&#xFF0C;Pot&#x548C;Flower&#x8FD8;&#x6709;MainActivity&#x53EA;&#x662F;&#x5355;&#x7EAF;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x3002;&#x5C31;&#x7B97;&#x6709;&#xFF0C;&#x4E5F;&#x53EA;&#x80FD;&#x662F;Flower&#x4F5C;&#x4E3A;Pot&#x7684;Subcomponent&#xFF0C;&#x800C;&#x4E0D;&#x662F;Demo&#x4E2D;&#x6240;&#x793A;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x9700;&#x8981;&#x7ED9;&#x5927;&#x5BB6;&#x5C55;&#x793A;Dagger&#x7684;API&#xFF0C;&#x5F3A;&#x884C;&#x4F7F;&#x7528;&#x3002;</p>
+<p><strong>&#x6BD4;&#x8F83;&#x9002;&#x5408;&#x4F7F;&#x7528;Subcomponent&#x7684;&#x51E0;&#x4E2A;&#x573A;&#x666F;&#xFF1A;</strong>
+&#x5F88;&#x591A;&#x5DE5;&#x5177;&#x7C7B;&#x90FD;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5230;Application&#x7684;Context&#x5BF9;&#x8C61;&#xFF0C;&#x6B64;&#x65F6;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x4E00;&#x4E2A;Component&#x8D1F;&#x8D23;&#x63D0;&#x4F9B;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x547D;&#x540D;&#x4E3A;AppComponent&#x3002;</p>
+<p>&#x9700;&#x8981;&#x7528;&#x5230;&#x7684;context&#x5BF9;&#x8C61;&#x7684;SharePreferenceComponent&#xFF0C;ToastComponent&#x5C31;&#x53EF;&#x4EE5;&#x5B83;&#x4F5C;&#x4E3A;Subcomponent&#x5B58;&#x5728;&#x4E86;&#x3002;</p>
+<p>&#x800C;&#x4E14;&#x5728;AppComponent&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F88;&#x6E05;&#x6670;&#x7684;&#x770B;&#x5230;&#x6709;&#x54EA;&#x4E9B;&#x5B50;Component&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x91CC;&#x9762;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E86;&#x5F88;&#x591A;<code>XxxComponent plus(Module... modules)</code></p>
+<p>&#x6BCF;&#x4E2A;ActivityComponent&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;AppComponent&#x7684;Subcomponent&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x66F4;&#x65B9;&#x4FBF;&#x7684;&#x8FDB;&#x884C;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#xFF0C;&#x51CF;&#x5C11;&#x91CD;&#x590D;&#x4EE3;&#x7801;&#x3002;</p>
+<p><strong>Component dependencies&#x548C;Subcomponent&#x533A;&#x522B;</strong></p>
+<ol>
+<li><p>Component dependencies &#x80FD;&#x5355;&#x72EC;&#x4F7F;&#x7528;&#xFF0C;&#x800C;Subcomponent&#x5FC5;&#x987B;&#x7531;Component&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x3002;</p>
+</li>
+<li><p>Component dependencies &#x53EF;&#x4EE5;&#x5F88;&#x6E05;&#x695A;&#x7684;&#x5F97;&#x77E5;&#x4ED6;&#x4F9D;&#x8D56;&#x54EA;&#x4E2A;Component&#xFF0C; &#x800C;Subcomponent&#x4E0D;&#x77E5;&#x9053;&#x5B83;&#x81EA;&#x5DF1;&#x7684;&#x8C01;&#x7684;&#x5B69;&#x5B50;&#x2026;&#x2026;&#x771F;&#x53EF;&#x601C;</p>
+</li>
+<li><p>&#x4F7F;&#x7528;&#x4E0A;&#x7684;&#x533A;&#x522B;&#xFF0C;Subcomponent&#x5C31;&#x50CF;&#x8FD9;&#x6837;<code>DaggerAppComponent.plus(new SharePreferenceModule());</code></p>
+<p>&#x4F7F;&#x7528;Dependence&#x53EF;&#x80FD;&#x662F;&#x8FD9;&#x6837;<code>DaggerAppComponent.sharePreferenceComponent(SharePreferenceComponent.create())</code></p>
+</li>
+</ol>
+<p><strong>Component dependencies&#x548C;Subcomponent&#x4F7F;&#x7528;&#x4E0A;&#x7684;&#x603B;&#x7ED3;</strong></p>
+<ul>
+<li><p>Component Dependencies&#xFF1A;</p>
+</li>
+<li><p>&#x4F60;&#x60F3;&#x4FDD;&#x7559;&#x72EC;&#x7ACB;&#x7684;&#x60F3;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF08;Flower&#x53EF;&#x4EE5;&#x5355;&#x72EC;&#x4F7F;&#x7528;&#x6CE8;&#x5165;&#xFF0C;Pot&#x4E5F;&#x53EF;&#x4EE5;&#xFF09;</p>
+</li>
+<li><p>&#x8981;&#x660E;&#x786E;&#x7684;&#x663E;&#x793A;&#x8BE5;&#x7EC4;&#x4EF6;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x5176;&#x4ED6;&#x4F9D;&#x8D56;</p>
+</li>
+<li><p>Subcomponent&#xFF1A;</p>
+</li>
+<li><p>&#x4E24;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x7D27;&#x5BC6;</p>
+</li>
+<li><p>&#x4F60;&#x53EA;&#x5173;&#x5FC3;Component&#xFF0C;&#x800C;Subcomponent&#x53EA;&#x662F;&#x4F5C;&#x4E3A;Component&#x7684;&#x62D3;&#x5C55;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;Component.xxx&#x8C03;&#x7528;&#x3002;</p>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="dagger1.html" class="navigation navigation-prev " aria-label="Previous page: Dagger2(一)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="dagger3.html" class="navigation navigation-next " aria-label="Next page: Dagger2(三)">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Dagger2(二)","level":"1.4.4.2","depth":3,"next":{"title":"Dagger2(三)","level":"1.4.4.3","depth":3,"path":"android/dagger/dagger3.md","ref":"android/dagger/dagger3.md","articles":[]},"previous":{"title":"Dagger2(一)","level":"1.4.4.1","depth":3,"path":"android/dagger/dagger1.md","ref":"android/dagger/dagger1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/dagger/dagger2.md","mtime":"2018-06-06T12:00:44.772Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-08T10:51:23.081Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

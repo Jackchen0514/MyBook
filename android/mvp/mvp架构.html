@@ -1,0 +1,1027 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Mvp架构 · 技术博客</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="jackchen">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../dagger/readme.html" />
+    
+    
+    <link rel="prev" href="readme.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    个人简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../gitbook/">
+            
+                <a href="../../gitbook/">
+            
+                    
+                    Gitbook..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../gitbook/create.html">
+            
+                <a href="../../gitbook/create.html">
+            
+                    
+                    Gitbook各系统搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../gitbook/use.html">
+            
+                <a href="../../gitbook/use.html">
+            
+                    
+                    Gitbook基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../gerrit/">
+            
+                <a href="../../gerrit/">
+            
+                    
+                    Gerrit + Git..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../gerrit/ubuntu_build.html">
+            
+                <a href="../../gerrit/ubuntu_build.html">
+            
+                    
+                    Gerrit+Ubuntu搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../gerrit/centos_build.html">
+            
+                <a href="../../gerrit/centos_build.html">
+            
+                    
+                    Gerrit+CentOS搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../gerrit/use.html">
+            
+                <a href="../../gerrit/use.html">
+            
+                    
+                    Git基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../android.html">
+            
+                <a href="../android.html">
+            
+                    
+                    Android..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../adb_cmd.html">
+            
+                <a href="../adb_cmd.html">
+            
+                    
+                    adb命令集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../remake/remake1.html">
+            
+                <a href="../remake/remake1.html">
+            
+                    
+                    android反编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    Mvp..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.3.1" data-path="mvp架构.html">
+            
+                <a href="mvp架构.html">
+            
+                    
+                    Mvp架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../dagger/readme.html">
+            
+                <a href="../dagger/readme.html">
+            
+                    
+                    Dagger..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="../dagger/dagger1.html">
+            
+                <a href="../dagger/dagger1.html">
+            
+                    
+                    Dagger2(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="../dagger/dagger2.html">
+            
+                <a href="../dagger/dagger2.html">
+            
+                    
+                    Dagger2(二)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="../dagger/dagger3.html">
+            
+                <a href="../dagger/dagger3.html">
+            
+                    
+                    Dagger2(三)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../rxjava/rxjava.html">
+            
+                <a href="../rxjava/rxjava.html">
+            
+                    
+                    RxJava..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="../rxjava/rxjava1_1.html">
+            
+                <a href="../rxjava/rxjava1_1.html">
+            
+                    
+                    RxJava1.x(1/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="../rxjava/rxjava1_2.html">
+            
+                <a href="../rxjava/rxjava1_2.html">
+            
+                    
+                    RxJava1.x(2/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="../rxjava/rxjava1_3.html">
+            
+                <a href="../rxjava/rxjava1_3.html">
+            
+                    
+                    RxJava1.x(3/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.4" data-path="../rxjava/rxjava2_1.html">
+            
+                <a href="../rxjava/rxjava2_1.html">
+            
+                    
+                    RxJava2.x(1/2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.5" data-path="../rxjava/rxjava2_2.html">
+            
+                <a href="../rxjava/rxjava2_2.html">
+            
+                    
+                    RxJava2.x(2/2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.6" data-path="../rxjava/rxjava1&2.html">
+            
+                <a href="../rxjava/rxjava1&2.html">
+            
+                    
+                    RxJava1.x&2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.7" data-path="../rxjava/rxjava_backpressure.html">
+            
+                <a href="../rxjava/rxjava_backpressure.html">
+            
+                    
+                    BackPressure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.8" data-path="../rxjava/rxpermisson.html">
+            
+                <a href="../rxjava/rxpermisson.html">
+            
+                    
+                    RxPermisson
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../okhttp/readme.html">
+            
+                <a href="../okhttp/readme.html">
+            
+                    
+                    OkHttp..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="../okhttp/okhttp1.html">
+            
+                <a href="../okhttp/okhttp1.html">
+            
+                    
+                    Okhttp缓存详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../retrofit/retrofit.html">
+            
+                <a href="../retrofit/retrofit.html">
+            
+                    
+                    Retrofit..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.7.1" data-path="../retrofit/retrofit2_1.html">
+            
+                <a href="../retrofit/retrofit2_1.html">
+            
+                    
+                    Retrofit(1/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2" data-path="../retrofit/retrofit2_2.html">
+            
+                <a href="../retrofit/retrofit2_2.html">
+            
+                    
+                    Retrofit(2/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.3" data-path="../retrofit/retrofit1&2.html">
+            
+                <a href="../retrofit/retrofit1&2.html">
+            
+                    
+                    Retrofit1.x&2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.4" data-path="../retrofit/retrofit2.x&RxJava2.x.html">
+            
+                <a href="../retrofit/retrofit2.x&RxJava2.x.html">
+            
+                    
+                    Retrofit2.x+RxJava2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../widget/readme.html">
+            
+                <a href="../widget/readme.html">
+            
+                    
+                    widget..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.8.1" data-path="../widget/refreshlayout.html">
+            
+                <a href="../widget/refreshlayout.html">
+            
+                    
+                    SwipeRefreshLayout1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.2" data-path="../widget/swipeRefreshlayout.html">
+            
+                <a href="../widget/swipeRefreshlayout.html">
+            
+                    
+                    SwipeRefreshLayout2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../camera/readme.html">
+            
+                <a href="../camera/readme.html">
+            
+                    
+                    Camera..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.9.1" data-path="../camera/camera.html">
+            
+                <a href="../camera/camera.html">
+            
+                    
+                    Camera开发(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.2" data-path="../camera/camera1.html">
+            
+                <a href="../camera/camera1.html">
+            
+                    
+                    Camera开发(二)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../react-native/readme.html">
+            
+                <a href="../react-native/readme.html">
+            
+                    
+                    ReactNative..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.10.1" data-path="../react-native/react-native1.html">
+            
+                <a href="../react-native/react-native1.html">
+            
+                    
+                    react-native(1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../Http/readme.html">
+            
+                <a href="../../Http/readme.html">
+            
+                    
+                    Http..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../Http/restful.html">
+            
+                <a href="../../Http/restful.html">
+            
+                    
+                    Restful架构详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../Linux/readme.html">
+            
+                <a href="../../Linux/readme.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../nginx/readme.html">
+            
+                <a href="../../nginx/readme.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../fangkj/">
+            
+                <a href="../../fangkj/">
+            
+                    
+                    访客机
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Mvp架构</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="mvp&#x67B6;&#x6784;&#x642D;&#x5EFA;">mvp&#x67B6;&#x6784;&#x642D;&#x5EFA;</h1>
+<h2 id="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x7528;mvp&#x6A21;&#x5F0F;">&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x7528;MVP&#x6A21;&#x5F0F;</h2>
+<p>MVP &#x6A21;&#x5F0F;&#x5C06;Activity&#x4E2D;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x5168;&#x90E8;&#x5206;&#x79BB;&#x51FA;&#x6765;&#xFF0C; &#x8BA9;Activity&#x53EA;&#x505A;UI&#x903B;&#x8F91;&#x7684;&#x5904;&#x7406;&#xFF0C; &#x6240;&#x6709;&#x8DDF;Android API&#x65E0;&#x5173;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x7531;
+Presenter&#x5C42;&#x6765;&#x5B8C;&#x6210;&#x3002;</p>
+<p>&#x5C06;&#x4E1A;&#x52A1;&#x5904;&#x7406;&#x5206;&#x79BB;&#x51FA;&#x6765;&#x540E;&#x6700;&#x660E;&#x663E;&#x7684;&#x597D;&#x5904;&#x5C31;&#x662F;&#x7BA1;&#x7406;&#x65B9;&#x4FBF;&#xFF0C;&#x4F46;&#x662F;&#x7F3A;&#x70B9;&#x5C31;&#x662F;&#x589E;&#x52A0;&#x4E86;&#x4EE3;&#x7801;&#x91CF;&#x3002;</p>
+<h2 id="mvp&#x7406;&#x8BBA;&#x77E5;&#x8BC6;">MVP&#x7406;&#x8BBA;&#x77E5;&#x8BC6;</h2>
+<p>&#x968F;&#x7740;UI&#x521B;&#x5EFA;&#x6280;&#x672F;&#x7684;&#x529F;&#x80FD;&#x65E5;&#x76CA;&#x589E;&#x5F3A;&#xFF0C;UI&#x5C42;&#x4E5F;&#x5C65;&#x884C;&#x7740;&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#x7684;&#x804C;&#x8D23;&#x3002;&#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x5730;&#x7EC6;&#x5206;&#x89C6;&#x56FE;(View)&#x4E0E;&#x6A21;&#x578B;(Model)&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x8BA9;View&#x4E13;&#x6CE8;&#x4E8E;&#x5904;&#x7406;&#x6570;&#x636E;&#x7684;&#x53EF;&#x89C6;&#x5316;&#x4EE5;&#x53CA;&#x4E0E;&#x7528;&#x6237;&#x7684;&#x4EA4;&#x4E92;&#xFF0C;&#x540C;&#x65F6;&#x8BA9;Model&#x53EA;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x57FA;&#x4E8E;MVC&#x6982;&#x5FF5;&#x7684;MVP(Model-View-Presenter)&#x6A21;&#x5F0F;&#x5E94;&#x8FD0;&#x800C;&#x751F;&#x3002;</p>
+<p>&#x5728;MVP&#x6A21;&#x5F0F;&#x91CC;&#x901A;&#x5E38;&#x5305;&#x542B;4&#x4E2A;&#x8981;&#x7D20;&#xFF1A;</p>
+<p>(1) <code>View</code>: &#x8D1F;&#x8D23;&#x7ED8;&#x5236;UI&#x5143;&#x7D20;&#xFF0C; &#x4E0E;&#x7528;&#x6237;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#xFF08;Activity&#xFF0C; Fragment&#xFF09;;</p>
+<p>(2) <code>View interface</code>: &#x9700;&#x8981;View&#x5B9E;&#x73B0;&#x7684;&#x63A5;&#x53E3;&#xFF0C;View&#x901A;&#x8FC7;View Interface&#x4E0E;Presenter&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#xFF0C; &#x964D;&#x4F4E;&#x8026;&#x5408;&#xFF0C; &#x65B9;&#x4FBF;&#x8FDB;&#x884C;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF1B;</p>
+<p>(3) <code>Model</code>: &#x8D1F;&#x8D23;&#x5B58;&#x50A8;&#x3001;&#x68C0;&#x7D22;&#x3001;&#x64CD;&#x7EB5;&#x6570;&#x636E;(&#x6709;&#x65F6;&#x4E5F;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;Model interface&#x7528;&#x6765;&#x964D;&#x4F4E;&#x8026;&#x5408;)&#xFF1B;</p>
+<p>(4) <code>Presenter</code>:&#x4F5C;&#x4E3A;View&#x4E0E;Model&#x4EA4;&#x4E92;&#x7684;&#x4E2D;&#x95F4;&#x7EBD;&#x5E26;&#xFF0C;&#x5904;&#x7406;&#x4E0E;&#x7528;&#x6237;&#x4EA4;&#x4E92;&#x7684;&#x8D1F;&#x8D23;&#x903B;&#x8F91;</p>
+<h2 id="&#x5229;&#x7528;mvp&#x8FDB;&#x884C;android&#x5F00;&#x53D1;&#x7684;&#x4F8B;&#x5B50;">&#x5229;&#x7528;MVP&#x8FDB;&#x884C;Android&#x5F00;&#x53D1;&#x7684;&#x4F8B;&#x5B50;</h2>
+<ul>
+<li><strong>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E00;&#x4E2A;UserBean&#xFF0C; &#x7528;&#x6765;&#x4FDD;&#x5B58;&#x7528;&#x6237;&#x4FE1;&#x606F;</strong></li>
+</ul>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">package com.example.xinsi.myapplication.bean;
+
+public class UserBean {
+    private String mFirstName;
+    private String mLastName;
+
+    public UserBean(String firstName, String lastName) {
+        this.mFirstName = firstName;
+        this.mLastName = lastName;
+    }
+
+    public String getFirstName() {
+        return mFirstName;
+    }
+
+    public String getLastName() {
+        return mLastName;
+    }
+}<br></div></div>
+
+
+<ul>
+<li><strong>&#x518D;&#x6765;&#x770B;&#x770B;View&#x63A5;&#x53E3;</strong></li>
+</ul>
+<p>&#x6839;&#x636E;&#x9700;&#x6C42;&#x53EF;&#x77E5;&#xFF0C;View&#x53EF;&#x4EE5;&#x5BF9;ID&#x3001;FirstName&#x3001;LastName&#x8FD9;&#x4E09;&#x4E2A;EditText&#x8FDB;&#x884C;&#x8BFB;&#x64CD;&#x4F5C;&#xFF0C;&#x5BF9;FirstName&#x548C;LastName&#x8FDB;&#x884C;&#x5199;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x7531;&#x6B64;&#x5B9A;&#x4E49;IUserView&#x63A5;&#x53E3;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">public interface IUserView {
+       int getID();
+       String getFristName();
+       String getLastName();
+       void setFirstName (String firstName);
+       void setLastName (String lastName);
+}<br></div></div>
+
+<ul>
+<li><strong>Model&#x63A5;&#x53E3;</strong></li>
+</ul>
+<p>&#x540C;&#x6837;&#xFF0C;Model&#x4E5F;&#x9700;&#x8981;&#x5BF9;&#x8FD9;&#x4E09;&#x4E2A;&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x8BFB;&#x5199;&#x64CD;&#x4F5C;&#xFF0C;&#x5E76;&#x5B58;&#x50A8;&#x5728;&#x67D0;&#x4E2A;&#x8F7D;&#x4F53;&#x5185;&#xFF08;&#x8FD9;&#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x6240;&#x5173;&#x5FC3;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x3001;&#x6587;&#x4EF6;&#x3001;&#x6570;&#x636E;&#x5E93;&#x6216;&#x8005;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4F46;&#x5BF9;&#x4E8E;Presenter&#x53CA;View&#x65E0;&#x5F71;&#x54CD;)&#xFF0C;&#x5B9A;&#x4E49;IUserModel&#x63A5;&#x53E3;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">public interface IUserModel {
+       void setID (int id);
+       void setFirstName (String firstName);
+       void setLastName (String lastName);
+       int getID();
+       UserBean load (int id);//&#x901A;&#x8FC7;id&#x8BFB;&#x53D6;user&#x4FE1;&#x606F;,&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;UserBean
+}<br></div></div>
+
+<ul>
+<li><strong>Presenter</strong></li>
+</ul>
+<p>&#x81F3;&#x6B64;&#xFF0C;Presenter&#x5C31;&#x80FD;&#x901A;&#x8FC7;&#x63A5;&#x53E3;&#x4E0E;View&#x53CA;Model&#x8FDB;&#x884C;&#x4EA4;&#x4E92;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">public class UserPresenter {
+       private IUserView mUserView ;
+       private IUserModel mUserModel ;
+
+       public UserPresenter (IUserView view) {
+             mUserView = view;
+             mUserModel = new UserModel ();
+       }
+
+       public void saveUser( int id , String firstName , String lastName) {
+             mUserModel .setID (id );
+             mUserModel .setFirstName (firstName );
+             mUserModel .setLastName (lastName );
+       }
+
+       public void loadUser( int id ) {
+             UserBean user = mUserModel .load (id );
+             mUserrView .setFirstName (user .getFirstName ());//&#x901A;&#x8FC7;&#x8C03;&#x7528;IUserView&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x66F4;&#x65B0;&#x663E;&#x793A;
+             mUserView .setLastName (user .getLastName ());
+       }
+}<br></div></div>
+
+<ul>
+<li><strong>UserActivity</strong></li>
+</ul>
+<p>UserActivity&#x5B9E;&#x73B0;&#x4E86;IUserView&#x53CA;View.OnClickListener&#x63A5;&#x53E3;&#xFF0C;&#x540C;&#x65F6;&#x6709;&#x4E00;&#x4E2A;UserPresenter&#x6210;&#x5458;&#x53D8;&#x91CF;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">public class UserActivity extends Activity implements OnClickListener ,
+             IUserView {
+
+       private EditText mFirstNameEditText , mLastNameEditText , mIdEditText ;
+       private Button mSaveButton , mLoadButton ;
+       private UserPresenter mUserPresenter ;<br></div></div>
+
+
+<p>&#x91CD;&#x5199;&#x4E86;OnClick&#x65B9;&#x6CD5;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">@Override
+       public void onClick(View v) {
+             // TODO Auto-generated method stub
+             switch ( v. getId()) {
+             case R .id .saveButton :
+                   mUserPresenter .saveUser (getID (), getFristName (),
+                               getLastName ());
+                   break ;
+             case R .id .loadButton :
+                   mUserPresenter .loadUser (getID ());
+                   break ;
+             default :
+                   break ;
+             }
+       }<br></div></div>
+
+
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;View&#x53EA;&#x8D1F;&#x8D23;&#x5904;&#x7406;&#x4E0E;&#x7528;&#x6237;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#xFF0C;&#x5E76;&#x628A;&#x6570;&#x636E;&#x76F8;&#x5173;&#x7684;&#x903B;&#x8F91;&#x64CD;&#x4F5C;&#x90FD;&#x6254;&#x7ED9;&#x4E86;Presenter&#x53BB;&#x505A;&#x3002;&#x800C;Presenter&#x8C03;&#x7528;Model&#x5904;&#x7406;&#x5B8C;&#x6570;&#x636E;&#x4E4B;&#x540E;&#xFF0C;&#x518D;&#x901A;&#x8FC7;IUserView&#x66F4;&#x65B0;View&#x663E;&#x793A;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
+<h2 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h2>
+<p>[1] <a href="http://www.jcodecraeer.com/a/anzhuokaifa/2017/1020/8625.html" target="_blank">http://www.jcodecraeer.com/a/anzhuokaifa/2017/1020/8625.html</a></p>
+<p>[2] <a href="https://blog.csdn.net/vector_yi/article/details/24719873?utm_source=tuicool" target="_blank">https://blog.csdn.net/vector_yi/article/details/24719873?utm_source=tuicool</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="readme.html" class="navigation navigation-prev " aria-label="Previous page: Mvp..">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../dagger/readme.html" class="navigation navigation-next " aria-label="Next page: Dagger..">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Mvp架构","level":"1.4.3.1","depth":3,"next":{"title":"Dagger..","level":"1.4.4","depth":2,"path":"android/dagger/readme.md","ref":"android/dagger/readme.md","articles":[{"title":"Dagger2(一)","level":"1.4.4.1","depth":3,"path":"android/dagger/dagger1.md","ref":"android/dagger/dagger1.md","articles":[]},{"title":"Dagger2(二)","level":"1.4.4.2","depth":3,"path":"android/dagger/dagger2.md","ref":"android/dagger/dagger2.md","articles":[]},{"title":"Dagger2(三)","level":"1.4.4.3","depth":3,"path":"android/dagger/dagger3.md","ref":"android/dagger/dagger3.md","articles":[]}]},"previous":{"title":"Mvp..","level":"1.4.3","depth":2,"path":"android/mvp/readme.md","ref":"android/mvp/readme.md","articles":[{"title":"Mvp架构","level":"1.4.3.1","depth":3,"path":"android/mvp/mvp架构.md","ref":"android/mvp/mvp架构.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/mvp/mvp架构.md","mtime":"2018-06-06T12:00:44.772Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-08T10:51:23.081Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
