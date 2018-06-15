@@ -1,0 +1,1259 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>ThreadPool(一) · 技术博客</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="jackchen">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="threadpool2.html" />
+    
+    
+    <link rel="prev" href="readme.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    个人简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../gitbook/">
+            
+                <a href="../../gitbook/">
+            
+                    
+                    Gitbook..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../gitbook/create.html">
+            
+                <a href="../../gitbook/create.html">
+            
+                    
+                    Gitbook各系统搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../gitbook/use.html">
+            
+                <a href="../../gitbook/use.html">
+            
+                    
+                    Gitbook基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../gerrit/">
+            
+                <a href="../../gerrit/">
+            
+                    
+                    Gerrit + Git..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../gerrit/ubuntu_build.html">
+            
+                <a href="../../gerrit/ubuntu_build.html">
+            
+                    
+                    Gerrit+Ubuntu搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../gerrit/centos_build.html">
+            
+                <a href="../../gerrit/centos_build.html">
+            
+                    
+                    Gerrit+CentOS搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../gerrit/use.html">
+            
+                <a href="../../gerrit/use.html">
+            
+                    
+                    Git基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../android.html">
+            
+                <a href="../android.html">
+            
+                    
+                    Android..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../adb_cmd.html">
+            
+                <a href="../adb_cmd.html">
+            
+                    
+                    adb命令集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../remake/remake1.html">
+            
+                <a href="../remake/remake1.html">
+            
+                    
+                    android反编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.3.1" data-path="threadpool1.html">
+            
+                <a href="threadpool1.html">
+            
+                    
+                    ThreadPool(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.2" data-path="threadpool2.html">
+            
+                <a href="threadpool2.html">
+            
+                    
+                    ThreadPool(二)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.3" data-path="threadpool3.html">
+            
+                <a href="threadpool3.html">
+            
+                    
+                    ThreadPool(三)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../mvp/readme.html">
+            
+                <a href="../mvp/readme.html">
+            
+                    
+                    Mvp..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="../mvp/mvp架构.html">
+            
+                <a href="../mvp/mvp架构.html">
+            
+                    
+                    Mvp架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../dagger/readme.html">
+            
+                <a href="../dagger/readme.html">
+            
+                    
+                    Dagger..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="../dagger/dagger1.html">
+            
+                <a href="../dagger/dagger1.html">
+            
+                    
+                    Dagger2(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="../dagger/dagger2.html">
+            
+                <a href="../dagger/dagger2.html">
+            
+                    
+                    Dagger2(二)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="../dagger/dagger3.html">
+            
+                <a href="../dagger/dagger3.html">
+            
+                    
+                    Dagger2(三)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../rxjava/rxjava.html">
+            
+                <a href="../rxjava/rxjava.html">
+            
+                    
+                    RxJava..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="../rxjava/rxjava1_1.html">
+            
+                <a href="../rxjava/rxjava1_1.html">
+            
+                    
+                    RxJava1.x(1/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="../rxjava/rxjava1_2.html">
+            
+                <a href="../rxjava/rxjava1_2.html">
+            
+                    
+                    RxJava1.x(2/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="../rxjava/rxjava1_3.html">
+            
+                <a href="../rxjava/rxjava1_3.html">
+            
+                    
+                    RxJava1.x(3/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.4" data-path="../rxjava/rxjava2_1.html">
+            
+                <a href="../rxjava/rxjava2_1.html">
+            
+                    
+                    RxJava2.x(1/2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.5" data-path="../rxjava/rxjava2_2.html">
+            
+                <a href="../rxjava/rxjava2_2.html">
+            
+                    
+                    RxJava2.x(2/2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.6" data-path="../rxjava/rxjava1&2.html">
+            
+                <a href="../rxjava/rxjava1&2.html">
+            
+                    
+                    RxJava1.x&2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.7" data-path="../rxjava/rxjava_backpressure.html">
+            
+                <a href="../rxjava/rxjava_backpressure.html">
+            
+                    
+                    BackPressure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.8" data-path="../rxjava/rxpermisson.html">
+            
+                <a href="../rxjava/rxpermisson.html">
+            
+                    
+                    RxPermisson
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../okhttp/readme.html">
+            
+                <a href="../okhttp/readme.html">
+            
+                    
+                    OkHttp..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.7.1" data-path="../okhttp/okhttp1.html">
+            
+                <a href="../okhttp/okhttp1.html">
+            
+                    
+                    Okhttp缓存详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../retrofit/retrofit.html">
+            
+                <a href="../retrofit/retrofit.html">
+            
+                    
+                    Retrofit..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.8.1" data-path="../retrofit/retrofit2_1.html">
+            
+                <a href="../retrofit/retrofit2_1.html">
+            
+                    
+                    Retrofit(1/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.2" data-path="../retrofit/retrofit2_2.html">
+            
+                <a href="../retrofit/retrofit2_2.html">
+            
+                    
+                    Retrofit(2/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.3" data-path="../retrofit/retrofit1&2.html">
+            
+                <a href="../retrofit/retrofit1&2.html">
+            
+                    
+                    Retrofit1.x&2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.4" data-path="../retrofit/retrofit2.x&RxJava2.x.html">
+            
+                <a href="../retrofit/retrofit2.x&RxJava2.x.html">
+            
+                    
+                    Retrofit2.x+RxJava2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../widget/readme.html">
+            
+                <a href="../widget/readme.html">
+            
+                    
+                    widget..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.9.1" data-path="../widget/refreshlayout.html">
+            
+                <a href="../widget/refreshlayout.html">
+            
+                    
+                    SwipeRefreshLayout1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.2" data-path="../widget/swipeRefreshlayout.html">
+            
+                <a href="../widget/swipeRefreshlayout.html">
+            
+                    
+                    SwipeRefreshLayout2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../camera/readme.html">
+            
+                <a href="../camera/readme.html">
+            
+                    
+                    Camera..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.10.1" data-path="../camera/camera.html">
+            
+                <a href="../camera/camera.html">
+            
+                    
+                    Camera开发(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10.2" data-path="../camera/camera1.html">
+            
+                <a href="../camera/camera1.html">
+            
+                    
+                    Camera开发(二)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../react-native/readme.html">
+            
+                <a href="../react-native/readme.html">
+            
+                    
+                    ReactNative..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.11.1" data-path="../react-native/react-native1.html">
+            
+                <a href="../react-native/react-native1.html">
+            
+                    
+                    react-native(1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../Http/readme.html">
+            
+                <a href="../../Http/readme.html">
+            
+                    
+                    Http..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../Http/http1.html">
+            
+                <a href="../../Http/http1.html">
+            
+                    
+                    Http请求头和请求体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../Http/http2.html">
+            
+                <a href="../../Http/http2.html">
+            
+                    
+                    Http相应头与状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../Http/restful.html">
+            
+                <a href="../../Http/restful.html">
+            
+                    
+                    Restful架构详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../Linux/readme.html">
+            
+                <a href="../../Linux/readme.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../nginx/readme.html">
+            
+                <a href="../../nginx/readme.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../fangkj/">
+            
+                <a href="../../fangkj/">
+            
+                    
+                    访客机
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >ThreadPool(一)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="java&#x7EBF;&#x7A0B;&#x6C60;threadpoolexecutor&#x4F7F;&#x7528;&#x548C;&#x5206;&#x6790;&#x4E00;">Java&#x7EBF;&#x7A0B;&#x6C60;ThreadPoolExecutor&#x4F7F;&#x7528;&#x548C;&#x5206;&#x6790;(&#x4E00;)</h1>
+<h2 id="&#x7EBF;&#x7A0B;&#x6C60;&#x67B6;&#x6784;">&#x7EBF;&#x7A0B;&#x6C60;&#x67B6;&#x6784;</h2>
+<p><img src="https://images2015.cnblogs.com/blog/677054/201703/677054-20170321162048518-855195547.jpg" alt="image"></p>
+<ul>
+<li>Executor&#x662F;&#x6700;&#x57FA;&#x7840;&#x7684;&#x6267;&#x884C;&#x63A5;&#x53E3;&#xFF1B;</li>
+<li>ExecutorService&#x63A5;&#x53E3;&#x7EE7;&#x627F;&#x4E86;Executor&#xFF0C;&#x5728;&#x5176;&#x4E0A;&#x505A;&#x4E86;&#x4E00;&#x4E9B;shutdown()&#x3001;submit()&#x7684;&#x6269;&#x5C55;&#xFF0C;&#x53EF;&#x4EE5;&#x8BF4;&#x662F;&#x771F;&#x6B63;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x63A5;&#x53E3;&#xFF1B;</li>
+<li>AbstractExecutorService&#x62BD;&#x8C61;&#x7C7B;&#x5B9E;&#x73B0;&#x4E86;ExecutorService&#x63A5;&#x53E3;&#x4E2D;&#x7684;&#x5927;&#x90E8;&#x5206;&#x65B9;&#x6CD5;</li>
+<li>TheadPoolExecutor&#x7EE7;&#x627F;&#x4E86;AbstractExecutorService&#xFF0C;&#x662F;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#xFF1B;</li>
+<li>ScheduledExecutorService&#x63A5;&#x53E3;&#x7EE7;&#x627F;&#x4E86;ExecutorService&#x63A5;&#x53E3;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x5E26;&quot;&#x5468;&#x671F;&#x6267;&#x884C;&quot;&#x529F;&#x80FD;ExecutorService&#xFF1B;</li>
+<li>ScheduledThreadPoolExecutor&#x65E2;&#x7EE7;&#x627F;&#x4E86;TheadPoolExecutor&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x4E5F;&#x5B9E;&#x73B0;&#x4E86;ScheduledExecutorService&#x63A5;&#x53E3;&#xFF0C;&#x662F;&#x5E26;&quot;&#x5468;&#x671F;&#x6267;&#x884C;&quot;&#x529F;&#x80FD;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#xFF1B;</li>
+<li><p>Executors&#x662F;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x9759;&#x6001;&#x5DE5;&#x5382;&#xFF0C;&#x5176;&#x63D0;&#x4F9B;&#x4E86;&#x5FEB;&#x6377;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x3002;</p>
+</li>
+<li><p><strong>Executor&#x63A5;&#x53E3;</strong></p>
+</li>
+</ul>
+<p>&#x201C;&#x6267;&#x884C;&#x8005;&#x201D;&#x63A5;&#x53E3;&#xFF0C;&#x53EA;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code>void execute(Runnable command);
+</code></pre><p>&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6267;&#x884C;&#x5DF2;&#x7ECF;&#x63D0;&#x4EA4;&#x7684;Runnable&#x4EFB;&#x52A1;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x5C06;&#x201C;&#x4EFB;&#x52A1;&#x63D0;&#x4EA4;&#x201D;&#x4E0E;&#x201C;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x201D;&#x89E3;&#x8026;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<ol>
+<li><strong>ExecutorService&#x63A5;&#x53E3;</strong></li>
+</ol>
+<p>&#x201C;&#x6267;&#x884C;&#x8005;&#x670D;&#x52A1;&#x201D;&#x63A5;&#x53E3;&#xFF0C;&#x53EF;&#x4EE5;&#x8BF4;&#x662F;&#x771F;&#x6B63;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x63A5;&#x53E3;&#xFF0C;&#x5728;Executor&#x63A5;&#x53E3;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x505A;&#x4E86;&#x4E00;&#x4E9B;&#x6269;&#x5C55;&#xFF0C;&#x4E3B;&#x8981;&#x662F;</p>
+<ul>
+<li>&#x7BA1;&#x7406;&#x4EFB;&#x52A1;&#x5982;&#x4F55;&#x7EC8;&#x6B62;&#x7684; shutdown&#x76F8;&#x5173;&#x65B9;&#x6CD5;</li>
+</ul>
+<pre><code>/**
+ * &#x542F;&#x52A8;&#x4E00;&#x6B21;&#x6709;&#x5E8F;&#x7684;&#x5173;&#x95ED;&#xFF0C;&#x4E4B;&#x524D;&#x63D0;&#x4EA4;&#x7684;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#xFF0C;&#x4F46;&#x4E0D;&#x63A5;&#x53D7;&#x65B0;&#x4EFB;&#x52A1;
+ * &#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4E0D;&#x4F1A;&#x7B49;&#x5F85;&#x4E4B;&#x524D;&#x63D0;&#x4EA4;&#x7684;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5B8C;&#x6BD5;
+ */
+void shutdown();
+
+/**
+ * &#x8BD5;&#x56FE;&#x505C;&#x6B62;&#x6240;&#x6709;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x6682;&#x505C;&#x5904;&#x7406;&#x6B63;&#x5728;&#x7B49;&#x5F85;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7B49;&#x5F85;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#x5217;&#x8868;
+ * &#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4E0D;&#x4F1A;&#x7B49;&#x5F85;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#x7EC8;&#x6B62;
+ */
+List&lt;Runnable&gt; shutdownNow();
+
+/**
+ * &#x5982;&#x679C;&#x5DF2;&#x7ECF;&#x88AB;shutdown&#xFF0C;&#x8FD4;&#x56DE;true
+ */
+boolean isShutdown();
+
+/**
+ * &#x5982;&#x679C;&#x6240;&#x6709;&#x4EFB;&#x52A1;&#x90FD;&#x5DF2;&#x7ECF;&#x88AB;&#x7EC8;&#x6B62;&#xFF0C;&#x8FD4;&#x56DE;true
+ * &#x662F;&#x5426;&#x4E3A;&#x7EC8;&#x6B62;&#x72B6;&#x6001;
+ */
+boolean isTerminated();
+
+/**
+ * &#x5728;&#x4E00;&#x4E2A;shutdown&#x8BF7;&#x6C42;&#x540E;&#xFF0C;&#x963B;&#x585E;&#x7684;&#x7B49;&#x5F85;&#x6240;&#x6709;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5B8C;&#x6BD5;
+ * &#x6216;&#x8005;&#x5230;&#x8FBE;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF0C;&#x6216;&#x8005;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x88AB;&#x4E2D;&#x65AD;
+ */
+boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedException;
+</code></pre><ul>
+<li>&#x53EF;&#x4EE5;&#x751F;&#x6210;&#x7528;&#x4E8E;&#x8FFD;&#x8E2A;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x7684;Future&#x5BF9;&#x8C61;&#x7684; submit()&#x76F8;&#x5173;&#x65B9;&#x6CD5;</li>
+</ul>
+<pre><code>/**
+ * &#x63D0;&#x4EA4;&#x4E00;&#x4E2A;&#x53EF;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Future&#x4EE3;&#x8868;&#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;
+ * &#x7B49;&#x5230;&#x4EFB;&#x52A1;&#x6210;&#x529F;&#x6267;&#x884C;&#xFF0C;Future#get()&#x65B9;&#x6CD5;&#x4F1A;&#x8FD4;&#x56DE;null
+ */
+Future&lt;?&gt; submit(Runnable task);
+
+/**
+ * &#x63D0;&#x4EA4;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Future&#x4EE3;&#x8868;&#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;
+ * &#x7B49;&#x5230;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7ED3;&#x675F;&#xFF0C;Future#get()&#x65B9;&#x6CD5;&#x4F1A;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x7ED9;&#x5B9A;&#x7684;result
+ */
+&lt;T&gt; Future&lt;T&gt; submit(Runnable task, T result);
+
+/**
+ * &#x63D0;&#x4EA4;&#x4E00;&#x4E2A;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Future&#x4EE3;&#x8868;&#x7B49;&#x5F85;&#x7684;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7684;&#x7ED3;&#x679C;
+ * &#x7B49;&#x5230;&#x4EFB;&#x52A1;&#x6210;&#x529F;&#x6267;&#x884C;&#xFF0C;Future#get()&#x65B9;&#x6CD5;&#x4F1A;&#x8FD4;&#x56DE;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7684;&#x7ED3;&#x679C;
+ */
+&lt;T&gt; Future&lt;T&gt; submit(Callable&lt;T&gt; task);
+</code></pre><ul>
+<li>ScheduledExecutorService&#x63A5;&#x53E3;</li>
+</ul>
+<pre><code>/**
+ * &#x5728;&#x7ED9;&#x5B9A;&#x5EF6;&#x65F6;&#x540E;&#xFF0C;&#x521B;&#x5EFA;&#x5E76;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x4E00;&#x6B21;&#x6027;&#x7684;Runnable&#x4EFB;&#x52A1;
+ * &#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;&#xFF0C;ScheduledFuture#get()&#x65B9;&#x6CD5;&#x4F1A;&#x8FD4;&#x56DE;null
+ */
+public ScheduledFuture&lt;?&gt; schedule(Runnable command, long delay, TimeUnit unit);
+
+/**
+ * &#x5728;&#x7ED9;&#x5B9A;&#x5EF6;&#x65F6;&#x540E;&#xFF0C;&#x521B;&#x5EFA;&#x5E76;&#x6267;&#x884C;&#x4E00;&#x4E2A;ScheduledFutureTask
+ * ScheduledFuture &#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x7ED3;&#x679C;&#x6216;&#x53D6;&#x6D88;&#x4EFB;&#x52A1;
+ */
+public &lt;V&gt; ScheduledFuture&lt;V&gt; schedule(Callable&lt;V&gt; callable, ong delay, TimeUnit unit);
+
+/**
+ * &#x521B;&#x5EFA;&#x5E76;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x5728;&#x7ED9;&#x5B9A;&#x521D;&#x59CB;&#x5EF6;&#x8FDF;&#x540E;&#x9996;&#x6B21;&#x542F;&#x7528;&#x7684;&#x5B9A;&#x671F;&#x64CD;&#x4F5C;&#xFF0C;&#x540E;&#x7EED;&#x64CD;&#x4F5C;&#x5177;&#x6709;&#x7ED9;&#x5B9A;&#x7684;&#x5468;&#x671F;
+ * &#x4E5F;&#x5C31;&#x662F;&#x5C06;&#x5728; initialDelay &#x540E;&#x5F00;&#x59CB;&#x6267;&#x884C;&#xFF0C;&#x7136;&#x540E;&#x5728; initialDelay+period &#x540E;&#x6267;&#x884C;&#xFF0C;&#x63A5;&#x7740;&#x5728; initialDelay + 2 * period &#x540E;&#x6267;&#x884C;&#xFF0C;&#x4F9D;&#x6B64;&#x7C7B;&#x63A8;
+ * &#x5982;&#x679C;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#x53D1;&#x751F;&#x5F02;&#x5E38;&#xFF0C;&#x968F;&#x540E;&#x7684;&#x4EFB;&#x52A1;&#x5C06;&#x88AB;&#x7981;&#x6B62;&#xFF0C;&#x5426;&#x5219;&#x4EFB;&#x52A1;&#x53EA;&#x4F1A;&#x5728;&#x88AB;&#x53D6;&#x6D88;&#x6216;&#x8005;Executor&#x88AB;&#x7EC8;&#x6B62;&#x540E;&#x505C;&#x6B62;
+ * &#x5982;&#x679C;&#x4EFB;&#x4F55;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#x8D85;&#x8FC7;&#x4E86;&#x5468;&#x671F;&#xFF0C;&#x968F;&#x540E;&#x7684;&#x6267;&#x884C;&#x4F1A;&#x5EF6;&#x65F6;&#xFF0C;&#x4E0D;&#x4F1A;&#x5E76;&#x53D1;&#x6267;&#x884C;
+ */
+public ScheduledFuture&lt;?&gt; scheduleAtFixedRate(Runnable command,
+                                                  long initialDelay,
+                                                  long period,
+                                                  TimeUnit unit);
+
+/**
+ * &#x521B;&#x5EFA;&#x5E76;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x5728;&#x7ED9;&#x5B9A;&#x521D;&#x59CB;&#x5EF6;&#x8FDF;&#x540E;&#x9996;&#x6B21;&#x542F;&#x7528;&#x7684;&#x5B9A;&#x671F;&#x64CD;&#x4F5C;&#xFF0C;&#x968F;&#x540E;&#xFF0C;&#x5728;&#x6BCF;&#x4E00;&#x6B21;&#x6267;&#x884C;&#x7EC8;&#x6B62;&#x548C;&#x4E0B;&#x4E00;&#x6B21;&#x6267;&#x884C;&#x5F00;&#x59CB;&#x4E4B;&#x95F4;&#x90FD;&#x5B58;&#x5728;&#x7ED9;&#x5B9A;&#x7684;&#x5EF6;&#x8FDF;
+ * &#x5982;&#x679C;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#x53D1;&#x751F;&#x5F02;&#x5E38;&#xFF0C;&#x968F;&#x540E;&#x7684;&#x4EFB;&#x52A1;&#x5C06;&#x88AB;&#x7981;&#x6B62;&#xFF0C;&#x5426;&#x5219;&#x4EFB;&#x52A1;&#x53EA;&#x4F1A;&#x5728;&#x88AB;&#x53D6;&#x6D88;&#x6216;&#x8005;Executor&#x88AB;&#x7EC8;&#x6B62;&#x540E;&#x505C;&#x6B62;
+ */
+public ScheduledFuture&lt;?&gt; scheduleWithFixedDelay(Runnable command,
+                                                     long initialDelay,
+                                                     long delay,
+                                                     TimeUnit unit);
+</code></pre><h2 id="threadpoolexecutor">ThreadPoolExecutor</h2>
+<ol>
+<li><strong>ThreadPoolExecutor&#x6784;&#x9020;&#x53C2;&#x6570;</strong></li>
+</ol>
+<pre><code>public ThreadPoolExecutor(int corePoolSize,
+                          int maximumPoolSize,
+                          long keepAliveTime,
+                          TimeUnit unit,
+                          BlockingQueue&lt;Runnable&gt; workQueue,
+                          ThreadFactory threadFactory,
+                          RejectedExecutionHandler handler)
+</code></pre><p><strong>corePoolSize</strong></p>
+<p>&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6570;&#xFF0C;&#x5F53;&#x63D0;&#x4EA4;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x65F6;&#xFF0C;&#x7EBF;&#x7A0B;&#x6C60;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#xFF0C;&#x76F4;&#x5230;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x6570;&#x7B49;&#x4E8E;corePoolSize&#xFF1B;</p>
+<p>&#x5982;&#x679C;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x6570;&#x4E3A;corePoolSize&#xFF0C;&#x7EE7;&#x7EED;&#x63D0;&#x4EA4;&#x7684;&#x4EFB;&#x52A1;&#x88AB;&#x4FDD;&#x5B58;&#x5230;&#x963B;&#x585E;&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x7B49;&#x5F85;&#x88AB;&#x6267;&#x884C;&#xFF1B;</p>
+<p>&#x5982;&#x679C;&#x6267;&#x884C;&#x4E86;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;prestartAllCoreThreads()&#x65B9;&#x6CD5;&#xFF0C;&#x7EBF;&#x7A0B;&#x6C60;&#x4F1A;&#x63D0;&#x524D;&#x521B;&#x5EFA;&#x5E76;&#x542F;&#x52A8;&#x6240;&#x6709;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x3002;</p>
+<p><strong>maximumPoolSize</strong></p>
+<p>&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x5141;&#x8BB8;&#x7684;&#x6700;&#x5927;&#x7EBF;&#x7A0B;&#x6570;&#x3002;&#x5982;&#x679C;&#x5F53;&#x524D;&#x963B;&#x585E;&#x961F;&#x5217;&#x6EE1;&#x4E86;&#xFF0C;&#x4E14;&#x7EE7;&#x7EED;&#x63D0;&#x4EA4;&#x4EFB;&#x52A1;&#xFF0C;&#x5219;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#xFF0C;&#x524D;&#x63D0;&#x662F;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x6570;&#x5C0F;&#x4E8E;maximumPoolSize</p>
+<p><strong>keepAliveTime</strong></p>
+<p>&#x7EBF;&#x7A0B;&#x7A7A;&#x95F2;&#x65F6;&#x7684;&#x5B58;&#x6D3B;&#x65F6;&#x95F4;&#xFF0C;&#x5373;&#x5F53;&#x7EBF;&#x7A0B;&#x6CA1;&#x6709;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x7EE7;&#x7EED;&#x5B58;&#x6D3B;&#x7684;&#x65F6;&#x95F4;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8BE5;&#x53C2;&#x6570;&#x53EA;&#x5728;&#x7EBF;&#x7A0B;&#x6570;&#x5927;&#x4E8E;corePoolSize&#x65F6;&#x624D;&#x6709;&#x7528;</p>
+<p><strong>workQueue</strong></p>
+<p>workQueue&#x5FC5;&#x987B;&#x662F;BlockingQueue&#x963B;&#x585E;&#x961F;&#x5217;&#x3002;&#x5F53;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x8D85;&#x8FC7;&#x5B83;&#x7684;corePoolSize&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7EBF;&#x7A0B;&#x4F1A;&#x8FDB;&#x5165;&#x963B;&#x585E;&#x961F;&#x5217;&#x8FDB;&#x884C;&#x963B;&#x585E;&#x7B49;&#x5F85;&#x3002;&#x901A;&#x8FC7;workQueue&#xFF0C;&#x7EBF;&#x7A0B;&#x6C60;&#x5B9E;&#x73B0;&#x4E86;&#x963B;&#x585E;&#x529F;&#x80FD;</p>
+<ul>
+<li><strong>&#x51E0;&#x79CD;&#x6392;&#x961F;&#x7684;&#x7B56;&#x7565;&#xFF1A;</strong></li>
+</ul>
+<p>&#xFF08;1&#xFF09;&#x4E0D;&#x6392;&#x961F;&#xFF0C;&#x76F4;&#x63A5;&#x63D0;&#x4EA4;
+&#x5C06;&#x4EFB;&#x52A1;&#x76F4;&#x63A5;&#x4EA4;&#x7ED9;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x800C;&#x4E0D;&#x4FDD;&#x6301;&#x5B83;&#x4EEC;&#xFF0C;&#x53EF;&#x4F7F;&#x7528;SynchronousQueue
+&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x53EF;&#x7528;&#x4E8E;&#x7ACB;&#x5373;&#x8FD0;&#x884C;&#x4EFB;&#x52A1;&#x7684;&#x7EBF;&#x7A0B;&#xFF08;&#x5373;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x90FD;&#x5728;&#x5DE5;&#x4F5C;&#xFF09;&#xFF0C;&#x5219;&#x8BD5;&#x56FE;&#x628A;&#x4EFB;&#x52A1;&#x52A0;&#x5165;&#x7F13;&#x51B2;&#x961F;&#x5217;&#x5C06;&#x4F1A;&#x5931;&#x8D25;&#xFF0C;&#x56E0;&#x6B64;&#x4F1A;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7EBF;&#x7A0B;&#x6765;&#x5904;&#x7406;&#x65B0;&#x6DFB;&#x52A0;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x52A0;&#x5165;&#x5230;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#xFF08;corePoolSize--&gt;maximumPoolSize&#x6269;&#x5BB9;&#xFF09;
+Executors.newCachedThreadPool()&#x91C7;&#x7528;&#x7684;&#x4FBF;&#x662F;&#x8FD9;&#x79CD;&#x7B56;&#x7565;</p>
+<p>&#xFF08;2&#xFF09;&#x65E0;&#x754C;&#x961F;&#x5217;</p>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;LinkedBlockingQueue&#xFF08;&#x57FA;&#x4E8E;&#x94FE;&#x8868;&#x7684;&#x6709;&#x754C;&#x961F;&#x5217;&#xFF0C;FIFO&#xFF09;&#xFF0C;&#x7406;&#x8BBA;&#x4E0A;&#x662F;&#x8BE5;&#x961F;&#x5217;&#x53EF;&#x4EE5;&#x5BF9;&#x65E0;&#x9650;&#x591A;&#x7684;&#x4EFB;&#x52A1;&#x6392;&#x961F;</p>
+<p>&#x5C06;&#x5BFC;&#x81F4;&#x5728;&#x6240;&#x6709;corePoolSize&#x7EBF;&#x7A0B;&#x90FD;&#x5DE5;&#x4F5C;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5C06;&#x65B0;&#x4EFB;&#x52A1;&#x52A0;&#x5165;&#x5230;&#x961F;&#x5217;&#x4E2D;&#x3002;&#x8FD9;&#x6837;&#xFF0C;&#x521B;&#x5EFA;&#x7684;&#x7EBF;&#x7A0B;&#x5C31;&#x4E0D;&#x4F1A;&#x8D85;&#x8FC7;corePoolSize&#xFF0C;&#x4E5F;&#x56E0;&#x6B64;&#xFF0C;maximumPoolSize&#x7684;&#x503C;&#x4E5F;&#x5C31;&#x65E0;&#x6548;&#x4E86;</p>
+<p>&#xFF08;3&#xFF09;&#x6709;&#x754C;&#x961F;&#x5217;</p>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;ArrayBlockingQueue&#xFF08;&#x57FA;&#x4E8E;&#x6570;&#x7EC4;&#x7ED3;&#x6784;&#x7684;&#x6709;&#x754C;&#x961F;&#x5217;&#xFF0C;FIFO&#xFF09;&#xFF0C;&#x5E76;&#x6307;&#x5B9A;&#x961F;&#x5217;&#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;</p>
+<p>&#x4F7F;&#x7528;&#x6709;&#x754C;&#x961F;&#x5217;&#x53EF;&#x4EE5;&#x9632;&#x6B62;&#x8D44;&#x6E90;&#x8017;&#x5C3D;&#xFF0C;&#x4F46;&#x4E5F;&#x4F1A;&#x9020;&#x6210;&#x8D85;&#x8FC7;&#x961F;&#x5217;&#x5927;&#x5C0F;&#x548C;maximumPoolSize&#x540E;&#xFF0C;&#x63D0;&#x4EA4;&#x7684;&#x4EFB;&#x52A1;&#x88AB;&#x62D2;&#x7EDD;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6BD4;&#x8F83;&#x96BE;&#x8C03;&#x6574;&#x548C;&#x63A7;&#x5236;&#x3002;</p>
+<p><strong>threadFactory</strong></p>
+<p>&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x7684;&#x5DE5;&#x5382;&#xFF0C;&#x901A;&#x8FC7;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x7EBF;&#x7A0B;&#x5DE5;&#x5382;&#x53EF;&#x4EE5;&#x7ED9;&#x6BCF;&#x4E2A;&#x65B0;&#x5EFA;&#x7684;&#x7EBF;&#x7A0B;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x5177;&#x6709;&#x8BC6;&#x522B;&#x5EA6;&#x7684;&#x7EBF;&#x7A0B;&#x540D;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">/**
+ * The default thread factory
+ */
+static class DefaultThreadFactory implements ThreadFactory {
+    private static final AtomicInteger poolNumber = new AtomicInteger(1);
+    private final ThreadGroup group;
+    private final AtomicInteger threadNumber = new AtomicInteger(1);
+    private final String namePrefix;
+
+    DefaultThreadFactory() {
+        SecurityManager s = System.getSecurityManager();
+        group = (s != null) ? s.getThreadGroup() :
+                              Thread.currentThread().getThreadGroup();
+        namePrefix = &quot;pool-&quot; +
+                      poolNumber.getAndIncrement() +
+                     &quot;-thread-&quot;;
+    }
+
+    public Thread newThread(Runnable r) {
+        Thread t = new Thread(group, r,
+                              namePrefix + threadNumber.getAndIncrement(),
+                              0);
+        if (t.isDaemon())
+            t.setDaemon(false);
+        if (t.getPriority() != Thread.NORM_PRIORITY)
+            t.setPriority(Thread.NORM_PRIORITY);
+        return t;
+    }
+}<br></div></div>
+
+<p>Executors&#x9759;&#x6001;&#x5DE5;&#x5382;&#x91CC;&#x9ED8;&#x8BA4;&#x7684;threadFactory&#xFF0C;&#x7EBF;&#x7A0B;&#x7684;&#x547D;&#x540D;&#x89C4;&#x5219;&#x662F;&#x201C;pool-&#x6570;&#x5B57;-thread-&#x6570;&#x5B57;&#x201D;</p>
+<p><strong>RejectedExecutionHandler</strong></p>
+<p>&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x9971;&#x548C;&#x7B56;&#x7565;&#xFF0C;&#x5F53;&#x963B;&#x585E;&#x961F;&#x5217;&#x6EE1;&#x4E86;&#xFF0C;&#x4E14;&#x6CA1;&#x6709;&#x7A7A;&#x95F2;&#x7684;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#xFF0C;&#x5982;&#x679C;&#x7EE7;&#x7EED;&#x63D0;&#x4EA4;&#x4EFB;&#x52A1;&#xFF0C;&#x5FC5;&#x987B;&#x91C7;&#x53D6;&#x4E00;&#x79CD;&#x7B56;&#x7565;&#x5904;&#x7406;&#x8BE5;&#x4EFB;&#x52A1;&#xFF0C;&#x7EBF;&#x7A0B;&#x6C60;&#x63D0;&#x4F9B;&#x4E86;4&#x79CD;&#x7B56;&#x7565;&#xFF1A;</p>
+<p>&#xFF08;1&#xFF09;AbortPolicy&#xFF1A;&#x76F4;&#x63A5;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x9ED8;&#x8BA4;&#x7B56;&#x7565;&#xFF1B;</p>
+<p>&#xFF08;2&#xFF09;CallerRunsPolicy&#xFF1A;&#x7528;&#x8C03;&#x7528;&#x8005;&#x6240;&#x5728;&#x7684;&#x7EBF;&#x7A0B;&#x6765;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#xFF1B;</p>
+<p>&#xFF08;3&#xFF09;DiscardOldestPolicy&#xFF1A;&#x4E22;&#x5F03;&#x963B;&#x585E;&#x961F;&#x5217;&#x4E2D;&#x9760;&#x6700;&#x524D;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x5E76;&#x6267;&#x884C;&#x5F53;&#x524D;&#x4EFB;&#x52A1;&#xFF1B;</p>
+<p>&#xFF08;4&#xFF09;DiscardPolicy&#xFF1A;&#x76F4;&#x63A5;&#x4E22;&#x5F03;&#x4EFB;&#x52A1;&#xFF1B;</p>
+<p>&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x5E94;&#x7528;&#x573A;&#x666F;&#x5B9E;&#x73B0;RejectedExecutionHandler&#x63A5;&#x53E3;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x9971;&#x548C;&#x7B56;&#x7565;&#xFF0C;&#x5982;&#x8BB0;&#x5F55;&#x65E5;&#x5FD7;&#x6216;&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;&#x4E0D;&#x80FD;&#x5904;&#x7406;&#x7684;&#x4EFB;&#x52A1;&#x3002;</p>
+<ol>
+<li><strong>ThreadPoolExecutor&#x7EBF;&#x7A0B;&#x6C60;&#x6267;&#x884C;&#x6D41;&#x7A0B;</strong></li>
+</ol>
+<p>&#x6839;&#x636E;ThreadPoolExecutor&#x6E90;&#x7801;&#x524D;&#x9762;&#x5927;&#x6BB5;&#x7684;&#x6CE8;&#x91CA;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x5F53;&#x8BD5;&#x56FE;&#x901A;&#x8FC7;execute&#x65B9;&#x6CD5;&#x5C06;&#x4E00;&#x4E2A;Runnable&#x4EFB;&#x52A1;&#x6DFB;&#x52A0;&#x5230;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x65F6;&#xFF0C;&#x6309;&#x7167;&#x5982;&#x4E0B;&#x987A;&#x5E8F;&#x6765;&#x5904;&#x7406;&#xFF1A;</p>
+<p>&#xFF08;1&#xFF09;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x5C11;&#x4E8E;corePoolSize&#xFF0C;&#x5C31;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x7EBF;&#x7A0B;&#x6765;&#x6267;&#x884C;&#x65B0;&#x6DFB;&#x52A0;&#x7684;&#x4EFB;&#x52A1;&#xFF1B;</p>
+<p>&#xFF08;2&#xFF09;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;corePoolSize&#xFF0C;&#x4F46;&#x961F;&#x5217;workQueue&#x672A;&#x6EE1;&#xFF0C;&#x5219;&#x5C06;&#x65B0;&#x6DFB;&#x52A0;&#x7684;&#x4EFB;&#x52A1;&#x653E;&#x5230;workQueue&#x4E2D;&#xFF0C;&#x6309;&#x7167;FIFO&#x7684;&#x539F;&#x5219;&#x4F9D;&#x6B21;&#x7B49;&#x5F85;&#x6267;&#x884C;&#xFF08;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x6709;&#x7EBF;&#x7A0B;&#x7A7A;&#x95F2;&#x51FA;&#x6765;&#x540E;&#x4F9D;&#x6B21;&#x5C06;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#x4EA4;&#x4ED8;&#x7ED9;&#x7A7A;&#x95F2;&#x7684;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#xFF09;&#xFF1B;</p>
+<p>&#xFF08;3&#xFF09;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;corePoolSize&#xFF0C;&#x4E14;&#x961F;&#x5217;workQueue&#x5DF2;&#x6EE1;&#xFF0C;&#x4F46;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x5C0F;&#x4E8E;maximumPoolSize&#xFF0C;&#x5219;&#x4F1A;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x7EBF;&#x7A0B;&#x6765;&#x5904;&#x7406;&#x88AB;&#x6DFB;&#x52A0;&#x7684;&#x4EFB;&#x52A1;&#xFF1B;</p>
+<p>&#xFF08;4&#xFF09;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x7B49;&#x4E8E;&#x4E86;maximumPoolSize&#xFF0C;&#x5C31;&#x7528;RejectedExecutionHandler&#x6765;&#x505A;&#x62D2;&#x7EDD;&#x5904;&#x7406;</p>
+<p>&#x603B;&#x7ED3;&#xFF0C;&#x5F53;&#x6709;&#x65B0;&#x7684;&#x4EFB;&#x52A1;&#x8981;&#x5904;&#x7406;&#x65F6;&#xFF0C;&#x5148;&#x770B;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x662F;&#x5426;&#x5927;&#x4E8E;corePoolSize&#xFF0C;&#x518D;&#x770B;&#x7F13;&#x51B2;&#x961F;&#x5217;workQueue&#x662F;&#x5426;&#x6EE1;&#xFF0C;&#x6700;&#x540E;&#x770B;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x662F;&#x5426;&#x5927;&#x4E8E;maximumPoolSize</p>
+<p>&#x53E6;&#x5916;&#xFF0C;&#x5F53;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x5927;&#x4E8E;corePoolSize&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x91CC;&#x9762;&#x6709;&#x7EBF;&#x7A0B;&#x7684;&#x7A7A;&#x95F2;&#x65F6;&#x95F4;&#x8D85;&#x8FC7;&#x4E86;keepAliveTime&#xFF0C;&#x5C31;&#x5C06;&#x5176;&#x79FB;&#x9664;&#x7EBF;&#x7A0B;&#x6C60;</p>
+<p>&#x6700;&#x540E;&#xFF0C;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x56FE;&#x6765;&#x770B;&#x770B;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#x7B56;&#x7565;&#xFF1A;</p>
+<p><img src="https://images2015.cnblogs.com/blog/677054/201703/677054-20170321224836533-1321569829.png" alt="image"></p>
+<p><img src="https://images2015.cnblogs.com/blog/677054/201703/677054-20170321224836533-1321569829.png" alt="image"></p>
+<p>&#x56FE;1</p>
+<p><img src="https://images2015.cnblogs.com/blog/677054/201703/677054-20170321224838861-1061102171.png" alt="image"></p>
+<p><img src="https://images2015.cnblogs.com/blog/677054/201703/677054-20170321224838861-1061102171.png" alt="image"></p>
+<p>&#x56FE;2</p>
+<p>&#x5728;&#x56FE;1&#x4E2D;&#xFF0C;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x6709;N&#x4E2A;&#x4EFB;&#x52A1;&#x3002;&quot;&#x4EFB;&#x52A1;1&quot;, &quot;&#x4EFB;&#x52A1;2&quot;, &quot;&#x4EFB;&#x52A1;3&quot;&#x8FD9;3&#x4E2A;&#x4EFB;&#x52A1;&#x5728;&#x6267;&#x884C;&#xFF0C;&#x800C;&quot;&#x4EFB;&#x52A1;3&quot;&#x5230;&quot;&#x4EFB;&#x52A1;N&quot;&#x5728;&#x963B;&#x585E;&#x961F;&#x5217;&#x4E2D;&#x7B49;&#x5F85;&#x3002;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x5728;workers&#x96C6;&#x5408;&#x4E2D;&#xFF0C;workers&#x96C6;&#x5408;&#x5305;&#x542B;3&#x4E2A;Worker&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;Worker&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;Thread&#x7EBF;&#x7A0B;&#xFF0C;Thread&#x7EBF;&#x7A0B;&#x6BCF;&#x6B21;&#x5904;&#x7406;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x3002;</p>
+<p>&#x5F53;workers&#x96C6;&#x5408;&#x4E2D;&#x5904;&#x7406;&#x5B8C;&#x67D0;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x4E4B;&#x540E;&#xFF0C;&#x4F1A;&#x4ECE;&#x963B;&#x585E;&#x961F;&#x5217;&#x4E2D;&#x53D6;&#x51FA;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x6765;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#xFF0C;&#x5982;&#x56FE;2&#x6240;&#x793A;&#x3002;&#x56FE;2&#x8868;&#x793A;&quot;&#x4EFB;&#x52A1;1&quot;&#x5904;&#x7406;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#xFF0C;&#x7EBF;&#x7A0B;&#x6C60;&#x5C06;&quot;&#x4EFB;&#x52A1;4&quot;&#x4ECE;&#x963B;&#x585E;&#x961F;&#x5217;&#x4E2D;&#x53D6;&#x51FA;&#xFF0C;&#x653E;&#x5230;workers&#x4E2D;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;</p>
+<h2 id="executors&#x9759;&#x6001;&#x5DE5;&#x5382;&#x521B;&#x5EFA;&#x51E0;&#x79CD;&#x5E38;&#x7528;&#x7EBF;&#x7A0B;&#x6C60;">Executors&#x9759;&#x6001;&#x5DE5;&#x5382;&#x521B;&#x5EFA;&#x51E0;&#x79CD;&#x5E38;&#x7528;&#x7EBF;&#x7A0B;&#x6C60;</h2>
+<p>Exectors&#x5DE5;&#x5382;&#x7C7B;&#x63D0;&#x4F9B;&#x4E86;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x521D;&#x59CB;&#x5316;&#x63A5;&#x53E3;&#xFF0C;&#x4E3B;&#x8981;&#x6709;&#x5982;&#x4E0B;&#x51E0;&#x79CD;</p>
+<p><strong>newFixedThreadPool</strong></p>
+<pre><code>public static ExecutorService newFixedThreadPool(int nThreads) {
+    return new ThreadPoolExecutor(nThreads, nThreads,
+                                  0L, TimeUnit.MILLISECONDS,
+                                  new LinkedBlockingQueue&lt;Runnable&gt;());
+}
+
+public static ExecutorService newFixedThreadPool(int nThreads, ThreadFactory threadFactory) {
+    return new ThreadPoolExecutor(nThreads, nThreads,
+                                  0L, TimeUnit.MILLISECONDS,
+                                  new LinkedBlockingQueue&lt;Runnable&gt;(),
+                                  threadFactory);
+}
+</code></pre><p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x6570;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x5176;&#x4E2D;&#x53C2;&#x6570; corePoolSize &#x548C; maximumPoolSize &#x76F8;&#x7B49;&#xFF0C;&#x963B;&#x585E;&#x961F;&#x5217;&#x57FA;&#x4E8E;LinkedBlockingQueue</p>
+<p>&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x5178;&#x578B;&#x4E14;&#x4F18;&#x79C0;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x5B83;&#x5177;&#x6709;&#x7EBF;&#x7A0B;&#x6C60;&#x63D0;&#x9AD8;&#x7A0B;&#x5E8F;&#x6548;&#x7387;&#x548C;&#x8282;&#x7701;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x65F6;&#x6240;&#x8017;&#x7684;&#x5F00;&#x9500;&#x7684;&#x4F18;&#x70B9;&#x3002;&#x4F46;&#x662F;&#x5728;&#x7EBF;&#x7A0B;&#x6C60;&#x7A7A;&#x95F2;&#x65F6;&#xFF0C;&#x5373;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x6CA1;&#x6709;&#x53EF;&#x8FD0;&#x884C;&#x4EFB;&#x52A1;&#x65F6;&#xFF0C;&#x5B83;&#x4E5F;&#x4E0D;&#x4F1A;&#x91CA;&#x653E;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#xFF0C;&#x8FD8;&#x4F1A;&#x5360;&#x7528;&#x4E00;&#x5B9A;&#x7684;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90;</p>
+<p><strong>newSingleThreadExecutor</strong></p>
+<pre><code>public static ExecutorService newSingleThreadExecutor() {
+    return new FinalizableDelegatedExecutorService
+        (new ThreadPoolExecutor(1, 1,
+                                0L, TimeUnit.MILLISECONDS,
+                                new LinkedBlockingQueue&lt;Runnable&gt;()));
+}
+
+public static ExecutorService newSingleThreadExecutor(ThreadFactory threadFactory) {
+    return new FinalizableDelegatedExecutorService
+        (new ThreadPoolExecutor(1, 1,
+                                0L, TimeUnit.MILLISECONDS,
+                                new LinkedBlockingQueue&lt;Runnable&gt;(),
+                                threadFactory));
+}
+</code></pre><p>&#x521D;&#x59CB;&#x5316;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x7EBF;&#x7A0B;&#x5F02;&#x5E38;&#x7ED3;&#x675F;&#xFF0C;&#x4F1A;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7EBF;&#x7A0B;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#xFF0C;&#x552F;&#x4E00;&#x7684;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x6240;&#x63D0;&#x4EA4;&#x4EFB;&#x52A1;&#x7684;&#x987A;&#x5E8F;&#x6267;&#x884C;&#xFF0C;&#x5185;&#x90E8;&#x4F7F;&#x7528;LinkedBlockingQueue&#x4F5C;&#x4E3A;&#x963B;&#x585E;&#x961F;&#x5217;</p>
+<p><strong>newCachedThreadPool</strong></p>
+<pre><code>public static ExecutorService newCachedThreadPool() {
+    return new ThreadPoolExecutor(0, Integer.MAX_VALUE,
+                                  60L, TimeUnit.SECONDS,
+                                  new SynchronousQueue&lt;Runnable&gt;());
+}
+
+public static ExecutorService newCachedThreadPool(ThreadFactory threadFactory) {
+    return new ThreadPoolExecutor(0, Integer.MAX_VALUE,
+                                  60L, TimeUnit.SECONDS,
+                                  new SynchronousQueue&lt;Runnable&gt;(),
+                                  threadFactory);
+}
+</code></pre><p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x53EF;&#x7F13;&#x5B58;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x9ED8;&#x8BA4;&#x5B58;&#x6D3B;&#x65F6;&#x95F4;60&#x79D2;&#xFF0C;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x53EF;&#x8FBE;&#x5230;Integer.MAX_VALUE&#xFF0C;&#x5373;2147483647&#xFF0C;&#x5185;&#x90E8;&#x4F7F;&#x7528;SynchronousQueue&#x4F5C;&#x4E3A;&#x963B;&#x585E;&#x961F;&#x5217;&#xFF1B;</p>
+<p>&#x5728;&#x6CA1;&#x6709;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5F53;&#x7EBF;&#x7A0B;&#x7684;&#x7A7A;&#x95F2;&#x65F6;&#x95F4;&#x8D85;&#x8FC7;keepAliveTime&#xFF0C;&#x5219;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x5C06;&#x4F1A;&#x7EC8;&#x6B62;&#xFF0C;&#x5F53;&#x63D0;&#x4EA4;&#x65B0;&#x4EFB;&#x52A1;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x7A7A;&#x95F2;&#x7EBF;&#x7A0B;&#xFF0C;&#x5219;&#x521B;&#x5EFA;&#x65B0;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x4E00;&#x5B9A;&#x7684;&#x7CFB;&#x7EDF;&#x5F00;&#x9500;</p>
+<p><strong>newScheduledThreadPool</strong></p>
+<pre><code>public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize) {
+    return new ScheduledThreadPoolExecutor(corePoolSize);
+}
+
+public static ScheduledExecutorService newScheduledThreadPool(
+        int corePoolSize, ThreadFactory threadFactory) {
+    return new ScheduledThreadPoolExecutor(corePoolSize, threadFactory);
+}
+</code></pre><p>&#x521D;&#x59CB;&#x5316;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x53EF;&#x4EE5;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x5185;&#x5468;&#x671F;&#x6027;&#x7684;&#x6267;&#x884C;&#x6240;&#x63D0;&#x4EA4;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x5728;&#x5B9E;&#x9645;&#x7684;&#x4E1A;&#x52A1;&#x573A;&#x666F;&#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8BE5;&#x7EBF;&#x7A0B;&#x6C60;&#x5B9A;&#x671F;&#x7684;&#x540C;&#x6B65;&#x6570;&#x636E;</p>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong></p>
+<p><code>ScheduledExecutorService#scheduleAtFixedRate()</code> &#x6307;&#x7684;&#x662F;&#x201C;&#x4EE5;&#x56FA;&#x5B9A;&#x7684;&#x9891;&#x7387;&#x201D;&#x6267;&#x884C;&#xFF0C;period&#xFF08;&#x5468;&#x671F;&#xFF09;&#x6307;&#x7684;&#x662F;&#x4E24;&#x6B21;&#x6210;&#x529F;&#x6267;&#x884C;&#x4E4B;&#x95F4;&#x7684;&#x65F6;&#x95F4;</p>
+<p>&#x6BD4;&#x5982;&#xFF0C;scheduleAtFixedRate(command, 5, 2, second)&#xFF0C;&#x7B2C;&#x4E00;&#x6B21;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x662F;5s&#x540E;&#xFF0C;&#x5047;&#x5982;&#x6267;&#x884C;&#x8017;&#x65F6;1s&#xFF0C;&#x90A3;&#x4E48;&#x4E0B;&#x6B21;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x662F;7s&#x540E;&#xFF0C;&#x518D;&#x4E0B;&#x6B21;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x662F;9s&#x540E;</p>
+<p>&#x800C;<code>ScheduledExecutorService#scheduleWithFixedDelay()</code>  &#x6307;&#x7684;&#x662F;&#x201C;&#x4EE5;&#x56FA;&#x5B9A;&#x7684;&#x5EF6;&#x65F6;&#x201D;&#x6267;&#x884C;&#xFF0C;delay&#xFF08;&#x5EF6;&#x65F6;&#xFF09;&#x6307;&#x7684;&#x662F;&#x4E00;&#x6B21;&#x6267;&#x884C;&#x7EC8;&#x6B62;&#x548C;&#x4E0B;&#x4E00;&#x6B21;&#x6267;&#x884C;&#x5F00;&#x59CB;&#x4E4B;&#x95F4;&#x7684;&#x5EF6;&#x8FDF;</p>
+<p>&#x8FD8;&#x662F;&#x4E0A;&#x4F8B;&#xFF0C;scheduleWithFixedDelay(command, 5, 2, second)&#xFF0C;&#x7B2C;&#x4E00;&#x6B21;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x662F;5s&#x540E;&#xFF0C;&#x5047;&#x5982;&#x6267;&#x884C;&#x8017;&#x65F6;1s&#xFF0C;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x65F6;&#x95F4;&#x662F;6s&#x540E;&#xFF0C;&#x90A3;&#x4E48;&#x4E0B;&#x6B21;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x662F;8s&#x540E;&#xFF0C;&#x518D;&#x4E0B;&#x6B21;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x662F;11s&#x540E;</p>
+<h2 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h2>
+<p><a href="http://www.cnblogs.com/trust-freedom/p/6594270.html" target="_blank">http://www.cnblogs.com/trust-freedom/p/6594270.html</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="readme.html" class="navigation navigation-prev " aria-label="Previous page: Java">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="threadpool2.html" class="navigation navigation-next " aria-label="Next page: ThreadPool(二)">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ThreadPool(一)","level":"1.4.3.1","depth":3,"next":{"title":"ThreadPool(二)","level":"1.4.3.2","depth":3,"path":"android/java/threadpool2.md","ref":"android/java/threadpool2.md","articles":[]},"previous":{"title":"Java","level":"1.4.3","depth":2,"path":"android/java/readme.md","ref":"android/java/readme.md","articles":[{"title":"ThreadPool(一)","level":"1.4.3.1","depth":3,"path":"android/java/threadpool1.md","ref":"android/java/threadpool1.md","articles":[]},{"title":"ThreadPool(二)","level":"1.4.3.2","depth":3,"path":"android/java/threadpool2.md","ref":"android/java/threadpool2.md","articles":[]},{"title":"ThreadPool(三)","level":"1.4.3.3","depth":3,"path":"android/java/threadpool3.md","ref":"android/java/threadpool3.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/java/threadpool1.md","mtime":"2018-06-15T03:07:49.634Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-15T03:50:46.854Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
