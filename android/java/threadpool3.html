@@ -1,0 +1,1346 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>ThreadPool(三) · 技术博客</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="jackchen">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../mvp/readme.html" />
+    
+    
+    <link rel="prev" href="threadpool2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    个人简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../gitbook/">
+            
+                <a href="../../gitbook/">
+            
+                    
+                    Gitbook..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../gitbook/create.html">
+            
+                <a href="../../gitbook/create.html">
+            
+                    
+                    Gitbook各系统搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../gitbook/use.html">
+            
+                <a href="../../gitbook/use.html">
+            
+                    
+                    Gitbook基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../gerrit/">
+            
+                <a href="../../gerrit/">
+            
+                    
+                    Gerrit + Git..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../gerrit/ubuntu_build.html">
+            
+                <a href="../../gerrit/ubuntu_build.html">
+            
+                    
+                    Gerrit+Ubuntu搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../gerrit/centos_build.html">
+            
+                <a href="../../gerrit/centos_build.html">
+            
+                    
+                    Gerrit+CentOS搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../gerrit/use.html">
+            
+                <a href="../../gerrit/use.html">
+            
+                    
+                    Git基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../android.html">
+            
+                <a href="../android.html">
+            
+                    
+                    Android..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../adb_cmd.html">
+            
+                <a href="../adb_cmd.html">
+            
+                    
+                    adb命令集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../remake/remake1.html">
+            
+                <a href="../remake/remake1.html">
+            
+                    
+                    android反编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    Java..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="threadpool1.html">
+            
+                <a href="threadpool1.html">
+            
+                    
+                    ThreadPool(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.2" data-path="threadpool2.html">
+            
+                <a href="threadpool2.html">
+            
+                    
+                    ThreadPool(二)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3.3" data-path="threadpool3.html">
+            
+                <a href="threadpool3.html">
+            
+                    
+                    ThreadPool(三)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../mvp/readme.html">
+            
+                <a href="../mvp/readme.html">
+            
+                    
+                    Mvp..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="../mvp/mvp架构.html">
+            
+                <a href="../mvp/mvp架构.html">
+            
+                    
+                    Mvp架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../dagger/readme.html">
+            
+                <a href="../dagger/readme.html">
+            
+                    
+                    Dagger..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="../dagger/dagger1.html">
+            
+                <a href="../dagger/dagger1.html">
+            
+                    
+                    Dagger2(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="../dagger/dagger2.html">
+            
+                <a href="../dagger/dagger2.html">
+            
+                    
+                    Dagger2(二)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="../dagger/dagger3.html">
+            
+                <a href="../dagger/dagger3.html">
+            
+                    
+                    Dagger2(三)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../faceai/baidufacesdk.html">
+            
+                <a href="../faceai/baidufacesdk.html">
+            
+                    
+                    Face
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../rxjava/rxjava.html">
+            
+                <a href="../rxjava/rxjava.html">
+            
+                    
+                    RxJava..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.7.1" data-path="../rxjava/rxjava1_1.html">
+            
+                <a href="../rxjava/rxjava1_1.html">
+            
+                    
+                    RxJava1.x(1/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2" data-path="../rxjava/rxjava1_2.html">
+            
+                <a href="../rxjava/rxjava1_2.html">
+            
+                    
+                    RxJava1.x(2/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.3" data-path="../rxjava/rxjava1_3.html">
+            
+                <a href="../rxjava/rxjava1_3.html">
+            
+                    
+                    RxJava1.x(3/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.4" data-path="../rxjava/rxjava2_1.html">
+            
+                <a href="../rxjava/rxjava2_1.html">
+            
+                    
+                    RxJava2.x(1/2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.5" data-path="../rxjava/rxjava2_2.html">
+            
+                <a href="../rxjava/rxjava2_2.html">
+            
+                    
+                    RxJava2.x(2/2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.6" data-path="../rxjava/rxjava1&2.html">
+            
+                <a href="../rxjava/rxjava1&2.html">
+            
+                    
+                    RxJava1.x&2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.7" data-path="../rxjava/rxjava_backpressure.html">
+            
+                <a href="../rxjava/rxjava_backpressure.html">
+            
+                    
+                    BackPressure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.8" data-path="../rxjava/rxpermisson.html">
+            
+                <a href="../rxjava/rxpermisson.html">
+            
+                    
+                    RxPermisson
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../okhttp/readme.html">
+            
+                <a href="../okhttp/readme.html">
+            
+                    
+                    OkHttp..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.8.1" data-path="../okhttp/okhttp1.html">
+            
+                <a href="../okhttp/okhttp1.html">
+            
+                    
+                    Okhttp缓存详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../retrofit/retrofit.html">
+            
+                <a href="../retrofit/retrofit.html">
+            
+                    
+                    Retrofit..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.9.1" data-path="../retrofit/retrofit2_1.html">
+            
+                <a href="../retrofit/retrofit2_1.html">
+            
+                    
+                    Retrofit(1/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.2" data-path="../retrofit/retrofit2_2.html">
+            
+                <a href="../retrofit/retrofit2_2.html">
+            
+                    
+                    Retrofit(2/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.3" data-path="../retrofit/retrofit1&2.html">
+            
+                <a href="../retrofit/retrofit1&2.html">
+            
+                    
+                    Retrofit1.x&2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.4" data-path="../retrofit/retrofit2.x&RxJava2.x.html">
+            
+                <a href="../retrofit/retrofit2.x&RxJava2.x.html">
+            
+                    
+                    Retrofit2.x+RxJava2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../widget/readme.html">
+            
+                <a href="../widget/readme.html">
+            
+                    
+                    widget..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.10.1" data-path="../widget/refreshlayout.html">
+            
+                <a href="../widget/refreshlayout.html">
+            
+                    
+                    SwipeRefreshLayout1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10.2" data-path="../widget/swipeRefreshlayout.html">
+            
+                <a href="../widget/swipeRefreshlayout.html">
+            
+                    
+                    SwipeRefreshLayout2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../camera/readme.html">
+            
+                <a href="../camera/readme.html">
+            
+                    
+                    Camera..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.11.1" data-path="../camera/camera.html">
+            
+                <a href="../camera/camera.html">
+            
+                    
+                    Camera开发(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2" data-path="../camera/camera1.html">
+            
+                <a href="../camera/camera1.html">
+            
+                    
+                    Camera开发(二)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../react-native/readme.html">
+            
+                <a href="../react-native/readme.html">
+            
+                    
+                    ReactNative..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.12.1" data-path="../react-native/react-native1.html">
+            
+                <a href="../react-native/react-native1.html">
+            
+                    
+                    react-native(1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../gradle/readme.html">
+            
+                <a href="../../gradle/readme.html">
+            
+                    
+                    Gradle..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../gradle/groovy1.html">
+            
+                <a href="../../gradle/groovy1.html">
+            
+                    
+                    Gradle开发(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../Http/readme.html">
+            
+                <a href="../../Http/readme.html">
+            
+                    
+                    Http..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../Http/http1.html">
+            
+                <a href="../../Http/http1.html">
+            
+                    
+                    Http请求头和请求体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../Http/http2.html">
+            
+                <a href="../../Http/http2.html">
+            
+                    
+                    Http相应头与状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../Http/restful.html">
+            
+                <a href="../../Http/restful.html">
+            
+                    
+                    Restful架构详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../Linux/readme.html">
+            
+                <a href="../../Linux/readme.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../nginx/readme.html">
+            
+                <a href="../../nginx/readme.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../fangkj/">
+            
+                <a href="../../fangkj/">
+            
+                    
+                    访客机
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >ThreadPool(三)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="java&#x7EBF;&#x7A0B;&#x6C60;threadpoolexecutor&#x4F7F;&#x7528;&#x548C;&#x5206;&#x6790;&#x4E09;---&#x7EC8;&#x6B62;&#x7EBF;&#x7A0B;&#x6C60;&#x539F;&#x7406;">Java&#x7EBF;&#x7A0B;&#x6C60;ThreadPoolExecutor&#x4F7F;&#x7528;&#x548C;&#x5206;&#x6790;(&#x4E09;) - &#x7EC8;&#x6B62;&#x7EBF;&#x7A0B;&#x6C60;&#x539F;&#x7406;</h1>
+<h2 id="shutdown------&#x6E29;&#x67D4;&#x7684;&#x7EC8;&#x6B62;&#x7EBF;&#x7A0B;&#x6C60;">shutdown()  --  &#x6E29;&#x67D4;&#x7684;&#x7EC8;&#x6B62;&#x7EBF;&#x7A0B;&#x6C60;</h2>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">/**
+ * Initiates an orderly shutdown in which previously submitted
+ * tasks are executed, but no new tasks will be accepted.
+ * Invocation has no additional effect if already shut down.
+ * &#x5F00;&#x59CB;&#x4E00;&#x4E2A;&#x6709;&#x5E8F;&#x7684;&#x5173;&#x95ED;&#xFF0C;&#x5728;&#x5173;&#x95ED;&#x4E2D;&#xFF0C;&#x4E4B;&#x524D;&#x63D0;&#x4EA4;&#x7684;&#x4EFB;&#x52A1;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#xFF08;&#x5305;&#x542B;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;&#xFF0C;&#x5728;&#x963B;&#x585E;&#x961F;&#x5217;&#x4E2D;&#x7684;&#xFF09;&#xFF0C;&#x4F46;&#x65B0;&#x4EFB;&#x52A1;&#x4F1A;&#x88AB;&#x62D2;&#x7EDD;
+ * &#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x5DF2;&#x7ECF;shutdown&#xFF0C;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;&#x4E0D;&#x4F1A;&#x6709;&#x9644;&#x52A0;&#x6548;&#x5E94;
+ *
+ * &lt;p&gt;This method does not wait for previously submitted tasks to
+ * complete execution.  Use {@link #awaitTermination awaitTermination}
+ * to do that.
+ * &#x5F53;&#x524D;&#x65B9;&#x6CD5;&#x4E0D;&#x4F1A;&#x7B49;&#x5F85;&#x4E4B;&#x524D;&#x63D0;&#x4EA4;&#x7684;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7ED3;&#x675F;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;awaitTermination()
+ *
+ * @throws SecurityException {@inheritDoc}
+ */
+public void shutdown() {
+    final ReentrantLock mainLock = this.mainLock;
+    mainLock.lock(); //&#x4E0A;&#x9501;
+
+    try {
+        //&#x5224;&#x65AD;&#x8C03;&#x7528;&#x8005;&#x662F;&#x5426;&#x6709;&#x6743;&#x9650;shutdown&#x7EBF;&#x7A0B;&#x6C60;
+        checkShutdownAccess();
+
+        //CAS+&#x5FAA;&#x73AF;&#x8BBE;&#x7F6E;&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;&#x4E3A;shutdown
+        advanceRunState(SHUTDOWN);
+
+        //&#x4E2D;&#x65AD;&#x6240;&#x6709;&#x7A7A;&#x95F2;&#x7EBF;&#x7A0B;
+        interruptIdleWorkers();
+
+        onShutdown(); // hook for ScheduledThreadPoolExecutor
+    }
+    finally {
+        mainLock.unlock(); //&#x89E3;&#x9501;
+    }
+
+    //&#x5C1D;&#x8BD5;&#x7EC8;&#x6B62;&#x7EBF;&#x7A0B;&#x6C60;
+    tryTerminate();
+}<br></div></div>
+
+<p><strong>shutdown()&#x6267;&#x884C;&#x6D41;&#x7A0B;</strong>&#xFF1A;</p>
+<p>1&#x3001;&#x4E0A;&#x9501;&#xFF0C;mainLock&#x662F;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x4E3B;&#x9501;&#xFF0C;&#x662F;&#x53EF;&#x91CD;&#x5165;&#x9501;&#xFF0C;&#x5F53;&#x8981;&#x64CD;&#x4F5C;workers set&#x8FD9;&#x4E2A;&#x4FDD;&#x6301;&#x7EBF;&#x7A0B;&#x7684;HashSet&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x83B7;&#x53D6;mainLock&#xFF0C;&#x8FD8;&#x6709;&#x5F53;&#x8981;&#x5904;&#x7406;largestPoolSize&#x3001;completedTaskCount&#x8FD9;&#x7C7B;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x65F6;&#x9700;&#x8981;&#x5148;&#x83B7;&#x53D6;mainLock</p>
+<p>2&#x3001;&#x5224;&#x65AD;&#x8C03;&#x7528;&#x8005;&#x662F;&#x5426;&#x6709;&#x6743;&#x9650;shutdown&#x7EBF;&#x7A0B;&#x6C60;</p>
+<p>3&#x3001;&#x4F7F;&#x7528;CAS&#x64CD;&#x4F5C;&#x5C06;&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;&#x8BBE;&#x7F6E;&#x4E3A;shutdown&#xFF0C;shutdown&#x4E4B;&#x540E;&#x5C06;&#x4E0D;&#x518D;&#x63A5;&#x6536;&#x65B0;&#x4EFB;&#x52A1;</p>
+<p>4&#x3001;&#x4E2D;&#x65AD;&#x6240;&#x6709;&#x7A7A;&#x95F2;&#x7EBF;&#x7A0B;  interruptIdleWorkers()</p>
+<p>5&#x3001;onShutdown()&#xFF0C;ScheduledThreadPoolExecutor&#x4E2D;&#x5B9E;&#x73B0;&#x4E86;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;shutdown()&#x65F6;&#x505A;&#x4E00;&#x4E9B;&#x5904;&#x7406;</p>
+<p>6&#x3001;&#x89E3;&#x9501;</p>
+<p>7&#x3001;&#x5C1D;&#x8BD5;&#x7EC8;&#x6B62;&#x7EBF;&#x7A0B;&#x6C60;  tryTerminate()</p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;shutdown()&#x65B9;&#x6CD5;&#x6700;&#x91CD;&#x8981;&#x7684;&#x51E0;&#x4E2A;&#x6B65;&#x9AA4;&#x662F;&#xFF1A;<code>&#x66F4;&#x65B0;&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;&#x4E3A;shutdown</code>&#x3001;<code>&#x4E2D;&#x65AD;&#x6240;&#x6709;&#x7A7A;&#x95F2;&#x7EBF;&#x7A0B;</code>&#x3001;<code>tryTerminated()&#x5C1D;&#x8BD5;&#x7EC8;&#x6B62;&#x7EBF;&#x7A0B;&#x6C60;</code></p>
+<p>&#x90A3;&#x4E48;&#xFF0C;&#x4EC0;&#x4E48;&#x662F;&#x7A7A;&#x95F2;&#x7EBF;&#x7A0B;&#xFF1F;interruptIdleWorkers() &#x662F;&#x600E;&#x4E48;&#x4E2D;&#x65AD;&#x7A7A;&#x95F2;&#x7EBF;&#x7A0B;&#x7684;&#xFF1F;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">/**
+ * Interrupts threads that might be waiting for tasks (as
+ * indicated by not being locked) so they can check for
+ * termination or configuration changes. Ignores
+ * SecurityExceptions (in which case some threads may remain
+ * uninterrupted).
+ * &#x4E2D;&#x65AD;&#x5728;&#x7B49;&#x5F85;&#x4EFB;&#x52A1;&#x7684;&#x7EBF;&#x7A0B;(&#x6CA1;&#x6709;&#x4E0A;&#x9501;&#x7684;)&#xFF0C;&#x4E2D;&#x65AD;&#x5524;&#x9192;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;&#x662F;&#x5426;&#x53D8;&#x5316;&#x6765;&#x51B3;&#x5B9A;&#x662F;&#x5426;&#x7EE7;&#x7EED;
+ *
+ * @param onlyOne If true, interrupt at most one worker. This is
+ * called only from tryTerminate when termination is otherwise
+ * enabled but there are still other workers.  In this case, at
+ * most one waiting worker is interrupted to propagate shutdown
+ * signals in case(&#x4EE5;&#x514D;) all threads are currently waiting.
+ * Interrupting any arbitrary thread ensures that newly arriving
+ * workers since shutdown began will also eventually exit.
+ * To guarantee eventual termination, it suffices to always
+ * interrupt only one idle worker, but shutdown() interrupts all
+ * idle workers so that redundant workers exit promptly, not
+ * waiting for a straggler task to finish.
+ *
+ * onlyOne&#x5982;&#x679C;&#x4E3A;true&#xFF0C;&#x6700;&#x591A;interrupt&#x4E00;&#x4E2A;worker
+ * &#x53EA;&#x6709;&#x5F53;&#x7EC8;&#x6B62;&#x6D41;&#x7A0B;&#x5DF2;&#x7ECF;&#x5F00;&#x59CB;&#xFF0C;&#x4F46;&#x7EBF;&#x7A0B;&#x6C60;&#x8FD8;&#x6709;worker&#x7EBF;&#x7A0B;&#x65F6;,tryTerminate()&#x65B9;&#x6CD5;&#x4F1A;&#x505A;&#x8C03;&#x7528;onlyOne&#x4E3A;true&#x7684;&#x8C03;&#x7528;
+ * &#xFF08;&#x7EC8;&#x6B62;&#x6D41;&#x7A0B;&#x5DF2;&#x7ECF;&#x5F00;&#x59CB;&#x6307;&#x7684;&#x662F;&#xFF1A;shutdown&#x72B6;&#x6001; &#x4E14; workQueue&#x4E3A;&#x7A7A;&#xFF0C;&#x6216;&#x8005; stop&#x72B6;&#x6001;&#xFF09;
+ * &#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6700;&#x591A;&#x6709;&#x4E00;&#x4E2A;worker&#x88AB;&#x4E2D;&#x65AD;&#xFF0C;&#x4E3A;&#x4E86;&#x4F20;&#x64AD;shutdown&#x4FE1;&#x53F7;&#xFF0C;&#x4EE5;&#x514D;&#x6240;&#x6709;&#x7684;&#x7EBF;&#x7A0B;&#x90FD;&#x5728;&#x7B49;&#x5F85;
+ * &#x4E3A;&#x4FDD;&#x8BC1;&#x7EBF;&#x7A0B;&#x6C60;&#x6700;&#x7EC8;&#x80FD;&#x7EC8;&#x6B62;&#xFF0C;&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x603B;&#x662F;&#x4E2D;&#x65AD;&#x4E00;&#x4E2A;&#x7A7A;&#x95F2;worker
+ * &#x800C;shutdown()&#x4E2D;&#x65AD;&#x6240;&#x6709;&#x7A7A;&#x95F2;worker&#xFF0C;&#x6765;&#x4FDD;&#x8BC1;&#x7A7A;&#x95F2;&#x7EBF;&#x7A0B;&#x53CA;&#x65F6;&#x9000;&#x51FA;
+ */
+private void interruptIdleWorkers(boolean onlyOne) {
+    final ReentrantLock mainLock = this.mainLock;
+    mainLock.lock(); //&#x4E0A;&#x9501;
+    try {
+        for (Worker w : workers) {
+            Thread t = w.thread;
+
+            if (!t.isInterrupted() &amp;&amp; w.tryLock()) {
+                try {
+                    t.interrupt();
+                } catch (SecurityException ignore) {
+                } finally {
+                    w.unlock();
+                }
+            }
+            if (onlyOne)
+                break;
+        }
+    } finally {
+        mainLock.unlock(); //&#x89E3;&#x9501;
+    }
+}<br></div></div>
+
+<p>interruptIdleWorkers() &#x9996;&#x5148;&#x4F1A;&#x83B7;&#x53D6;mainLock&#x9501;&#xFF0C;&#x56E0;&#x4E3A;&#x8981;&#x8FED;&#x4EE3;workers set&#xFF0C;&#x5728;&#x4E2D;&#x65AD;&#x6BCF;&#x4E2A;worker&#x524D;&#xFF0C;&#x9700;&#x8981;&#x505A;&#x4E24;&#x4E2A;&#x5224;&#x65AD;&#xFF1A;</p>
+<p>1&#x3001;&#x7EBF;&#x7A0B;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x88AB;&#x4E2D;&#x65AD;&#xFF0C;&#x662F;&#x5C31;&#x4EC0;&#x4E48;&#x90FD;&#x4E0D;&#x505A;</p>
+<p>2&#x3001;worker.tryLock() &#x662F;&#x5426;&#x6210;&#x529F;</p>
+<p>&#x7B2C;&#x4E8C;&#x4E2A;&#x5224;&#x65AD;&#x6BD4;&#x8F83;&#x91CD;&#x8981;&#xFF0C;&#x56E0;&#x4E3A;Worker&#x7C7B;&#x9664;&#x4E86;&#x5B9E;&#x73B0;&#x4E86;&#x53EF;&#x6267;&#x884C;&#x7684;Runnable&#xFF0C;&#x4E5F;&#x7EE7;&#x627F;&#x4E86;AQS&#xFF0C;&#x672C;&#x8EAB;&#x4E5F;&#x662F;&#x4E00;&#x628A;&#x9501;&#xFF0C;&#x5177;&#x4F53;&#x53EF;&#x89C1; ThreadPoolExecutor&#x5185;&#x90E8;&#x7C7B;Worker&#x89E3;&#x6790;</p>
+<p>tryLock()&#x8C03;&#x7528;&#x4E86;Worker&#x81EA;&#x8EAB;&#x5B9E;&#x73B0;&#x7684;tryAcquire()&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;AQS&#x89C4;&#x5B9A;&#x5B50;&#x7C7B;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x7684;&#x5C1D;&#x8BD5;&#x83B7;&#x53D6;&#x9501;&#x7684;&#x65B9;&#x6CD5;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">protected boolean tryAcquire(int unused) {
+    if (compareAndSetState(0, 1)) {
+        setExclusiveOwnerThread(Thread.currentThread());
+        return true;
+    }
+    return false;
+}<br></div></div>
+
+<p>tryAcquire()&#x5148;&#x5C1D;&#x8BD5;&#x5C06;AQS&#x7684;state&#x4ECE;0--&gt;1&#xFF0C;&#x8FD4;&#x56DE;true&#x4EE3;&#x8868;&#x4E0A;&#x9501;&#x6210;&#x529F;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x4E3A;&#x9501;&#x7684;&#x62E5;&#x6709;&#x8005;</p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;compareAndSetState(0, 1)&#x53EA;&#x5C1D;&#x8BD5;&#x4E86;&#x4E00;&#x6B21;&#x83B7;&#x53D6;&#x9501;&#xFF0C;&#x4E14;&#x4E0D;&#x662F;&#x6BCF;&#x6B21;state+1&#xFF0C;&#x800C;&#x662F;0--&gt;1&#xFF0C;&#x8BF4;&#x660E;&#x9501;&#x4E0D;&#x662F;&#x53EF;&#x91CD;&#x5165;&#x7684;</p>
+<p>&#x4F46;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;worker.tryLock()&#x83B7;&#x53D6;worker&#x7684;&#x9501;&#x5462;&#xFF1F;</p>
+<p>&#x8FD9;&#x5C31;&#x662F;Woker&#x7C7B;&#x5B58;&#x5728;&#x7684;&#x4EF7;&#x503C;&#x4E4B;&#x4E00;&#xFF0C;&#x63A7;&#x5236;&#x7EBF;&#x7A0B;&#x4E2D;&#x65AD;</p>
+<p>&#x5728;runWorker()&#x65B9;&#x6CD5;&#x4E2D;&#x6BCF;&#x6B21;&#x83B7;&#x53D6;&#x5230;task&#xFF0C;task.run()&#x4E4B;&#x524D;&#x90FD;&#x9700;&#x8981;worker.lock()&#x4E0A;&#x9501;&#xFF0C;&#x8FD0;&#x884C;&#x7ED3;&#x675F;&#x540E;&#x89E3;&#x9501;&#xFF0C;&#x5373;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x4EFB;&#x52A1;&#x7684;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x90FD;&#x662F;&#x4E0A;&#x4E86;worker&#x9501;&#x7684;</p>
+<p><img src="https://images2015.cnblogs.com/blog/677054/201704/677054-20170411225458469-685583225.jpg" alt="image"></p>
+<p>&#x5728;interruptIdleWorkers()&#x4E2D;&#x65AD;&#x4E4B;&#x524D;&#x9700;&#x8981;&#x5148;tryLock()&#x83B7;&#x53D6;worker&#x9501;&#xFF0C;&#x610F;&#x5473;&#x7740;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;worker&#x4E0D;&#x80FD;&#x4E2D;&#x65AD;&#xFF0C;&#x56E0;&#x4E3A;worker.tryLock()&#x5931;&#x8D25;&#xFF0C;&#x4E14;&#x9501;&#x662F;&#x4E0D;&#x53EF;&#x91CD;&#x5165;&#x7684;</p>
+<p>&#x6545;shutdown()&#x53EA;&#x6709;&#x5BF9;&#x80FD;&#x83B7;&#x53D6;&#x5230;worker&#x9501;&#x7684;&#x7A7A;&#x95F2;&#x7EBF;&#x7A0B;&#xFF08;&#x6B63;&#x5728;&#x4ECE;workQueue&#x4E2D;getTask()&#xFF0C;&#x6B64;&#x65F6;worker&#x6CA1;&#x6709;&#x52A0;&#x9501;&#xFF09;&#x53D1;&#x9001;&#x4E2D;&#x65AD;&#x4FE1;&#x53F7;</p>
+<p>&#x7531;&#x6B64;&#x53EF;&#x4EE5;&#x5C06;worker&#x5212;&#x5206;&#x4E3A;&#xFF1A;
+1&#x3001;&#x7A7A;&#x95F2;worker&#xFF1A;&#x6B63;&#x5728;&#x4ECE;workQueue&#x963B;&#x585E;&#x961F;&#x5217;&#x4E2D;&#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#x7684;worker
+2&#x3001;&#x8FD0;&#x884C;&#x4E2D;worker&#xFF1A;&#x6B63;&#x5728;task.run()&#x6267;&#x884C;&#x4EFB;&#x52A1;&#x7684;worker</p>
+<p>&#x6B63;&#x963B;&#x585E;&#x5728;getTask()&#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#x7684;worker&#x5728;&#x88AB;&#x4E2D;&#x65AD;&#x540E;&#xFF0C;&#x4F1A;&#x629B;&#x51FA;InterruptedException&#xFF0C;&#x4E0D;&#x518D;&#x963B;&#x585E;&#x83B7;&#x53D6;&#x4EFB;&#x52A1;</p>
+<p>&#x6355;&#x83B7;&#x4E2D;&#x65AD;&#x5F02;&#x5E38;&#x540E;&#xFF0C;&#x5C06;&#x7EE7;&#x7EED;&#x5FAA;&#x73AF;&#x5230;getTask()&#x6700;&#x5F00;&#x59CB;&#x7684;&#x5224;&#x65AD;&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x5F53;&#x7EBF;&#x7A0B;&#x6C60;&#x662F;shutdown&#x72B6;&#x6001;&#xFF0C;&#x4E14;workQueue.isEmpty&#x65F6;&#xFF0C;return null&#xFF0C;&#x8FDB;&#x884C;worker&#x7EBF;&#x7A0B;&#x9000;&#x51FA;&#x903B;&#x8F91;</p>
+<p>&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;interruptIdleWorkers()&#x65F6;&#x591A;&#x4E2A;worker&#x6B63;&#x5728;&#x8FD0;&#x884C;&#xFF0C;&#x4E0D;&#x4F1A;&#x5BF9;&#x5176;&#x53D1;&#x51FA;&#x4E2D;&#x65AD;&#x4FE1;&#x53F7;&#xFF0C;&#x5047;&#x8BBE;&#x6B64;&#x65F6;workQueue&#x4E5F;&#x4E0D;&#x4E3A;&#x7A7A;</p>
+<p>&#x90A3;&#x4E48;&#x5F53;&#x591A;&#x4E2A;worker&#x8FD0;&#x884C;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x4F1A;&#x5230;workQueue&#x963B;&#x585E;&#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#xFF0C;&#x83B7;&#x53D6;&#x5230;&#x7684;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#xFF0C;&#x6CA1;&#x83B7;&#x53D6;&#x5230;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x8FD8;&#x662F;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#xFF0C;&#x4F1A;&#x4E00;&#x76F4;workQueue.take()&#x963B;&#x585E;&#x4F4F;&#xFF0C;&#x7EBF;&#x7A0B;&#x65E0;&#x6CD5;&#x7EC8;&#x6B62;&#xFF0C;&#x56E0;&#x4E3A;workQueue&#x5DF2;&#x7ECF;&#x7A7A;&#x4E86;&#xFF0C;&#x4E14;shutdown&#x540E;&#x4E0D;&#x4F1A;&#x63A5;&#x6536;&#x65B0;&#x4EFB;&#x52A1;&#x4E86;</p>
+<p>&#x8FD9;&#x5C31;&#x9700;&#x8981;&#x5728;shutdown()&#x540E;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x53D1;&#x51FA;&#x4E2D;&#x65AD;&#x4FE1;&#x53F7;</p>
+<p>Doug Lea&#x5927;&#x795E;&#x5DE7;&#x5999;&#x7684;&#x5728;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x7EBF;&#x7A0B;&#x6C60;&#x4EA7;&#x7EC8;&#x6B62;&#x7684;&#x5730;&#x65B9;&#x5B89;&#x63D2;&#x4E86;tryTerminated()&#x5C1D;&#x8BD5;&#x7EBF;&#x7A0B;&#x6C60;&#x7EC8;&#x6B62;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x5E76;&#x5728;&#x5176;&#x4E2D;&#x5224;&#x65AD;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x5DF2;&#x7ECF;&#x8FDB;&#x5165;&#x7EC8;&#x6B62;&#x6D41;&#x7A0B;&#xFF0C;&#x6CA1;&#x6709;&#x4EFB;&#x52A1;&#x7B49;&#x5F85;&#x6267;&#x884C;&#x4E86;&#xFF0C;&#x4F46;&#x7EBF;&#x7A0B;&#x6C60;&#x8FD8;&#x6709;&#x7EBF;&#x7A0B;&#xFF0C;&#x4E2D;&#x65AD;&#x5524;&#x9192;&#x4E00;&#x4E2A;&#x7A7A;&#x95F2;&#x7EBF;&#x7A0B;</p>
+<p>shutdown()&#x7684;&#x6700;&#x540E;&#x4E5F;&#x8C03;&#x7528;&#x4E86;tryTerminated()&#x65B9;&#x6CD5;&#xFF0C;&#x4E0B;&#x9762;&#x770B;&#x770B;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x903B;&#x8F91;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">/**
+ * Transitions to TERMINATED state if either (SHUTDOWN and pool
+ * and queue empty) or (STOP and pool empty).  If otherwise
+ * eligible to terminate but workerCount is nonzero, interrupts an
+ * idle worker to ensure that shutdown signals propagate. This
+ * method must be called following any action that might make
+ * termination possible -- reducing worker count or removing tasks
+ * from the queue during shutdown. The method is non-private to
+ * allow access from ScheduledThreadPoolExecutor.
+ *
+ * &#x5728;&#x4EE5;&#x4E0B;&#x60C5;&#x51B5;&#x5C06;&#x7EBF;&#x7A0B;&#x6C60;&#x53D8;&#x4E3A;TERMINATED&#x7EC8;&#x6B62;&#x72B6;&#x6001;
+ * shutdown &#x4E14; &#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;worker &#x548C; workQueue&#x961F;&#x5217; &#x90FD;empty
+ * stop &#x4E14;  &#x6CA1;&#x6709;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;worker
+ *
+ * &#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x5728;&#x4EFB;&#x4F55;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x7EBF;&#x7A0B;&#x6C60;&#x7EC8;&#x6B62;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x5982;&#xFF1A;
+ * &#x51CF;&#x5C11;worker&#x6570;&#x91CF;
+ * shutdown&#x65F6;&#x4ECE;queue&#x4E2D;&#x79FB;&#x9664;&#x4EFB;&#x52A1;
+ *
+ * &#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4E0D;&#x662F;&#x79C1;&#x6709;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5141;&#x8BB8;&#x5B50;&#x7C7B;ScheduledThreadPoolExecutor&#x8C03;&#x7528;
+ */
+final void tryTerminate() {
+    //&#x8FD9;&#x4E2A;for&#x5FAA;&#x73AF;&#x4E3B;&#x8981;&#x662F;&#x548C;&#x8FDB;&#x5165;&#x5173;&#x95ED;&#x7EBF;&#x7A0B;&#x6C60;&#x64CD;&#x4F5C;&#x7684;CAS&#x5224;&#x65AD;&#x7ED3;&#x5408;&#x4F7F;&#x7528;&#x7684;
+    for (;;) {
+        int c = ctl.get();
+
+        /**
+         * &#x7EBF;&#x7A0B;&#x6C60;&#x662F;&#x5426;&#x9700;&#x8981;&#x7EC8;&#x6B62;
+         * &#x5982;&#x679C;&#x4EE5;&#x4E0B;3&#x4E2D;&#x60C5;&#x51B5;&#x4EFB;&#x4E00;&#x4E3A;true&#xFF0C;return&#xFF0C;&#x4E0D;&#x8FDB;&#x884C;&#x7EC8;&#x6B62;
+         * 1&#x3001;&#x8FD8;&#x5728;&#x8FD0;&#x884C;&#x72B6;&#x6001;
+         * 2&#x3001;&#x72B6;&#x6001;&#x662F;TIDYING&#x3001;&#x6216; TERMINATED&#xFF0C;&#x5DF2;&#x7ECF;&#x7EC8;&#x6B62;&#x8FC7;&#x4E86;
+         * 3&#x3001;SHUTDOWN &#x4E14; workQueue&#x4E0D;&#x4E3A;&#x7A7A;
+         */
+        if (isRunning(c) ||
+            runStateAtLeast(c, TIDYING) ||
+            (runStateOf(c) == SHUTDOWN &amp;&amp; ! workQueue.isEmpty()))
+            return;
+
+        /**
+         * &#x53EA;&#x6709;shutdown&#x72B6;&#x6001; &#x4E14; workQueue&#x4E3A;&#x7A7A;&#xFF0C;&#x6216;&#x8005; stop&#x72B6;&#x6001;&#x80FD;&#x6267;&#x884C;&#x5230;&#x8FD9;&#x4E00;&#x6B65;
+         * &#x5982;&#x679C;&#x6B64;&#x65F6;&#x7EBF;&#x7A0B;&#x6C60;&#x8FD8;&#x6709;&#x7EBF;&#x7A0B;&#xFF08;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x4EFB;&#x52A1;&#xFF0C;&#x6B63;&#x5728;&#x7B49;&#x5F85;&#x4EFB;&#x52A1;&#xFF09;
+         * &#x4E2D;&#x65AD;&#x5524;&#x9192;&#x4E00;&#x4E2A;&#x6B63;&#x5728;&#x7B49;&#x4EFB;&#x52A1;&#x7684;&#x7A7A;&#x95F2;worker
+         * &#x5524;&#x9192;&#x540E;&#x518D;&#x6B21;&#x5224;&#x65AD;&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;&#xFF0C;&#x4F1A;return null&#xFF0C;&#x8FDB;&#x5165;processWorkerExit()&#x6D41;&#x7A0B;
+         */
+        if (workerCountOf(c) != 0) { // Eligible to terminate &#x8D44;&#x683C;&#x7EC8;&#x6B62;
+            interruptIdleWorkers(ONLY_ONE); //&#x4E2D;&#x65AD;workers&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x7A7A;&#x95F2;&#x4EFB;&#x52A1;&#xFF0C;&#x53C2;&#x6570;&#x4E3A;true&#xFF0C;&#x53EA;&#x4E2D;&#x65AD;&#x4E00;&#x4E2A;
+            return;
+        }
+
+        /**
+         * &#x5982;&#x679C;&#x72B6;&#x6001;&#x662F;SHUTDOWN&#xFF0C;workQueue&#x4E5F;&#x4E3A;&#x7A7A;&#x4E86;&#xFF0C;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;worker&#x4E5F;&#x6CA1;&#x6709;&#x4E86;&#xFF0C;&#x5F00;&#x59CB;terminated
+         */
+        final ReentrantLock mainLock = this.mainLock;
+        mainLock.lock();
+        try {
+            //CAS&#xFF1A;&#x5C06;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;ctl&#x53D8;&#x6210;TIDYING&#xFF08;&#x6240;&#x6709;&#x7684;&#x4EFB;&#x52A1;&#x88AB;&#x7EC8;&#x6B62;&#xFF0C;workCount&#x4E3A;0&#xFF0C;&#x4E3A;&#x6B64;&#x72B6;&#x6001;&#x65F6;&#x5C06;&#x4F1A;&#x8C03;&#x7528;terminated()&#x65B9;&#x6CD5;&#xFF09;&#xFF0C;&#x671F;&#x95F4;ctl&#x6709;&#x53D8;&#x5316;&#x5C31;&#x4F1A;&#x5931;&#x8D25;&#xFF0C;&#x4F1A;&#x518D;&#x6B21;for&#x5FAA;&#x73AF;
+            if (ctl.compareAndSet(c, ctlOf(TIDYING, 0))) {
+                try {
+                    terminated(); //&#x9700;&#x5B50;&#x7C7B;&#x5B9E;&#x73B0;
+                }
+                finally {
+                    ctl.set(ctlOf(TERMINATED, 0)); //&#x5C06;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;ctl&#x53D8;&#x6210;TERMINATED
+                    termination.signalAll(); //&#x5524;&#x9192;&#x8C03;&#x7528;&#x4E86; &#x7B49;&#x5F85;&#x7EBF;&#x7A0B;&#x6C60;&#x7EC8;&#x6B62;&#x7684;&#x7EBF;&#x7A0B; awaitTermination()
+                }
+                return;
+            }
+        }
+        finally {
+            mainLock.unlock();
+        }
+        // else retry on failed CAS
+        // &#x5982;&#x679C;&#x4E0A;&#x9762;&#x7684;CAS&#x5224;&#x65AD;false&#xFF0C;&#x518D;&#x6B21;&#x5FAA;&#x73AF;
+    }
+}<br></div></div>
+
+<p>tryTerminate() &#x6267;&#x884C;&#x6D41;&#x7A0B;&#xFF1A;</p>
+<p>1&#x3001;&#x5224;&#x65AD;&#x7EBF;&#x7A0B;&#x6C60;&#x662F;&#x5426;&#x9700;&#x8981;&#x8FDB;&#x5165;&#x7EC8;&#x6B62;&#x6D41;&#x7A0B;&#xFF08;&#x53EA;&#x6709;&#x5F53;shutdown&#x72B6;&#x6001;+workQueue.isEmpty &#x6216; stop&#x72B6;&#x6001;&#xFF0C;&#x624D;&#x9700;&#x8981;&#xFF09;</p>
+<p>2&#x3001;&#x5224;&#x65AD;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x662F;&#x5426;&#x8FD8;&#x6709;&#x7EBF;&#x7A0B;&#xFF0C;&#x6709;&#x5219; interruptIdleWorkers(ONLY_ONE) &#x5C1D;&#x8BD5;&#x4E2D;&#x65AD;&#x4E00;&#x4E2A;&#x7A7A;&#x95F2;&#x7EBF;&#x7A0B;&#xFF08;&#x6B63;&#x662F;&#x8FD9;&#x4E2A;&#x903B;&#x8F91;&#x53EF;&#x4EE5;&#x518D;&#x6B21;&#x53D1;&#x51FA;&#x4E2D;&#x65AD;&#x4FE1;&#x53F7;&#xFF0C;&#x4E2D;&#x65AD;&#x963B;&#x585E;&#x5728;&#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#x7684;&#x7EBF;&#x7A0B;&#xFF09;</p>
+<p>3&#x3001;&#x5982;&#x679C;&#x72B6;&#x6001;&#x662F;SHUTDOWN&#xFF0C;workQueue&#x4E5F;&#x4E3A;&#x7A7A;&#x4E86;&#xFF0C;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;worker&#x4E5F;&#x6CA1;&#x6709;&#x4E86;&#xFF0C;&#x5F00;&#x59CB;terminated
+    &#x4F1A;&#x5148;&#x4E0A;&#x9501;&#xFF0C;&#x5C06;&#x7EBF;&#x7A0B;&#x6C60;&#x7F6E;&#x4E3A;tidying&#x72B6;&#x6001;&#xFF0C;&#x4E4B;&#x540E;&#x8C03;&#x7528;&#x9700;&#x5B50;&#x7C7B;&#x5B9E;&#x73B0;&#x7684; terminated()&#xFF0C;&#x6700;&#x540E;&#x7EBF;&#x7A0B;&#x6C60;&#x7F6E;&#x4E3A;terminated&#x72B6;&#x6001;&#xFF0C;&#x5E76;&#x5524;&#x9192;&#x6240;&#x6709;&#x7B49;&#x5F85;&#x7EBF;&#x7A0B;&#x6C60;&#x7EC8;&#x6B62;&#x8FD9;&#x4E2A;Condition&#x7684;&#x7EBF;&#x7A0B;</p>
+<h2 id="shutdownnow------&#x5F3A;&#x786C;&#x7684;&#x7EC8;&#x6B62;&#x7EBF;&#x7A0B;&#x6C60;">shutdownNow()  --  &#x5F3A;&#x786C;&#x7684;&#x7EC8;&#x6B62;&#x7EBF;&#x7A0B;&#x6C60;</h2>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">/**
+ * Attempts to stop all actively executing tasks, halts the
+ * processing of waiting tasks, and returns a list of the tasks
+ * that were awaiting execution. These tasks are drained (removed)
+ * from the task queue upon return from this method.
+ * &#x5C1D;&#x8BD5;&#x505C;&#x6B62;&#x6240;&#x6709;&#x6D3B;&#x52A8;&#x7684;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x505C;&#x6B62;&#x7B49;&#x5F85;&#x4EFB;&#x52A1;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x6B63;&#x5728;&#x7B49;&#x5F85;&#x88AB;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#x5217;&#x8868;
+ * &#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;&#x5217;&#x8868;&#x662F;&#x4ECE;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x4E2D;&#x6392;&#x51FA;&#xFF08;&#x5220;&#x9664;&#xFF09;&#x7684;
+ *
+ * &lt;p&gt;This method does not wait for actively executing tasks to
+ * terminate.  Use {@link #awaitTermination awaitTermination} to
+ * do that.
+ * &#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4E0D;&#x7528;&#x7B49;&#x5230;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#x7ED3;&#x675F;&#xFF0C;&#x8981;&#x7B49;&#x5F85;&#x7EBF;&#x7A0B;&#x6C60;&#x7EC8;&#x6B62;&#x53EF;&#x4F7F;&#x7528;awaitTermination()
+ *
+ * &lt;p&gt;There are no guarantees beyond best-effort attempts to stop
+ * processing actively executing tasks.  This implementation
+ * cancels tasks via {@link Thread#interrupt}, so any task that
+ * fails to respond to interrupts may never terminate.
+ * &#x9664;&#x4E86;&#x5C3D;&#x529B;&#x5C1D;&#x8BD5;&#x505C;&#x6B62;&#x8FD0;&#x884C;&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x4FDD;&#x8BC1;
+ * &#x53D6;&#x6D88;&#x4EFB;&#x52A1;&#x662F;&#x901A;&#x8FC7;Thread.interrupt()&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4EFB;&#x4F55;&#x54CD;&#x5E94;&#x4E2D;&#x65AD;&#x5931;&#x8D25;&#x7684;&#x4EFB;&#x52A1;&#x53EF;&#x80FD;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x7ED3;&#x675F;
+ *
+ * @throws SecurityException {@inheritDoc}
+ */
+public List&lt;Runnable&gt; shutdownNow() {
+    List&lt;Runnable&gt; tasks;
+    final ReentrantLock mainLock = this.mainLock;
+    mainLock.lock(); //&#x4E0A;&#x9501;
+
+    try {
+        //&#x5224;&#x65AD;&#x8C03;&#x7528;&#x8005;&#x662F;&#x5426;&#x6709;&#x6743;&#x9650;shutdown&#x7EBF;&#x7A0B;&#x6C60;
+        checkShutdownAccess();
+
+        //CAS+&#x5FAA;&#x73AF;&#x8BBE;&#x7F6E;&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;&#x4E3A;stop
+        advanceRunState(STOP);
+
+        //&#x4E2D;&#x65AD;&#x6240;&#x6709;&#x7EBF;&#x7A0B;&#xFF0C;&#x5305;&#x62EC;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x4EFB;&#x52A1;&#x7684;
+        interruptWorkers();
+
+        tasks = drainQueue(); //&#x5C06;workQueue&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x653E;&#x5165;&#x4E00;&#x4E2A;List&#x5E76;&#x8FD4;&#x56DE;
+    }
+    finally {
+        mainLock.unlock(); //&#x89E3;&#x9501;
+    }
+
+    //&#x5C1D;&#x8BD5;&#x7EC8;&#x6B62;&#x7EBF;&#x7A0B;&#x6C60;
+    tryTerminate();
+
+    return tasks; //&#x8FD4;&#x56DE;workQueue&#x4E2D;&#x672A;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;
+}<br></div></div>
+
+<p>shutdownNow() &#x548C; shutdown()&#x7684;&#x5927;&#x4F53;&#x6D41;&#x7A0B;&#x76F8;&#x4F3C;&#xFF0C;&#x5DEE;&#x522B;&#x662F;&#xFF1A;</p>
+<p>1&#x3001;&#x5C06;&#x7EBF;&#x7A0B;&#x6C60;&#x66F4;&#x65B0;&#x4E3A;stop&#x72B6;&#x6001;</p>
+<p>2&#x3001;&#x8C03;&#x7528; interruptWorkers() &#x4E2D;&#x65AD;&#x6240;&#x6709;&#x7EBF;&#x7A0B;&#xFF0C;&#x5305;&#x62EC;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x7EBF;&#x7A0B;</p>
+<p>3&#x3001;&#x5C06;workQueue&#x4E2D;&#x5F85;&#x5904;&#x7406;&#x7684;&#x4EFB;&#x52A1;&#x79FB;&#x5230;&#x4E00;&#x4E2A;List&#x4E2D;&#xFF0C;&#x5E76;&#x5728;&#x65B9;&#x6CD5;&#x6700;&#x540E;&#x8FD4;&#x56DE;&#xFF0C;&#x8BF4;&#x660E;shutdownNow()&#x540E;&#x4E0D;&#x4F1A;&#x518D;&#x5904;&#x7406;workQueue&#x4E2D;&#x7684;&#x4EFB;&#x52A1;</p>
+<p><strong>interruptWorkers()</strong></p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">private void interruptWorkers() {
+    final ReentrantLock mainLock = this.mainLock;
+    mainLock.lock();
+    try {
+        for (Worker w : workers)
+            w.interruptIfStarted();
+    } finally {
+        mainLock.unlock();
+    }
+}<br></div></div>
+
+<p>interruptWorkers() &#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5FAA;&#x73AF;&#x5BF9;&#x6240;&#x6709;worker&#x8C03;&#x7528; interruptIfStarted()&#xFF0C;&#x5176;&#x4E2D;&#x4F1A;&#x5224;&#x65AD;worker&#x7684;AQS state&#x662F;&#x5426;&#x5927;&#x4E8E;0&#xFF0C;&#x5373;worker&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x5F00;&#x59CB;&#x8FD0;&#x4F5C;&#xFF0C;&#x518D;&#x8C03;&#x7528;Thread.interrupt()</p>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5BF9;&#x4E8E;&#x8FD0;&#x884C;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;Thread.interrupt()&#x5E76;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x7EBF;&#x7A0B;&#x88AB;&#x7EC8;&#x6B62;&#xFF0C;task.run()&#x5185;&#x90E8;&#x53EF;&#x80FD;&#x6355;&#x83B7;&#x4E86;InterruptException&#xFF0C;&#x6CA1;&#x6709;&#x4E0A;&#x629B;&#xFF0C;&#x5BFC;&#x81F4;&#x7EBF;&#x7A0B;&#x4E00;&#x76F4;&#x65E0;&#x6CD5;&#x7ED3;&#x675F;</p>
+<p>&#x53C2;&#x6570;&#xFF1A;
+    timeout&#xFF1A;&#x8D85;&#x65F6;&#x65F6;&#x95F4;
+    unit&#xFF1A;     timeout&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x7684;&#x5355;&#x4F4D;
+&#x8FD4;&#x56DE;&#xFF1A;
+    true&#xFF1A;&#x7EBF;&#x7A0B;&#x6C60;&#x7EC8;&#x6B62;
+    false&#xFF1A;&#x8D85;&#x8FC7;timeout&#x6307;&#x5B9A;&#x65F6;&#x95F4;
+&#x5728;&#x53D1;&#x51FA;&#x4E00;&#x4E2A;shutdown&#x8BF7;&#x6C42;&#x540E;&#xFF0C;&#x5728;&#x4EE5;&#x4E0B;3&#x79CD;&#x60C5;&#x51B5;&#x53D1;&#x751F;&#x4E4B;&#x524D;&#xFF0C;awaitTermination()&#x90FD;&#x4F1A;&#x88AB;&#x963B;&#x585E;
+1&#x3001;&#x6240;&#x6709;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x6267;&#x884C;
+2&#x3001;&#x5230;&#x8FBE;&#x8D85;&#x65F6;&#x65F6;&#x95F4;
+3&#x3001;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x88AB;&#x4E2D;&#x65AD;</p>
+<pre><code>/**
+ * Wait condition to support awaitTermination
+ */
+private final Condition termination = mainLock.newCondition();
+</code></pre><p>awaitTermination() &#x5FAA;&#x73AF;&#x7684;&#x5224;&#x65AD;&#x7EBF;&#x7A0B;&#x6C60;&#x662F;&#x5426;terminated&#x7EC8;&#x6B62; &#x6216; &#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x8D85;&#x8FC7;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;termination&#x8FD9;&#x4E2A;Condition&#x963B;&#x585E;&#x7B49;&#x5F85;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;</p>
+<p>termination.awaitNanos() &#x662F;&#x901A;&#x8FC7; LockSupport.parkNanos(this, nanosTimeout)&#x5B9E;&#x73B0;&#x7684;&#x963B;&#x585E;&#x7B49;&#x5F85;</p>
+<p>&#x963B;&#x585E;&#x7B49;&#x5F85;&#x8FC7;&#x7A0B;&#x4E2D;&#x53D1;&#x751F;&#x4EE5;&#x4E0B;&#x5177;&#x4F53;&#x60C5;&#x51B5;&#x4F1A;&#x89E3;&#x9664;&#x963B;&#x585E;&#xFF08;&#x5BF9;&#x4E0A;&#x9762;3&#x79CD;&#x60C5;&#x51B5;&#x7684;&#x89E3;&#x91CA;&#xFF09;&#xFF1A;</p>
+<p>1&#x3001;&#x5982;&#x679C;&#x53D1;&#x751F;&#x4E86; termination.signalAll()&#xFF08;&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#x662F; LockSupport.unpark()&#xFF09;&#x4F1A;&#x5524;&#x9192;&#x963B;&#x585E;&#x7B49;&#x5F85;&#xFF0C;&#x4E14;&#x7531;&#x4E8E;ThreadPoolExecutor&#x53EA;&#x6709;&#x5728; tryTerminated()&#x5C1D;&#x8BD5;&#x7EC8;&#x6B62;&#x7EBF;&#x7A0B;&#x6C60;&#x6210;&#x529F;&#xFF0C;&#x5C06;&#x7EBF;&#x7A0B;&#x6C60;&#x66F4;&#x65B0;&#x4E3A;terminated&#x72B6;&#x6001;&#x540E;&#x624D;&#x4F1A;signalAll()&#xFF0C;&#x6545;awaitTermination()&#x518D;&#x6B21;&#x5224;&#x65AD;&#x72B6;&#x6001;&#x4F1A;return true&#x9000;&#x51FA;</p>
+<p>2&#x3001;&#x5982;&#x679C;&#x8FBE;&#x5230;&#x4E86;&#x8D85;&#x65F6;&#x65F6;&#x95F4; termination.awaitNanos() &#x4E5F;&#x4F1A;&#x8FD4;&#x56DE;&#xFF0C;&#x6B64;&#x65F6;nano==0&#xFF0C;&#x518D;&#x6B21;&#x5FAA;&#x73AF;&#x5224;&#x65AD;return false&#xFF0C;&#x7B49;&#x5F85;&#x7EBF;&#x7A0B;&#x6C60;&#x7EC8;&#x6B62;&#x5931;&#x8D25;</p>
+<p>3&#x3001;&#x5982;&#x679C;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x88AB; Thread.interrupt()&#xFF0C;termination.awaitNanos()&#x4F1A;&#x4E0A;&#x629B;InterruptException&#xFF0C;awaitTermination()&#x7EE7;&#x7EED;&#x4E0A;&#x629B;&#x7ED9;&#x8C03;&#x7528;&#x7EBF;&#x7A0B;&#xFF0C;&#x4F1A;&#x4EE5;&#x5F02;&#x5E38;&#x7684;&#x5F62;&#x5F0F;&#x89E3;&#x9664;&#x963B;&#x585E;</p>
+<p>&#x6545;&#x7EC8;&#x6B62;&#x7EBF;&#x7A0B;&#x6C60;&#x5E76;&#x9700;&#x8981;&#x77E5;&#x9053;&#x5176;&#x662F;&#x5426;&#x7EC8;&#x6B62;&#x53EF;&#x4EE5;&#x7528;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">executorService.shutdown();
+try{
+    while(!executorService.awaitTermination(500, TimeUnit.MILLISECONDS)) {
+        LOGGER.debug(&quot;Waiting for terminate&quot;);
+    }
+}
+catch (InterruptedException e) {
+    //&#x4E2D;&#x65AD;&#x5904;&#x7406;
+}<br></div></div>
+
+<h2 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h2>
+<p><a href="http://www.cnblogs.com/trust-freedom/p/6693601.html" target="_blank">http://www.cnblogs.com/trust-freedom/p/6693601.html</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="threadpool2.html" class="navigation navigation-prev " aria-label="Previous page: ThreadPool(二)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../mvp/readme.html" class="navigation navigation-next " aria-label="Next page: Mvp..">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ThreadPool(三)","level":"1.4.3.3","depth":3,"next":{"title":"Mvp..","level":"1.4.4","depth":2,"path":"android/mvp/readme.md","ref":"android/mvp/readme.md","articles":[{"title":"Mvp架构","level":"1.4.4.1","depth":3,"path":"android/mvp/mvp架构.md","ref":"android/mvp/mvp架构.md","articles":[]}]},"previous":{"title":"ThreadPool(二)","level":"1.4.3.2","depth":3,"path":"android/java/threadpool2.md","ref":"android/java/threadpool2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/java/threadpool3.md","mtime":"2018-06-15T06:11:03.957Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-21T09:44:30.252Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

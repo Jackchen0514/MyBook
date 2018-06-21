@@ -1,0 +1,1853 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>ThreadPool(二) · 技术博客</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="jackchen">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="threadpool3.html" />
+    
+    
+    <link rel="prev" href="threadpool1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    个人简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../gitbook/">
+            
+                <a href="../../gitbook/">
+            
+                    
+                    Gitbook..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../gitbook/create.html">
+            
+                <a href="../../gitbook/create.html">
+            
+                    
+                    Gitbook各系统搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../gitbook/use.html">
+            
+                <a href="../../gitbook/use.html">
+            
+                    
+                    Gitbook基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../gerrit/">
+            
+                <a href="../../gerrit/">
+            
+                    
+                    Gerrit + Git..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../gerrit/ubuntu_build.html">
+            
+                <a href="../../gerrit/ubuntu_build.html">
+            
+                    
+                    Gerrit+Ubuntu搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../gerrit/centos_build.html">
+            
+                <a href="../../gerrit/centos_build.html">
+            
+                    
+                    Gerrit+CentOS搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../gerrit/use.html">
+            
+                <a href="../../gerrit/use.html">
+            
+                    
+                    Git基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../android.html">
+            
+                <a href="../android.html">
+            
+                    
+                    Android..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../adb_cmd.html">
+            
+                <a href="../adb_cmd.html">
+            
+                    
+                    adb命令集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../remake/remake1.html">
+            
+                <a href="../remake/remake1.html">
+            
+                    
+                    android反编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    Java..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="threadpool1.html">
+            
+                <a href="threadpool1.html">
+            
+                    
+                    ThreadPool(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3.2" data-path="threadpool2.html">
+            
+                <a href="threadpool2.html">
+            
+                    
+                    ThreadPool(二)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.3" data-path="threadpool3.html">
+            
+                <a href="threadpool3.html">
+            
+                    
+                    ThreadPool(三)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../mvp/readme.html">
+            
+                <a href="../mvp/readme.html">
+            
+                    
+                    Mvp..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="../mvp/mvp架构.html">
+            
+                <a href="../mvp/mvp架构.html">
+            
+                    
+                    Mvp架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../dagger/readme.html">
+            
+                <a href="../dagger/readme.html">
+            
+                    
+                    Dagger..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="../dagger/dagger1.html">
+            
+                <a href="../dagger/dagger1.html">
+            
+                    
+                    Dagger2(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="../dagger/dagger2.html">
+            
+                <a href="../dagger/dagger2.html">
+            
+                    
+                    Dagger2(二)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="../dagger/dagger3.html">
+            
+                <a href="../dagger/dagger3.html">
+            
+                    
+                    Dagger2(三)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../faceai/baidufacesdk.html">
+            
+                <a href="../faceai/baidufacesdk.html">
+            
+                    
+                    Face
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../rxjava/rxjava.html">
+            
+                <a href="../rxjava/rxjava.html">
+            
+                    
+                    RxJava..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.7.1" data-path="../rxjava/rxjava1_1.html">
+            
+                <a href="../rxjava/rxjava1_1.html">
+            
+                    
+                    RxJava1.x(1/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2" data-path="../rxjava/rxjava1_2.html">
+            
+                <a href="../rxjava/rxjava1_2.html">
+            
+                    
+                    RxJava1.x(2/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.3" data-path="../rxjava/rxjava1_3.html">
+            
+                <a href="../rxjava/rxjava1_3.html">
+            
+                    
+                    RxJava1.x(3/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.4" data-path="../rxjava/rxjava2_1.html">
+            
+                <a href="../rxjava/rxjava2_1.html">
+            
+                    
+                    RxJava2.x(1/2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.5" data-path="../rxjava/rxjava2_2.html">
+            
+                <a href="../rxjava/rxjava2_2.html">
+            
+                    
+                    RxJava2.x(2/2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.6" data-path="../rxjava/rxjava1&2.html">
+            
+                <a href="../rxjava/rxjava1&2.html">
+            
+                    
+                    RxJava1.x&2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.7" data-path="../rxjava/rxjava_backpressure.html">
+            
+                <a href="../rxjava/rxjava_backpressure.html">
+            
+                    
+                    BackPressure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.8" data-path="../rxjava/rxpermisson.html">
+            
+                <a href="../rxjava/rxpermisson.html">
+            
+                    
+                    RxPermisson
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../okhttp/readme.html">
+            
+                <a href="../okhttp/readme.html">
+            
+                    
+                    OkHttp..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.8.1" data-path="../okhttp/okhttp1.html">
+            
+                <a href="../okhttp/okhttp1.html">
+            
+                    
+                    Okhttp缓存详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../retrofit/retrofit.html">
+            
+                <a href="../retrofit/retrofit.html">
+            
+                    
+                    Retrofit..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.9.1" data-path="../retrofit/retrofit2_1.html">
+            
+                <a href="../retrofit/retrofit2_1.html">
+            
+                    
+                    Retrofit(1/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.2" data-path="../retrofit/retrofit2_2.html">
+            
+                <a href="../retrofit/retrofit2_2.html">
+            
+                    
+                    Retrofit(2/3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.3" data-path="../retrofit/retrofit1&2.html">
+            
+                <a href="../retrofit/retrofit1&2.html">
+            
+                    
+                    Retrofit1.x&2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.4" data-path="../retrofit/retrofit2.x&RxJava2.x.html">
+            
+                <a href="../retrofit/retrofit2.x&RxJava2.x.html">
+            
+                    
+                    Retrofit2.x+RxJava2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../widget/readme.html">
+            
+                <a href="../widget/readme.html">
+            
+                    
+                    widget..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.10.1" data-path="../widget/refreshlayout.html">
+            
+                <a href="../widget/refreshlayout.html">
+            
+                    
+                    SwipeRefreshLayout1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10.2" data-path="../widget/swipeRefreshlayout.html">
+            
+                <a href="../widget/swipeRefreshlayout.html">
+            
+                    
+                    SwipeRefreshLayout2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../camera/readme.html">
+            
+                <a href="../camera/readme.html">
+            
+                    
+                    Camera..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.11.1" data-path="../camera/camera.html">
+            
+                <a href="../camera/camera.html">
+            
+                    
+                    Camera开发(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2" data-path="../camera/camera1.html">
+            
+                <a href="../camera/camera1.html">
+            
+                    
+                    Camera开发(二)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../react-native/readme.html">
+            
+                <a href="../react-native/readme.html">
+            
+                    
+                    ReactNative..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.12.1" data-path="../react-native/react-native1.html">
+            
+                <a href="../react-native/react-native1.html">
+            
+                    
+                    react-native(1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../gradle/readme.html">
+            
+                <a href="../../gradle/readme.html">
+            
+                    
+                    Gradle..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../gradle/groovy1.html">
+            
+                <a href="../../gradle/groovy1.html">
+            
+                    
+                    Gradle开发(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../Http/readme.html">
+            
+                <a href="../../Http/readme.html">
+            
+                    
+                    Http..
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../Http/http1.html">
+            
+                <a href="../../Http/http1.html">
+            
+                    
+                    Http请求头和请求体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../Http/http2.html">
+            
+                <a href="../../Http/http2.html">
+            
+                    
+                    Http相应头与状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../Http/restful.html">
+            
+                <a href="../../Http/restful.html">
+            
+                    
+                    Restful架构详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../Linux/readme.html">
+            
+                <a href="../../Linux/readme.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../nginx/readme.html">
+            
+                <a href="../../nginx/readme.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../fangkj/">
+            
+                <a href="../../fangkj/">
+            
+                    
+                    访客机
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >ThreadPool(二)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="java&#x7EBF;&#x7A0B;&#x6C60;threadpoolexecutor&#x4F7F;&#x7528;&#x548C;&#x5206;&#x6790;&#x4E8C;---execute&#x539F;&#x7406;">Java&#x7EBF;&#x7A0B;&#x6C60;ThreadPoolExecutor&#x4F7F;&#x7528;&#x548C;&#x5206;&#x6790;(&#x4E8C;) - execute()&#x539F;&#x7406;</h1>
+<h2 id="&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x6267;&#x884C;&#x6D41;&#x7A0B;">&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x6267;&#x884C;&#x6D41;&#x7A0B;</h2>
+<p><img src="https://images2015.cnblogs.com/blog/677054/201704/677054-20170408210803050-1576156526.png" alt="image"></p>
+<p>1&#x3001;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x5C11;&#x4E8E;corePoolSize&#xFF0C;&#x5C31;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x7EBF;&#x7A0B;&#x6765;&#x6267;&#x884C;&#x65B0;&#x6DFB;&#x52A0;&#x7684;&#x4EFB;&#x52A1;
+2&#x3001;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;corePoolSize&#xFF0C;&#x4F46;&#x961F;&#x5217;workQueue&#x672A;&#x6EE1;&#xFF0C;&#x5219;&#x5C06;&#x65B0;&#x6DFB;&#x52A0;&#x7684;&#x4EFB;&#x52A1;&#x653E;&#x5230;workQueue&#x4E2D;
+3&#x3001;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;corePoolSize&#xFF0C;&#x4E14;&#x961F;&#x5217;workQueue&#x5DF2;&#x6EE1;&#xFF0C;&#x4F46;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x5C0F;&#x4E8E;maximumPoolSize&#xFF0C;&#x5219;&#x4F1A;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x7EBF;&#x7A0B;&#x6765;&#x5904;&#x7406;&#x88AB;&#x6DFB;&#x52A0;&#x7684;&#x4EFB;&#x52A1;
+4&#x3001;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x7B49;&#x4E8E;&#x4E86;maximumPoolSize&#xFF0C;&#x5C31;&#x7528;RejectedExecutionHandler&#x6765;&#x6267;&#x884C;&#x62D2;&#x7EDD;&#x7B56;&#x7565;</p>
+<h2 id="&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;">&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;</h2>
+<pre><code>private final AtomicInteger ctl = new AtomicInteger(ctlOf(RUNNING, 0));
+private static final int COUNT_BITS = Integer.SIZE - 3;
+private static final int CAPACITY   = (1 &lt;&lt; COUNT_BITS) - 1;
+
+// runState is stored in the high-order bits
+private static final int RUNNING    = -1 &lt;&lt; COUNT_BITS;
+private static final int SHUTDOWN   =  0 &lt;&lt; COUNT_BITS;
+private static final int STOP       =  1 &lt;&lt; COUNT_BITS;
+private static final int TIDYING    =  2 &lt;&lt; COUNT_BITS;
+private static final int TERMINATED =  3 &lt;&lt; COUNT_BITS;
+
+// Packing and unpacking ctl
+private static int runStateOf(int c)     { return c &amp; ~CAPACITY; }
+private static int workerCountOf(int c)  { return c &amp; CAPACITY; }
+private static int ctlOf(int rs, int wc) { return rs | wc; }
+</code></pre><p>&#x5176;&#x4E2D;ctl&#x8FD9;&#x4E2A;AtomicInteger&#x7684;&#x529F;&#x80FD;&#x5F88;&#x5F3A;&#x5927;&#xFF0C;&#x5176;&#x9AD8;3&#x4F4D;&#x7528;&#x4E8E;&#x7EF4;&#x62A4;&#x7EBF;&#x7A0B;&#x6C60;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#xFF0C;&#x4F4E;29&#x4F4D;&#x7EF4;&#x62A4;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;</p>
+<p>1&#x3001;<code>RUNNING</code>&#xFF1A;-1&lt;&lt;COUNT_BITS&#xFF0C;&#x5373;&#x9AD8;3&#x4F4D;&#x4E3A;1&#xFF0C;&#x4F4E;29&#x4F4D;&#x4E3A;0&#xFF0C;&#x8BE5;&#x72B6;&#x6001;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x4F1A;&#x63A5;&#x6536;&#x65B0;&#x4EFB;&#x52A1;&#xFF0C;&#x4E5F;&#x4F1A;&#x5904;&#x7406;&#x5728;&#x963B;&#x585E;&#x961F;&#x5217;&#x4E2D;&#x7B49;&#x5F85;&#x5904;&#x7406;&#x7684;&#x4EFB;&#x52A1;</p>
+<p>2&#x3001;<code>SHUTDOWN</code>&#xFF1A;0&lt;&lt;COUNT_BITS&#xFF0C;&#x5373;&#x9AD8;3&#x4F4D;&#x4E3A;0&#xFF0C;&#x4F4E;29&#x4F4D;&#x4E3A;0&#xFF0C;&#x8BE5;&#x72B6;&#x6001;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x4E0D;&#x4F1A;&#x518D;&#x63A5;&#x6536;&#x65B0;&#x4EFB;&#x52A1;&#xFF0C;&#x4F46;&#x8FD8;&#x4F1A;&#x5904;&#x7406;&#x5DF2;&#x7ECF;&#x63D0;&#x4EA4;&#x5230;&#x963B;&#x585E;&#x961F;&#x5217;&#x4E2D;&#x7B49;&#x5F85;&#x5904;&#x7406;&#x7684;&#x4EFB;&#x52A1;</p>
+<p>3&#x3001;<code>STOP</code>&#xFF1A;1&lt;&lt;COUNT_BITS&#xFF0C;&#x5373;&#x9AD8;3&#x4F4D;&#x4E3A;001&#xFF0C;&#x4F4E;29&#x4F4D;&#x4E3A;0&#xFF0C;&#x8BE5;&#x72B6;&#x6001;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x4E0D;&#x4F1A;&#x518D;&#x63A5;&#x6536;&#x65B0;&#x4EFB;&#x52A1;&#xFF0C;&#x4E0D;&#x4F1A;&#x5904;&#x7406;&#x5728;&#x963B;&#x585E;&#x961F;&#x5217;&#x4E2D;&#x7B49;&#x5F85;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x800C;&#x4E14;&#x8FD8;&#x4F1A;&#x4E2D;&#x65AD;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x4EFB;&#x52A1;</p>
+<p>4&#x3001;<code>TIDYING</code>&#xFF1A;2&lt;&lt;COUNT_BITS&#xFF0C;&#x5373;&#x9AD8;3&#x4F4D;&#x4E3A;010&#xFF0C;&#x4F4E;29&#x4F4D;&#x4E3A;0&#xFF0C;&#x6240;&#x6709;&#x4EFB;&#x52A1;&#x90FD;&#x88AB;&#x7EC8;&#x6B62;&#x4E86;&#xFF0C;workerCount&#x4E3A;0&#xFF0C;&#x4E3A;&#x6B64;&#x72B6;&#x6001;&#x65F6;&#x8FD8;&#x5C06;&#x8C03;&#x7528;terminated()&#x65B9;&#x6CD5;</p>
+<p>5&#x3001;<code>TERMINATED</code>&#xFF1A;3&lt;&lt;COUNT_BITS&#xFF0C;&#x5373;&#x9AD8;3&#x4F4D;&#x4E3A;100&#xFF0C;&#x4F4E;29&#x4F4D;&#x4E3A;0&#xFF0C;terminated()&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x5B8C;&#x6210;&#x540E;&#x53D8;&#x6210;&#x6B64;&#x72B6;&#x6001;</p>
+<p>&#x8FD9;&#x4E9B;&#x72B6;&#x6001;&#x5747;&#x7531;int&#x578B;&#x8868;&#x793A;&#xFF0C;&#x5927;&#x5C0F;&#x5173;&#x7CFB;&#x4E3A; RUNNING&lt;SHUTDOWN&lt;STOP&lt;TIDYING&lt;TERMINATED&#xFF0C;&#x8FD9;&#x4E2A;&#x987A;&#x5E8F;&#x57FA;&#x672C;&#x4E0A;&#x4E5F;&#x662F;&#x9075;&#x5FAA;&#x7EBF;&#x7A0B;&#x6C60;&#x4ECE; &#x8FD0;&#x884C; &#x5230; &#x7EC8;&#x6B62;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x3002;</p>
+<p><code>runStateOf(int c)</code>  &#x65B9;&#x6CD5;&#xFF1A;c &amp; &#x9AD8;3&#x4F4D;&#x4E3A;1&#xFF0C;&#x4F4E;29&#x4F4D;&#x4E3A;0&#x7684;~CAPACITY&#xFF0C;&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x9AD8;3&#x4F4D;&#x4FDD;&#x5B58;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;</p>
+<p><code>workerCountOf(int c)</code> &#x65B9;&#x6CD5;&#xFF1A;c &amp; &#x9AD8;3&#x4F4D;&#x4E3A;0&#xFF0C;&#x4F4E;29&#x4F4D;&#x4E3A;1&#x7684;CAPACITY&#xFF0C;&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x4F4E;29&#x4F4D;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;</p>
+<p><code>ctlOf(int rs, int wc)</code> &#x65B9;&#x6CD5;&#xFF1A;&#x53C2;&#x6570;rs&#x8868;&#x793A;runState&#xFF0C;&#x53C2;&#x6570;wc&#x8868;&#x793A;workerCount&#xFF0C;&#x5373;&#x6839;&#x636E;runState&#x548C;workerCount&#x6253;&#x5305;&#x5408;&#x5E76;&#x6210;ctl</p>
+<h2 id="&#x4EFB;&#x52A1;&#x63D0;&#x4EA4;&#x5185;&#x90E8;&#x539F;&#x7406;">&#x4EFB;&#x52A1;&#x63D0;&#x4EA4;&#x5185;&#x90E8;&#x539F;&#x7406;</h2>
+<ol>
+<li>execute()  --  &#x63D0;&#x4EA4;&#x4EFB;&#x52A1;</li>
+</ol>
+<p><img src="https://images2015.cnblogs.com/blog/677054/201704/677054-20170408210905472-1864459025.png" alt="image"></p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">/**
+ * Executes the given task sometime in the future.  The task
+ * may execute in a new thread or in an existing pooled thread.
+ * &#x5728;&#x672A;&#x6765;&#x7684;&#x67D0;&#x4E2A;&#x65F6;&#x523B;&#x6267;&#x884C;&#x7ED9;&#x5B9A;&#x7684;&#x4EFB;&#x52A1;&#x3002;&#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;&#x7528;&#x4E00;&#x4E2A;&#x65B0;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#xFF0C;&#x6216;&#x8005;&#x7528;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x7EBF;&#x7A0B;&#x6267;&#x884C;
+ *
+ * If the task cannot be submitted for execution, either because this
+ * executor has been shutdown or because its capacity has been reached,
+ * the task is handled by the current {@code RejectedExecutionHandler}.
+ * &#x5982;&#x679C;&#x4EFB;&#x52A1;&#x65E0;&#x6CD5;&#x88AB;&#x63D0;&#x4EA4;&#x6267;&#x884C;&#xFF0C;&#x8981;&#x4E48;&#x662F;&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;Executor&#x5DF2;&#x7ECF;&#x88AB;shutdown&#x5173;&#x95ED;&#xFF0C;&#x8981;&#x4E48;&#x662F;&#x5DF2;&#x7ECF;&#x8FBE;&#x5230;&#x5176;&#x5BB9;&#x91CF;&#x4E0A;&#x9650;&#xFF0C;&#x4EFB;&#x52A1;&#x4F1A;&#x88AB;&#x5F53;&#x524D;&#x7684;RejectedExecutionHandler&#x5904;&#x7406;
+ *
+ * @param command the task to execute
+ * @throws RejectedExecutionException at discretion of
+ *         {@code RejectedExecutionHandler}, if the task
+ *         cannot be accepted for execution                 RejectedExecutionException&#x662F;&#x4E00;&#x4E2A;RuntimeException
+ * @throws NullPointerException if {@code command} is null
+ */
+public void execute(Runnable command) {
+    if (command == null)
+        throw new NullPointerException();
+
+    /*
+     * Proceed in 3 steps:
+     *
+     * 1. If fewer than corePoolSize threads are running, try to
+     * start a new thread with the given command as its first
+     * task.  The call to addWorker atomically checks runState and
+     * workerCount, and so prevents false alarms that would add
+     * threads when it shouldn&apos;t, by returning false.
+     * &#x5982;&#x679C;&#x8FD0;&#x884C;&#x7684;&#x7EBF;&#x7A0B;&#x5C11;&#x4E8E;corePoolSize&#xFF0C;&#x5C1D;&#x8BD5;&#x5F00;&#x542F;&#x4E00;&#x4E2A;&#x65B0;&#x7EBF;&#x7A0B;&#x53BB;&#x8FD0;&#x884C;command&#xFF0C;command&#x4F5C;&#x4E3A;&#x8FD9;&#x4E2A;&#x7EBF;&#x7A0B;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;
+     *
+     * 2. If a task can be successfully queued, then we still need
+     * to double-check whether we should have added a thread
+     * (because existing ones died since last checking) or that
+     * the pool shut down since entry into this method. So we
+     * recheck state and if necessary roll back the enqueuing if
+     * stopped, or start a new thread if there are none.
+     * &#x5982;&#x679C;&#x4EFB;&#x52A1;&#x6210;&#x529F;&#x653E;&#x5165;&#x961F;&#x5217;&#xFF0C;&#x6211;&#x4EEC;&#x4ECD;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x53CC;&#x91CD;&#x6821;&#x9A8C;&#x53BB;&#x786E;&#x8BA4;&#x662F;&#x5426;&#x5E94;&#x8BE5;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF08;&#x56E0;&#x4E3A;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x6709;&#x4E9B;&#x7EBF;&#x7A0B;&#x5728;&#x6211;&#x4EEC;&#x4E0A;&#x6B21;&#x68C0;&#x67E5;&#x540E;&#x6B7B;&#x4E86;&#xFF09; &#x6216;&#x8005; &#x4ECE;&#x6211;&#x4EEC;&#x8FDB;&#x5165;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x540E;&#xFF0C;pool&#x88AB;&#x5173;&#x95ED;&#x4E86;
+     * &#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x518D;&#x6B21;&#x68C0;&#x67E5;state&#xFF0C;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x505C;&#x6B62;&#x4E86;&#x9700;&#x8981;&#x56DE;&#x6EDA;&#x5165;&#x961F;&#x5217;&#xFF0C;&#x5982;&#x679C;&#x6C60;&#x4E2D;&#x6CA1;&#x6709;&#x7EBF;&#x7A0B;&#x4E86;&#xFF0C;&#x65B0;&#x5F00;&#x542F; &#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;
+     *
+     * 3. If we cannot queue task, then we try to add a new
+     * thread.  If it fails, we know we are shut down or saturated
+     * and so reject the task.
+     * &#x5982;&#x679C;&#x65E0;&#x6CD5;&#x5C06;&#x4EFB;&#x52A1;&#x5165;&#x961F;&#x5217;&#xFF08;&#x53EF;&#x80FD;&#x961F;&#x5217;&#x6EE1;&#x4E86;&#xFF09;&#xFF0C;&#x9700;&#x8981;&#x65B0;&#x5F00;&#x533A;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF08;&#x81EA;&#x5DF1;&#xFF1A;&#x5F80;maxPoolSize&#x53D1;&#x5C55;&#xFF09;
+     * &#x5982;&#x679C;&#x5931;&#x8D25;&#x4E86;&#xFF0C;&#x8BF4;&#x660E;&#x7EBF;&#x7A0B;&#x6C60;shutdown &#x6216;&#x8005; &#x9971;&#x548C;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x62D2;&#x7EDD;&#x4EFB;&#x52A1;
+     */
+    int c = ctl.get();
+
+    /**
+     * 1&#x3001;&#x5982;&#x679C;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x6570;&#x5C11;&#x4E8E;corePoolSize&#xFF08;&#x53EF;&#x80FD;&#x662F;&#x7531;&#x4E8E;addWorker()&#x64CD;&#x4F5C;&#x5DF2;&#x7ECF;&#x5305;&#x542B;&#x5BF9;&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;&#x7684;&#x5224;&#x65AD;&#xFF0C;&#x5982;&#x6B64;&#x5904;&#x6CA1;&#x52A0;&#xFF0C;&#x800C;&#x5165;workQueue&#x524D;&#x52A0;&#x4E86;&#xFF09;
+     */
+    if (workerCountOf(c) &lt; corePoolSize) {
+        //addWorker()&#x6210;&#x529F;&#xFF0C;&#x8FD4;&#x56DE;
+        if (addWorker(command, true))
+            return;
+
+        /**
+         * &#x6CA1;&#x6709;&#x6210;&#x529F;addWorker()&#xFF0C;&#x518D;&#x6B21;&#x83B7;&#x53D6;c&#xFF08;&#x51E1;&#x662F;&#x9700;&#x8981;&#x518D;&#x6B21;&#x7528;ctl&#x505A;&#x5224;&#x65AD;&#x65F6;&#xFF0C;&#x90FD;&#x4F1A;&#x518D;&#x6B21;&#x8C03;&#x7528;ctl.get()&#xFF09;
+         * &#x5931;&#x8D25;&#x7684;&#x539F;&#x56E0;&#x53EF;&#x80FD;&#x662F;&#xFF1A;
+         * 1&#x3001;&#x7EBF;&#x7A0B;&#x6C60;&#x5DF2;&#x7ECF;shutdown&#xFF0C;shutdown&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x4E0D;&#x518D;&#x63A5;&#x6536;&#x65B0;&#x4EFB;&#x52A1;
+         * 2&#x3001;workerCountOf(c) &lt; corePoolSize &#x5224;&#x65AD;&#x540E;&#xFF0C;&#x7531;&#x4E8E;&#x5E76;&#x53D1;&#xFF0C;&#x522B;&#x7684;&#x7EBF;&#x7A0B;&#x5148;&#x521B;&#x5EFA;&#x4E86;worker&#x7EBF;&#x7A0B;&#xFF0C;&#x5BFC;&#x81F4;workerCount&gt;=corePoolSize
+         */
+        c = ctl.get();
+    }
+
+    /**
+     * 2&#x3001;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;RUNNING&#x72B6;&#x6001;&#xFF0C;&#x4E14;&#x5165;&#x961F;&#x5217;&#x6210;&#x529F;
+     */
+    if (isRunning(c) &amp;&amp; workQueue.offer(command)) {
+        int recheck = ctl.get();//&#x518D;&#x6B21;&#x6821;&#x9A8C;&#x4F4D;
+
+        /**
+         * &#x518D;&#x6B21;&#x6821;&#x9A8C;&#x653E;&#x5165;workerQueue&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#x662F;&#x5426;&#x80FD;&#x88AB;&#x6267;&#x884C;
+         * 1&#x3001;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x4E0D;&#x662F;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#x4E86;&#xFF0C;&#x5E94;&#x8BE5;&#x62D2;&#x7EDD;&#x6DFB;&#x52A0;&#x65B0;&#x4EFB;&#x52A1;&#xFF0C;&#x4ECE;workQueue&#x4E2D;&#x5220;&#x9664;&#x4EFB;&#x52A1;
+         * 2&#x3001;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x662F;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#xFF0C;&#x6216;&#x8005;&#x4ECE;workQueue&#x4E2D;&#x5220;&#x9664;&#x4EFB;&#x52A1;&#x5931;&#x8D25;&#xFF08;&#x521A;&#x597D;&#x6709;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;&#x5E76;&#x6D88;&#x8017;&#x4E86;&#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;&#xFF09;&#xFF0C;&#x786E;&#x4FDD;&#x8FD8;&#x6709;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#xFF08;&#x53EA;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x5C31;&#x591F;&#x4E86;&#xFF09;
+         */
+        //&#x5982;&#x679C;&#x518D;&#x6B21;&#x6821;&#x9A8C;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x7EBF;&#x7A0B;&#x6C60;&#x4E0D;&#x662F;RUNNING&#x72B6;&#x6001;&#xFF0C;&#x5E76;&#x4E14;remove(command)--workQueue.remove()&#x6210;&#x529F;&#xFF0C;&#x62D2;&#x7EDD;&#x5F53;&#x524D;command
+        if (! isRunning(recheck) &amp;&amp; remove(command))
+            reject(command);
+        //&#x5982;&#x679C;&#x5F53;&#x524D;worker&#x6570;&#x91CF;&#x4E3A;0&#xFF0C;&#x901A;&#x8FC7;addWorker(null, false)&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x5176;&#x4EFB;&#x52A1;&#x4E3A;null
+        //&#x4E3A;&#x4EC0;&#x4E48;&#x53EA;&#x68C0;&#x67E5;&#x8FD0;&#x884C;&#x7684;worker&#x6570;&#x91CF;&#x662F;&#x4E0D;&#x662F;0&#x5462;&#xFF1F;&#xFF1F; &#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x548C;corePoolSize&#x6BD4;&#x8F83;&#x5462;&#xFF1F;&#xFF1F;
+        //&#x53EA;&#x4FDD;&#x8BC1;&#x6709;&#x4E00;&#x4E2A;worker&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x4ECE;queue&#x4E2D;&#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5C31;&#x884C;&#x4E86;&#xFF1F;&#xFF1F;
+        //&#x56E0;&#x4E3A;&#x53EA;&#x8981;&#x8FD8;&#x6709;&#x6D3B;&#x52A8;&#x7684;worker&#x7EBF;&#x7A0B;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x6D88;&#x8D39;workerQueue&#x4E2D;&#x7684;&#x4EFB;&#x52A1;
+        else if (workerCountOf(recheck) == 0)
+            addWorker(null, false);  //&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;null&#xFF0C;&#x8BF4;&#x660E;&#x53EA;&#x4E3A;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;worker&#x7EBF;&#x7A0B;&#xFF0C;&#x6CA1;&#x6709;&#x6307;&#x5B9A;firstTask
+                                     //&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;true&#x4EE3;&#x8868;&#x5360;&#x7528;corePoolSize&#xFF0C;false&#x5360;&#x7528;maxPoolSize
+    }
+    /**
+     * 3&#x3001;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x4E0D;&#x662F;running&#x72B6;&#x6001; &#x6216;&#x8005; &#x65E0;&#x6CD5;&#x5165;&#x961F;&#x5217;
+     *   &#x5C1D;&#x8BD5;&#x5F00;&#x542F;&#x65B0;&#x7EBF;&#x7A0B;&#xFF0C;&#x6269;&#x5BB9;&#x81F3;maxPoolSize&#xFF0C;&#x5982;&#x679C;addWork(command, false)&#x5931;&#x8D25;&#x4E86;&#xFF0C;&#x62D2;&#x7EDD;&#x5F53;&#x524D;command
+     */
+    else if (!addWorker(command, false))
+        reject(command);
+}<br></div></div>
+
+<p><strong>&#x53C2;&#x6570;</strong>&#xFF1A;
+    command    &#x63D0;&#x4EA4;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;
+<strong>&#x6267;&#x884C;&#x6D41;&#x7A0B;</strong>&#xFF1A;
+1&#x3001;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x5C11;&#x4E8E;corePoolSize&#xFF0C;&#x5219;addWorker(command, true)&#x521B;&#x5EFA;&#x65B0;worker&#x7EBF;&#x7A0B;&#xFF0C;&#x5982;&#x521B;&#x5EFA;&#x6210;&#x529F;&#x8FD4;&#x56DE;&#xFF0C;&#x5982;&#x6CA1;&#x521B;&#x5EFA;&#x6210;&#x529F;&#xFF0C;&#x5219;&#x6267;&#x884C;&#x540E;&#x7EED;&#x6B65;&#x9AA4;&#xFF1B;
+    addWorker(command, true)&#x5931;&#x8D25;&#x7684;&#x539F;&#x56E0;&#x53EF;&#x80FD;&#x662F;&#xFF1A;
+    A&#x3001;&#x7EBF;&#x7A0B;&#x6C60;&#x5DF2;&#x7ECF;shutdown&#xFF0C;shutdown&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x4E0D;&#x518D;&#x63A5;&#x6536;&#x65B0;&#x4EFB;&#x52A1;
+    B&#x3001;workerCountOf(c) &lt; corePoolSize &#x5224;&#x65AD;&#x540E;&#xFF0C;&#x7531;&#x4E8E;&#x5E76;&#x53D1;&#xFF0C;&#x522B;&#x7684;&#x7EBF;&#x7A0B;&#x5148;&#x521B;&#x5EFA;&#x4E86;worker&#x7EBF;&#x7A0B;&#xFF0C;&#x5BFC;&#x81F4;workerCount&gt;=corePoolSize
+2&#x3001;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x8FD8;&#x5728;running&#x72B6;&#x6001;&#xFF0C;&#x5C06;task&#x52A0;&#x5165;workQueue&#x963B;&#x585E;&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x52A0;&#x5165;&#x6210;&#x529F;&#xFF0C;&#x8FDB;&#x884C;double-check&#xFF0C;&#x5982;&#x679C;&#x52A0;&#x5165;&#x5931;&#x8D25;&#xFF08;&#x53EF;&#x80FD;&#x662F;&#x961F;&#x5217;&#x5DF2;&#x6EE1;&#xFF09;&#xFF0C;&#x5219;&#x6267;&#x884C;&#x540E;&#x7EED;&#x6B65;&#x9AA4;&#xFF1B;
+    double-check&#x4E3B;&#x8981;&#x76EE;&#x7684;&#x662F;&#x5224;&#x65AD;&#x521A;&#x52A0;&#x5165;workQueue&#x963B;&#x585E;&#x961F;&#x5217;&#x7684;task&#x662F;&#x5426;&#x80FD;&#x88AB;&#x6267;&#x884C;
+    A&#x3001;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x5DF2;&#x7ECF;&#x4E0D;&#x662F;running&#x72B6;&#x6001;&#x4E86;&#xFF0C;&#x5E94;&#x8BE5;&#x62D2;&#x7EDD;&#x6DFB;&#x52A0;&#x65B0;&#x4EFB;&#x52A1;&#xFF0C;&#x4ECE;workQueue&#x4E2D;&#x5220;&#x9664;&#x4EFB;&#x52A1;
+    B&#x3001;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x662F;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#xFF0C;&#x6216;&#x8005;&#x4ECE;workQueue&#x4E2D;&#x5220;&#x9664;&#x4EFB;&#x52A1;&#x5931;&#x8D25;&#xFF08;&#x521A;&#x597D;&#x6709;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;&#x5E76;&#x6D88;&#x8017;&#x4E86;&#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;&#xFF09;&#xFF0C;&#x786E;&#x4FDD;&#x8FD8;&#x6709;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#xFF08;&#x53EA;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x5C31;&#x591F;&#x4E86;&#xFF09;
+3&#x3001;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x4E0D;&#x662F;running&#x72B6;&#x6001; &#x6216;&#x8005; &#x65E0;&#x6CD5;&#x5165;&#x961F;&#x5217;&#xFF0C;&#x5C1D;&#x8BD5;&#x5F00;&#x542F;&#x65B0;&#x7EBF;&#x7A0B;&#xFF0C;&#x6269;&#x5BB9;&#x81F3;maxPoolSize&#xFF0C;&#x5982;&#x679C;addWork(command, false)&#x5931;&#x8D25;&#x4E86;&#xFF0C;&#x62D2;&#x7EDD;&#x5F53;&#x524D;command</p>
+<ol>
+<li><strong>addWorker()  --  &#x6DFB;&#x52A0;worker&#x7EBF;&#x7A0B;</strong></li>
+</ol>
+<p><img src="https://images2015.cnblogs.com/blog/677054/201704/677054-20170408211358816-1277836615.png" alt="IMAGE"></p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">/**
+ * Checks if a new worker can be added with respect to current
+ * pool state and the given bound (either core or maximum). If so,
+ * the worker count is adjusted accordingly, and, if possible, a
+ * new worker is created and started, running firstTask as its
+ * first task. This method returns false if the pool is stopped or
+ * eligible to shut down. It also returns false if the thread
+ * factory fails to create a thread when asked.  If the thread
+ * creation fails, either due to the thread factory returning
+ * null, or due to an exception (typically OutOfMemoryError in
+ * Thread#start), we roll back cleanly.
+ * &#x68C0;&#x67E5;&#x6839;&#x636E;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x72B6;&#x6001;&#x548C;&#x7ED9;&#x5B9A;&#x7684;&#x8FB9;&#x754C;(core or maximum)&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;worker
+ * &#x5982;&#x679C;&#x662F;&#x8FD9;&#x6837;&#x7684;&#x8BDD;&#xFF0C;worker&#x7684;&#x6570;&#x91CF;&#x505A;&#x76F8;&#x5E94;&#x7684;&#x8C03;&#x6574;&#xFF0C;&#x5982;&#x679C;&#x53EF;&#x80FD;&#x7684;&#x8BDD;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;worker&#x5E76;&#x542F;&#x52A8;&#xFF0C;&#x53C2;&#x6570;&#x4E2D;&#x7684;firstTask&#x4F5C;&#x4E3A;worker&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;
+ * &#x5982;&#x679C;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;false&#xFF0C;&#x53EF;&#x80FD;&#x56E0;&#x4E3A;pool&#x5DF2;&#x7ECF;&#x5173;&#x95ED;&#x6216;&#x8005;&#x8C03;&#x7528;&#x8FC7;&#x4E86;shutdown
+ * &#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x5DE5;&#x5382;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x5931;&#x8D25;&#xFF0C;&#x4E5F;&#x4F1A;&#x5931;&#x8D25;&#xFF0C;&#x8FD4;&#x56DE;false
+ * &#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x521B;&#x5EFA;&#x5931;&#x8D25;&#xFF0C;&#x8981;&#x4E48;&#x662F;&#x56E0;&#x4E3A;&#x7EBF;&#x7A0B;&#x5DE5;&#x5382;&#x8FD4;&#x56DE;null&#xFF0C;&#x8981;&#x4E48;&#x662F;&#x53D1;&#x751F;&#x4E86;OutOfMemoryError
+ *
+ * @param firstTask the task the new thread should run first (or
+ * null if none). Workers are created with an initial first task
+ * (in method execute()) to bypass(&#x7ED5;&#x5F00;) queuing when there are fewer
+ * than corePoolSize threads (in which case we always start one),
+ * or when the queue is full (in which case we must bypass queue).
+ * Initially idle threads are usually created via
+ * prestartCoreThread or to replace other dying workers.
+ *
+ * @param core if true use corePoolSize as bound, else
+ * maximumPoolSize. (A boolean indicator is used here rather than a
+ * value to ensure reads of fresh values after checking other pool
+ * state).
+ * @return true if successful
+ */
+private boolean addWorker(Runnable firstTask, boolean core) {
+    //&#x5916;&#x5C42;&#x5FAA;&#x73AF;&#xFF0C;&#x8D1F;&#x8D23;&#x5224;&#x65AD;&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;
+    retry:
+    for (;;) {
+        int c = ctl.get();
+        int rs = runStateOf(c); //&#x72B6;&#x6001;
+
+        // Check if queue empty only if necessary.
+        /**
+         * &#x7EBF;&#x7A0B;&#x6C60;&#x7684;state&#x8D8A;&#x5C0F;&#x8D8A;&#x662F;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#xFF0C;runnbale=-1&#xFF0C;shutdown=0,stop=1,tidying=2&#xFF0C;terminated=3
+         * 1&#x3001;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;state&#x5DF2;&#x7ECF;&#x81F3;&#x5C11;&#x662F;shutdown&#x72B6;&#x6001;&#x4E86;
+         * 2&#x3001;&#x5E76;&#x4E14;&#x4EE5;&#x4E0B;3&#x4E2A;&#x6761;&#x4EF6;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x662F;false
+         *   rs == SHUTDOWN         &#xFF08;&#x9690;&#x542B;&#xFF1A;rs&gt;=SHUTDOWN&#xFF09;false&#x60C5;&#x51B5;&#xFF1A; &#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;&#x5DF2;&#x7ECF;&#x8D85;&#x8FC7;shutdown&#xFF0C;&#x53EF;&#x80FD;&#x662F;stop&#x3001;tidying&#x3001;terminated&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#xFF0C;&#x5373;&#x7EBF;&#x7A0B;&#x6C60;&#x5DF2;&#x7ECF;&#x7EC8;&#x6B62;
+         *   firstTask == null      &#xFF08;&#x9690;&#x542B;&#xFF1A;rs==SHUTDOWN&#xFF09;false&#x60C5;&#x51B5;&#xFF1A; firstTask&#x4E0D;&#x4E3A;&#x7A7A;&#xFF0C;rs==SHUTDOWN &#x4E14; firstTask&#x4E0D;&#x4E3A;&#x7A7A;&#xFF0C;return false&#xFF0C;&#x573A;&#x666F;&#x662F;&#x5728;&#x7EBF;&#x7A0B;&#x6C60;&#x5DF2;&#x7ECF;shutdown&#x540E;&#xFF0C;&#x8FD8;&#x8981;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x62D2;&#x7EDD;
+         *   ! workQueue.isEmpty()  &#xFF08;&#x9690;&#x542B;&#xFF1A;rs==SHUTDOWN&#xFF0C;firstTask==null&#xFF09;false&#x60C5;&#x51B5;&#xFF1A; workQueue&#x4E3A;&#x7A7A;&#xFF0C;&#x5F53;firstTask&#x4E3A;&#x7A7A;&#x65F6;&#x662F;&#x4E3A;&#x4E86;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;&#x4EFB;&#x52A1;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x518D;&#x4ECE;workQueue&#x4E2D;&#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#xFF0C;&#x5982;&#x679C;workQueue&#x5DF2;&#x7ECF;&#x4E3A;&#x7A7A;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x6CA1;&#x6709;&#x6DFB;&#x52A0;&#x65B0;worker&#x7EBF;&#x7A0B;&#x7684;&#x5FC5;&#x8981;&#x4E86;
+         * return false&#xFF0C;&#x5373;&#x65E0;&#x6CD5;addWorker()
+         */
+        if (rs &gt;= SHUTDOWN &amp;&amp;
+            ! (rs == SHUTDOWN &amp;&amp;
+               firstTask == null &amp;&amp;
+               ! workQueue.isEmpty()))
+            return false;
+
+        //&#x5185;&#x5C42;&#x5FAA;&#x73AF;&#xFF0C;&#x8D1F;&#x8D23;worker&#x6570;&#x91CF;+1
+        for (;;) {
+            int wc = workerCountOf(c); //worker&#x6570;&#x91CF;
+
+            //&#x5982;&#x679C;worker&#x6570;&#x91CF;&gt;&#x7EBF;&#x7A0B;&#x6C60;&#x6700;&#x5927;&#x4E0A;&#x9650;CAPACITY&#xFF08;&#x5373;&#x4F7F;&#x7528;int&#x4F4E;29&#x4F4D;&#x53EF;&#x4EE5;&#x5BB9;&#x7EB3;&#x7684;&#x6700;&#x5927;&#x503C;&#xFF09;
+            //&#x6216;&#x8005;( worker&#x6570;&#x91CF;&gt;corePoolSize &#x6216;  worker&#x6570;&#x91CF;&gt;maximumPoolSize )&#xFF0C;&#x5373;&#x5DF2;&#x7ECF;&#x8D85;&#x8FC7;&#x4E86;&#x7ED9;&#x5B9A;&#x7684;&#x8FB9;&#x754C;
+            if (wc &gt;= CAPACITY ||
+                wc &gt;= (core ? corePoolSize : maximumPoolSize))
+                return false;
+
+            //&#x8C03;&#x7528;unsafe CAS&#x64CD;&#x4F5C;&#xFF0C;&#x4F7F;&#x5F97;worker&#x6570;&#x91CF;+1&#xFF0C;&#x6210;&#x529F;&#x5219;&#x8DF3;&#x51FA;retry&#x5FAA;&#x73AF;
+            if (compareAndIncrementWorkerCount(c))
+                break retry;
+
+            //CAS worker&#x6570;&#x91CF;+1&#x5931;&#x8D25;&#xFF0C;&#x518D;&#x6B21;&#x8BFB;&#x53D6;ctl
+            c = ctl.get();  // Re-read ctl
+
+            //&#x5982;&#x679C;&#x72B6;&#x6001;&#x4E0D;&#x7B49;&#x4E8E;&#x4E4B;&#x524D;&#x83B7;&#x53D6;&#x7684;state&#xFF0C;&#x8DF3;&#x51FA;&#x5185;&#x5C42;&#x5FAA;&#x73AF;&#xFF0C;&#x7EE7;&#x7EED;&#x53BB;&#x5916;&#x5C42;&#x5FAA;&#x73AF;&#x5224;&#x65AD;
+            if (runStateOf(c) != rs)
+                continue retry;
+            // else CAS failed due to workerCount change; retry inner loop
+            // else CAS&#x5931;&#x8D25;&#x65F6;&#x56E0;&#x4E3A;workerCount&#x6539;&#x53D8;&#x4E86;&#xFF0C;&#x7EE7;&#x7EED;&#x5185;&#x5C42;&#x5FAA;&#x73AF;&#x5C1D;&#x8BD5;CAS&#x5BF9;worker&#x6570;&#x91CF;+1
+        }
+    }
+
+    /**
+     * worker&#x6570;&#x91CF;+1&#x6210;&#x529F;&#x7684;&#x540E;&#x7EED;&#x64CD;&#x4F5C;
+     * &#x6DFB;&#x52A0;&#x5230;workers Set&#x96C6;&#x5408;&#xFF0C;&#x5E76;&#x542F;&#x52A8;worker&#x7EBF;&#x7A0B;
+     */
+    boolean workerStarted = false;
+    boolean workerAdded = false;
+    Worker w = null;
+    try {
+        final ReentrantLock mainLock = this.mainLock;
+        w = new Worker(firstTask); //1&#x3001;&#x8BBE;&#x7F6E;worker&#x8FD9;&#x4E2A;AQS&#x9501;&#x7684;&#x540C;&#x6B65;&#x72B6;&#x6001;state=-1
+                                   //2&#x3001;&#x5C06;firstTask&#x8BBE;&#x7F6E;&#x7ED9;worker&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;firstTask
+                                   //3&#x3001;&#x4F7F;&#x7528;worker&#x81EA;&#x8EAB;&#x8FD9;&#x4E2A;runnable&#xFF0C;&#x8C03;&#x7528;ThreadFactory&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x7ED9;worker&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;thread
+        final Thread t = w.thread;
+        if (t != null) {
+            mainLock.lock();
+            try {
+                //--------------------------------------------&#x8FD9;&#x90E8;&#x5206;&#x4EE3;&#x7801;&#x662F;&#x4E0A;&#x9501;&#x7684;
+                // Recheck while holding lock.
+                // Back out on ThreadFactory failure or if
+                // shut down before lock acquired.
+                // &#x5F53;&#x83B7;&#x53D6;&#x5230;&#x9501;&#x540E;&#xFF0C;&#x518D;&#x6B21;&#x68C0;&#x67E5;
+                int c = ctl.get();
+                int rs = runStateOf(c);
+
+                //&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x5728;&#x8FD0;&#x884C;running&lt;shutdown &#x6216;&#x8005; &#x7EBF;&#x7A0B;&#x6C60;&#x5DF2;&#x7ECF;shutdown&#xFF0C;&#x4E14;firstTask==null&#xFF08;&#x53EF;&#x80FD;&#x662F;workQueue&#x4E2D;&#x4ECD;&#x6709;&#x672A;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x521B;&#x5EFA;&#x6CA1;&#x6709;&#x521D;&#x59CB;&#x4EFB;&#x52A1;&#x7684;worker&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#xFF09;
+                //worker&#x6570;&#x91CF;-1&#x7684;&#x64CD;&#x4F5C;&#x5728;addWorkerFailed()
+                if (rs &lt; SHUTDOWN ||
+                    (rs == SHUTDOWN &amp;&amp; firstTask == null)) {
+                    if (t.isAlive()) // precheck that t is startable   &#x7EBF;&#x7A0B;&#x5DF2;&#x7ECF;&#x542F;&#x52A8;&#xFF0C;&#x629B;&#x975E;&#x6CD5;&#x7EBF;&#x7A0B;&#x72B6;&#x6001;&#x5F02;&#x5E38;
+                        throw new IllegalThreadStateException();
+
+                    workers.add(w);//workers&#x662F;&#x4E00;&#x4E2A;HashSet&lt;Worker&gt;
+
+                    //&#x8BBE;&#x7F6E;&#x6700;&#x5927;&#x7684;&#x6C60;&#x5927;&#x5C0F;largestPoolSize&#xFF0C;workerAdded&#x8BBE;&#x7F6E;&#x4E3A;true
+                    int s = workers.size();
+                    if (s &gt; largestPoolSize)
+                        largestPoolSize = s;
+                    workerAdded = true;
+                }
+              //--------------------------------------------
+            }
+            finally {
+                mainLock.unlock();
+            }
+
+            //&#x5982;&#x679C;&#x5F80;HashSet&#x4E2D;&#x6DFB;&#x52A0;worker&#x6210;&#x529F;&#xFF0C;&#x542F;&#x52A8;&#x7EBF;&#x7A0B;
+            if (workerAdded) {
+                t.start();
+                workerStarted = true;
+            }
+        }
+    } finally {
+        //&#x5982;&#x679C;&#x542F;&#x52A8;&#x7EBF;&#x7A0B;&#x5931;&#x8D25;
+        if (! workerStarted)
+            addWorkerFailed(w);
+    }
+    return workerStarted;
+}<br></div></div>
+
+<p>addWorker(Runnable firstTask, boolean core)
+<strong>&#x53C2;&#x6570;</strong>&#xFF1A;
+    firstTask&#xFF1A;    worker&#x7EBF;&#x7A0B;&#x7684;&#x521D;&#x59CB;&#x4EFB;&#x52A1;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;
+    core&#xFF1A;           true&#xFF1A;&#x5C06;corePoolSize&#x4F5C;&#x4E3A;&#x4E0A;&#x9650;&#xFF0C;false&#xFF1A;&#x5C06;maximumPoolSize&#x4F5C;&#x4E3A;&#x4E0A;&#x9650;
+addWorker&#x65B9;&#x6CD5;&#x6709;4&#x79CD;&#x4F20;&#x53C2;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<pre><code>1&#x3001;addWorker(command, true)
+
+2&#x3001;addWorker(command, false)
+
+3&#x3001;addWorker(null, false)
+
+4&#x3001;addWorker(null, true)
+</code></pre><p>&#x5728;execute&#x65B9;&#x6CD5;&#x4E2D;&#x5C31;&#x4F7F;&#x7528;&#x4E86;&#x524D;3&#x79CD;&#xFF0C;&#x7ED3;&#x5408;&#x8FD9;&#x4E2A;&#x6838;&#x5FC3;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x4EE5;&#x4E0B;&#x5206;&#x6790;
+    &#x7B2C;&#x4E00;&#x4E2A;&#xFF1A;&#x7EBF;&#x7A0B;&#x6570;&#x5C0F;&#x4E8E;corePoolSize&#x65F6;&#xFF0C;&#x653E;&#x4E00;&#x4E2A;&#x9700;&#x8981;&#x5904;&#x7406;&#x7684;task&#x8FDB;Workers Set&#x3002;&#x5982;&#x679C;Workers Set&#x957F;&#x5EA6;&#x8D85;&#x8FC7;corePoolSize&#xFF0C;&#x5C31;&#x8FD4;&#x56DE;false
+    &#x7B2C;&#x4E8C;&#x4E2A;&#xFF1A;&#x5F53;&#x961F;&#x5217;&#x88AB;&#x653E;&#x6EE1;&#x65F6;&#xFF0C;&#x5C31;&#x5C1D;&#x8BD5;&#x5C06;&#x8FD9;&#x4E2A;&#x65B0;&#x6765;&#x7684;task&#x76F4;&#x63A5;&#x653E;&#x5165;Workers Set&#xFF0C;&#x800C;&#x6B64;&#x65F6;Workers Set&#x7684;&#x957F;&#x5EA6;&#x9650;&#x5236;&#x662F;maximumPoolSize&#x3002;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x4E5F;&#x6EE1;&#x4E86;&#x7684;&#x8BDD;&#x5C31;&#x8FD4;&#x56DE;false
+    &#x7B2C;&#x4E09;&#x4E2A;&#xFF1A;&#x653E;&#x5165;&#x4E00;&#x4E2A;&#x7A7A;&#x7684;task&#x8FDB;workers Set&#xFF0C;&#x957F;&#x5EA6;&#x9650;&#x5236;&#x662F;maximumPoolSize&#x3002;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;task&#x4E3A;&#x7A7A;&#x7684;worker&#x5728;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x53BB;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x91CC;&#x62FF;&#x4EFB;&#x52A1;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x76F8;&#x5F53;&#x4E8E;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x53EA;&#x662F;&#x6CA1;&#x6709;&#x9A6C;&#x4E0A;&#x5206;&#x914D;&#x4EFB;&#x52A1;
+    &#x7B2C;&#x56DB;&#x4E2A;&#xFF1A;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x653E;&#x4E00;&#x4E2A;null&#x7684;task&#x8FDB;Workers Set&#xFF0C;&#x800C;&#x4E14;&#x662F;&#x5728;&#x5C0F;&#x4E8E;corePoolSize&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x6B64;&#x65F6;Set&#x4E2D;&#x7684;&#x6570;&#x91CF;&#x5DF2;&#x7ECF;&#x8FBE;&#x5230;corePoolSize&#x90A3;&#x5C31;&#x8FD4;&#x56DE;false&#xFF0C;&#x4EC0;&#x4E48;&#x4E5F;&#x4E0D;&#x5E72;&#x3002;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x4E2D;&#x662F;&#x5728;prestartAllCoreThreads()&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7528;&#x6765;&#x4E3A;&#x7EBF;&#x7A0B;&#x6C60;&#x9884;&#x5148;&#x542F;&#x52A8;corePoolSize&#x4E2A;worker&#x7B49;&#x5F85;&#x4ECE;workQueue&#x4E2D;&#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#x6267;&#x884C;
+<strong>&#x6267;&#x884C;&#x6D41;&#x7A0B;</strong>&#xFF1A;
+1&#x3001;&#x5224;&#x65AD;&#x7EBF;&#x7A0B;&#x6C60;&#x5F53;&#x524D;&#x662F;&#x5426;&#x4E3A;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;worker&#x7EBF;&#x7A0B;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x53EF;&#x4EE5;&#x5219;&#x7EE7;&#x7EED;&#x4E0B;&#x4E00;&#x6B65;&#xFF0C;&#x4E0D;&#x53EF;&#x4EE5;return false&#xFF1A;
+    A&#x3001;&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;&gt;shutdown&#xFF0C;&#x53EF;&#x80FD;&#x4E3A;stop&#x3001;tidying&#x3001;terminated&#xFF0C;&#x4E0D;&#x80FD;&#x6DFB;&#x52A0;worker&#x7EBF;&#x7A0B;
+    B&#x3001;&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;==shutdown&#xFF0C;firstTask&#x4E0D;&#x4E3A;&#x7A7A;&#xFF0C;&#x4E0D;&#x80FD;&#x6DFB;&#x52A0;worker&#x7EBF;&#x7A0B;&#xFF0C;&#x56E0;&#x4E3A;shutdown&#x72B6;&#x6001;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x4E0D;&#x63A5;&#x6536;&#x65B0;&#x4EFB;&#x52A1;
+    C&#x3001;&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;==shutdown&#xFF0C;firstTask==null&#xFF0C;workQueue&#x4E3A;&#x7A7A;&#xFF0C;&#x4E0D;&#x80FD;&#x6DFB;&#x52A0;worker&#x7EBF;&#x7A0B;&#xFF0C;&#x56E0;&#x4E3A;firstTask&#x4E3A;&#x7A7A;&#x662F;&#x4E3A;&#x4E86;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;&#x4EFB;&#x52A1;&#x7684;&#x7EBF;&#x7A0B;&#x518D;&#x4ECE;workQueue&#x83B7;&#x53D6;task&#xFF0C;&#x800C;workQueue&#x4E3A;&#x7A7A;&#xFF0C;&#x8BF4;&#x660E;&#x6DFB;&#x52A0;&#x65E0;&#x4EFB;&#x52A1;&#x7EBF;&#x7A0B;&#x5DF2;&#x7ECF;&#x6CA1;&#x6709;&#x610F;&#x4E49;
+2&#x3001;&#x7EBF;&#x7A0B;&#x6C60;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x662F;&#x5426;&#x8D85;&#x8FC7;&#x4E0A;&#x9650;&#xFF08;corePoolSize &#x6216; maximumPoolSize&#xFF09;&#xFF0C;&#x8D85;&#x8FC7;&#x4E86;return false&#xFF0C;&#x6CA1;&#x8D85;&#x8FC7;&#x5219;&#x5BF9;workerCount+1&#xFF0C;&#x7EE7;&#x7EED;&#x4E0B;&#x4E00;&#x6B65;
+3&#x3001;&#x5728;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;ReentrantLock&#x4FDD;&#x8BC1;&#x4E0B;&#xFF0C;&#x5411;Workers Set&#x4E2D;&#x6DFB;&#x52A0;&#x65B0;&#x521B;&#x5EFA;&#x7684;worker&#x5B9E;&#x4F8B;&#xFF0C;&#x6DFB;&#x52A0;&#x5B8C;&#x6210;&#x540E;&#x89E3;&#x9501;&#xFF0C;&#x5E76;&#x542F;&#x52A8;worker&#x7EBF;&#x7A0B;&#xFF0C;&#x5982;&#x679C;&#x8FD9;&#x4E00;&#x5207;&#x90FD;&#x6210;&#x529F;&#x4E86;&#xFF0C;return true&#xFF0C;&#x5982;&#x679C;&#x6DFB;&#x52A0;worker&#x5165;Set&#x5931;&#x8D25;&#x6216;&#x542F;&#x52A8;&#x5931;&#x8D25;&#xFF0C;&#x8C03;&#x7528;addWorkerFailed()&#x903B;&#x8F91;</p>
+<ol>
+<li><strong>&#x5185;&#x90E8;&#x7C7B;Worker</strong></li>
+</ol>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">/**
+ * Class Worker mainly maintains interrupt control state for
+ * threads running tasks, along with other minor bookkeeping.
+ * This class opportunistically extends AbstractQueuedSynchronizer
+ * to simplify acquiring and releasing a lock surrounding each
+ * task execution.  This protects against interrupts that are
+ * intended to wake up a worker thread waiting for a task from
+ * instead interrupting a task being run.  We implement a simple
+ * non-reentrant mutual exclusion lock rather than use
+ * ReentrantLock because we do not want worker tasks to be able to
+ * reacquire the lock when they invoke pool control methods like
+ * setCorePoolSize.  Additionally, to suppress interrupts until
+ * the thread actually starts running tasks, we initialize lock
+ * state to a negative value, and clear it upon start (in
+ * runWorker).
+ *
+ * Worker&#x7C7B;&#x5927;&#x4F53;&#x4E0A;&#x7BA1;&#x7406;&#x7740;&#x8FD0;&#x884C;&#x7EBF;&#x7A0B;&#x7684;&#x4E2D;&#x65AD;&#x72B6;&#x6001; &#x548C; &#x4E00;&#x4E9B;&#x6307;&#x6807;
+ * Worker&#x7C7B;&#x6295;&#x673A;&#x53D6;&#x5DE7;&#x7684;&#x7EE7;&#x627F;&#x4E86;AbstractQueuedSynchronizer&#x6765;&#x7B80;&#x5316;&#x5728;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#x65F6;&#x7684;&#x83B7;&#x53D6;&#x3001;&#x91CA;&#x653E;&#x9501;
+ * &#x8FD9;&#x6837;&#x9632;&#x6B62;&#x4E86;&#x4E2D;&#x65AD;&#x5728;&#x8FD0;&#x884C;&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x53EA;&#x4F1A;&#x5524;&#x9192;(&#x4E2D;&#x65AD;)&#x5728;&#x7B49;&#x5F85;&#x4ECE;workQueue&#x4E2D;&#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#x7684;&#x7EBF;&#x7A0B;
+ * &#x89E3;&#x91CA;&#xFF1A;
+ *   &#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x76F4;&#x63A5;&#x6267;&#x884C;execute(command)&#x63D0;&#x4EA4;&#x7684;command&#xFF0C;&#x800C;&#x8981;&#x5728;&#x5916;&#x9762;&#x5305;&#x4E00;&#x5C42;Worker&#x5462;&#xFF1F;&#xFF1F;
+ *   &#x4E3B;&#x8981;&#x662F;&#x4E3A;&#x4E86;&#x63A7;&#x5236;&#x4E2D;&#x65AD;
+ *   &#x7528;&#x4EC0;&#x4E48;&#x63A7;&#x5236;&#xFF1F;&#xFF1F;
+ *   &#x7528;AQS&#x9501;&#xFF0C;&#x5F53;&#x8FD0;&#x884C;&#x65F6;&#x4E0A;&#x9501;&#xFF0C;&#x5C31;&#x4E0D;&#x80FD;&#x4E2D;&#x65AD;&#xFF0C;TreadPoolExecutor&#x7684;shutdown()&#x65B9;&#x6CD5;&#x4E2D;&#x65AD;&#x524D;&#x90FD;&#x8981;&#x83B7;&#x53D6;worker&#x9501;
+ *   &#x53EA;&#x6709;&#x5728;&#x7B49;&#x5F85;&#x4ECE;workQueue&#x4E2D;&#x83B7;&#x53D6;&#x4EFB;&#x52A1;getTask()&#x65F6;&#x624D;&#x80FD;&#x4E2D;&#x65AD;
+ * worker&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4E0D;&#x53EF;&#x91CD;&#x5165;&#x7684;&#x4E92;&#x65A5;&#x9501;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x7528;ReentrantLock&#x53EF;&#x91CD;&#x5165;&#x9501;
+ * &#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x4E0D;&#x60F3;&#x8BA9;&#x5728;&#x8C03;&#x7528;&#x6BD4;&#x5982;setCorePoolSize()&#x8FD9;&#x79CD;&#x7EBF;&#x7A0B;&#x6C60;&#x63A7;&#x5236;&#x65B9;&#x6CD5;&#x65F6;&#x53EF;&#x4EE5;&#x518D;&#x6B21;&#x83B7;&#x53D6;&#x9501;(&#x91CD;&#x5165;)
+ * &#x89E3;&#x91CA;&#xFF1A;
+ *   setCorePoolSize()&#x65F6;&#x53EF;&#x80FD;&#x4F1A;interruptIdleWorkers()&#xFF0C;&#x5728;&#x5BF9;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;interrupt&#x65F6;&#x4F1A;&#x8981;w.tryLock()
+ *   &#x5982;&#x679C;&#x53EF;&#x91CD;&#x5165;&#xFF0C;&#x5C31;&#x53EF;&#x80FD;&#x4F1A;&#x5728;&#x5BF9;&#x7EBF;&#x7A0B;&#x6C60;&#x64CD;&#x4F5C;&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#x4E2D;&#x65AD;&#x7EBF;&#x7A0B;&#xFF0C;&#x7C7B;&#x4F3C;&#x65B9;&#x6CD5;&#x8FD8;&#x6709;&#xFF1A;
+ *   setMaximumPoolSize()
+ *   setKeppAliveTime()
+ *   allowCoreThreadTimeOut()
+ *   shutdown()
+ * &#x6B64;&#x5916;&#xFF0C;&#x4E3A;&#x4E86;&#x8BA9;&#x7EBF;&#x7A0B;&#x771F;&#x6B63;&#x5F00;&#x59CB;&#x540E;&#x624D;&#x53EF;&#x4EE5;&#x4E2D;&#x65AD;&#xFF0C;&#x521D;&#x59CB;&#x5316;lock&#x72B6;&#x6001;&#x4E3A;&#x8D1F;&#x503C;(-1)&#xFF0C;&#x5728;&#x5F00;&#x59CB;runWorker()&#x65F6;&#x5C06;state&#x7F6E;&#x4E3A;0&#xFF0C;&#x800C;state&gt;=0&#x624D;&#x53EF;&#x4EE5;&#x4E2D;&#x65AD;
+ *
+ *
+ * Worker&#x7EE7;&#x627F;&#x4E86;AQS&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;Runnable&#xFF0C;&#x8BF4;&#x660E;&#x5176;&#x65E2;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x8FD0;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x4E5F;&#x662F;&#x4E00;&#x628A;&#x9501;&#xFF08;&#x4E0D;&#x53EF;&#x91CD;&#x5165;&#xFF09;
+ */
+private final class Worker
+    extends AbstractQueuedSynchronizer
+    implements Runnable
+{
+    /**
+     * This class will never be serialized, but we provide a
+     * serialVersionUID to suppress a javac warning.
+     */
+    private static final long serialVersionUID = 6138294804551838833L;
+
+    /** Thread this worker is running in.  Null if factory fails. */
+    final Thread thread; //&#x5229;&#x7528;ThreadFactory&#x548C; Worker&#x8FD9;&#x4E2A;Runnable&#x521B;&#x5EFA;&#x7684;&#x7EBF;&#x7A0B;&#x5BF9;&#x8C61;
+
+    /** Initial task to run.  Possibly null. */
+    Runnable firstTask;
+
+    /** Per-thread task counter */
+    volatile long completedTasks;
+
+    /**
+     * Creates with given first task and thread from ThreadFactory.
+     * @param firstTask the first task (null if none)
+     */
+    Worker(Runnable firstTask) {
+        //&#x8BBE;&#x7F6E;AQS&#x7684;&#x540C;&#x6B65;&#x72B6;&#x6001;private volatile int state&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x5927;&#x4E8E;0&#x4EE3;&#x8868;&#x9501;&#x5DF2;&#x7ECF;&#x88AB;&#x83B7;&#x53D6;
+        setState(-1); // inhibit interrupts until runWorker
+                      // &#x5728;&#x8C03;&#x7528;runWorker()&#x524D;&#xFF0C;&#x7981;&#x6B62;interrupt&#x4E2D;&#x65AD;&#xFF0C;&#x5728;interruptIfStarted()&#x65B9;&#x6CD5;&#x4E2D;&#x4F1A;&#x5224;&#x65AD; getState()&gt;=0
+        this.firstTask = firstTask;
+        this.thread = getThreadFactory().newThread(this); //&#x6839;&#x636E;&#x5F53;&#x524D;worker&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x5BF9;&#x8C61;
+                                                          //&#x5F53;&#x524D;worker&#x672C;&#x8EAB;&#x5C31;&#x662F;&#x4E00;&#x4E2A;runnable&#x4EFB;&#x52A1;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4E0D;&#x4F1A;&#x7528;&#x53C2;&#x6570;&#x7684;firstTask&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#xFF0C;&#x800C;&#x662F;&#x8C03;&#x7528;&#x5F53;&#x524D;worker.run()&#x65F6;&#x8C03;&#x7528;firstTask.run()
+    }
+
+    /** Delegates main run loop to outer runWorker  */
+    public void run() {
+        runWorker(this); //runWorker()&#x662F;ThreadPoolExecutor&#x7684;&#x65B9;&#x6CD5;
+    }
+
+    // Lock methods
+    //
+    // The value 0 represents the unlocked state. 0&#x4EE3;&#x8868;&#x201C;&#x6CA1;&#x88AB;&#x9501;&#x5B9A;&#x201D;&#x72B6;&#x6001;
+    // The value 1 represents the locked state. 1&#x4EE3;&#x8868;&#x201C;&#x9501;&#x5B9A;&#x201D;&#x72B6;&#x6001;
+
+    protected boolean isHeldExclusively() {
+        return getState() != 0;
+    }
+
+    /**
+     * &#x5C1D;&#x8BD5;&#x83B7;&#x53D6;&#x9501;
+     * &#x91CD;&#x5199;AQS&#x7684;tryAcquire()&#xFF0C;AQS&#x672C;&#x6765;&#x5C31;&#x662F;&#x8BA9;&#x5B50;&#x7C7B;&#x6765;&#x5B9E;&#x73B0;&#x7684;
+     */
+    protected boolean tryAcquire(int unused) {
+        //&#x5C1D;&#x8BD5;&#x4E00;&#x6B21;&#x5C06;state&#x4ECE;0&#x8BBE;&#x7F6E;&#x4E3A;1&#xFF0C;&#x5373;&#x201C;&#x9501;&#x5B9A;&#x201D;&#x72B6;&#x6001;&#xFF0C;&#x4F46;&#x7531;&#x4E8E;&#x6BCF;&#x6B21;&#x90FD;&#x662F;state 0-&gt;1&#xFF0C;&#x800C;&#x4E0D;&#x662F;+1&#xFF0C;&#x90A3;&#x4E48;&#x8BF4;&#x660E;&#x4E0D;&#x53EF;&#x91CD;&#x5165;
+        //&#x4E14;state==-1&#x65F6;&#x4E5F;&#x4E0D;&#x4F1A;&#x83B7;&#x53D6;&#x5230;&#x9501;
+        if (compareAndSetState(0, 1)) {
+            setExclusiveOwnerThread(Thread.currentThread()); //&#x8BBE;&#x7F6E;exclusiveOwnerThread=&#x5F53;&#x524D;&#x7EBF;&#x7A0B;
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * &#x5C1D;&#x8BD5;&#x91CA;&#x653E;&#x9501;
+     * &#x4E0D;&#x662F;state-1&#xFF0C;&#x800C;&#x662F;&#x7F6E;&#x4E3A;0
+     */
+    protected boolean tryRelease(int unused) {
+        setExclusiveOwnerThread(null);
+        setState(0);
+        return true;
+    }
+
+    public void lock()        { acquire(1); }
+    public boolean tryLock()  { return tryAcquire(1); }
+    public void unlock()      { release(1); }
+    public boolean isLocked() { return isHeldExclusively(); }
+
+    /**
+     * &#x4E2D;&#x65AD;&#xFF08;&#x5982;&#x679C;&#x8FD0;&#x884C;&#xFF09;
+     * shutdownNow&#x65F6;&#x4F1A;&#x5FAA;&#x73AF;&#x5BF9;worker&#x7EBF;&#x7A0B;&#x6267;&#x884C;
+     * &#x4E14;&#x4E0D;&#x9700;&#x8981;&#x83B7;&#x53D6;worker&#x9501;&#xFF0C;&#x5373;&#x4F7F;&#x5728;worker&#x8FD0;&#x884C;&#x65F6;&#x4E5F;&#x53EF;&#x4EE5;&#x4E2D;&#x65AD;
+     */
+    void interruptIfStarted() {
+        Thread t;
+        //&#x5982;&#x679C;state&gt;=0&#x3001;t!=null&#x3001;&#x4E14;t&#x6CA1;&#x6709;&#x88AB;&#x4E2D;&#x65AD;
+        //new Worker()&#x65F6;state==-1&#xFF0C;&#x8BF4;&#x660E;&#x4E0D;&#x80FD;&#x4E2D;&#x65AD;
+        if (getState() &gt;= 0 &amp;&amp; (t = thread) != null &amp;&amp; !t.isInterrupted()) {
+            try {
+                t.interrupt();
+            } catch (SecurityException ignore) {
+            }
+        }
+    }
+}<br></div></div>
+
+
+<p><strong>Worker&#x7C7B;</strong>
+Worker&#x7C7B;&#x672C;&#x8EAB;&#x65E2;&#x5B9E;&#x73B0;&#x4E86;Runnable&#xFF0C;&#x53C8;&#x7EE7;&#x627F;&#x4E86;AbstractQueuedSynchronizer&#xFF08;&#x4EE5;&#x4E0B;&#x7B80;&#x79F0;AQS&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x5176;&#x65E2;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x53C8;&#x53EF;&#x4EE5;&#x8FBE;&#x5230;&#x9501;&#x7684;&#x6548;&#x679C;
+<strong>new Worker()</strong>
+1&#x3001;&#x5C06;AQS&#x7684;state&#x7F6E;&#x4E3A;-1&#xFF0C;&#x5728;runWoker()&#x524D;&#x4E0D;&#x5141;&#x8BB8;&#x4E2D;&#x65AD;
+2&#x3001;&#x5F85;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#x4F1A;&#x4EE5;&#x53C2;&#x6570;&#x4F20;&#x5165;&#xFF0C;&#x5E76;&#x8D4B;&#x4E88;firstTask
+3&#x3001;&#x7528;Worker&#x8FD9;&#x4E2A;Runnable&#x521B;&#x5EFA;Thread</p>
+<p>&#x4E4B;&#x6240;&#x4EE5;Worker&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;Runnable&#xFF0C;&#x5E76;&#x521B;&#x5EFA;Thread&#xFF0C;&#x5728;firstTask&#x5916;&#x5305;&#x4E00;&#x5C42;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x8981;&#x901A;&#x8FC7;Worker&#x63A7;&#x5236;&#x4E2D;&#x65AD;&#xFF0C;&#x800C;firstTask&#x8FD9;&#x4E2A;&#x5DE5;&#x4F5C;&#x4EFB;&#x52A1;&#x53EA;&#x662F;&#x8D1F;&#x8D23;&#x6267;&#x884C;&#x4E1A;&#x52A1;
+<strong>Worker&#x63A7;&#x5236;&#x4E2D;&#x65AD;&#x4E3B;&#x8981;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x65B9;&#x9762;</strong>&#xFF1A;
+1&#x3001;&#x521D;&#x59CB;AQS&#x72B6;&#x6001;&#x4E3A;-1&#xFF0C;&#x6B64;&#x65F6;&#x4E0D;&#x5141;&#x8BB8;&#x4E2D;&#x65AD;interrupt()&#xFF0C;&#x53EA;&#x6709;&#x5728;worker&#x7EBF;&#x7A0B;&#x542F;&#x52A8;&#x4E86;&#xFF0C;&#x6267;&#x884C;&#x4E86;runWoker()&#xFF0C;&#x5C06;state&#x7F6E;&#x4E3A;0&#xFF0C;&#x624D;&#x80FD;&#x4E2D;&#x65AD;
+    &#x4E0D;&#x5141;&#x8BB8;&#x4E2D;&#x65AD;&#x4F53;&#x73B0;&#x5728;&#xFF1A;
+    A&#x3001;shutdown()&#x7EBF;&#x7A0B;&#x6C60;&#x65F6;&#xFF0C;&#x4F1A;&#x5BF9;&#x6BCF;&#x4E2A;worker tryLock()&#x4E0A;&#x9501;&#xFF0C;&#x800C;Worker&#x7C7B;&#x8FD9;&#x4E2A;AQS&#x7684;tryAcquire()&#x65B9;&#x6CD5;&#x662F;&#x56FA;&#x5B9A;&#x5C06;state&#x4ECE;0-&gt;1&#xFF0C;&#x6545;&#x521D;&#x59CB;&#x72B6;&#x6001;state==-1&#x65F6;tryLock()&#x5931;&#x8D25;&#xFF0C;&#x6CA1;&#x53D1;interrupt()
+    B&#x3001;shutdownNow()&#x7EBF;&#x7A0B;&#x6C60;&#x65F6;&#xFF0C;&#x4E0D;&#x7528;tryLock()&#x4E0A;&#x9501;&#xFF0C;&#x4F46;&#x8C03;&#x7528;worker.interruptIfStarted()&#x7EC8;&#x6B62;worker&#xFF0C;interruptIfStarted()&#x4E5F;&#x6709;state&gt;0&#x624D;&#x80FD;interrupt&#x7684;&#x903B;&#x8F91;
+2&#x3001;&#x4E3A;&#x4E86;&#x9632;&#x6B62;&#x67D0;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5728;&#x8FD0;&#x884C;&#x4E2D;&#x7684;worker&#x88AB;&#x4E2D;&#x65AD;&#xFF0C;runWorker()&#x6BCF;&#x6B21;&#x8FD0;&#x884C;&#x4EFB;&#x52A1;&#x65F6;&#x90FD;&#x4F1A;lock()&#x4E0A;&#x9501;&#xFF0C;&#x800C;shutdown()&#x8FD9;&#x7C7B;&#x53EF;&#x80FD;&#x4F1A;&#x7EC8;&#x6B62;worker&#x7684;&#x64CD;&#x4F5C;&#x9700;&#x8981;&#x5148;&#x83B7;&#x53D6;worker&#x7684;&#x9501;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x9632;&#x6B62;&#x4E86;&#x4E2D;&#x65AD;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x7EBF;&#x7A0B;</p>
+<p>Worker&#x5B9E;&#x73B0;&#x7684;AQS&#x4E3A;&#x4E0D;&#x53EF;&#x91CD;&#x5165;&#x9501;&#xFF0C;&#x4E3A;&#x4E86;&#x662F;&#x5728;&#x83B7;&#x5F97;worker&#x9501;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x518D;&#x8FDB;&#x5165;&#x5176;&#x5B83;&#x4E00;&#x4E9B;&#x9700;&#x8981;&#x52A0;&#x9501;&#x7684;&#x65B9;&#x6CD5;</p>
+<p><strong>Worker&#x548C;Task&#x7684;&#x533A;&#x522B;</strong>&#xFF1A;
+Worker&#x662F;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x800C;Task&#x867D;&#x7136;&#x662F;runnable&#xFF0C;&#x4F46;&#x662F;&#x5E76;&#x6CA1;&#x6709;&#x771F;&#x6B63;&#x6267;&#x884C;&#xFF0C;&#x53EA;&#x662F;&#x88AB;Worker&#x8C03;&#x7528;&#x4E86;run&#x65B9;&#x6CD5;&#xFF0C;&#x540E;&#x9762;&#x4F1A;&#x770B;&#x5230;&#x8FD9;&#x90E8;&#x5206;&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
+<ol>
+<li><strong>runWorker()  --  &#x6267;&#x884C;&#x4EFB;&#x52A1;</strong></li>
+</ol>
+<p><img src="https://images2015.cnblogs.com/blog/677054/201704/677054-20170408211458878-1033038857.png" alt="image"></p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">/**
+ * Main worker run loop.  Repeatedly gets tasks from queue and
+ * executes them, while coping with a number of issues:
+ * &#x91CD;&#x590D;&#x7684;&#x4ECE;&#x961F;&#x5217;&#x4E2D;&#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#x5E76;&#x6267;&#x884C;&#xFF0C;&#x540C;&#x65F6;&#x5E94;&#x5BF9;&#x4E00;&#x4E9B;&#x95EE;&#x9898;&#xFF1A;
+ *
+ * 1. We may start out with an initial task, in which case we
+ * don&apos;t need to get the first one. Otherwise, as long as pool is
+ * running, we get tasks from getTask. If it returns null then the
+ * worker exits due to changed pool state or configuration
+ * parameters.  Other exits result from exception throws in
+ * external code, in which case completedAbruptly holds, which
+ * usually leads processWorkerExit to replace this thread.
+ * &#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x521D;&#x59CB;&#x5316;&#x4EFB;&#x52A1;&#x5F00;&#x59CB;&#xFF0C;&#x5373;firstTask&#x4E3A;null
+ * &#x7136;&#x540E;&#x53EA;&#x8981;&#x7EBF;&#x7A0B;&#x6C60;&#x5728;&#x8FD0;&#x884C;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x4ECE;getTask()&#x83B7;&#x53D6;&#x4EFB;&#x52A1;
+ * &#x5982;&#x679C;getTask()&#x8FD4;&#x56DE;null&#xFF0C;&#x5219;worker&#x7531;&#x4E8E;&#x6539;&#x53D8;&#x4E86;&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;&#x6216;&#x53C2;&#x6570;&#x914D;&#x7F6E;&#x800C;&#x9000;&#x51FA;
+ * &#x5176;&#x5B83;&#x9000;&#x51FA;&#x56E0;&#x4E3A;&#x5916;&#x90E8;&#x4EE3;&#x7801;&#x629B;&#x5F02;&#x5E38;&#x4E86;&#xFF0C;&#x8FD9;&#x4F1A;&#x4F7F;&#x5F97;completedAbruptly&#x4E3A;true&#xFF0C;&#x8FD9;&#x4F1A;&#x5BFC;&#x81F4;&#x5728;processWorkerExit()&#x65B9;&#x6CD5;&#x4E2D;&#x66FF;&#x6362;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;
+ *
+ * 2. Before running any task, the lock is acquired to prevent
+ * other pool interrupts while the task is executing, and
+ * clearInterruptsForTaskRun called to ensure that unless pool is
+ * stopping, this thread does not have its interrupt set.
+ * &#x5728;&#x4EFB;&#x4F55;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x4E4B;&#x524D;&#xFF0C;&#x90FD;&#x9700;&#x8981;&#x5BF9;worker&#x52A0;&#x9501;&#x53BB;&#x9632;&#x6B62;&#x5728;&#x4EFB;&#x52A1;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x5176;&#x5B83;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x65AD;&#x64CD;&#x4F5C;
+ * clearInterruptsForTaskRun&#x4FDD;&#x8BC1;&#x9664;&#x975E;&#x7EBF;&#x7A0B;&#x6C60;&#x6B63;&#x5728;stoping&#xFF0C;&#x7EBF;&#x7A0B;&#x4E0D;&#x4F1A;&#x88AB;&#x8BBE;&#x7F6E;&#x4E2D;&#x65AD;&#x6807;&#x793A;
+ *
+ * 3. Each task run is preceded by a call to beforeExecute, which
+ * might throw an exception, in which case we cause thread to die
+ * (breaking loop with completedAbruptly true) without processing
+ * the task.
+ * &#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x524D;&#x4F1A;&#x8C03;&#x7528;beforeExecute()&#xFF0C;&#x5176;&#x4E2D;&#x53EF;&#x80FD;&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;&#xFF0C;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x4F1A;&#x5BFC;&#x81F4;&#x7EBF;&#x7A0B;die&#xFF08;&#x8DF3;&#x51FA;&#x5FAA;&#x73AF;&#xFF0C;&#x4E14;completedAbruptly==true&#xFF09;&#xFF0C;&#x6CA1;&#x6709;&#x6267;&#x884C;&#x4EFB;&#x52A1;
+ * &#x56E0;&#x4E3A;beforeExecute()&#x7684;&#x5F02;&#x5E38;&#x6CA1;&#x6709;cache&#x4F4F;&#xFF0C;&#x4F1A;&#x4E0A;&#x629B;&#xFF0C;&#x8DF3;&#x51FA;&#x5FAA;&#x73AF;
+ *
+ * 4. Assuming beforeExecute completes normally, we run the task,
+ * gathering any of its thrown exceptions to send to
+ * afterExecute. We separately handle RuntimeException, Error
+ * (both of which the specs guarantee that we trap) and arbitrary
+ * Throwables.  Because we cannot rethrow Throwables within
+ * Runnable.run, we wrap them within Errors on the way out (to the
+ * thread&apos;s UncaughtExceptionHandler).  Any thrown exception also
+ * conservatively causes thread to die.
+ * &#x5047;&#x5B9A;beforeExecute()&#x6B63;&#x5E38;&#x5B8C;&#x6210;&#xFF0C;&#x6211;&#x4EEC;&#x6267;&#x884C;&#x4EFB;&#x52A1;
+ * &#x6C47;&#x603B;&#x4EFB;&#x4F55;&#x629B;&#x51FA;&#x7684;&#x5F02;&#x5E38;&#x5E76;&#x53D1;&#x9001;&#x7ED9;afterExecute(task, thrown)
+ * &#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x4E0D;&#x80FD;&#x5728;Runnable.run()&#x65B9;&#x6CD5;&#x4E2D;&#x91CD;&#x65B0;&#x4E0A;&#x629B;Throwables&#xFF0C;&#x6211;&#x4EEC;&#x5C06;Throwables&#x5305;&#x88C5;&#x5230;Errors&#x4E0A;&#x629B;&#xFF08;&#x4F1A;&#x5230;&#x7EBF;&#x7A0B;&#x7684;UncaughtExceptionHandler&#x53BB;&#x5904;&#x7406;&#xFF09;
+ * &#x4EFB;&#x4F55;&#x4E0A;&#x629B;&#x7684;&#x5F02;&#x5E38;&#x90FD;&#x4F1A;&#x5BFC;&#x81F4;&#x7EBF;&#x7A0B;die
+ *
+ * 5. After task.run completes, we call afterExecute, which may
+ * also throw an exception, which will also cause thread to
+ * die. According to JLS Sec 14.20, this exception is the one that
+ * will be in effect even if task.run throws.
+ * &#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x8C03;&#x7528;afterExecute()&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x629B;&#x5F02;&#x5E38;&#xFF0C;&#x4E5F;&#x4F1A;&#x5BFC;&#x81F4;&#x7EBF;&#x7A0B;die
+ * &#x6839;&#x636E;JLS Sec 14.20&#xFF0C;&#x8FD9;&#x4E2A;&#x5F02;&#x5E38;&#xFF08;finally&#x4E2D;&#x7684;&#x5F02;&#x5E38;&#xFF09;&#x4F1A;&#x751F;&#x6548;
+ *
+ * The net effect of the exception mechanics is that afterExecute
+ * and the thread&apos;s UncaughtExceptionHandler have as accurate
+ * information as we can provide about any problems encountered by
+ * user code.
+ *
+ * @param w the worker
+ */
+final void runWorker(Worker w) {
+    Thread wt = Thread.currentThread();
+    Runnable task = w.firstTask;
+    w.firstTask = null;
+    w.unlock(); // allow interrupts
+                // new Worker()&#x662F;state==-1&#xFF0C;&#x6B64;&#x5904;&#x662F;&#x8C03;&#x7528;Worker&#x7C7B;&#x7684;tryRelease()&#x65B9;&#x6CD5;&#xFF0C;&#x5C06;state&#x7F6E;&#x4E3A;0&#xFF0C; &#x800C;interruptIfStarted()&#x4E2D;&#x53EA;&#x6709;state&gt;=0&#x624D;&#x5141;&#x8BB8;&#x8C03;&#x7528;&#x4E2D;&#x65AD;
+    boolean completedAbruptly = true; //&#x662F;&#x5426;&#x201C;&#x7A81;&#x7136;&#x5B8C;&#x6210;&#x201D;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x7531;&#x4E8E;&#x5F02;&#x5E38;&#x5BFC;&#x81F4;&#x7684;&#x8FDB;&#x5165;finally&#xFF0C;&#x90A3;&#x4E48;completedAbruptly==true&#x5C31;&#x662F;&#x7A81;&#x7136;&#x5B8C;&#x6210;&#x7684;
+    try {
+        /**
+         * &#x5982;&#x679C;task&#x4E0D;&#x4E3A;null&#xFF0C;&#x6216;&#x8005;&#x4ECE;&#x963B;&#x585E;&#x961F;&#x5217;&#x4E2D;getTask()&#x4E0D;&#x4E3A;null
+         */
+        while (task != null || (task = getTask()) != null) {
+            w.lock(); //&#x4E0A;&#x9501;&#xFF0C;&#x4E0D;&#x662F;&#x4E3A;&#x4E86;&#x9632;&#x6B62;&#x5E76;&#x53D1;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#xFF0C;&#x4E3A;&#x4E86;&#x5728;shutdown()&#x65F6;&#x4E0D;&#x7EC8;&#x6B62;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;worker
+
+            // If pool is stopping, ensure thread is interrupted;
+            // if not, ensure thread is not interrupted.  This
+            // requires a recheck in second case to deal with
+            // shutdownNow race while clearing interrupt
+            /**
+             * clearInterruptsForTaskRun&#x64CD;&#x4F5C;
+             * &#x786E;&#x4FDD;&#x53EA;&#x6709;&#x5728;&#x7EBF;&#x7A0B;stoping&#x65F6;&#xFF0C;&#x624D;&#x4F1A;&#x88AB;&#x8BBE;&#x7F6E;&#x4E2D;&#x65AD;&#x6807;&#x793A;&#xFF0C;&#x5426;&#x5219;&#x6E05;&#x9664;&#x4E2D;&#x65AD;&#x6807;&#x793A;
+             * 1&#x3001;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;&gt;=stop&#xFF0C;&#x4E14;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x4E2D;&#x65AD;&#x72B6;&#x6001;&#xFF0C;wt.interrupt()
+             * 2&#x3001;&#x5982;&#x679C;&#x4E00;&#x5F00;&#x59CB;&#x5224;&#x65AD;&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;&lt;stop&#xFF0C;&#x4F46;Thread.interrupted()&#x4E3A;true&#xFF0C;&#x5373;&#x7EBF;&#x7A0B;&#x5DF2;&#x7ECF;&#x88AB;&#x4E2D;&#x65AD;&#xFF0C;&#x53C8;&#x6E05;&#x9664;&#x4E86;&#x4E2D;&#x65AD;&#x6807;&#x793A;&#xFF0C;&#x518D;&#x6B21;&#x5224;&#x65AD;&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;&#x662F;&#x5426;&gt;=stop
+             *   &#x662F;&#xFF0C;&#x518D;&#x6B21;&#x8BBE;&#x7F6E;&#x4E2D;&#x65AD;&#x6807;&#x793A;&#xFF0C;wt.interrupt()
+             *   &#x5426;&#xFF0C;&#x4E0D;&#x505A;&#x64CD;&#x4F5C;&#xFF0C;&#x6E05;&#x9664;&#x4E2D;&#x65AD;&#x6807;&#x793A;&#x540E;&#x8FDB;&#x884C;&#x540E;&#x7EED;&#x6B65;&#x9AA4;
+             */
+            if ((runStateAtLeast(ctl.get(), STOP) ||
+                 (Thread.interrupted() &amp;&amp;
+                  runStateAtLeast(ctl.get(), STOP))) &amp;&amp;
+                !wt.isInterrupted())
+                wt.interrupt(); //&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;interrupt()&#x4E2D;&#x65AD;
+
+            try {
+                //&#x6267;&#x884C;&#x524D;&#xFF08;&#x5B50;&#x7C7B;&#x5B9E;&#x73B0;&#xFF09;
+                beforeExecute(wt, task);
+
+                Throwable thrown = null;
+                try {
+                    task.run();
+                }
+                catch (RuntimeException x) {
+                    thrown = x; throw x;
+                }
+                catch (Error x) {
+                    thrown = x; throw x;
+                }
+                catch (Throwable x) {
+                    thrown = x; throw new Error(x);
+                }
+                finally {
+                    //&#x6267;&#x884C;&#x540E;&#xFF08;&#x5B50;&#x7C7B;&#x5B9E;&#x73B0;&#xFF09;
+                    afterExecute(task, thrown); //&#x8FD9;&#x91CC;&#x5C31;&#x8003;&#x9A8C;catch&#x548C;finally&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x4E86;&#xFF0C;&#x56E0;&#x4E3A;&#x8981;&#x4EE5;thrown&#x4E3A;&#x53C2;&#x6570;
+                }
+            }
+            finally {
+                task = null; //task&#x7F6E;&#x4E3A;null
+                w.completedTasks++; //&#x5B8C;&#x6210;&#x4EFB;&#x52A1;&#x6570;+1
+                w.unlock(); //&#x89E3;&#x9501;
+            }
+        }
+
+        completedAbruptly = false;
+    }
+    finally {
+        //&#x5904;&#x7406;worker&#x7684;&#x9000;&#x51FA;
+        processWorkerExit(w, completedAbruptly);
+    }
+}<br></div></div>
+
+<p><strong>runWorker(Worker w)</strong>
+<strong>&#x6267;&#x884C;&#x6D41;&#x7A0B;</strong>&#xFF1A;
+1&#x3001;Worker&#x7EBF;&#x7A0B;&#x542F;&#x52A8;&#x540E;&#xFF0C;&#x901A;&#x8FC7;Worker&#x7C7B;&#x7684;run()&#x65B9;&#x6CD5;&#x8C03;&#x7528;runWorker(this)
+2&#x3001;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#x4E4B;&#x524D;&#xFF0C;&#x9996;&#x5148;worker.unlock()&#xFF0C;&#x5C06;AQS&#x7684;state&#x7F6E;&#x4E3A;0&#xFF0C;&#x5141;&#x8BB8;&#x4E2D;&#x65AD;&#x5F53;&#x524D;worker&#x7EBF;&#x7A0B;
+3&#x3001;&#x5F00;&#x59CB;&#x6267;&#x884C;firstTask&#xFF0C;&#x8C03;&#x7528;task.run()&#xFF0C;&#x5728;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#x524D;&#x4F1A;&#x4E0A;&#x9501;wroker.lock()&#xFF0C;&#x5728;&#x6267;&#x884C;&#x5B8C;&#x4EFB;&#x52A1;&#x540E;&#x4F1A;&#x89E3;&#x9501;&#xFF0C;&#x4E3A;&#x4E86;&#x9632;&#x6B62;&#x5728;&#x4EFB;&#x52A1;&#x8FD0;&#x884C;&#x65F6;&#x88AB;&#x7EBF;&#x7A0B;&#x6C60;&#x4E00;&#x4E9B;&#x4E2D;&#x65AD;&#x64CD;&#x4F5C;&#x4E2D;&#x65AD;
+4&#x3001;&#x5728;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x524D;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x4E1A;&#x52A1;&#x573A;&#x666F;&#x81EA;&#x5B9A;&#x4E49;beforeExecute() &#x548C; afterExecute()&#x65B9;&#x6CD5;
+5&#x3001;&#x65E0;&#x8BBA;&#x5728;beforeExecute()&#x3001;task.run()&#x3001;afterExecute()&#x53D1;&#x751F;&#x5F02;&#x5E38;&#x4E0A;&#x629B;&#xFF0C;&#x90FD;&#x4F1A;&#x5BFC;&#x81F4;worker&#x7EBF;&#x7A0B;&#x7EC8;&#x6B62;&#xFF0C;&#x8FDB;&#x5165;processWorkerExit()&#x5904;&#x7406;worker&#x9000;&#x51FA;&#x7684;&#x6D41;&#x7A0B;
+6&#x3001;&#x5982;&#x6B63;&#x5E38;&#x6267;&#x884C;&#x5B8C;&#x5F53;&#x524D;task&#x540E;&#xFF0C;&#x4F1A;&#x901A;&#x8FC7;getTask()&#x4ECE;&#x963B;&#x585E;&#x961F;&#x5217;&#x4E2D;&#x83B7;&#x53D6;&#x65B0;&#x4EFB;&#x52A1;&#xFF0C;&#x5F53;&#x961F;&#x5217;&#x4E2D;&#x6CA1;&#x6709;&#x4EFB;&#x52A1;&#xFF0C;&#x4E14;&#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#x8D85;&#x65F6;&#xFF0C;&#x90A3;&#x4E48;&#x5F53;&#x524D;worker&#x4E5F;&#x4F1A;&#x8FDB;&#x5165;&#x9000;&#x51FA;&#x6D41;&#x7A0B;</p>
+<ol>
+<li><strong>getTask()  --  &#x83B7;&#x53D6;&#x4EFB;&#x52A1;</strong></li>
+</ol>
+<p><img src="https://images2015.cnblogs.com/blog/677054/201704/677054-20170408211632300-254189763.png" alt="image"></p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">/**
+ * Performs blocking or timed wait for a task, depending on
+ * current configuration settings, or returns null if this worker
+ * must exit because of any of:  &#x4EE5;&#x4E0B;&#x60C5;&#x51B5;&#x4F1A;&#x8FD4;&#x56DE;null
+ * 1. There are more than maximumPoolSize workers (due to
+ *    a call to setMaximumPoolSize).
+ *    &#x8D85;&#x8FC7;&#x4E86;maximumPoolSize&#x8BBE;&#x7F6E;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#xFF08;&#x56E0;&#x4E3A;&#x8C03;&#x7528;&#x4E86;setMaximumPoolSize()&#xFF09;
+ * 2. The pool is stopped.
+ *    &#x7EBF;&#x7A0B;&#x6C60;&#x88AB;stop
+ * 3. The pool is shutdown and the queue is empty.
+ *    &#x7EBF;&#x7A0B;&#x6C60;&#x88AB;shutdown&#xFF0C;&#x5E76;&#x4E14;workQueue&#x7A7A;&#x4E86;
+ * 4. This worker timed out waiting for a task, and timed-out
+ *    workers are subject to termination (that is,
+ *    {@code allowCoreThreadTimeOut || workerCount &gt; corePoolSize})
+ *    both before and after the timed wait.
+ *    &#x7EBF;&#x7A0B;&#x7B49;&#x5F85;&#x4EFB;&#x52A1;&#x8D85;&#x65F6;
+ *
+ * @return task, or null if the worker must exit, in which case
+ *         workerCount is decremented
+ *         &#x8FD4;&#x56DE;null&#x8868;&#x793A;&#x8FD9;&#x4E2A;worker&#x8981;&#x7ED3;&#x675F;&#x4E86;&#xFF0C;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;workerCount-1
+ */
+private Runnable getTask() {
+    boolean timedOut = false; // Did the last poll() time out?
+
+    /**
+     * &#x5916;&#x5C42;&#x5FAA;&#x73AF;
+     * &#x7528;&#x4E8E;&#x5224;&#x65AD;&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;
+     */
+    retry:
+    for (;;) {
+        int c = ctl.get();
+        int rs = runStateOf(c);
+
+        // Check if queue empty only if necessary.
+        /**
+         * &#x5BF9;&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;&#x7684;&#x5224;&#x65AD;&#xFF0C;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#x4F1A;workerCount-1&#xFF0C;&#x5E76;&#x4E14;&#x8FD4;&#x56DE;null
+         * &#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;&#x4E3A;shutdown&#xFF0C;&#x4E14;workQueue&#x4E3A;&#x7A7A;&#xFF08;&#x53CD;&#x6620;&#x4E86;shutdown&#x72B6;&#x6001;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x8FD8;&#x662F;&#x8981;&#x6267;&#x884C;workQueue&#x4E2D;&#x5269;&#x4F59;&#x7684;&#x4EFB;&#x52A1;&#x7684;&#xFF09;
+         * &#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;&#x4E3A;stop&#xFF08;shutdownNow()&#x4F1A;&#x5BFC;&#x81F4;&#x53D8;&#x6210;STOP&#xFF09;&#xFF08;&#x6B64;&#x65F6;&#x4E0D;&#x7528;&#x8003;&#x8651;workQueue&#x7684;&#x60C5;&#x51B5;&#xFF09;
+         */
+        if (rs &gt;= SHUTDOWN &amp;&amp; (rs &gt;= STOP || workQueue.isEmpty())) {
+            decrementWorkerCount(); //&#x5FAA;&#x73AF;&#x7684;CAS&#x51CF;&#x5C11;worker&#x6570;&#x91CF;&#xFF0C;&#x76F4;&#x5230;&#x6210;&#x529F;
+            return null;
+        }
+
+        boolean timed;      // Are workers subject to culling?
+                            // &#x662F;&#x5426;&#x9700;&#x8981;&#x5B9A;&#x65F6;&#x4ECE;workQueue&#x4E2D;&#x83B7;&#x53D6;
+
+        /**
+         * &#x5185;&#x5C42;&#x5FAA;&#x73AF;
+         * &#x8981;&#x4E48;break&#x53BB;workQueue&#x83B7;&#x53D6;&#x4EFB;&#x52A1;
+         * &#x8981;&#x4E48;&#x8D85;&#x65F6;&#x4E86;&#xFF0C;worker count-1
+         */
+        for (;;) {
+            int wc = workerCountOf(c);
+            timed = allowCoreThreadTimeOut || wc &gt; corePoolSize; //allowCoreThreadTimeOut&#x9ED8;&#x8BA4;&#x4E3A;false
+                                                                 //&#x5982;&#x679C;allowCoreThreadTimeOut&#x4E3A;true&#xFF0C;&#x8BF4;&#x660E;corePoolSize&#x548C;maximum&#x90FD;&#x9700;&#x8981;&#x5B9A;&#x65F6;
+
+            //&#x5982;&#x679C;&#x5F53;&#x524D;&#x6267;&#x884C;&#x7EBF;&#x7A0B;&#x6570;&lt;maximumPoolSize&#xFF0C;&#x5E76;&#x4E14;timedOut &#x548C; timed &#x4EFB;&#x4E00;&#x4E3A;false&#xFF0C;&#x8DF3;&#x51FA;&#x5FAA;&#x73AF;&#xFF0C;&#x5F00;&#x59CB;&#x4ECE;workQueue&#x83B7;&#x53D6;&#x4EFB;&#x52A1;
+            if (wc &lt;= maximumPoolSize &amp;&amp; ! (timedOut &amp;&amp; timed))
+                break;
+
+            /**
+             * &#x5982;&#x679C;&#x5230;&#x4E86;&#x8FD9;&#x4E00;&#x6B65;&#xFF0C;&#x8BF4;&#x660E;&#x8981;&#x4E48;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x8D85;&#x8FC7;&#x4E86;maximumPoolSize&#xFF08;&#x53EF;&#x80FD;maximumPoolSize&#x88AB;&#x4FEE;&#x6539;&#x4E86;&#xFF09;
+             * &#x8981;&#x4E48;&#x65E2;&#x9700;&#x8981;&#x8BA1;&#x65F6;timed==true&#xFF0C;&#x4E5F;&#x8D85;&#x65F6;&#x4E86;timedOut==true
+             * worker&#x6570;&#x91CF;-1&#xFF0C;&#x51CF;&#x4E00;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x5C31;&#x884C;&#x4E86;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;null&#xFF0C;&#x5728;runWorker()&#x4E2D;&#x4F1A;&#x6709;&#x903B;&#x8F91;&#x51CF;&#x5C11;worker&#x7EBF;&#x7A0B;
+             * &#x5982;&#x679C;&#x672C;&#x6B21;&#x51CF;&#x4E00;&#x5931;&#x8D25;&#xFF0C;&#x7EE7;&#x7EED;&#x5185;&#x5C42;&#x5FAA;&#x73AF;&#x518D;&#x6B21;&#x5C1D;&#x8BD5;&#x51CF;&#x4E00;
+             */
+            if (compareAndDecrementWorkerCount(c))
+                return null;
+
+            //&#x5982;&#x679C;&#x51CF;&#x6570;&#x91CF;&#x5931;&#x8D25;&#xFF0C;&#x518D;&#x6B21;&#x8BFB;&#x53D6;ctl
+            c = ctl.get();  // Re-read ctl
+
+            //&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x7EE7;&#x7EED;&#x5916;&#x5C42;&#x5FAA;&#x73AF;
+            //&#x5982;&#x679C;&#x72B6;&#x6001;&#x6CA1;&#x53D8;&#xFF0C;&#x7EE7;&#x7EED;&#x5185;&#x5C42;&#x5FAA;&#x73AF;
+            if (runStateOf(c) != rs)
+                continue retry;
+            // else CAS failed due to workerCount change; retry inner loop
+        }
+
+        try {
+            //poll() - &#x4F7F;&#x7528;  LockSupport.parkNanos(this, nanosTimeout) &#x6302;&#x8D77;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#xFF0C;interrupt()&#x65F6;&#x4E0D;&#x4F1A;&#x629B;&#x5F02;&#x5E38;&#xFF0C;&#x4F46;&#x4F1A;&#x6709;&#x4E2D;&#x65AD;&#x54CD;&#x5E94;
+            //take() - &#x4F7F;&#x7528; LockSupport.park(this) &#x6302;&#x8D77;&#xFF0C;interrupt()&#x65F6;&#x4E0D;&#x4F1A;&#x629B;&#x5F02;&#x5E38;&#xFF0C;&#x4F46;&#x4F1A;&#x6709;&#x4E2D;&#x65AD;&#x54CD;&#x5E94;
+            Runnable r = timed ?
+                workQueue.poll(keepAliveTime, TimeUnit.NANOSECONDS) :    //&#x5927;&#x4E8E;corePoolSize
+                workQueue.take();                                        //&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;corePoolSize
+
+            //&#x5982;&#x83B7;&#x53D6;&#x5230;&#x4E86;&#x4EFB;&#x52A1;&#x5C31;&#x8FD4;&#x56DE;
+            if (r != null)
+                return r;
+
+            //&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#xFF0C;&#x8BF4;&#x660E;&#x8D85;&#x65F6;&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x4E0B;&#x4E00;&#x6B21;&#x5185;&#x5C42;&#x5FAA;&#x73AF;&#x65F6;&#x4F1A;&#x8FDB;&#x5165;worker count&#x51CF;&#x4E00;&#x7684;&#x6B65;&#x9AA4;
+            timedOut = true;
+        }
+        /**
+              * blockingQueue&#x7684;take()&#x963B;&#x585E;&#x4F7F;&#x7528;LockSupport.park(this)&#x8FDB;&#x5165;wait&#x72B6;&#x6001;&#x7684;&#xFF0C;&#x5BF9;LockSupport.park(this)&#x8FDB;&#x884C;interrupt&#x4E0D;&#x4F1A;&#x629B;&#x5F02;&#x5E38;&#xFF0C;&#x4F46;&#x8FD8;&#x662F;&#x4F1A;&#x6709;&#x4E2D;&#x65AD;&#x54CD;&#x5E94;
+              * &#x4F46;AQS&#x7684;ConditionObject&#x7684;await()&#x5BF9;&#x4E2D;&#x65AD;&#x72B6;&#x6001;&#x505A;&#x4E86;&#x5224;&#x65AD;&#xFF0C;&#x4F1A;&#x62A5;&#x544A;&#x4E2D;&#x65AD;&#x72B6;&#x6001; reportInterruptAfterWait(interruptMode)
+              * &#x5C31;&#x4F1A;&#x4E0A;&#x629B;InterruptedException&#xFF0C;&#x5728;&#x6B64;&#x5904;&#x6355;&#x83B7;&#xFF0C;&#x91CD;&#x65B0;&#x5F00;&#x59CB;&#x5FAA;&#x73AF;
+              * &#x5982;&#x679C;&#x662F;&#x7531;&#x4E8E;shutdown()&#x7B49;&#x64CD;&#x4F5C;&#x5BFC;&#x81F4;&#x7684;&#x7A7A;&#x95F2;worker&#x4E2D;&#x65AD;&#x54CD;&#x5E94;&#xFF0C;&#x5728;&#x5916;&#x5C42;&#x5FAA;&#x73AF;&#x5224;&#x65AD;&#x72B6;&#x6001;&#x65F6;&#xFF0C;&#x53EF;&#x80FD;return null
+              */
+        catch (InterruptedException retry) {
+            timedOut = false; //&#x54CD;&#x5E94;&#x4E2D;&#x65AD;&#xFF0C;&#x91CD;&#x65B0;&#x5F00;&#x59CB;&#xFF0C;&#x4E2D;&#x65AD;&#x72B6;&#x6001;&#x4F1A;&#x88AB;&#x6E05;&#x9664;
+        }
+    }
+}<br></div></div>
+
+<p><strong>getTask()</strong>
+<strong>&#x6267;&#x884C;&#x6D41;&#x7A0B;</strong>&#xFF1A;
+1&#x3001;&#x9996;&#x5148;&#x5224;&#x65AD;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x6EE1;&#x8DB3;&#x4ECE;workQueue&#x4E2D;&#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#x7684;&#x6761;&#x4EF6;&#xFF0C;&#x4E0D;&#x6EE1;&#x8DB3;return null
+    A&#x3001;&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;&#x662F;&#x5426;&#x6EE1;&#x8DB3;&#xFF1A;
+        &#xFF08;a&#xFF09;shutdown&#x72B6;&#x6001; + workQueue&#x4E3A;&#x7A7A; &#x6216; stop&#x72B6;&#x6001;&#xFF0C;&#x90FD;&#x4E0D;&#x6EE1;&#x8DB3;&#xFF0C;&#x56E0;&#x4E3A;&#x88AB;shutdown&#x540E;&#x8FD8;&#x662F;&#x8981;&#x6267;&#x884C;workQueue&#x5269;&#x4F59;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x4F46;workQueue&#x4E5F;&#x4E3A;&#x7A7A;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x9000;&#x51FA;&#x4E86;
+        &#xFF08;b&#xFF09;stop&#x72B6;&#x6001;&#xFF0C;shutdownNow()&#x64CD;&#x4F5C;&#x4F1A;&#x4F7F;&#x7EBF;&#x7A0B;&#x6C60;&#x8FDB;&#x5165;stop&#xFF0C;&#x6B64;&#x65F6;&#x4E0D;&#x63A5;&#x53D7;&#x65B0;&#x4EFB;&#x52A1;&#xFF0C;&#x4E2D;&#x65AD;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;workQueue&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#x4E5F;&#x4E0D;&#x6267;&#x884C;&#x4E86;&#xFF0C;&#x6545;return null&#x8FD4;&#x56DE;
+    B&#x3001;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x662F;&#x5426;&#x8D85;&#x8FC7;maximumPoolSize &#x6216; &#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#x662F;&#x5426;&#x8D85;&#x65F6;
+        &#xFF08;a&#xFF09;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x8D85;&#x8FC7;maximumPoolSize&#x53EF;&#x80FD;&#x662F;&#x7EBF;&#x7A0B;&#x6C60;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x88AB;&#x8C03;&#x7528;&#x4E86;setMaximumPoolSize()&#x88AB;&#x6539;&#x53D8;&#x4E86;&#x5927;&#x5C0F;&#xFF0C;&#x5426;&#x5219;&#x5DF2;&#x7ECF;addWorker()&#x6210;&#x529F;&#x4E0D;&#x4F1A;&#x8D85;&#x8FC7;maximumPoolSize
+        &#xFF08;b&#xFF09;&#x5982;&#x679C; &#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&gt;corePoolSize&#xFF0C;&#x624D;&#x4F1A;&#x68C0;&#x67E5;&#x662F;&#x5426;&#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#x8D85;&#x65F6;&#xFF0C;&#x8FD9;&#x4E5F;&#x4F53;&#x73B0;&#x4E86;&#x5F53;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x8FBE;&#x5230;maximumPoolSize&#x540E;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x76F4;&#x6CA1;&#x6709;&#x65B0;&#x4EFB;&#x52A1;&#xFF0C;&#x4F1A;&#x9010;&#x6E10;&#x7EC8;&#x6B62;worker&#x7EBF;&#x7A0B;&#x76F4;&#x5230;corePoolSize
+2&#x3001;&#x5982;&#x679C;&#x6EE1;&#x8DB3;&#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#x6761;&#x4EF6;&#xFF0C;&#x6839;&#x636E;&#x662F;&#x5426;&#x9700;&#x8981;&#x5B9A;&#x65F6;&#x83B7;&#x53D6;&#x8C03;&#x7528;&#x4E0D;&#x540C;&#x65B9;&#x6CD5;&#xFF1A;
+    A&#x3001;workQueue.poll()&#xFF1A;&#x5982;&#x679C;&#x5728;keepAliveTime&#x65F6;&#x95F4;&#x5185;&#xFF0C;&#x963B;&#x585E;&#x961F;&#x5217;&#x8FD8;&#x662F;&#x6CA1;&#x6709;&#x4EFB;&#x52A1;&#xFF0C;&#x8FD4;&#x56DE;null
+    B&#x3001;workQueue.take()&#xFF1A;&#x5982;&#x679C;&#x963B;&#x585E;&#x961F;&#x5217;&#x4E3A;&#x7A7A;&#xFF0C;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x4F1A;&#x88AB;&#x6302;&#x8D77;&#x7B49;&#x5F85;&#xFF1B;&#x5F53;&#x961F;&#x5217;&#x4E2D;&#x6709;&#x4EFB;&#x52A1;&#x52A0;&#x5165;&#x65F6;&#xFF0C;&#x7EBF;&#x7A0B;&#x88AB;&#x5524;&#x9192;&#xFF0C;take&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x4EFB;&#x52A1;
+3&#x3001;&#x5728;&#x963B;&#x585E;&#x4ECE;workQueue&#x4E2D;&#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x88AB;interrupt()&#x4E2D;&#x65AD;&#xFF0C;&#x4EE3;&#x7801;&#x4E2D;&#x6355;&#x83B7;&#x4E86;InterruptedException&#xFF0C;&#x91CD;&#x7F6E;timedOut&#x4E3A;&#x521D;&#x59CB;&#x503C;false&#xFF0C;&#x518D;&#x6B21;&#x6267;&#x884C;&#x7B2C;1&#x6B65;&#x4E2D;&#x7684;&#x5224;&#x65AD;&#xFF0C;&#x6EE1;&#x8DB3;&#x5C31;&#x7EE7;&#x7EED;&#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#xFF0C;&#x4E0D;&#x6EE1;&#x8DB3;return null&#xFF0C;&#x4F1A;&#x8FDB;&#x5165;worker&#x9000;&#x51FA;&#x7684;&#x6D41;&#x7A0B;</p>
+<ol>
+<li><strong>processWorkerExit()  --  worker&#x7EBF;&#x7A0B;&#x9000;&#x51FA;</strong></li>
+</ol>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">/**
+ * Performs cleanup and bookkeeping for a dying worker. Called
+ * only from worker threads. Unless completedAbruptly is set,
+ * assumes that workerCount has already been adjusted to account
+ * for exit.  This method removes thread from worker set, and
+ * possibly terminates the pool or replaces the worker if either
+ * it exited due to user task exception or if fewer than
+ * corePoolSize workers are running or queue is non-empty but
+ * there are no workers.
+ *
+ * @param w the worker
+ * @param completedAbruptly if the worker died due to user exception
+ */
+private void processWorkerExit(Worker w, boolean completedAbruptly) {
+    /**
+     * 1&#x3001;worker&#x6570;&#x91CF;-1
+     * &#x5982;&#x679C;&#x662F;&#x7A81;&#x7136;&#x7EC8;&#x6B62;&#xFF0C;&#x8BF4;&#x660E;&#x662F;task&#x6267;&#x884C;&#x65F6;&#x5F02;&#x5E38;&#x60C5;&#x51B5;&#x5BFC;&#x81F4;&#xFF0C;&#x5373;run()&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x65F6;&#x53D1;&#x751F;&#x4E86;&#x5F02;&#x5E38;&#xFF0C;&#x90A3;&#x4E48;&#x6B63;&#x5728;&#x5DE5;&#x4F5C;&#x7684;worker&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x9700;&#x8981;-1
+     * &#x5982;&#x679C;&#x4E0D;&#x662F;&#x7A81;&#x7136;&#x7EC8;&#x6B62;&#xFF0C;&#x8BF4;&#x660E;&#x662F;worker&#x7EBF;&#x7A0B;&#x6CA1;&#x6709;task&#x53EF;&#x6267;&#x884C;&#x4E86;&#xFF0C;&#x4E0D;&#x7528;-1&#xFF0C;&#x56E0;&#x4E3A;&#x5DF2;&#x7ECF;&#x5728;getTask()&#x65B9;&#x6CD5;&#x4E2D;-1&#x4E86;
+     */
+    if (completedAbruptly) // If abrupt, then workerCount wasn&apos;t adjusted &#x4EE3;&#x7801;&#x548C;&#x6CE8;&#x91CA;&#x6B63;&#x597D;&#x76F8;&#x53CD;&#x554A;
+        decrementWorkerCount();
+
+    /**
+     * 2&#x3001;&#x4ECE;Workers Set&#x4E2D;&#x79FB;&#x9664;worker
+     */
+    final ReentrantLock mainLock = this.mainLock;
+    mainLock.lock();
+    try {
+        completedTaskCount += w.completedTasks; //&#x628A;worker&#x7684;&#x5B8C;&#x6210;&#x4EFB;&#x52A1;&#x6570;&#x52A0;&#x5230;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x5B8C;&#x6210;&#x4EFB;&#x52A1;&#x6570;
+        workers.remove(w); //&#x4ECE;HashSet&lt;Worker&gt;&#x4E2D;&#x79FB;&#x9664;
+    } finally {
+        mainLock.unlock();
+    }
+
+    /**
+     * 3&#x3001;&#x5728;&#x5BF9;&#x7EBF;&#x7A0B;&#x6C60;&#x6709;&#x8D1F;&#x6548;&#x76CA;&#x7684;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x90FD;&#x9700;&#x8981;&#x201C;&#x5C1D;&#x8BD5;&#x7EC8;&#x6B62;&#x201D;&#x7EBF;&#x7A0B;&#x6C60;
+     * &#x4E3B;&#x8981;&#x662F;&#x5224;&#x65AD;&#x7EBF;&#x7A0B;&#x6C60;&#x662F;&#x5426;&#x6EE1;&#x8DB3;&#x7EC8;&#x6B62;&#x7684;&#x72B6;&#x6001;
+     * &#x5982;&#x679C;&#x72B6;&#x6001;&#x6EE1;&#x8DB3;&#xFF0C;&#x4F46;&#x8FD8;&#x6709;&#x7EBF;&#x7A0B;&#x6C60;&#x8FD8;&#x6709;&#x7EBF;&#x7A0B;&#xFF0C;&#x5C1D;&#x8BD5;&#x5BF9;&#x5176;&#x53D1;&#x51FA;&#x4E2D;&#x65AD;&#x54CD;&#x5E94;&#xFF0C;&#x4F7F;&#x5176;&#x80FD;&#x8FDB;&#x5165;&#x9000;&#x51FA;&#x6D41;&#x7A0B;
+     * &#x6CA1;&#x6709;&#x7EBF;&#x7A0B;&#x4E86;&#xFF0C;&#x66F4;&#x65B0;&#x72B6;&#x6001;&#x4E3A;tidying-&gt;terminated
+     */
+    tryTerminate();
+
+    /**
+     * 4&#x3001;&#x662F;&#x5426;&#x9700;&#x8981;&#x589E;&#x52A0;worker&#x7EBF;&#x7A0B;
+     * &#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;&#x662F;running &#x6216; shutdown
+     * &#x5982;&#x679C;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x662F;&#x7A81;&#x7136;&#x7EC8;&#x6B62;&#x7684;&#xFF0C;addWorker()
+     * &#x5982;&#x679C;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x4E0D;&#x662F;&#x7A81;&#x7136;&#x7EC8;&#x6B62;&#x7684;&#xFF0C;&#x4F46;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x6570;&#x91CF; &lt; &#x8981;&#x7EF4;&#x62A4;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#xFF0C;addWorker()
+     * &#x6545;&#x5982;&#x679C;&#x8C03;&#x7528;&#x7EBF;&#x7A0B;&#x6C60;shutdown()&#xFF0C;&#x76F4;&#x5230;workQueue&#x4E3A;&#x7A7A;&#x524D;&#xFF0C;&#x7EBF;&#x7A0B;&#x6C60;&#x90FD;&#x4F1A;&#x7EF4;&#x6301;corePoolSize&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x9010;&#x6E10;&#x9500;&#x6BC1;&#x8FD9;corePoolSize&#x4E2A;&#x7EBF;&#x7A0B;
+     */
+    int c = ctl.get();
+    //&#x5982;&#x679C;&#x72B6;&#x6001;&#x662F;running&#x3001;shutdown&#xFF0C;&#x5373;tryTerminate()&#x6CA1;&#x6709;&#x6210;&#x529F;&#x7EC8;&#x6B62;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x5C1D;&#x8BD5;&#x518D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;worker
+    if (runStateLessThan(c, STOP)) {
+        //&#x4E0D;&#x662F;&#x7A81;&#x7136;&#x5B8C;&#x6210;&#x7684;&#xFF0C;&#x5373;&#x6CA1;&#x6709;task&#x4EFB;&#x52A1;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x800C;&#x5B8C;&#x6210;&#x7684;&#xFF0C;&#x8BA1;&#x7B97;min&#xFF0C;&#x5E76;&#x6839;&#x636E;&#x5F53;&#x524D;worker&#x6570;&#x91CF;&#x5224;&#x65AD;&#x662F;&#x5426;&#x9700;&#x8981;addWorker()
+        if (!completedAbruptly) {
+            int min = allowCoreThreadTimeOut ? 0 : corePoolSize; //allowCoreThreadTimeOut&#x9ED8;&#x8BA4;&#x4E3A;false&#xFF0C;&#x5373;min&#x9ED8;&#x8BA4;&#x4E3A;corePoolSize
+
+            //&#x5982;&#x679C;min&#x4E3A;0&#xFF0C;&#x5373;&#x4E0D;&#x9700;&#x8981;&#x7EF4;&#x6301;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#xFF0C;&#x4E14;workQueue&#x4E0D;&#x4E3A;&#x7A7A;&#xFF0C;&#x81F3;&#x5C11;&#x4FDD;&#x6301;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;
+            if (min == 0 &amp;&amp; ! workQueue.isEmpty())
+                min = 1;
+
+            //&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x5927;&#x4E8E;&#x6700;&#x5C11;&#x6570;&#x91CF;&#xFF0C;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#xFF0C;&#x5426;&#x5219;&#x4E0B;&#x9762;&#x81F3;&#x5C11;&#x8981;addWorker&#x4E00;&#x4E2A;
+            if (workerCountOf(c) &gt;= min)
+                return; // replacement not needed
+        }
+
+        //&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;firstTask&#x7684;worker
+        //&#x53EA;&#x8981;worker&#x662F;completedAbruptly&#x7A81;&#x7136;&#x7EC8;&#x6B62;&#x7684;&#xFF0C;&#x6216;&#x8005;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x5C0F;&#x4E8E;&#x8981;&#x7EF4;&#x62A4;&#x7684;&#x6570;&#x91CF;&#xFF0C;&#x5C31;&#x65B0;&#x6DFB;&#x4E00;&#x4E2A;worker&#x7EBF;&#x7A0B;&#xFF0C;&#x5373;&#x4F7F;&#x662F;shutdown&#x72B6;&#x6001;
+        addWorker(null, false);
+    }
+}<br></div></div>
+
+<p><strong>processWorkerExit(Worker w, boolean completedAbruptly)</strong>
+<strong>&#x53C2;&#x6570;</strong>&#xFF1A;
+    worker&#xFF1A;                      &#x8981;&#x7ED3;&#x675F;&#x7684;worker
+    completedAbruptly&#xFF1A; &#x662F;&#x5426;&#x7A81;&#x7136;&#x5B8C;&#x6210;&#xFF08;&#x662F;&#x5426;&#x56E0;&#x4E3A;&#x5F02;&#x5E38;&#x9000;&#x51FA;&#xFF09;
+<strong>&#x6267;&#x884C;&#x6D41;&#x7A0B;</strong>&#xFF1A;
+1&#x3001;worker&#x6570;&#x91CF;-1
+    A&#x3001;&#x5982;&#x679C;&#x662F;&#x7A81;&#x7136;&#x7EC8;&#x6B62;&#xFF0C;&#x8BF4;&#x660E;&#x662F;task&#x6267;&#x884C;&#x65F6;&#x5F02;&#x5E38;&#x60C5;&#x51B5;&#x5BFC;&#x81F4;&#xFF0C;&#x5373;run()&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x65F6;&#x53D1;&#x751F;&#x4E86;&#x5F02;&#x5E38;&#xFF0C;&#x90A3;&#x4E48;&#x6B63;&#x5728;&#x5DE5;&#x4F5C;&#x7684;worker&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x9700;&#x8981;-1
+    B&#x3001;&#x5982;&#x679C;&#x4E0D;&#x662F;&#x7A81;&#x7136;&#x7EC8;&#x6B62;&#xFF0C;&#x8BF4;&#x660E;&#x662F;worker&#x7EBF;&#x7A0B;&#x6CA1;&#x6709;task&#x53EF;&#x6267;&#x884C;&#x4E86;&#xFF0C;&#x4E0D;&#x7528;-1&#xFF0C;&#x56E0;&#x4E3A;&#x5DF2;&#x7ECF;&#x5728;getTask()&#x65B9;&#x6CD5;&#x4E2D;-1&#x4E86;
+2&#x3001;&#x4ECE;Workers Set&#x4E2D;&#x79FB;&#x9664;worker&#xFF0C;&#x5220;&#x9664;&#x65F6;&#x9700;&#x8981;&#x4E0A;&#x9501;mainlock
+3&#x3001;tryTerminate()&#xFF1A;&#x5728;&#x5BF9;&#x7EBF;&#x7A0B;&#x6C60;&#x6709;&#x8D1F;&#x6548;&#x76CA;&#x7684;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x90FD;&#x9700;&#x8981;&#x201C;&#x5C1D;&#x8BD5;&#x7EC8;&#x6B62;&#x201D;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x5927;&#x6982;&#x903B;&#x8F91;&#xFF1A;
+    &#x5224;&#x65AD;&#x7EBF;&#x7A0B;&#x6C60;&#x662F;&#x5426;&#x6EE1;&#x8DB3;&#x7EC8;&#x6B62;&#x7684;&#x72B6;&#x6001;
+    A&#x3001;&#x5982;&#x679C;&#x72B6;&#x6001;&#x6EE1;&#x8DB3;&#xFF0C;&#x4F46;&#x8FD8;&#x6709;&#x7EBF;&#x7A0B;&#x6C60;&#x8FD8;&#x6709;&#x7EBF;&#x7A0B;&#xFF0C;&#x5C1D;&#x8BD5;&#x5BF9;&#x5176;&#x53D1;&#x51FA;&#x4E2D;&#x65AD;&#x54CD;&#x5E94;&#xFF0C;&#x4F7F;&#x5176;&#x80FD;&#x8FDB;&#x5165;&#x9000;&#x51FA;&#x6D41;&#x7A0B;
+    B&#x3001;&#x6CA1;&#x6709;&#x7EBF;&#x7A0B;&#x4E86;&#xFF0C;&#x66F4;&#x65B0;&#x72B6;&#x6001;&#x4E3A;tidying-&gt;terminated
+4&#x3001;&#x662F;&#x5426;&#x9700;&#x8981;&#x589E;&#x52A0;worker&#x7EBF;&#x7A0B;&#xFF0C;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x8FD8;&#x6CA1;&#x6709;&#x5B8C;&#x5168;&#x7EC8;&#x6B62;&#xFF0C;&#x4ECD;&#x9700;&#x8981;&#x4FDD;&#x6301;&#x4E00;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x7EBF;&#x7A0B;
+    &#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;&#x662F;running &#x6216; shutdown
+    A&#x3001;&#x5982;&#x679C;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x662F;&#x7A81;&#x7136;&#x7EC8;&#x6B62;&#x7684;&#xFF0C;addWorker()
+    B&#x3001;&#x5982;&#x679C;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x4E0D;&#x662F;&#x7A81;&#x7136;&#x7EC8;&#x6B62;&#x7684;&#xFF0C;&#x4F46;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x6570;&#x91CF; &lt; &#x8981;&#x7EF4;&#x62A4;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#xFF0C;addWorker()
+    &#x6545;&#x5982;&#x679C;&#x8C03;&#x7528;&#x7EBF;&#x7A0B;&#x6C60;shutdown()&#xFF0C;&#x76F4;&#x5230;workQueue&#x4E3A;&#x7A7A;&#x524D;&#xFF0C;&#x7EBF;&#x7A0B;&#x6C60;&#x90FD;&#x4F1A;&#x7EF4;&#x6301;corePoolSize&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x9010;&#x6E10;&#x9500;&#x6BC1;&#x8FD9;corePoolSize&#x4E2A;&#x7EBF;&#x7A0B;</p>
+<h2 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h2>
+<p><a href="http://www.cnblogs.com/trust-freedom/p/6681948.html" target="_blank">http://www.cnblogs.com/trust-freedom/p/6681948.html</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="threadpool1.html" class="navigation navigation-prev " aria-label="Previous page: ThreadPool(一)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="threadpool3.html" class="navigation navigation-next " aria-label="Next page: ThreadPool(三)">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ThreadPool(二)","level":"1.4.3.2","depth":3,"next":{"title":"ThreadPool(三)","level":"1.4.3.3","depth":3,"path":"android/java/threadpool3.md","ref":"android/java/threadpool3.md","articles":[]},"previous":{"title":"ThreadPool(一)","level":"1.4.3.1","depth":3,"path":"android/java/threadpool1.md","ref":"android/java/threadpool1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/java/threadpool2.md","mtime":"2018-06-15T06:05:46.634Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-21T09:44:30.252Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
