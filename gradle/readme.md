@@ -37,3 +37,10 @@ groovy可以与Java完美结合， 而且可以使用java所有的库
 1. 安装jdk
 
 2. 下载groovysdk
+
+
+## 参考
+
+**Gradle 完整指南（Android）** https://www.jianshu.com/p/9df3c3b6067a
+
+**Android Studio 中 Gradle 依赖的统一管理**  https://www.jianshu.com/p/a092bcc3de7d
