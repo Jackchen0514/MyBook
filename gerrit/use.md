@@ -179,5 +179,17 @@ Date:   Sat Mar 3 18:38:11 2018 +0800
 
 ```
 
+## 本地分支关联远程分支
+
+```
+git branch --set-upstream-to=origin/<remote_branch> local_branch
+```
+
+## 创建分支并关联某远程分支
+
+```
+git checkout --track origin/<remote_branch>
+```
+
 # 参考
 官方网站：https://git-scm.com/book/zh/v2
