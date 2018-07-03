@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Gradle开发(一) · 技术博客</title>
+        <title>Fiddler · 技术博客</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../Http/readme.html" />
+    <link rel="next" href="../Linux/readme.html" />
     
     
-    <link rel="prev" href="readme.html" />
+    <link rel="prev" href="restful.html" />
     
 
     </head>
@@ -767,9 +767,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="readme.html">
+        <li class="chapter " data-level="1.5" data-path="../gradle/readme.html">
             
-                <a href="readme.html">
+                <a href="../gradle/readme.html">
             
                     
                     Gradle..
@@ -781,9 +781,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.5.1" data-path="groovy1.html">
+        <li class="chapter " data-level="1.5.1" data-path="../gradle/groovy1.html">
             
-                <a href="groovy1.html">
+                <a href="../gradle/groovy1.html">
             
                     
                     Gradle开发(一)
@@ -799,9 +799,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../Http/readme.html">
+        <li class="chapter " data-level="1.6" data-path="readme.html">
             
-                <a href="../Http/readme.html">
+                <a href="readme.html">
             
                     
                     Http..
@@ -813,9 +813,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../Http/http1.html">
+        <li class="chapter " data-level="1.6.1" data-path="http1.html">
             
-                <a href="../Http/http1.html">
+                <a href="http1.html">
             
                     
                     Http请求头和请求体
@@ -826,9 +826,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="../Http/http2.html">
+        <li class="chapter " data-level="1.6.2" data-path="http2.html">
             
-                <a href="../Http/http2.html">
+                <a href="http2.html">
             
                     
                     Http相应头与状态码
@@ -839,9 +839,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="../Http/restful.html">
+        <li class="chapter " data-level="1.6.3" data-path="restful.html">
             
-                <a href="../Http/restful.html">
+                <a href="restful.html">
             
                     
                     Restful架构详解
@@ -852,9 +852,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.4" data-path="../Http/Fiddler.html">
+        <li class="chapter active" data-level="1.6.4" data-path="Fiddler.html">
             
-                <a href="../Http/Fiddler.html">
+                <a href="Fiddler.html">
             
                     
                     Fiddler
@@ -990,7 +990,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Gradle开发(一)</a>
+        <a href=".." >Fiddler</a>
     </h1>
 </div>
 
@@ -1005,69 +1005,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="groovy">Groovy</h1>
-<h2 id="&#x57FA;&#x7840;&#x8BED;&#x6CD5;">&#x57FA;&#x7840;&#x8BED;&#x6CD5;</h2>
-<ul>
-<li><p><strong>&#x53D8;&#x91CF;&#x7C7B;&#x578B;</strong></p>
-</li>
-<li><p>&#x57FA;&#x672C;&#x7C7B;&#x578B;</p>
-</li>
-<li>&#x5BF9;&#x8C61;&#x7C7B;&#x578B;</li>
-</ul>
-<p>&#x5176;&#x5B9E;&#x90FD;&#x662F;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;</p>
-<ul>
-<li><p><strong>&#x53D8;&#x91CF;&#x7684;&#x5B9A;&#x4E49;</strong></p>
-</li>
-<li><p>&#x5F3A;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;</p>
-</li>
-</ul>
-<p>int double &#x7B49;</p>
-<ol>
-<li>&#x5F31;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;</li>
-</ol>
-<p>def</p>
-<p>&#x5982;&#x679C;&#x53EA;&#x7528;&#x4E8E;&#x5F53;&#x524D;&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x5F31;&#x7C7B;&#x578B;
-&#x5982;&#x679C;&#x4E0D;&#x4EC5;&#x4EC5;&#x7528;&#x4E8E;&#x5F53;&#x524D;&#x7C7B;&#xFF0C;&#x5EFA;&#x8BAE;&#x5F3A;&#x7C7B;&#x578B;</p>
-<ul>
-<li><p><strong>&#x5B57;&#x7B26;&#x4E32;</strong></p>
-</li>
-<li><p>String</p>
-</li>
-<li>GString</li>
-</ul>
-<p>&#x4E24;&#x8005;&#x53EF;&#x4EE5;&#x4E92;&#x76F8;&#x8F6C;&#x6362;</p>
-<pre><code>&apos; str &apos;
-&apos;&apos;&apos; str &apos;&apos;&apos;
-
-//&#x53EF;&#x6269;&#x5C55;&#x5B57;&#x7B26;&#x4E32;
-&quot; str &quot;
-</code></pre><p><strong>&#x5B57;&#x7B26;&#x4E32;&#x65B9;&#x6CD5;</strong></p>
-<p>&#x666E;&#x901A;&#x53C2;&#x6570;&#x7C7B;&#x578B;
-&#x95ED;&#x5305;&#x53C2;&#x6570;&#x7C7B;&#x578B;</p>
-<h2 id="&#x903B;&#x8F91;&#x63A7;&#x5236;">&#x903B;&#x8F91;&#x63A7;&#x5236;</h2>
-<ul>
-<li><p>&#x987A;&#x5E8F;&#x903B;&#x8F91;</p>
-</li>
-<li><p>&#x6761;&#x4EF6;&#x903B;&#x8F91;</p>
-</li>
-<li><p>&#x5FAA;&#x73AF;&#x903B;&#x8F91;</p>
-</li>
-</ul>
-<h2 id="&#x95ED;&#x5305;">&#x95ED;&#x5305;</h2>
-<ul>
-<li>&#x95ED;&#x5305;&#x7684;&#x57FA;&#x672C;</li>
-</ul>
-<p>&#x95ED;&#x5305;&#x6982;&#x5FF5;</p>
-<p>&#x95ED;&#x5305;&#x53C2;&#x6570;</p>
-<p>&#x95ED;&#x5305;&#x8FD4;&#x56DE;&#x503C;</p>
-<ul>
-<li><p>&#x95ED;&#x5305;&#x4F7F;&#x7528;&#x8BE6;&#x89E3;</p>
-</li>
-<li><p>&#x95ED;&#x5305;&#x8FDB;&#x9636;&#x8BB2;&#x89E3;</p>
-</li>
-</ul>
+                                <h1 id="fiddler">Fiddler</h1>
 <h2 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h2>
-<p>[1] <a href="https://yuweiguocn.github.io/write-gradle-plugin/" target="_blank">https://yuweiguocn.github.io/write-gradle-plugin/</a></p>
+<p><a href="http://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/ConfigureForAndroid" target="_blank">http://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/ConfigureForAndroid</a></p>
 
                                 
                                 </section>
@@ -1095,12 +1035,12 @@
 
             
                 
-                <a href="readme.html" class="navigation navigation-prev " aria-label="Previous page: Gradle..">
+                <a href="restful.html" class="navigation navigation-prev " aria-label="Previous page: Restful架构详解">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../Http/readme.html" class="navigation navigation-next " aria-label="Next page: Http..">
+                <a href="../Linux/readme.html" class="navigation navigation-next " aria-label="Next page: Linux">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1111,7 +1051,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Gradle开发(一)","level":"1.5.1","depth":2,"next":{"title":"Http..","level":"1.6","depth":1,"path":"Http/readme.md","ref":"Http/readme.md","articles":[{"title":"Http请求头和请求体","level":"1.6.1","depth":2,"path":"Http/http1.md","ref":"Http/http1.md","articles":[]},{"title":"Http相应头与状态码","level":"1.6.2","depth":2,"path":"Http/http2.md","ref":"Http/http2.md","articles":[]},{"title":"Restful架构详解","level":"1.6.3","depth":2,"path":"Http/restful.md","ref":"Http/restful.md","articles":[]},{"title":"Fiddler","level":"1.6.4","depth":2,"path":"Http/Fiddler.md","ref":"Http/Fiddler.md","articles":[]}]},"previous":{"title":"Gradle..","level":"1.5","depth":1,"path":"gradle/readme.md","ref":"gradle/readme.md","articles":[{"title":"Gradle开发(一)","level":"1.5.1","depth":2,"path":"gradle/groovy1.md","ref":"gradle/groovy1.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"gradle/groovy1.md","mtime":"2018-06-22T07:35:58.080Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-03T12:37:58.462Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Fiddler","level":"1.6.4","depth":2,"next":{"title":"Linux","level":"1.7","depth":1,"path":"Linux/readme.md","ref":"Linux/readme.md","articles":[]},"previous":{"title":"Restful架构详解","level":"1.6.3","depth":2,"path":"Http/restful.md","ref":"Http/restful.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"Http/Fiddler.md","mtime":"2018-07-02T02:00:18.585Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-03T12:37:58.462Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
