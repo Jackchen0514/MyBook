@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Gradle开发(一) · 技术博客</title>
+        <title>百度人脸识别 · 技术博客</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -64,8 +64,6 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
-    
-    <link rel="next" href="../Http/readme.html" />
     
     
     <link rel="prev" href="readme.html" />
@@ -767,9 +765,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="readme.html">
+        <li class="chapter " data-level="1.5" data-path="../gradle/readme.html">
             
-                <a href="readme.html">
+                <a href="../gradle/readme.html">
             
                     
                     Gradle..
@@ -781,9 +779,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.5.1" data-path="groovy1.html">
+        <li class="chapter " data-level="1.5.1" data-path="../gradle/groovy1.html">
             
-                <a href="groovy1.html">
+                <a href="../gradle/groovy1.html">
             
                     
                     Gradle开发(一)
@@ -928,9 +926,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10" data-path="../zhaji/readme.html">
+        <li class="chapter " data-level="1.10" data-path="readme.html">
             
-                <a href="../zhaji/readme.html">
+                <a href="readme.html">
             
                     
                     闸机
@@ -942,9 +940,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.10.1" data-path="../zhaji/baiduface1.html">
+        <li class="chapter active" data-level="1.10.1" data-path="baiduface1.html">
             
-                <a href="../zhaji/baiduface1.html">
+                <a href="baiduface1.html">
             
                     
                     百度人脸识别
@@ -990,7 +988,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Gradle开发(一)</a>
+        <a href=".." >百度人脸识别</a>
     </h1>
 </div>
 
@@ -1005,69 +1003,104 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="groovy">Groovy</h1>
-<h2 id="&#x57FA;&#x7840;&#x8BED;&#x6CD5;">&#x57FA;&#x7840;&#x8BED;&#x6CD5;</h2>
+                                <h1 id="&#x767E;&#x5EA6;&#x95F8;&#x673A;">&#x767E;&#x5EA6;&#x95F8;&#x673A;</h1>
+<h2 id="&#x6CE8;&#x518C;&#x6A21;&#x5757;">&#x6CE8;&#x518C;&#x6A21;&#x5757;</h2>
 <ul>
-<li><p><strong>&#x53D8;&#x91CF;&#x7C7B;&#x578B;</strong></p>
-</li>
-<li><p>&#x57FA;&#x672C;&#x7C7B;&#x578B;</p>
-</li>
-<li>&#x5BF9;&#x8C61;&#x7C7B;&#x578B;</li>
+<li><strong>&#x4ECE;&#x76F8;&#x518C;&#x9009;&#x53D6;</strong></li>
 </ul>
-<p>&#x5176;&#x5B9E;&#x90FD;&#x662F;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;</p>
-<ul>
-<li><p><strong>&#x53D8;&#x91CF;&#x7684;&#x5B9A;&#x4E49;</strong></p>
-</li>
-<li><p>&#x5F3A;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;</p>
-</li>
-</ul>
-<p>int double &#x7B49;</p>
-<ol>
-<li>&#x5F31;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;</li>
-</ol>
-<p>def</p>
-<p>&#x5982;&#x679C;&#x53EA;&#x7528;&#x4E8E;&#x5F53;&#x524D;&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x5F31;&#x7C7B;&#x578B;
-&#x5982;&#x679C;&#x4E0D;&#x4EC5;&#x4EC5;&#x7528;&#x4E8E;&#x5F53;&#x524D;&#x7C7B;&#xFF0C;&#x5EFA;&#x8BAE;&#x5F3A;&#x7C7B;&#x578B;</p>
-<ul>
-<li><p><strong>&#x5B57;&#x7B26;&#x4E32;</strong></p>
-</li>
-<li><p>String</p>
-</li>
-<li>GString</li>
-</ul>
-<p>&#x4E24;&#x8005;&#x53EF;&#x4EE5;&#x4E92;&#x76F8;&#x8F6C;&#x6362;</p>
-<pre><code>&apos; str &apos;
-&apos;&apos;&apos; str &apos;&apos;&apos;
+<p>&#x538B;&#x7F29;&#x9009;&#x53D6;&#x7684;&#x76F8;&#x518C;&#x56FE;&#x7247;</p>
+<p>&#x6CE8;&#xFF1A; (&#x56FE;&#x7247;&#x5F88;&#x5927;&#xFF0C;&#x4E0D;&#x80FD;&#x5168;&#x90E8;&#x52A0;&#x5728;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#x5904;&#x7406;&#xFF0C;&#x8981;&#x662F;&#x5168;&#x90E8;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#x4F1A;&#x5185;&#x5B58;&#x6EA2;&#x51FA;)</p>
+<p>&#x538B;&#x7F29;&#x4EBA;&#x8138;&#x56FE;&#x7247;&#x81F3;300 * 300, &#x51CF;&#x5C11;&#x7F51;&#x7EDC;&#x4F20;&#x8F93;&#x65F6;&#x95F4;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">public static void resize(Bitmap bitmap, File outputFile, int maxWidth, int maxHeight) {
+    try {
+        int bitmapWidth = bitmap.getWidth();
+        int bitmapHeight = bitmap.getHeight();
+        // &#x56FE;&#x7247;&#x5927;&#x4E8E;&#x6700;&#x5927;&#x9AD8;&#x5BBD;&#xFF0C;&#x6309;&#x5927;&#x7684;&#x503C;&#x7F29;&#x653E;
+        if (bitmapWidth &gt; maxHeight || bitmapHeight &gt; maxWidth) {
+            float widthScale = maxWidth * 1.0f / bitmapWidth;
+            float heightScale = maxHeight * 1.0f / bitmapHeight;
 
-//&#x53EF;&#x6269;&#x5C55;&#x5B57;&#x7B26;&#x4E32;
-&quot; str &quot;
-</code></pre><p><strong>&#x5B57;&#x7B26;&#x4E32;&#x65B9;&#x6CD5;</strong></p>
-<p>&#x666E;&#x901A;&#x53C2;&#x6570;&#x7C7B;&#x578B;
-&#x95ED;&#x5305;&#x53C2;&#x6570;&#x7C7B;&#x578B;</p>
-<h2 id="&#x903B;&#x8F91;&#x63A7;&#x5236;">&#x903B;&#x8F91;&#x63A7;&#x5236;</h2>
+            float scale = Math.min(widthScale, heightScale);
+
+            //&#x77E9;&#x9635;
+            Matrix matrix = new Matrix();
+            matrix.postScale(scale, scale);
+
+            /**
+             * android.graphics.Bitmap createBitmap(android.graphics.Bitmap source, int x, int y, int width, int height,
+             *                 android.graphics.Matrix m, boolean filter)
+             */
+            bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmapWidth, bitmapHeight, matrix, false);
+        }
+        LogUtil.i(&quot;APIService&quot;, &quot;upload face size&quot; + bitmap.getWidth() + &quot;*&quot; + bitmap.getHeight());
+        // save image
+        FileOutputStream out = new FileOutputStream(outputFile);
+        try {
+            /**
+             * 90&#x4EE3;&#x8868;&#x538B;&#x7F29;&#x7387;, &#x8868;&#x793A;&#x538B;&#x7F29;10%,  100&#x8868;&#x793A;&#x4E0D;&#x538B;&#x7F29;&#xFF0C;&#x538B;&#x7F29;0%
+             */
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 90, out);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                out.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}<br></div></div>
+
 <ul>
-<li><p>&#x987A;&#x5E8F;&#x903B;&#x8F91;</p>
-</li>
-<li><p>&#x6761;&#x4EF6;&#x903B;&#x8F91;</p>
-</li>
-<li><p>&#x5FAA;&#x73AF;&#x903B;&#x8F91;</p>
-</li>
+<li><strong>&#x81EA;&#x52A8;&#x68C0;&#x6D4B;</strong></li>
 </ul>
-<h2 id="&#x95ED;&#x5305;">&#x95ED;&#x5305;</h2>
-<ul>
-<li>&#x95ED;&#x5305;&#x7684;&#x57FA;&#x672C;</li>
-</ul>
-<p>&#x95ED;&#x5305;&#x6982;&#x5FF5;</p>
-<p>&#x95ED;&#x5305;&#x53C2;&#x6570;</p>
-<p>&#x95ED;&#x5305;&#x8FD4;&#x56DE;&#x503C;</p>
-<ul>
-<li><p>&#x95ED;&#x5305;&#x4F7F;&#x7528;&#x8BE6;&#x89E3;</p>
-</li>
-<li><p>&#x95ED;&#x5305;&#x8FDB;&#x9636;&#x8BB2;&#x89E3;</p>
-</li>
-</ul>
-<h2 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h2>
-<p>[1] <a href="https://yuweiguocn.github.io/write-gradle-plugin/" target="_blank">https://yuweiguocn.github.io/write-gradle-plugin/</a></p>
+<p>activity_reg_detected.xml :</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;match_parent&quot;&gt;
+
+    &lt;com.baidu.aip.face.TexturePreviewView
+            android:id=&quot;@+id/texture_view&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;match_parent&quot;
+            android:visibility=&quot;visible&quot;/&gt;
+
+    &lt;View
+            android:id=&quot;@+id/rect_view&quot;
+            android:background=&quot;@drawable/avator_rect_shape&quot;
+            android:layout_margin=&quot;20dip&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;400dp&quot;
+            android:layout_centerInParent=&quot;true&quot;
+            android:visibility=&quot;visible&quot;/&gt;
+
+    &lt;ImageView
+            android:id=&quot;@+id/display_avatar&quot;
+            android:layout_width=&quot;125dp&quot;
+            android:layout_height=&quot;150dp&quot;/&gt;
+
+    &lt;TextView
+            android:id=&quot;@+id/hint_text_view&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:textSize=&quot;18sp&quot;
+            android:textColor=&quot;#FFFFFF&quot;
+            android:padding=&quot;6dp&quot;
+            android:layout_marginTop=&quot;12dp&quot;
+            android:layout_centerHorizontal=&quot;true&quot;
+            android:background=&quot;#66000000&quot;
+            android:layout_below=&quot;@+id/rect_view&quot;/&gt;
+
+&lt;/RelativeLayout&gt;<br></div></div>
+
+<p>&#x5982;&#x4E0B;&#x56FE;&#xFF1A;</p>
+<p><img src="https://raw.githubusercontent.com/Jackchen0514/Pictures/master/regdetect1.png" alt="image"></p>
+<p>texture_view &#x662F;&#x6574;&#x4E2A;&#x663E;&#x793A;&#x533A;&#x57DF;</p>
+<p>rect_view &#x662F;&#x4E2D;&#x95F4;&#x7684;&#x9EC4;&#x6846;&#x6240;&#x663E;&#x793A;&#x533A;&#x57DF;</p>
+<p><code>&#x4EBA;&#x8138;&#x8BC6;&#x522B;&#x7684;&#x56FE;&#x7247;&#x53EA;&#x622A;&#x53D6;&#x9EC4;&#x6846;&#x91CC;&#x7684;&#x56FE;&#x7247;&#x4F5C;&#x4E3A;&#x8BC6;&#x522B;&#x56FE;&#x7247;</code></p>
 
                                 
                                 </section>
@@ -1095,14 +1128,10 @@
 
             
                 
-                <a href="readme.html" class="navigation navigation-prev " aria-label="Previous page: Gradle..">
+                <a href="readme.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 闸机">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="../Http/readme.html" class="navigation navigation-next " aria-label="Next page: Http..">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -1111,7 +1140,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Gradle开发(一)","level":"1.5.1","depth":2,"next":{"title":"Http..","level":"1.6","depth":1,"path":"Http/readme.md","ref":"Http/readme.md","articles":[{"title":"Http请求头和请求体","level":"1.6.1","depth":2,"path":"Http/http1.md","ref":"Http/http1.md","articles":[]},{"title":"Http相应头与状态码","level":"1.6.2","depth":2,"path":"Http/http2.md","ref":"Http/http2.md","articles":[]},{"title":"Restful架构详解","level":"1.6.3","depth":2,"path":"Http/restful.md","ref":"Http/restful.md","articles":[]},{"title":"Fiddler","level":"1.6.4","depth":2,"path":"Http/Fiddler.md","ref":"Http/Fiddler.md","articles":[]}]},"previous":{"title":"Gradle..","level":"1.5","depth":1,"path":"gradle/readme.md","ref":"gradle/readme.md","articles":[{"title":"Gradle开发(一)","level":"1.5.1","depth":2,"path":"gradle/groovy1.md","ref":"gradle/groovy1.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"gradle/groovy1.md","mtime":"2018-06-22T07:35:58.080Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-03T12:37:58.462Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"百度人脸识别","level":"1.10.1","depth":2,"previous":{"title":"闸机","level":"1.10","depth":1,"path":"zhaji/readme.md","ref":"zhaji/readme.md","articles":[{"title":"百度人脸识别","level":"1.10.1","depth":2,"path":"zhaji/baiduface1.md","ref":"zhaji/baiduface1.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"zhaji/baiduface1.md","mtime":"2018-07-03T12:36:44.473Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-03T12:37:58.462Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
