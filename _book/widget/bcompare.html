@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Linux · 技术博客</title>
+        <title>bcompare · 技术博客</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../nginx/readme.html" />
+    <link rel="next" href="../fangkj/" />
     
     
-    <link rel="prev" href="../Http/Fiddler.html" />
+    <link rel="prev" href="readme.html" />
     
 
     </head>
@@ -870,9 +870,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.7" data-path="readme.html">
+        <li class="chapter " data-level="1.7" data-path="../Linux/readme.html">
             
-                <a href="readme.html">
+                <a href="../Linux/readme.html">
             
                     
                     Linux
@@ -896,9 +896,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="../widget/readme.html">
+        <li class="chapter " data-level="1.9" data-path="readme.html">
             
-                <a href="../widget/readme.html">
+                <a href="readme.html">
             
                     
                     实用工具
@@ -910,9 +910,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.9.1" data-path="../widget/bcompare.html">
+        <li class="chapter active" data-level="1.9.1" data-path="bcompare.html">
             
-                <a href="../widget/bcompare.html">
+                <a href="bcompare.html">
             
                     
                     bcompare
@@ -1022,7 +1022,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Linux</a>
+        <a href=".." >bcompare</a>
     </h1>
 </div>
 
@@ -1037,9 +1037,43 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="linux&#x57FA;&#x672C;&#x64CD;&#x4F5C;">Linux&#x57FA;&#x672C;&#x64CD;&#x4F5C;</h1>
-<h2 id="&#x4ECE;&#x672C;&#x5730;&#x590D;&#x5236;&#x6587;&#x4EF6;&#x5230;&#x8FDC;&#x7A0B;">&#x4ECE;&#x672C;&#x5730;&#x590D;&#x5236;&#x6587;&#x4EF6;&#x5230;&#x8FDC;&#x7A0B;</h2>
-<pre><code>scp FangKJ.apk root@IP&#x5730;&#x5740;:/root/download/FangKJ.apk
+                                <h1 id="beyond-compare-4&#x7834;&#x89E3;">beyond compare 4&#x7834;&#x89E3;</h1>
+<ul>
+<li><strong>1.&#x4E0B;&#x8F7D;bcompare</strong></li>
+</ul>
+<pre><code>wget http://(ip&#x5730;&#x5740;):83/bcompare-4.2.5.23088_amd64.deb
+</code></pre><p>&#x5B98;&#x7F51;&#x4E0B;&#x8F7D;:</p>
+<pre><code>wget http://www.scootersoftware.com/bcompare-4.2.5.23088_amd64.deb
+</code></pre><ul>
+<li><strong>2.&#x5B89;&#x88C5;</strong></li>
+</ul>
+<pre><code>sudo apt-get update
+sudo apt-get install gdebi-core
+sudo gdebi bcompare-4.2.5.23088_amd64.deb
+</code></pre><ul>
+<li><strong>3.&#x5378;&#x8F7D;</strong></li>
+</ul>
+<pre><code>sudo apt-get remove bcompare
+</code></pre><ul>
+<li><strong>4.&#x7834;&#x89E3;</strong></li>
+</ul>
+<pre><code>cd /usr/lib/beyondcompare/
+</code></pre><pre><code>sudo sed -i &quot;s/keexjEP3t4Mue23hrnuPtY4TdcsqNiJL-5174TsUdLmJSIXKfG2NGPwBL6vnRPddT7tH
+29qpkneX63DO9ECSPE9rzY1zhThHERg8lHM9IBFT+rVuiY823aQJuqzxCKIE1bcDqM4wgW01FH6oCBP1G4ub
+01xmb4BGSUG6ZrjxWHJyNLyIlGvOhoY2HAYzEtzYGwxFZn2JZ66o4RONkXjX0DF9EzsdUef3UAS+JQ+fCYRe
+LawdjEe6tXCv88GKaaPKWxCeaUL9PejICQgRQOLGOZtZQkLgAelrOtehxz5ANOOqCaJgy2mJLQVLM5SJ9Dli
+909c5ybvEhVmIC0dc9dWH+/N9KmiLVlKMU7RJqnE+WXEEPI1SgglmfmLc1yVH7dqBb9ehOoKG9UE+HAE1YvH
+1XX2XVGeEqYUY-Tsk7YBTz0WpSpoYyPgx6Iki5KLtQ5G-aKP9eysnkuOAkrvHU8bLbGtZteGwJarev03PhfC
+ioJL4OSqsmQGEvDbHFEbNl1qJtdwEriR+VNZts9vNNLk7UGfeNwIiqpxjk4Mn09nmSd8FhM4ifvcaIbNCRoM
+PGl6KU12iseSe+w+1kFsLhX+OhQM8WXcWV10cGqBzQE9OqOLUcg9n0krrR3KrohstS9smTwEx9olyLYppvC0
+p5i7dAx2deWvM1ZxKNs0BvcXGukR+/g&quot; BCompare
+</code></pre><p>&#x6B64;&#x65F6;BCompare&#x6587;&#x4EF6;&#x5DF2;&#x88AB;&#x7834;&#x89E3;&#xFF0C;&#x6253;&#x5F00;&#x8F6F;&#x4EF6;&#x4F1A;&#x63D0;&#x793A;Trial Mode Error&#xFF01;&#x8868;&#x793A;&#x6210;&#x529F;&#xFF0C;&#x8F93;&#x5165;&#x4E0B;&#x9762;&#x7684;&#x5BC6;&#x94A5;&#x5373;&#x53EF;&#x6CE8;&#x518C;&#x6210;&#x529F;</p>
+<pre><code>--- BEGIN LICENSE KEY ---
+GXN1eh9FbDiX1ACdd7XKMV7hL7x0ClBJLUJ-zFfKofjaj2yxE53xauIfkqZ8FoLpcZ0Ux6McTyNmODDSvSIHL
+Yhg1QkTxjCeSCk6ARz0ABJcnUmd3dZYJNWFyJun14rmGByRnVPL49QH+Rs0kjRGKCB-cb8IT4Gf0Ue9WMQ1A6
+t31MO9jmjoYUeoUmbeAQSofvuK8GN1rLRv7WXfUJ0uyvYlGLqzq1ZoJAJDyo0Kdr4ThF-IXcv2cxVyWVW1SaM
+q8GFosDEGThnY7C-SgNXW30jqAOgiRjKKRX9RuNeDMFqgP2cuf0NMvyMrMScnM1ZyiAaJJtzbxqN5hZOMClUTE+++
+--- END LICENSE KEY -----
 </code></pre>
                                 
                                 </section>
@@ -1067,12 +1101,12 @@
 
             
                 
-                <a href="../Http/Fiddler.html" class="navigation navigation-prev " aria-label="Previous page: Fiddler">
+                <a href="readme.html" class="navigation navigation-prev " aria-label="Previous page: 实用工具">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../nginx/readme.html" class="navigation navigation-next " aria-label="Next page: Nginx">
+                <a href="../fangkj/" class="navigation navigation-next " aria-label="Next page: 访客机">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1083,7 +1117,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Linux","level":"1.7","depth":1,"next":{"title":"Nginx","level":"1.8","depth":1,"path":"nginx/readme.md","ref":"nginx/readme.md","articles":[]},"previous":{"title":"Fiddler","level":"1.6.4","depth":2,"path":"Http/Fiddler.md","ref":"Http/Fiddler.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"Linux/readme.md","mtime":"2018-06-06T12:00:44.720Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-05T09:19:35.887Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"bcompare","level":"1.9.1","depth":2,"next":{"title":"访客机","level":"1.10","depth":1,"path":"fangkj/README.MD","ref":"fangkj/README.MD","articles":[{"title":"门禁访客机","level":"1.10.1","depth":2,"path":"fangkj/fangkj_1.md","ref":"fangkj/fangkj_1.md","articles":[]}]},"previous":{"title":"实用工具","level":"1.9","depth":1,"path":"widget/readme.md","ref":"widget/readme.md","articles":[{"title":"bcompare","level":"1.9.1","depth":2,"path":"widget/bcompare.md","ref":"widget/bcompare.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"widget/bcompare.md","mtime":"2018-07-05T09:16:06.492Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-05T09:19:35.887Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -55,6 +55,8 @@
     * [Fiddler](Http/Fiddler.md)
 * [Linux](Linux/readme.md)
 * [Nginx](nginx/readme.md)
+* [实用工具](widget/readme.md)
+    * [bcompare](widget/bcompare.md)
 * [访客机](fangkj/README.MD)
     * [门禁访客机](fangkj/fangkj_1.md)
 * [闸机](zhaji/readme.md)

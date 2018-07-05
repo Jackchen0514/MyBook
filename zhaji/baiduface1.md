@@ -619,3 +619,16 @@ RegDetectActivity.java:
 ```
 
 
+## 注意事项
+
+Application 初始化的时候 apiKey,secretKey 要先注册认证，否则会报如下错误：
+
+```
+java.lang.UnsatisfiedLinkError: No implementation found for int
+com.baidu.idl.facesdk.FaceSDK.getARGBFromYUVimg(byte[], int[], int, int, int, int) (tried
+Java_com_baidu_idl_facesdk_FaceSDK_getARGBFromYUVimg and
+Java_com_baidu_idl_facesdk_FaceSDK_getARGBFromYUVimg___3B_3IIIII)
+
+```
+
+
