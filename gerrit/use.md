@@ -20,6 +20,53 @@ git log //查看commit记录
 
 ```
 
+### 解决每次都要输入密码的问题
+
+如果你的版本库已经用https 方式创建好了，那么就需要先删除原来的提交方式。在终端执行以下指令：
+
+```
+git remote rm origin
+git remote add origin git@github.com:Jackchen0514/MyBook.git
+```
+
+这里我提供一下我的具体例子：
+https: https://github.com/用户名/GitTest.git
+ssh: git@github.com:用户名/GitTest.git
+我是怎么知道的呢？如果你在创建版本库时选择不创建README.md，系统会提示你创建：
+
+```
+https：
+…or create a new repository on the command line
+echo # GitTest >> README.md
+
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/Sugerming/GitTest.git
+git push -u origin master
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/Sugerming/GitTest.git
+git push -u origin master
+
+
+
+ssh:
+…or create a new repository on the command line
+echo # GitTest >> README.md
+
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:Sugerming/GitTest.git
+git push -u origin master
+
+
+…or push an existing repository from the command line
+git remote add origin git@github.com:Sugerming/GitTest.git
+git push -u origin master
+```
+
 ### 仓库迁移
 仓库迁移不丢失log的方法，使用git push - - mirror
 
