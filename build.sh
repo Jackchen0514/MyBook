@@ -1,16 +1,17 @@
 #!/bin/bash
 
-echo "开始build gitbook"
+echo "#############################################"
+echo "***************gitbook build*****************"
 
 gitbook build
 
-echo "build 完成"
+echo "**********cp -r _book/* ../book/*************"
+echo "                                             "
 
 cp -r _book/* ../book/
 
-echo "book 复制成功"
-
-echo "开始代码上传"
+echo "****************./git_push.sh****************"
 ./git_push.sh
 
-echo "上传结束"
+echo "****************successful*******************"
+echo "#############################################"
