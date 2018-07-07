@@ -238,5 +238,11 @@ git branch --set-upstream-to=origin/<remote_branch> local_branch
 git checkout --track origin/<remote_branch>
 ```
 
+
+## 拉取某个分支
+```
+git clone -b <branch-name> https://github.com/Jackchen0514/MyBook.git
+```
+
 # 参考
 官方网站：https://git-scm.com/book/zh/v2
