@@ -2,7 +2,79 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de97163e-d830-4b78-8e61-0bef565ba3ae" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/gerrit/use.md" afterPath="$PROJECT_DIR$/gerrit/use.md" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/_book/.idea/workspace.xml" afterPath="$PROJECT_DIR$/_book/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/_book/Http/Fiddler.html" afterPath="$PROJECT_DIR$/_book/Http/Fiddler.html" />
+      <change beforePath="$PROJECT_DIR$/_book/Http/http1.html" afterPath="$PROJECT_DIR$/_book/Http/http1.html" />
+      <change beforePath="$PROJECT_DIR$/_book/Http/http2.html" afterPath="$PROJECT_DIR$/_book/Http/http2.html" />
+      <change beforePath="$PROJECT_DIR$/_book/Http/readme.html" afterPath="$PROJECT_DIR$/_book/Http/readme.html" />
+      <change beforePath="$PROJECT_DIR$/_book/Http/restful.html" afterPath="$PROJECT_DIR$/_book/Http/restful.html" />
+      <change beforePath="$PROJECT_DIR$/_book/Linux/readme.html" afterPath="$PROJECT_DIR$/_book/Linux/readme.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/adb_cmd.html" afterPath="$PROJECT_DIR$/_book/android/adb_cmd.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/android.html" afterPath="$PROJECT_DIR$/_book/android/android.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/camera/camera.html" afterPath="$PROJECT_DIR$/_book/android/camera/camera.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/camera/camera1.html" afterPath="$PROJECT_DIR$/_book/android/camera/camera1.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/dagger/dagger1.html" afterPath="$PROJECT_DIR$/_book/android/dagger/dagger1.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/dagger/dagger2.html" afterPath="$PROJECT_DIR$/_book/android/dagger/dagger2.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/dagger/dagger3.html" afterPath="$PROJECT_DIR$/_book/android/dagger/dagger3.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/dagger/readme.html" afterPath="$PROJECT_DIR$/_book/android/dagger/readme.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/faceai/baidufacesdk.html" afterPath="$PROJECT_DIR$/_book/android/faceai/baidufacesdk.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/java/readme.html" afterPath="$PROJECT_DIR$/_book/android/java/readme.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/java/threadpool1.html" afterPath="$PROJECT_DIR$/_book/android/java/threadpool1.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/java/threadpool2.html" afterPath="$PROJECT_DIR$/_book/android/java/threadpool2.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/java/threadpool3.html" afterPath="$PROJECT_DIR$/_book/android/java/threadpool3.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/mvp/mvp架构.html" afterPath="$PROJECT_DIR$/_book/android/mvp/mvp架构.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/mvp/readme.html" afterPath="$PROJECT_DIR$/_book/android/mvp/readme.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/okhttp/okhttp1.html" afterPath="$PROJECT_DIR$/_book/android/okhttp/okhttp1.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/okhttp/readme.html" afterPath="$PROJECT_DIR$/_book/android/okhttp/readme.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/react-native/react-native1.html" afterPath="$PROJECT_DIR$/_book/android/react-native/react-native1.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/react-native/readme.html" afterPath="$PROJECT_DIR$/_book/android/react-native/readme.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/remake/remake1.html" afterPath="$PROJECT_DIR$/_book/android/remake/remake1.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/retrofit/retrofit.html" afterPath="$PROJECT_DIR$/_book/android/retrofit/retrofit.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/retrofit/retrofit1&amp;2.html" afterPath="$PROJECT_DIR$/_book/android/retrofit/retrofit1&amp;2.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/retrofit/retrofit2.x&amp;RxJava2.x.html" afterPath="$PROJECT_DIR$/_book/android/retrofit/retrofit2.x&amp;RxJava2.x.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/retrofit/retrofit2_1.html" afterPath="$PROJECT_DIR$/_book/android/retrofit/retrofit2_1.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/retrofit/retrofit2_2.html" afterPath="$PROJECT_DIR$/_book/android/retrofit/retrofit2_2.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/rxjava/rxjava.html" afterPath="$PROJECT_DIR$/_book/android/rxjava/rxjava.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/rxjava/rxjava1&amp;2.html" afterPath="$PROJECT_DIR$/_book/android/rxjava/rxjava1&amp;2.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/rxjava/rxjava1_1.html" afterPath="$PROJECT_DIR$/_book/android/rxjava/rxjava1_1.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/rxjava/rxjava1_2.html" afterPath="$PROJECT_DIR$/_book/android/rxjava/rxjava1_2.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/rxjava/rxjava1_3.html" afterPath="$PROJECT_DIR$/_book/android/rxjava/rxjava1_3.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/rxjava/rxjava2_1.html" afterPath="$PROJECT_DIR$/_book/android/rxjava/rxjava2_1.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/rxjava/rxjava2_2.html" afterPath="$PROJECT_DIR$/_book/android/rxjava/rxjava2_2.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/rxjava/rxjava_backpressure.html" afterPath="$PROJECT_DIR$/_book/android/rxjava/rxjava_backpressure.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/rxjava/rxpermisson.html" afterPath="$PROJECT_DIR$/_book/android/rxjava/rxpermisson.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/widget/readme.html" afterPath="$PROJECT_DIR$/_book/android/widget/readme.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/widget/refreshlayout.html" afterPath="$PROJECT_DIR$/_book/android/widget/refreshlayout.html" />
+      <change beforePath="$PROJECT_DIR$/_book/android/widget/swipeRefreshlayout.html" afterPath="$PROJECT_DIR$/_book/android/widget/swipeRefreshlayout.html" />
+      <change beforePath="$PROJECT_DIR$/_book/camera/readme.html" afterPath="$PROJECT_DIR$/_book/camera/readme.html" />
+      <change beforePath="$PROJECT_DIR$/_book/fangkj/fangkj_1.html" afterPath="$PROJECT_DIR$/_book/fangkj/fangkj_1.html" />
+      <change beforePath="$PROJECT_DIR$/_book/fangkj/index.html" afterPath="$PROJECT_DIR$/_book/fangkj/index.html" />
+      <change beforePath="$PROJECT_DIR$/_book/gerrit/centos_build.html" afterPath="$PROJECT_DIR$/_book/gerrit/centos_build.html" />
+      <change beforePath="$PROJECT_DIR$/_book/gerrit/index.html" afterPath="$PROJECT_DIR$/_book/gerrit/index.html" />
+      <change beforePath="$PROJECT_DIR$/_book/gerrit/ubuntu_build.html" afterPath="$PROJECT_DIR$/_book/gerrit/ubuntu_build.html" />
+      <change beforePath="$PROJECT_DIR$/_book/gerrit/use.html" afterPath="$PROJECT_DIR$/_book/gerrit/use.html" />
+      <change beforePath="$PROJECT_DIR$/_book/gitbook/create.html" afterPath="$PROJECT_DIR$/_book/gitbook/create.html" />
+      <change beforePath="$PROJECT_DIR$/_book/gitbook/gitbook-plugin-highlight/ebook.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_book/gitbook/gitbook-plugin-highlight/website.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_book/gitbook/index.html" afterPath="$PROJECT_DIR$/_book/gitbook/index.html" />
+      <change beforePath="$PROJECT_DIR$/_book/gitbook/use.html" afterPath="$PROJECT_DIR$/_book/gitbook/use.html" />
+      <change beforePath="$PROJECT_DIR$/_book/gradle/groovy1.html" afterPath="$PROJECT_DIR$/_book/gradle/groovy1.html" />
+      <change beforePath="$PROJECT_DIR$/_book/gradle/readme.html" afterPath="$PROJECT_DIR$/_book/gradle/readme.html" />
+      <change beforePath="$PROJECT_DIR$/_book/index.html" afterPath="$PROJECT_DIR$/_book/index.html" />
+      <change beforePath="$PROJECT_DIR$/_book/jenkins/readme.html" afterPath="$PROJECT_DIR$/_book/jenkins/readme.html" />
+      <change beforePath="$PROJECT_DIR$/_book/nginx/readme.html" afterPath="$PROJECT_DIR$/_book/nginx/readme.html" />
+      <change beforePath="$PROJECT_DIR$/_book/search_index.json" afterPath="$PROJECT_DIR$/_book/search_index.json" />
+      <change beforePath="$PROJECT_DIR$/_book/widget/bcompare.html" afterPath="$PROJECT_DIR$/_book/widget/bcompare.html" />
+      <change beforePath="$PROJECT_DIR$/_book/widget/readme.html" afterPath="$PROJECT_DIR$/_book/widget/readme.html" />
+      <change beforePath="$PROJECT_DIR$/_book/zhaji/baiduface1.html" afterPath="$PROJECT_DIR$/_book/zhaji/baiduface1.html" />
+      <change beforePath="$PROJECT_DIR$/_book/zhaji/readme.html" afterPath="$PROJECT_DIR$/_book/zhaji/readme.html" />
+      <change beforePath="$PROJECT_DIR$/android/camera/camera.md" afterPath="$PROJECT_DIR$/android/camera/camera.md" />
+      <change beforePath="$PROJECT_DIR$/android/rxjava/rxjava1_1.md" afterPath="$PROJECT_DIR$/android/rxjava/rxjava1_1.md" />
+      <change beforePath="$PROJECT_DIR$/book.json" afterPath="$PROJECT_DIR$/book.json" />
+      <change beforePath="$PROJECT_DIR$/gitbook/create.md" afterPath="$PROJECT_DIR$/gitbook/create.md" />
+      <change beforePath="$PROJECT_DIR$/node_modules/gitbook-plugin-toggle-chapters/package.json" afterPath="$PROJECT_DIR$/node_modules/gitbook-plugin-toggle-chapters/package.json" />
+      <change beforePath="$PROJECT_DIR$/zhaji/baiduface1.md" afterPath="$PROJECT_DIR$/zhaji/baiduface1.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,72 +85,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SUMMARY.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SUMMARY.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="458">
-                <caret line="51" column="34" lean-forward="false" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-                <folding />
-              </first_editor>
-              <second_editor>
-                <markdownNavigatorState />
-              </second_editor>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="readme.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/camera/readme.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="522">
-                <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-                <folding />
-              </first_editor>
-              <second_editor>
-                <markdownNavigatorState />
-              </second_editor>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="camera1.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/camera/camera1.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="90">
-                <caret line="5" column="42" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="42" />
-                <folding />
-              </first_editor>
-              <second_editor>
-                <markdownNavigatorState />
-              </second_editor>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="readme.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/widget/readme.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="36">
-                <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-                <folding />
-              </first_editor>
-              <second_editor>
-                <markdownNavigatorState />
-              </second_editor>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bcompare.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/widget/bcompare.md">
+      <file leaf-file-name="retrofit.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/retrofit/retrofit.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="0">
-                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="20" />
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor>
@@ -88,12 +100,102 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readme.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jenkins/readme.md">
+      <file leaf-file-name="retrofit1&amp;2.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/retrofit/retrofit1&amp;2.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="2376">
-                <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor>
+                <markdownNavigatorState />
+              </second_editor>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="retrofit2.x&amp;RxJava2.x.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/retrofit/retrofit2.x&amp;RxJava2.x.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor>
+                <markdownNavigatorState />
+              </second_editor>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rxjava1&amp;2.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/rxjava/rxjava1&amp;2.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor>
+                <markdownNavigatorState />
+              </second_editor>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rxjava1_2.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/rxjava/rxjava1_2.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor>
+                <markdownNavigatorState />
+              </second_editor>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rxjava1_1.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/rxjava/rxjava1_1.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="288">
+                <caret line="19" column="42" lean-forward="false" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+                <folding />
+              </first_editor>
+              <second_editor>
+                <markdownNavigatorState />
+              </second_editor>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gitbook/create.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="236">
+                <caret line="108" column="7" lean-forward="false" selection-start-line="108" selection-start-column="7" selection-end-line="108" selection-end-column="7" />
+                <folding />
+              </first_editor>
+              <second_editor>
+                <markdownNavigatorState />
+              </second_editor>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="use.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gitbook/use.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="-268">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor>
@@ -104,7 +206,7 @@
         </entry>
       </file>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gerrit/README.md">
+        <entry file="file://$PROJECT_DIR$/gitbook/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="0">
@@ -118,47 +220,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ubuntu_build.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gerrit/ubuntu_build.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="0">
-                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor>
-                <markdownNavigatorState />
-              </second_editor>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="use.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gerrit/use.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="606">
-                <caret line="244" column="3" lean-forward="true" selection-start-line="244" selection-start-column="3" selection-end-line="244" selection-end-column="3" />
-                <folding />
-              </first_editor>
-              <second_editor>
-                <markdownNavigatorState />
-              </second_editor>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="readme.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Linux/readme.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="288">
-                <caret line="16" column="54" lean-forward="false" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
-                <folding />
-              </first_editor>
-              <second_editor>
-                <markdownNavigatorState />
-              </second_editor>
+      <file leaf-file-name="book.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/book.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+              <folding>
+                <marker date="1532313234684" expanded="true" signature="291:458" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -183,11 +252,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/android/retrofit/retrofit1&amp;2.md" />
-        <option value="$PROJECT_DIR$/android/retrofit/retrofit2_2.md" />
-        <option value="$PROJECT_DIR$/android/mvp/mvp架构.md" />
-        <option value="$PROJECT_DIR$/android/camera/readme.md" />
-        <option value="$PROJECT_DIR$/android/camera/camera.md" />
         <option value="$PROJECT_DIR$/nginx/readme.md" />
         <option value="$PROJECT_DIR$/react_native/readme.md" />
         <option value="$PROJECT_DIR$/react_native/react_native1.md" />
@@ -226,7 +290,6 @@
         <option value="$PROJECT_DIR$/android/camera/camera1.md" />
         <option value="$PROJECT_DIR$/camera/readme.md" />
         <option value="$PROJECT_DIR$/zhaji/readme.md" />
-        <option value="$PROJECT_DIR$/zhaji/baiduface1.md" />
         <option value="$PROJECT_DIR$/widget/bcompare.md" />
         <option value="$PROJECT_DIR$/widget/readme.md" />
         <option value="$PROJECT_DIR$/jenjins/readme.md" />
@@ -234,12 +297,18 @@
         <option value="$PROJECT_DIR$/Linux/readme.md" />
         <option value="$PROJECT_DIR$/SUMMARY.md" />
         <option value="$PROJECT_DIR$/gerrit/use.md" />
+        <option value="$PROJECT_DIR$/android/camera/camera.md" />
+        <option value="$PROJECT_DIR$/python/readme.md" />
+        <option value="$PROJECT_DIR$/zhaji/baiduface1.md" />
+        <option value="$PROJECT_DIR$/android/rxjava/rxjava1_1.md" />
+        <option value="$PROJECT_DIR$/book.json" />
+        <option value="$PROJECT_DIR$/gitbook/create.md" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="202" />
-    <option name="y" value="44" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="583" />
+    <option name="y" value="111" />
     <option name="width" value="1718" />
     <option name="height" value="982" />
   </component>
@@ -258,6 +327,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -269,27 +341,18 @@
             <path>
               <item name="MyBook" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyBook" type="462c0819:PsiDirectoryNode" />
-              <item name="camera" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MyBook" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyBook" type="462c0819:PsiDirectoryNode" />
-              <item name="gerrit" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="retrofit" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MyBook" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyBook" type="462c0819:PsiDirectoryNode" />
-              <item name="jenkins" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyBook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyBook" type="462c0819:PsiDirectoryNode" />
-              <item name="Linux" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyBook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyBook" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
+              <item name="gitbook" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MyBook" type="b2602c69:ProjectViewProjectNode" />
@@ -300,9 +363,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -439,8 +499,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="202" y="44" width="1718" height="982" extended-state="0" />
-    <editor active="true" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -452,34 +511,19 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16932154" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1566594" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16932154" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -490,118 +534,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/android/react-native/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/react-native/react-native1.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/rxjava/rxjava1_2.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/rxjava/rxpermisson.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="216">
-            <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/rxjava/rxjava1&amp;2.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/retrofit/retrofit2.x&amp;RxJava2.x.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/aosp/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1332">
-            <caret line="74" column="13" lean-forward="false" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/http/http2.md" />
-    <entry file="file://$PROJECT_DIR$/android/http/http1.md" />
-    <entry file="file://$PROJECT_DIR$/android/java/java1.md" />
     <entry file="file://$PROJECT_DIR$/android/java/threadpool1.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
@@ -902,32 +834,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/book.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zhaji/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="72">
             <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/camera/camera.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />
@@ -952,7 +863,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="1656">
             <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="8" />
-            <folding />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />
@@ -965,25 +875,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zhaji/baiduface1.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="11394">
-            <caret line="633" column="0" lean-forward="false" selection-start-line="633" selection-start-column="0" selection-end-line="633" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/widget/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="36">
             <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-            <folding />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />
@@ -996,7 +892,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="20" />
-            <folding />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />
@@ -1009,7 +904,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="288">
             <caret line="16" column="54" lean-forward="false" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
-            <folding />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />
@@ -1082,10 +976,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gerrit/use.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="4302">
+            <caret line="239" column="0" lean-forward="false" selection-start-line="239" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/camera/camera.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="4374">
+            <caret line="243" column="47" lean-forward="false" selection-start-line="243" selection-start-column="47" selection-end-line="243" selection-end-column="47" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="108">
+            <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SUMMARY.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="458">
+          <first_editor relative-caret-position="918">
             <caret line="51" column="34" lean-forward="false" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
             <folding />
           </first_editor>
@@ -1101,11 +1034,148 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gerrit/use.md">
+    <entry file="file://$PROJECT_DIR$/zhaji/baiduface1.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="606">
-            <caret line="244" column="3" lean-forward="true" selection-start-line="244" selection-start-column="3" selection-end-line="244" selection-end-column="3" />
+          <first_editor relative-caret-position="762">
+            <caret line="633" column="2" lean-forward="false" selection-start-line="633" selection-start-column="2" selection-end-line="633" selection-end-column="2" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/retrofit/retrofit.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/retrofit/retrofit1&amp;2.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/retrofit/retrofit2.x&amp;RxJava2.x.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/rxjava/rxjava1&amp;2.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/rxjava/rxjava1_2.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/rxjava/rxjava1_1.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="288">
+            <caret line="19" column="42" lean-forward="false" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+          <folding>
+            <marker date="1532313234684" expanded="true" signature="291:458" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitbook/use.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-268">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitbook/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitbook/create.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="236">
+            <caret line="108" column="7" lean-forward="false" selection-start-line="108" selection-start-column="7" selection-end-line="108" selection-end-column="7" />
             <folding />
           </first_editor>
           <second_editor>

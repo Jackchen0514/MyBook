@@ -25,7 +25,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
                 
             
                 
@@ -1053,7 +1053,7 @@
                                 <h1 id="dagger2&#x4E09;">Dagger2(&#x4E09;)</h1>
 <h2 id="scope&#x548C;singleton">@Scope&#x548C;@Singleton</h2>
 <p>@Scope&#x662F;&#x7528;&#x6765;&#x7BA1;&#x7406;&#x4F9D;&#x8D56;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x7684;&#x3002;&#x5B83;&#x548C;@Qualifier&#x4E00;&#x6837;&#x662F;&#x7528;&#x6765;&#x81EA;&#x5B9A;&#x4E49;&#x6CE8;&#x89E3;&#x7684;&#xFF0C;&#x800C;@Singleton&#x5219;&#x662F;@Scope&#x7684;&#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;&#x3002;</p>
-<pre><code>/**
+<pre class="language-"><code>/**
  * Identifies a type that the injector only instantiates once. Not inherited.
  *
  * @see javax.inject.Scope @Scope
@@ -1093,7 +1093,7 @@
 }<br></div></div>
 
 <p>&#x6253;&#x5370;&#x7684;&#x5730;&#x5740;&#x503C;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x662F;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;</p>
-<pre><code>D/MainActivity: pot = com.aitsuki.architecture.pot.Pot@240f3ff5, pot2 = com.aitsuki.architecture.pot.Pot@2c79118a
+<pre class="language-"><code>D/MainActivity: pot = com.aitsuki.architecture.pot.Pot@240f3ff5, pot2 = com.aitsuki.architecture.pot.Pot@2c79118a
 </code></pre><p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x9700;&#x8981;Pot&#x5BF9;&#x8C61;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x548C;app&#x76F8;&#x540C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5355;&#x4F8B;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x600E;&#x4E48;&#x505A;&#xFF1F;&#x8FD9;&#x65F6;&#x5019;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x5230;@Scope&#x6CE8;&#x89E3;&#x4E86;&#x3002;</p>
 <p>&#x6211;&#x4EEC;&#x6765;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7684;@Scope&#x5B9E;&#x73B0;&#x2014;&#x2014;@Singleton
 &#x9700;&#x8981;&#x5728;@Provide&#x548C;@Component&#x4E2D;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x624D;&#x8D77;&#x4F5C;&#x7528;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x5462;&#xFF0C;&#x5F85;&#x4F1A;&#x4F1A;&#x8BF4;&#x660E;&#x3002;</p>
@@ -1129,7 +1129,7 @@ public interface MainActivityComponent {
     void inject(MainActivity activity);
 }<br></div></div>
 
-<pre><code>D/MainActivity: pot = com.aitsuki.architecture.pot.Pot@240f3ff5, pot2 = com.aitsuki.architecture.pot.Pot@240f3ff5
+<pre class="language-"><code>D/MainActivity: pot = com.aitsuki.architecture.pot.Pot@240f3ff5, pot2 = com.aitsuki.architecture.pot.Pot@240f3ff5
 </code></pre><p>&#x8FD9;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x4E24;&#x4E2A;pot&#x5BF9;&#x8C61;&#x7684;&#x5730;&#x5740;&#x503C;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;@Scope&#x6CE8;&#x89E3;&#x8D77;&#x4F5C;&#x7528;&#x4E86;&#x3002;</p>
 <p>&#x90A3;&#x4E48;&#x6211;&#x518D;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;Activity&#xFF0C;&#x518D;&#x6B21;&#x6CE8;&#x5165;pot&#x6253;&#x5370;&#x5730;&#x5740;&#x503C;&#x3002;</p>
 <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">public class SecondActivity extends AppCompatActivity {
@@ -1192,7 +1192,7 @@ public interface SecondActivityComponent {
 }<br></div></div>
 
 
-<pre><code>D/MainActivity: pot = com.aitsuki.architecture.pot.Pot@240f3ff5, pot2 = com.aitsuki.architecture.pot.Pot@240f3ff5
+<pre class="language-"><code>D/MainActivity: pot = com.aitsuki.architecture.pot.Pot@240f3ff5, pot2 = com.aitsuki.architecture.pot.Pot@240f3ff5
 D/SecondActivity: pot3 = com.aitsuki.architecture.pot.Pot@1b7661c7
 </code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x5728;SecondActivity&#x4E2D;&#xFF0C;Pot&#x5BF9;&#x8C61;&#x5730;&#x5740;&#x548C;MainActivity&#x4E2D;&#x7684;&#x4E0D;&#x4E00;&#x6837;&#x4E86;&#x3002;
 &#x4E3A;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;&#x4E0D;&#x662F;&#x53EB;@Singleton&#x4E48;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;&#x4E86;&#x5B83;Pot&#x8FD8;&#x4E0D;&#x662F;&#x5355;&#x4F8B;&#x7684;&#xFF0C;Dagger2&#x4F60;&#x9017;&#x6211;</p>
@@ -1285,7 +1285,7 @@ ngleton&#xFF09;, &#x90A3;&#x4E48;&#x8BE5;Provide&#x65B9;&#x6CD5;&#x63D0;&#x4F9B;
 }<br></div></div>
 
 <p>&#x8FD0;&#x884C;&#x540E;&#x7684;log&#x8F93;&#x51FA;</p>
-<pre><code>D/MainActivity: pot = com.aitsuki.architecture.pot.Pot@240f3ff5, pot2 = com.aitsuki.architecture.pot.Pot@240f3ff5
+<pre class="language-"><code>D/MainActivity: pot = com.aitsuki.architecture.pot.Pot@240f3ff5, pot2 = com.aitsuki.architecture.pot.Pot@240f3ff5
 D/SecondActivity: pot3 = com.aitsuki.architecture.pot.Pot@240f3ff5
 </code></pre><p>&#x73B0;&#x5728;Pot&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x5C31;&#x548C;app&#x76F8;&#x540C;&#x4E86;&#x3002;</p>
 <p>&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x8BD5;&#x8BD5;&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;@ApplicationScope&#xFF0C;&#x66FF;&#x6362;&#x6389;@Singleton&#xFF0C;&#x7ED3;&#x679C;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x6F14;&#x793A;&#x4E86;&#x3002;</p>
@@ -1397,7 +1397,7 @@ map.toString() // =&gt; &#x201E;{foo=foo value, bar=bar value}&#x201D;<br></div>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Dagger2(三)","level":"1.4.5.3","depth":3,"next":{"title":"Face","level":"1.4.6","depth":2,"path":"android/faceai/baidufacesdk.md","ref":"android/faceai/baidufacesdk.md","articles":[]},"previous":{"title":"Dagger2(二)","level":"1.4.5.2","depth":3,"path":"android/dagger/dagger2.md","ref":"android/dagger/dagger2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/dagger/dagger3.md","mtime":"2018-06-06T12:00:44.772Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-07T03:45:47.849Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Dagger2(三)","level":"1.4.5.3","depth":3,"next":{"title":"Face","level":"1.4.6","depth":2,"path":"android/faceai/baidufacesdk.md","ref":"android/faceai/baidufacesdk.md","articles":[]},"previous":{"title":"Dagger2(二)","level":"1.4.5.2","depth":3,"path":"android/dagger/dagger2.md","ref":"android/dagger/dagger2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters","prism","-highlight"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"ace":{},"toggle-chapters":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"search":{"maxIndexSize":1000000000},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/dagger/dagger3.md","mtime":"2018-06-06T12:00:44.772Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-23T02:44:27.544Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

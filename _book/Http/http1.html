@@ -25,7 +25,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
                 
             
                 
@@ -1223,12 +1223,12 @@
 </ul>
 <p>application/json &#x8FD9;&#x4E2A; Content-Type &#x4F5C;&#x4E3A;&#x54CD;&#x5E94;&#x5934;&#x5927;&#x5BB6;&#x80AF;&#x5B9A;&#x4E0D;&#x964C;&#x751F;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x73B0;&#x5728;&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#x7684;&#x4EBA;&#x628A;&#x5B83;&#x4F5C;&#x4E3A;&#x8BF7;&#x6C42;&#x5934;&#xFF0C;&#x7528;&#x6765;&#x544A;&#x8BC9;&#x670D;&#x52A1;&#x7AEF;&#x6D88;&#x606F;&#x4E3B;&#x4F53;&#x662F;&#x5E8F;&#x5217;&#x5316;&#x540E;&#x7684; JSON &#x5B57;&#x7B26;&#x4E32;&#x3002;&#x7531;&#x4E8E; JSON &#x89C4;&#x8303;&#x7684;&#x6D41;&#x884C;&#xFF0C;&#x9664;&#x4E86;&#x4F4E;&#x7248;&#x672C; IE &#x4E4B;&#x5916;&#x7684;&#x5404;&#x5927;&#x6D4F;&#x89C8;&#x5668;&#x90FD;&#x539F;&#x751F;&#x652F;&#x6301; JSON.stringify&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x8BED;&#x8A00;&#x4E5F;&#x90FD;&#x6709;&#x5904;&#x7406; JSON &#x7684;&#x51FD;&#x6570;&#xFF0C;&#x4F7F;&#x7528; JSON &#x4E0D;&#x4F1A;&#x9047;&#x4E0A;&#x4EC0;&#x4E48;&#x9EBB;&#x70E6;&#x3002;</p>
 <p>JSON &#x683C;&#x5F0F;&#x652F;&#x6301;&#x6BD4;&#x952E;&#x503C;&#x5BF9;&#x590D;&#x6742;&#x5F97;&#x591A;&#x7684;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x4E00;&#x70B9;&#x4E5F;&#x5F88;&#x6709;&#x7528;&#x3002;&#x8BB0;&#x5F97;&#x6211;&#x51E0;&#x5E74;&#x524D;&#x505A;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x63D0;&#x4EA4;&#x7684;&#x6570;&#x636E;&#x5C42;&#x6B21;&#x975E;&#x5E38;&#x6DF1;&#xFF0C;&#x6211;&#x5C31;&#x662F;&#x628A;&#x6570;&#x636E; JSON &#x5E8F;&#x5217;&#x5316;&#x4E4B;&#x540E;&#x6765;&#x63D0;&#x4EA4;&#x7684;&#x3002;&#x4E0D;&#x8FC7;&#x5F53;&#x65F6;&#x6211;&#x662F;&#x628A; JSON &#x5B57;&#x7B26;&#x4E32;&#x4F5C;&#x4E3A; val&#xFF0C;&#x4ECD;&#x7136;&#x653E;&#x5728;&#x952E;&#x503C;&#x5BF9;&#x91CC;&#xFF0C;&#x4EE5; x-www-form-urlencoded &#x65B9;&#x5F0F;&#x63D0;&#x4EA4;&#x3002;</p>
-<pre><code>JSvar data = {&apos;title&apos;:&apos;test&apos;, &apos;sub&apos; : [1,2,3]};
+<pre class="language-"><code>JSvar data = {&apos;title&apos;:&apos;test&apos;, &apos;sub&apos; : [1,2,3]};
 $http.post(url, data).success(function(result) {
     ...
 });
 </code></pre><p>&#x6700;&#x7EC8;&#x53D1;&#x9001;&#x7684;&#x8BF7;&#x6C42;&#x662F;&#xFF1A;</p>
-<pre><code>BASHPOST http://www.example.com HTTP/1.1
+<pre class="language-"><code>BASHPOST http://www.example.com HTTP/1.1
 Content-Type: application/json;charset=utf-8
 
 {&quot;title&quot;:&quot;test&quot;,&quot;sub&quot;:[1,2,3]}
@@ -1237,22 +1237,22 @@ Content-Type: application/json;charset=utf-8
 <li><strong>text/xml</strong></li>
 </ul>
 <p>&#x5178;&#x578B;&#x7684; XML-RPC &#x8BF7;&#x6C42;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;</p>
-<pre><code>HTMLPOST http://www.example.com HTTP/1.1
+<pre class="language-"><code>HTMLPOST http://www.example.com HTTP/1.1
 Content-Type: text/xml
 
-&lt;?xml version=&quot;1.0&quot;?&gt;
-&lt;methodCall&gt;
-    &lt;methodName&gt;examples.getStateName&lt;/methodName&gt;
-    &lt;params&gt;
-        &lt;param&gt;
-            &lt;value&gt;&lt;i4&gt;41&lt;/i4&gt;&lt;/value&gt;
-        &lt;/param&gt;
-    &lt;/params&gt;
-&lt;/methodCall&gt;
+<span class="token prolog">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>methodCall</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>methodName</span><span class="token punctuation">&gt;</span></span>examples.getStateName<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>methodName</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>params</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>param</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i4</span><span class="token punctuation">&gt;</span></span>41<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i4</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>param</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>params</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>methodCall</span><span class="token punctuation">&gt;</span></span>
 </code></pre><p>XML-RPC &#x534F;&#x8BAE;&#x7B80;&#x5355;&#x3001;&#x529F;&#x80FD;&#x591F;&#x7528;&#xFF0C;&#x5404;&#x79CD;&#x8BED;&#x8A00;&#x7684;&#x5B9E;&#x73B0;&#x90FD;&#x6709;&#x3002;&#x5B83;&#x7684;&#x4F7F;&#x7528;&#x4E5F;&#x5F88;&#x5E7F;&#x6CDB;&#xFF0C;&#x5982; WordPress &#x7684; XML-RPC Api&#xFF0C;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x7684; ping &#x670D;&#x52A1;&#x7B49;&#x7B49;&#x3002;JavaScript &#x4E2D;&#xFF0C;&#x4E5F;&#x6709;&#x73B0;&#x6210;&#x7684;&#x5E93;&#x652F;&#x6301;&#x4EE5;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4EA4;&#x4E92;&#xFF0C;&#x80FD;&#x5F88;&#x597D;&#x7684;&#x652F;&#x6301;&#x5DF2;&#x6709;&#x7684; XML-RPC &#x670D;&#x52A1;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x6211;&#x4E2A;&#x4EBA;&#x89C9;&#x5F97; XML &#x7ED3;&#x6784;&#x8FD8;&#x662F;&#x8FC7;&#x4E8E;&#x81C3;&#x80BF;&#xFF0C;&#x4E00;&#x822C;&#x573A;&#x666F;&#x7528; JSON &#x4F1A;&#x66F4;&#x7075;&#x6D3B;&#x65B9;&#x4FBF;&#x3002;</p>
 <h3 id="query-stringapplicationx-www-form-urlencoded">Query String:application/x-www-form-urlencoded</h3>
 <p>&#x8FD9;&#x7B97;&#x662F;&#x6700;&#x5E38;&#x89C1;&#x7684; POST &#x63D0;&#x4EA4;&#x6570;&#x636E;&#x7684;&#x65B9;&#x5F0F;&#x4E86;&#x3002;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x539F;&#x751F; <form> &#x8868;&#x5355;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x8BBE;&#x7F6E; enctype &#x5C5E;&#x6027;&#xFF0C;&#x90A3;&#x4E48;&#x6700;&#x7EC8;&#x5C31;&#x4F1A;&#x4EE5; application/x-www-form-urlencoded &#x65B9;&#x5F0F;&#x63D0;&#x4EA4;&#x6570;&#x636E;&#x3002;</form></p>
-<pre><code>POST http://www.example.com HTTP/1.1
+<pre class="language-"><code>POST http://www.example.com HTTP/1.1
 Content-Type: application/x-www-form-urlencoded;charset=utf-8
 title=test&amp;sub%5B%5D=1&amp;sub%5B%5D=2&amp;sub%5B%5D=3
 </code></pre><p>&#x9996;&#x5148;&#xFF0C;Content-Type &#x88AB;&#x6307;&#x5B9A;&#x4E3A; application/x-www-form-urlencoded&#xFF1B;&#x8FD9;&#x91CC;&#x7684;&#x683C;&#x5F0F;&#x8981;&#x6C42;&#x5C31;&#x662F;URL&#x4E2D;Query String&#x7684;&#x683C;&#x5F0F;&#x8981;&#x6C42;&#xFF1A;&#x591A;&#x4E2A;&#x952E;&#x503C;&#x5BF9;&#x4E4B;&#x95F4;&#x7528;&amp;&#x8FDE;&#x63A5;&#xFF0C;&#x952E;&#x4E0E;&#x503C;&#x4E4B;&#x524D;&#x7528;=&#x8FDE;&#x63A5;&#xFF0C;&#x4E14;&#x53EA;&#x80FD;&#x7528;ASCII&#x5B57;&#x7B26;&#xFF0C;&#x975E;ASCII&#x5B57;&#x7B26;&#x9700;&#x4F7F;&#x7528;UrlEncode&#x7F16;&#x7801;&#x3002;&#x5927;&#x90E8;&#x5206;&#x670D;&#x52A1;&#x7AEF;&#x8BED;&#x8A00;&#x90FD;&#x5BF9;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x6709;&#x5F88;&#x597D;&#x7684;&#x652F;&#x6301;&#x3002;&#x4F8B;&#x5982; PHP &#x4E2D;&#xFF0C;$_POST[&apos;title&apos;] &#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230; title &#x7684;&#x503C;&#xFF0C;$_POST[&apos;sub&apos;] &#x53EF;&#x4EE5;&#x5F97;&#x5230; sub &#x6570;&#x7EC4;&#x3002;</p>
@@ -1262,7 +1262,7 @@ title=test&amp;sub%5B%5D=1&amp;sub%5B%5D=2&amp;sub%5B%5D=3
 <p><img src="http://upload-images.jianshu.io/upload_images/1724103-f764903c4ae2408a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <p>&#x533A;&#x5206;&#x662F;&#x5426;&#x88AB;&#x5F53;&#x6210;&#x6587;&#x4EF6;&#x7684;&#x5173;&#x952E;&#x662F;Content-Disposition&#x662F;&#x5426;&#x5305;&#x542B;filename&#xFF0C;&#x56E0;&#x4E3A;&#x6587;&#x4EF6;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x6240;&#x4EE5;&#x8FD8;&#x8981;&#x4F7F;&#x7528;Content-Type&#x6307;&#x793A;&#x6587;&#x4EF6;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x77E5;&#x9053;&#x662F;&#x4EC0;&#x4E48;&#x7C7B;&#x578B;&#x53D6;&#x503C;&#x53EF;&#x4EE5;&#x4E3A;application/octet-stream&#x8868;&#x793A;&#x8BE5;&#x6587;&#x4EF6;&#x662F;&#x4E2A;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x662F;&#x6587;&#x4EF6;&#x5219;Content-Type&#x53EF;&#x4EE5;&#x7701;&#x7565;&#x3002;
 &#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x8868;&#x5355;&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x8BA9; <form> &#x8868;&#x5355;&#x7684; enctyped &#x7B49;&#x4E8E; multipart/form-data&#x3002;&#x76F4;&#x63A5;&#x6765;&#x770B;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x793A;&#x4F8B;&#xFF1A;</form></p>
-<pre><code>BASHPOST http://www.example.com HTTP/1.1
+<pre class="language-"><code>BASHPOST http://www.example.com HTTP/1.1
 Content-Type:multipart/form-data; boundary=----WebKitFormBoundaryrGKCBY7qhFd3TrwA
 
 ------WebKitFormBoundaryrGKCBY7qhFd3TrwA
@@ -1351,7 +1351,7 @@ PNG ... content of chrome.png ...
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Http请求头和请求体","level":"1.7.1","depth":2,"next":{"title":"Http相应头与状态码","level":"1.7.2","depth":2,"path":"Http/http2.md","ref":"Http/http2.md","articles":[]},"previous":{"title":"Http..","level":"1.7","depth":1,"path":"Http/readme.md","ref":"Http/readme.md","articles":[{"title":"Http请求头和请求体","level":"1.7.1","depth":2,"path":"Http/http1.md","ref":"Http/http1.md","articles":[]},{"title":"Http相应头与状态码","level":"1.7.2","depth":2,"path":"Http/http2.md","ref":"Http/http2.md","articles":[]},{"title":"Restful架构详解","level":"1.7.3","depth":2,"path":"Http/restful.md","ref":"Http/restful.md","articles":[]},{"title":"Fiddler","level":"1.7.4","depth":2,"path":"Http/Fiddler.md","ref":"Http/Fiddler.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"Http/http1.md","mtime":"2018-06-13T07:32:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-07T03:45:47.849Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Http请求头和请求体","level":"1.7.1","depth":2,"next":{"title":"Http相应头与状态码","level":"1.7.2","depth":2,"path":"Http/http2.md","ref":"Http/http2.md","articles":[]},"previous":{"title":"Http..","level":"1.7","depth":1,"path":"Http/readme.md","ref":"Http/readme.md","articles":[{"title":"Http请求头和请求体","level":"1.7.1","depth":2,"path":"Http/http1.md","ref":"Http/http1.md","articles":[]},{"title":"Http相应头与状态码","level":"1.7.2","depth":2,"path":"Http/http2.md","ref":"Http/http2.md","articles":[]},{"title":"Restful架构详解","level":"1.7.3","depth":2,"path":"Http/restful.md","ref":"Http/restful.md","articles":[]},{"title":"Fiddler","level":"1.7.4","depth":2,"path":"Http/Fiddler.md","ref":"Http/Fiddler.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters","prism","-highlight"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"ace":{},"toggle-chapters":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"search":{"maxIndexSize":1000000000},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"Http/http1.md","mtime":"2018-06-13T07:32:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-23T02:44:27.544Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

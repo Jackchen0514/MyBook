@@ -25,7 +25,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
                 
             
                 
@@ -1171,26 +1171,81 @@ public class MainActivity extends Activity {
 </ul>
 <p>&#x73B0;&#x5728;APP&#x542F;&#x52A8;&#x65F6;&#x5C31;&#x4F1A;&#x8C03;&#x7528;<code>MainActivity</code>&#xFF0C;&#x800C;<code>MainActivity</code>&#x521B;&#x5EFA;&#x65F6;&#x5C31;&#x4F1A;&#x521B;&#x5EFA;<code>CameraPreview</code>,<code>CameraPreview</code>&#x521B;&#x5EFA;&#x65F6;&#x5219;&#x4F1A;&#x8C03;&#x7528;&#x76F8;&#x673A;&#x5E76;&#x5F00;&#x542F;&#x76F8;&#x673A;&#x9884;&#x89C8;&#x3002;
 &#x73B0;&#x5728;&#x8FD8;&#x5B58;&#x5728;&#x7684;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x662F;APP&#x542F;&#x52A8;&#x540E;&#x624D;&#x4F1A;&#x8C03;&#x7528;&#x76F8;&#x673A;&#xFF0C;&#x800C;&#x5F88;&#x663E;&#x7136;&#x6211;&#x4EEC;&#x5E0C;&#x671B;APP&#x5728;&#x5B89;&#x88C5;&#x65F6;&#x5C31;&#x544A;&#x77E5;Android&#x9700;&#x8981;&#x7528;&#x5230;&#x76F8;&#x673A;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;<code>AndroidManifest</code>&#x8981;&#x5E72;&#x7684;&#x4E8B;&#x60C5;&#x5566;&#x3002;</p>
-<pre><code>    &lt;uses-permission android:name=&quot;android.permission.CAMERA&quot; /&gt;
-    &lt;uses-feature android:name=&quot;android.hardware.camera&quot; /&gt;
-    &lt;application
-        android:allowBackup=&quot;true&quot;
-        android:icon=&quot;@mipmap/ic_launcher&quot;
-        android:label=&quot;@string/app_name&quot;
-        android:supportsRtl=&quot;true&quot;
-        android:theme=&quot;@style/AppTheme&quot;&gt;
-        &lt;activity android:name=&quot;.MainActivity&quot;
-            android:screenOrientation=&quot;landscape&quot;&gt;
-            &lt;intent-filter&gt;
-                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
-                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
-            &lt;/intent-filter&gt;
-        &lt;/activity&gt;
-    &lt;/application&gt;
+<pre class="language-"><code>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>android.permission.CAMERA<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-feature</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>android.hardware.camera<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>application</span>
+        <span class="token attr-name"><span class="token namespace">android:</span>allowBackup</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>true<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>icon</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>@mipmap/ic_launcher<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>label</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>@string/app_name<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>supportsRtl</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>true<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>theme</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>@style/AppTheme<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>activity</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>.MainActivity<span class="token punctuation">&quot;</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>screenOrientation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>landscape<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>intent-filter</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>action</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>android.intent.action.MAIN<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>category</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>android.intent.category.LAUNCHER<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>intent-filter</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>activity</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>application</span><span class="token punctuation">&gt;</span></span>
 </code></pre><ul>
 <li><strong>&#x8FD0;&#x884C;</strong></li>
 </ul>
 <p>&#x5F88;&#x663E;&#x7136;&#x8FD9;&#x4E2A;&#x201C;&#x76F8;&#x673A;&#x201D;APP&#x8FD8;&#x4E0D;&#x80FD;&#x7B97;&#x771F;&#x6B63;&#x7684;&#x76F8;&#x673A;&#xFF0C;&#x4E0D;&#x80FD;&#x62CD;&#x7167;&#xFF0C;&#x800C;&#x4E14;&#x8FD8;&#x652F;&#x6301;&#x5BF9;&#x7126;&#xFF0C;&#x8FD9;&#x4E2A;&#x5C4F;&#x5E55;&#x4E00;&#x7BC7;&#x6A21;&#x7CCA;&#x7B80;&#x76F4;&#x4E0D;&#x80FD;&#x7528;&#x3002;&#x4F46;&#x5982;&#x679C;&#x4F60;&#x80FD;&#x6210;&#x529F;&#x5199;&#x51FA;&#x8FD9;&#x4E2A;APP&#xFF0C;&#x672C;&#x6587;&#x7684;&#x76EE;&#x7684;&#x4E5F;&#x7B97;&#x8FBE;&#x5230;&#x4E86;&#xFF0C;&#x81F3;&#x5C11;&#x4F60;&#x5DF2;&#x7ECF;&#x5927;&#x4F53;&#x660E;&#x767D;&#x4E86;Android&#x5F00;&#x53D1;&#x7684;&#x6B65;&#x9AA4;&#xFF0C;&#x4EE5;&#x53CA;Android APP&#x8FD0;&#x884C;&#x7684;&#x57FA;&#x672C;&#x8FC7;&#x7A0B;&#x3002;</p>
+<h2 id="&#x89E3;&#x51B3;surfaceview&#x9884;&#x89C8;camera&#x62C9;&#x4F38;&#x95EE;&#x9898;">&#x89E3;&#x51B3;SurfaceView&#x9884;&#x89C8;Camera&#x62C9;&#x4F38;&#x95EE;&#x9898;</h2>
+<p>&#x5728;android&#x4E2D;&#x5B9E;&#x73B0;&#x5F55;&#x5236;&#x89C6;&#x9891;&#x65F6;&#xFF0C;&#x90FD;&#x4F1A;&#x8981;&#x6C42;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x89C6;&#x9891;&#x9884;&#x89C8;&#x7684;&#x529F;&#x80FD;&#xFF08;&#x4E00;&#x822C;&#x90FD;&#x662F;&#x5168;&#x5C4F;&#x9884;&#x89C8;&#xFF09;&#xFF0C;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x5C31;&#x662F;&#x7528;SurfaceView&#x6765;&#x5B9E;&#x65F6;&#x663E;&#x793A;Camera&#x4F20;&#x9012;&#x8FC7;&#x6765;&#x7684;&#x56FE;&#x50CF;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x90FD;&#x77E5;&#x9053;&#xFF0C;android&#x624B;&#x673A;&#x7684;&#x5C4F;&#x5E55;&#x5C3A;&#x5BF8;&#x5343;&#x5947;&#x767E;&#x602A;&#xFF0C;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7684;&#x9884;&#x89C8;&#x5C3A;&#x5BF8;&#xFF0C;&#x90E8;&#x5206;&#x624B;&#x673A;&#x4F1A;&#x5BFC;&#x81F4;SurfaceView&#x663E;&#x793A;&#x65F6;&#x56FE;&#x50CF;&#x62C9;&#x957F;&#xFF0C;&#x6574;&#x4E2A;&#x4EBA;&#x7684;&#x8138;&#x770B;&#x8D77;&#x6765;&#x6BD4;&#x9A74;&#x8138;&#x8FD8;&#x957F;&#xFF1B;&#x5982;&#x679C;&#x8BBE;&#x7F6E;Camera&#x7684;&#x9884;&#x89C8;&#x5C3A;&#x5BF8;&#x4E3A;&#x5C4F;&#x5E55;&#x5C3A;&#x5BF8;&#xFF0C;&#x90A3;&#x4E48;&#x5982;&#x679C;&#x521A;&#x597D;Camera&#x4E0D;&#x517C;&#x5BB9;&#x8FD9;&#x4E2A;&#x5C3A;&#x5BF8;&#xFF0C;&#x5219;&#x4F1A;&#x76F4;&#x63A5;&#x62A5;&#x9519;&#x3002;</p>
+<p>&#x600E;&#x4E48;&#x80FD;&#x96BE;&#x5012;&#x4E07;&#x80FD;&#x7684;android&#x5F00;&#x53D1;&#x8005;&#xFF0C;&#x5982;&#x679C;&#x5C4F;&#x5E55;&#x5C3A;&#x5BF8;&#x4E0E;&#x9884;&#x89C8;&#x5C3A;&#x5BF8;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x90A3;&#x4E48;&#x53EA;&#x8981;&#x4ED6;&#x4EEC;&#x7684;&#x5BBD;&#x9AD8;&#x6BD4;&#x4E00;&#x81F4;&#xFF0C;&#x663E;&#x793A;&#x51FA;&#x6765;&#x7684;&#x6548;&#x679C;&#x4E00;&#x6837;&#x662F;&#x6B63;&#x5E38;&#x7684;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x91CD;&#x70B9;&#x662F;&#x5982;&#x4F55;&#x627E;&#x5230;&#x6700;&#x76F8;&#x8FD1;&#x7684;&#x9884;&#x89C8;&#x5C3A;&#x5BF8;&#x53C2;&#x6570;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">/**
+     * &#x901A;&#x8FC7;&#x5BF9;&#x6BD4;&#x5F97;&#x5230;&#x4E0E;&#x5BBD;&#x9AD8;&#x6BD4;&#x6700;&#x63A5;&#x8FD1;&#x7684;&#x9884;&#x89C8;&#x5C3A;&#x5BF8;&#xFF08;&#x5982;&#x679C;&#x6709;&#x76F8;&#x540C;&#x5C3A;&#x5BF8;&#xFF0C;&#x4F18;&#x5148;&#x9009;&#x62E9;&#xFF09;
+     *
+     * @param isPortrait &#x662F;&#x5426;&#x7AD6;&#x5C4F;
+     * @param surfaceWidth &#x9700;&#x8981;&#x88AB;&#x8FDB;&#x884C;&#x5BF9;&#x6BD4;&#x7684;&#x539F;&#x5BBD;
+     * @param surfaceHeight &#x9700;&#x8981;&#x88AB;&#x8FDB;&#x884C;&#x5BF9;&#x6BD4;&#x7684;&#x539F;&#x9AD8;
+     * @param preSizeList &#x9700;&#x8981;&#x5BF9;&#x6BD4;&#x7684;&#x9884;&#x89C8;&#x5C3A;&#x5BF8;&#x5217;&#x8868;
+     * @return &#x5F97;&#x5230;&#x4E0E;&#x539F;&#x5BBD;&#x9AD8;&#x6BD4;&#x4F8B;&#x6700;&#x63A5;&#x8FD1;&#x7684;&#x5C3A;&#x5BF8;
+     */
+    public static  Camera.Size getCloselyPreSize(boolean isPortrait, int surfaceWidth, int surfaceHeight, List&lt;Camera.Size&gt; preSizeList) {
+        int reqTmpWidth;
+        int reqTmpHeight;
+        // &#x5F53;&#x5C4F;&#x5E55;&#x4E3A;&#x5782;&#x76F4;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x628A;&#x5BBD;&#x9AD8;&#x503C;&#x8FDB;&#x884C;&#x8C03;&#x6362;&#xFF0C;&#x4FDD;&#x8BC1;&#x5BBD;&#x5927;&#x4E8E;&#x9AD8;
+        if (isPortrait) {
+            reqTmpWidth = surfaceHeight;
+            reqTmpHeight = surfaceWidth;
+        } else {
+            reqTmpWidth = surfaceWidth;
+            reqTmpHeight = surfaceHeight;
+        }
+        //&#x5148;&#x67E5;&#x627E;preview&#x4E2D;&#x662F;&#x5426;&#x5B58;&#x5728;&#x4E0E;surfaceview&#x76F8;&#x540C;&#x5BBD;&#x9AD8;&#x7684;&#x5C3A;&#x5BF8;
+        for(Camera.Size size : preSizeList){
+            if((size.width == reqTmpWidth) &amp;&amp; (size.height == reqTmpHeight)){
+                return size;
+            }
+        }
+
+        // &#x5F97;&#x5230;&#x4E0E;&#x4F20;&#x5165;&#x7684;&#x5BBD;&#x9AD8;&#x6BD4;&#x6700;&#x63A5;&#x8FD1;&#x7684;size
+        float reqRatio = ((float) reqTmpWidth) / reqTmpHeight;
+        float curRatio, deltaRatio;
+        float deltaRatioMin = Float.MAX_VALUE;
+        Camera.Size retSize = null;
+        for (Camera.Size size : preSizeList) {
+            curRatio = ((float) size.width) / size.height;
+            deltaRatio = Math.abs(reqRatio - curRatio);
+            if (deltaRatio &lt; deltaRatioMin) {
+                deltaRatioMin = deltaRatio;
+                retSize = size;
+            }
+        }
+
+        return retSize;
+    }<br></div></div>
+
+<p>&#x7136;&#x540E;&#x5728;&#x521D;&#x59CB;&#x5316;Camera&#x7684;&#x65F6;&#x5019;&#x8BBE;&#x7F6E;&#x9884;&#x89C8;&#x5C3A;&#x5BF8;&#x7684;&#x53C2;&#x6570;:</p>
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">Camera.Parameters parameters = mCamera.getParameters();
+    Camera.Size preSize = CameraUtil.getCloselyPreSize(true, screenWidth, screenHeight, parameters.getSupportedPreviewSizes());
+    parameters.setPreviewSize(preSize.width, preSize.height);
+    mCamera.setParameters(parameters);<br></div></div>
+
+<p>&#x56E0;&#x4E3A;&#x6211;&#x8FD9;&#x91CC;SurfaceView&#x662F;&#x5168;&#x5C4F;&#x663E;&#x793A;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x5C4F;&#x5E55;&#x7684;&#x5BBD;&#x9AD8;&#x5C31;&#x662F;SurfaceView&#x7684;&#x5BBD;&#x9AD8;&#x3002;</p>
 <h2 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h2>
 <p>[1] <a href="https://www.polarxiong.com/archives/Android%E7%9B%B8%E6%9C%BA%E5%BC%80%E5%8F%91-%E4%B8%80-%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E7%9B%B8%E6%9C%BA.html" target="_blank">https://www.polarxiong.com/archives/Android%E7%9B%B8%E6%9C%BA%E5%BC%80%E5%8F%91-%E4%B8%80-%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E7%9B%B8%E6%9C%BA.html</a></p>
 
@@ -1236,7 +1291,7 @@ public class MainActivity extends Activity {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Camera开发(一)","level":"1.6.1","depth":2,"next":{"title":"Camera开发(二)","level":"1.6.2","depth":2,"path":"android/camera/camera1.md","ref":"android/camera/camera1.md","articles":[]},"previous":{"title":"Camera..","level":"1.6","depth":1,"path":"camera/readme.md","ref":"camera/readme.md","articles":[{"title":"Camera开发(一)","level":"1.6.1","depth":2,"path":"android/camera/camera.md","ref":"android/camera/camera.md","articles":[]},{"title":"Camera开发(二)","level":"1.6.2","depth":2,"path":"android/camera/camera1.md","ref":"android/camera/camera1.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/camera/camera.md","mtime":"2018-06-06T12:00:44.772Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-07T03:45:47.849Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Camera开发(一)","level":"1.6.1","depth":2,"next":{"title":"Camera开发(二)","level":"1.6.2","depth":2,"path":"android/camera/camera1.md","ref":"android/camera/camera1.md","articles":[]},"previous":{"title":"Camera..","level":"1.6","depth":1,"path":"camera/readme.md","ref":"camera/readme.md","articles":[{"title":"Camera开发(一)","level":"1.6.1","depth":2,"path":"android/camera/camera.md","ref":"android/camera/camera.md","articles":[]},{"title":"Camera开发(二)","level":"1.6.2","depth":2,"path":"android/camera/camera1.md","ref":"android/camera/camera1.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters","prism","-highlight"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"ace":{},"toggle-chapters":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"search":{"maxIndexSize":1000000000},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/camera/camera.md","mtime":"2018-07-10T02:48:38.734Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-23T02:44:27.544Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

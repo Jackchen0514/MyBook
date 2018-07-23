@@ -8,7 +8,20 @@
     "root": ".",
     "plugins": [
       "ace",
-      "toggle-chapters"
-    ]
+      "toggle-chapters",
+      "prism",
+      "-highlight"
+    ],
 
+    "pluginsConfig": {
+      "prism": {
+        "css": [
+          "prismjs/themes/prism-okaidia.css"
+        ]
+      }
+    },
+    "search": {
+        "maxIndexSize": 1000000000
+    }
+    
 }

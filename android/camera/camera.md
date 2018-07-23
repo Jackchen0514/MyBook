@@ -174,6 +174,75 @@ public class MainActivity extends Activity {
 很显然这个“相机”APP还不能算真正的相机，不能拍照，而且还支持对焦，这个屏幕一篇模糊简直不能用。但如果你能成功写出这个APP，本文的目的也算达到了，至少你已经大体明白了Android开发的步骤，以及Android APP运行的基本过程。
 
 
+## 解决SurfaceView预览Camera拉伸问题
+
+在android中实现录制视频时，都会要求实现一个视频预览的功能（一般都是全屏预览），实现方式就是用SurfaceView来实时显示Camera传递过来的图像。
+
+但是我们都知道，android手机的屏幕尺寸千奇百怪，使用默认的预览尺寸，部分手机会导致SurfaceView显示时图像拉长，整个人的脸看起来比驴脸还长；如果设置Camera的预览尺寸为屏幕尺寸，那么如果刚好Camera不兼容这个尺寸，则会直接报错。
+
+怎么能难倒万能的android开发者，如果屏幕尺寸与预览尺寸不一致，那么只要他们的宽高比一致，显示出来的效果一样是正常的。所以，重点是如何找到最相近的预览尺寸参数，代码如下：
+
+{%ace edit=true lang='java'%}
+
+    /**
+     * 通过对比得到与宽高比最接近的预览尺寸（如果有相同尺寸，优先选择）
+     *
+     * @param isPortrait 是否竖屏
+     * @param surfaceWidth 需要被进行对比的原宽
+     * @param surfaceHeight 需要被进行对比的原高
+     * @param preSizeList 需要对比的预览尺寸列表
+     * @return 得到与原宽高比例最接近的尺寸
+     */
+    public static  Camera.Size getCloselyPreSize(boolean isPortrait, int surfaceWidth, int surfaceHeight, List<Camera.Size> preSizeList) {
+        int reqTmpWidth;
+        int reqTmpHeight;
+        // 当屏幕为垂直的时候需要把宽高值进行调换，保证宽大于高
+        if (isPortrait) {
+            reqTmpWidth = surfaceHeight;
+            reqTmpHeight = surfaceWidth;
+        } else {
+            reqTmpWidth = surfaceWidth;
+            reqTmpHeight = surfaceHeight;
+        }
+        //先查找preview中是否存在与surfaceview相同宽高的尺寸
+        for(Camera.Size size : preSizeList){
+            if((size.width == reqTmpWidth) && (size.height == reqTmpHeight)){
+                return size;
+            }
+        }
+
+        // 得到与传入的宽高比最接近的size
+        float reqRatio = ((float) reqTmpWidth) / reqTmpHeight;
+        float curRatio, deltaRatio;
+        float deltaRatioMin = Float.MAX_VALUE;
+        Camera.Size retSize = null;
+        for (Camera.Size size : preSizeList) {
+            curRatio = ((float) size.width) / size.height;
+            deltaRatio = Math.abs(reqRatio - curRatio);
+            if (deltaRatio < deltaRatioMin) {
+                deltaRatioMin = deltaRatio;
+                retSize = size;
+            }
+        }
+
+        return retSize;
+    }
+
+{%endace%}
+
+然后在初始化Camera的时候设置预览尺寸的参数:
+
+{%ace edit=true lang='java'%}
+
+    Camera.Parameters parameters = mCamera.getParameters();
+    Camera.Size preSize = CameraUtil.getCloselyPreSize(true, screenWidth, screenHeight, parameters.getSupportedPreviewSizes());
+    parameters.setPreviewSize(preSize.width, preSize.height);
+    mCamera.setParameters(parameters);
+
+{%endace%}
+
+因为我这里SurfaceView是全屏显示，所以，屏幕的宽高就是SurfaceView的宽高。
+
 ## 参考
 
 [1] https://www.polarxiong.com/archives/Android%E7%9B%B8%E6%9C%BA%E5%BC%80%E5%8F%91-%E4%B8%80-%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E7%9B%B8%E6%9C%BA.html

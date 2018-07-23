@@ -25,7 +25,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
                 
             
                 
@@ -1066,7 +1066,7 @@
 </li>
 </ul>
 <p>&#x201C;&#x6267;&#x884C;&#x8005;&#x201D;&#x63A5;&#x53E3;&#xFF0C;&#x53EA;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre><code>void execute(Runnable command);
+<pre class="language-"><code>void execute(Runnable command);
 </code></pre><p>&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6267;&#x884C;&#x5DF2;&#x7ECF;&#x63D0;&#x4EA4;&#x7684;Runnable&#x4EFB;&#x52A1;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x5C06;&#x201C;&#x4EFB;&#x52A1;&#x63D0;&#x4EA4;&#x201D;&#x4E0E;&#x201C;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x201D;&#x89E3;&#x8026;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
 <ol>
 <li><strong>ExecutorService&#x63A5;&#x53E3;</strong></li>
@@ -1075,7 +1075,7 @@
 <ul>
 <li>&#x7BA1;&#x7406;&#x4EFB;&#x52A1;&#x5982;&#x4F55;&#x7EC8;&#x6B62;&#x7684; shutdown&#x76F8;&#x5173;&#x65B9;&#x6CD5;</li>
 </ul>
-<pre><code>/**
+<pre class="language-"><code>/**
  * &#x542F;&#x52A8;&#x4E00;&#x6B21;&#x6709;&#x5E8F;&#x7684;&#x5173;&#x95ED;&#xFF0C;&#x4E4B;&#x524D;&#x63D0;&#x4EA4;&#x7684;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#xFF0C;&#x4F46;&#x4E0D;&#x63A5;&#x53D7;&#x65B0;&#x4EFB;&#x52A1;
  * &#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4E0D;&#x4F1A;&#x7B49;&#x5F85;&#x4E4B;&#x524D;&#x63D0;&#x4EA4;&#x7684;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5B8C;&#x6BD5;
  */
@@ -1085,7 +1085,7 @@ void shutdown();
  * &#x8BD5;&#x56FE;&#x505C;&#x6B62;&#x6240;&#x6709;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x6682;&#x505C;&#x5904;&#x7406;&#x6B63;&#x5728;&#x7B49;&#x5F85;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7B49;&#x5F85;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#x5217;&#x8868;
  * &#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4E0D;&#x4F1A;&#x7B49;&#x5F85;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#x7EC8;&#x6B62;
  */
-List&lt;Runnable&gt; shutdownNow();
+List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Runnable</span><span class="token punctuation">&gt;</span></span> shutdownNow();
 
 /**
  * &#x5982;&#x679C;&#x5DF2;&#x7ECF;&#x88AB;shutdown&#xFF0C;&#x8FD4;&#x56DE;true
@@ -1106,31 +1106,31 @@ boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedExceptio
 </code></pre><ul>
 <li>&#x53EF;&#x4EE5;&#x751F;&#x6210;&#x7528;&#x4E8E;&#x8FFD;&#x8E2A;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x7684;Future&#x5BF9;&#x8C61;&#x7684; submit()&#x76F8;&#x5173;&#x65B9;&#x6CD5;</li>
 </ul>
-<pre><code>/**
+<pre class="language-"><code>/**
  * &#x63D0;&#x4EA4;&#x4E00;&#x4E2A;&#x53EF;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Future&#x4EE3;&#x8868;&#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;
  * &#x7B49;&#x5230;&#x4EFB;&#x52A1;&#x6210;&#x529F;&#x6267;&#x884C;&#xFF0C;Future#get()&#x65B9;&#x6CD5;&#x4F1A;&#x8FD4;&#x56DE;null
  */
-Future&lt;?&gt; submit(Runnable task);
+Future<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>?</span><span class="token punctuation">&gt;</span></span> submit(Runnable task);
 
 /**
  * &#x63D0;&#x4EA4;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Future&#x4EE3;&#x8868;&#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;
  * &#x7B49;&#x5230;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7ED3;&#x675F;&#xFF0C;Future#get()&#x65B9;&#x6CD5;&#x4F1A;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x7ED9;&#x5B9A;&#x7684;result
  */
-&lt;T&gt; Future&lt;T&gt; submit(Runnable task, T result);
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>T</span><span class="token punctuation">&gt;</span></span> Future<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>T</span><span class="token punctuation">&gt;</span></span> submit(Runnable task, T result);
 
 /**
  * &#x63D0;&#x4EA4;&#x4E00;&#x4E2A;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Future&#x4EE3;&#x8868;&#x7B49;&#x5F85;&#x7684;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7684;&#x7ED3;&#x679C;
  * &#x7B49;&#x5230;&#x4EFB;&#x52A1;&#x6210;&#x529F;&#x6267;&#x884C;&#xFF0C;Future#get()&#x65B9;&#x6CD5;&#x4F1A;&#x8FD4;&#x56DE;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7684;&#x7ED3;&#x679C;
  */
-&lt;T&gt; Future&lt;T&gt; submit(Callable&lt;T&gt; task);
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>T</span><span class="token punctuation">&gt;</span></span> Future<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>T</span><span class="token punctuation">&gt;</span></span> submit(Callable<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>T</span><span class="token punctuation">&gt;</span></span> task);
 </code></pre><ul>
 <li>ScheduledExecutorService&#x63A5;&#x53E3;</li>
 </ul>
-<pre><code>/**
+<pre class="language-"><code>/**
  * &#x5728;&#x7ED9;&#x5B9A;&#x5EF6;&#x65F6;&#x540E;&#xFF0C;&#x521B;&#x5EFA;&#x5E76;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x4E00;&#x6B21;&#x6027;&#x7684;Runnable&#x4EFB;&#x52A1;
  * &#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;&#xFF0C;ScheduledFuture#get()&#x65B9;&#x6CD5;&#x4F1A;&#x8FD4;&#x56DE;null
  */
-public ScheduledFuture&lt;?&gt; schedule(Runnable command, long delay, TimeUnit unit);
+public ScheduledFuture<span class="token prolog">&lt;?&gt; schedule(Runnable command, long delay, TimeUnit unit);
 
 /**
  * &#x5728;&#x7ED9;&#x5B9A;&#x5EF6;&#x65F6;&#x540E;&#xFF0C;&#x521B;&#x5EFA;&#x5E76;&#x6267;&#x884C;&#x4E00;&#x4E2A;ScheduledFutureTask
@@ -1144,7 +1144,7 @@ public &lt;V&gt; ScheduledFuture&lt;V&gt; schedule(Callable&lt;V&gt; callable, o
  * &#x5982;&#x679C;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#x53D1;&#x751F;&#x5F02;&#x5E38;&#xFF0C;&#x968F;&#x540E;&#x7684;&#x4EFB;&#x52A1;&#x5C06;&#x88AB;&#x7981;&#x6B62;&#xFF0C;&#x5426;&#x5219;&#x4EFB;&#x52A1;&#x53EA;&#x4F1A;&#x5728;&#x88AB;&#x53D6;&#x6D88;&#x6216;&#x8005;Executor&#x88AB;&#x7EC8;&#x6B62;&#x540E;&#x505C;&#x6B62;
  * &#x5982;&#x679C;&#x4EFB;&#x4F55;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#x8D85;&#x8FC7;&#x4E86;&#x5468;&#x671F;&#xFF0C;&#x968F;&#x540E;&#x7684;&#x6267;&#x884C;&#x4F1A;&#x5EF6;&#x65F6;&#xFF0C;&#x4E0D;&#x4F1A;&#x5E76;&#x53D1;&#x6267;&#x884C;
  */
-public ScheduledFuture&lt;?&gt; scheduleAtFixedRate(Runnable command,
+public ScheduledFuture&lt;?&gt;</span> scheduleAtFixedRate(Runnable command,
                                                   long initialDelay,
                                                   long period,
                                                   TimeUnit unit);
@@ -1153,7 +1153,7 @@ public ScheduledFuture&lt;?&gt; scheduleAtFixedRate(Runnable command,
  * &#x521B;&#x5EFA;&#x5E76;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x5728;&#x7ED9;&#x5B9A;&#x521D;&#x59CB;&#x5EF6;&#x8FDF;&#x540E;&#x9996;&#x6B21;&#x542F;&#x7528;&#x7684;&#x5B9A;&#x671F;&#x64CD;&#x4F5C;&#xFF0C;&#x968F;&#x540E;&#xFF0C;&#x5728;&#x6BCF;&#x4E00;&#x6B21;&#x6267;&#x884C;&#x7EC8;&#x6B62;&#x548C;&#x4E0B;&#x4E00;&#x6B21;&#x6267;&#x884C;&#x5F00;&#x59CB;&#x4E4B;&#x95F4;&#x90FD;&#x5B58;&#x5728;&#x7ED9;&#x5B9A;&#x7684;&#x5EF6;&#x8FDF;
  * &#x5982;&#x679C;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#x53D1;&#x751F;&#x5F02;&#x5E38;&#xFF0C;&#x968F;&#x540E;&#x7684;&#x4EFB;&#x52A1;&#x5C06;&#x88AB;&#x7981;&#x6B62;&#xFF0C;&#x5426;&#x5219;&#x4EFB;&#x52A1;&#x53EA;&#x4F1A;&#x5728;&#x88AB;&#x53D6;&#x6D88;&#x6216;&#x8005;Executor&#x88AB;&#x7EC8;&#x6B62;&#x540E;&#x505C;&#x6B62;
  */
-public ScheduledFuture&lt;?&gt; scheduleWithFixedDelay(Runnable command,
+public ScheduledFuture<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>?</span><span class="token punctuation">&gt;</span></span> scheduleWithFixedDelay(Runnable command,
                                                      long initialDelay,
                                                      long delay,
                                                      TimeUnit unit);
@@ -1161,11 +1161,11 @@ public ScheduledFuture&lt;?&gt; scheduleWithFixedDelay(Runnable command,
 <ol>
 <li><strong>ThreadPoolExecutor&#x6784;&#x9020;&#x53C2;&#x6570;</strong></li>
 </ol>
-<pre><code>public ThreadPoolExecutor(int corePoolSize,
+<pre class="language-"><code>public ThreadPoolExecutor(int corePoolSize,
                           int maximumPoolSize,
                           long keepAliveTime,
                           TimeUnit unit,
-                          BlockingQueue&lt;Runnable&gt; workQueue,
+                          BlockingQueue<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Runnable</span><span class="token punctuation">&gt;</span></span> workQueue,
                           ThreadFactory threadFactory,
                           RejectedExecutionHandler handler)
 </code></pre><p><strong>corePoolSize</strong></p>
@@ -1253,53 +1253,53 @@ static class DefaultThreadFactory implements ThreadFactory {
 <h2 id="executors&#x9759;&#x6001;&#x5DE5;&#x5382;&#x521B;&#x5EFA;&#x51E0;&#x79CD;&#x5E38;&#x7528;&#x7EBF;&#x7A0B;&#x6C60;">Executors&#x9759;&#x6001;&#x5DE5;&#x5382;&#x521B;&#x5EFA;&#x51E0;&#x79CD;&#x5E38;&#x7528;&#x7EBF;&#x7A0B;&#x6C60;</h2>
 <p>Exectors&#x5DE5;&#x5382;&#x7C7B;&#x63D0;&#x4F9B;&#x4E86;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x521D;&#x59CB;&#x5316;&#x63A5;&#x53E3;&#xFF0C;&#x4E3B;&#x8981;&#x6709;&#x5982;&#x4E0B;&#x51E0;&#x79CD;</p>
 <p><strong>newFixedThreadPool</strong></p>
-<pre><code>public static ExecutorService newFixedThreadPool(int nThreads) {
+<pre class="language-"><code>public static ExecutorService newFixedThreadPool(int nThreads) {
     return new ThreadPoolExecutor(nThreads, nThreads,
                                   0L, TimeUnit.MILLISECONDS,
-                                  new LinkedBlockingQueue&lt;Runnable&gt;());
+                                  new LinkedBlockingQueue<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Runnable</span><span class="token punctuation">&gt;</span></span>());
 }
 
 public static ExecutorService newFixedThreadPool(int nThreads, ThreadFactory threadFactory) {
     return new ThreadPoolExecutor(nThreads, nThreads,
                                   0L, TimeUnit.MILLISECONDS,
-                                  new LinkedBlockingQueue&lt;Runnable&gt;(),
+                                  new LinkedBlockingQueue<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Runnable</span><span class="token punctuation">&gt;</span></span>(),
                                   threadFactory);
 }
 </code></pre><p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x6570;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x5176;&#x4E2D;&#x53C2;&#x6570; corePoolSize &#x548C; maximumPoolSize &#x76F8;&#x7B49;&#xFF0C;&#x963B;&#x585E;&#x961F;&#x5217;&#x57FA;&#x4E8E;LinkedBlockingQueue</p>
 <p>&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x5178;&#x578B;&#x4E14;&#x4F18;&#x79C0;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x5B83;&#x5177;&#x6709;&#x7EBF;&#x7A0B;&#x6C60;&#x63D0;&#x9AD8;&#x7A0B;&#x5E8F;&#x6548;&#x7387;&#x548C;&#x8282;&#x7701;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x65F6;&#x6240;&#x8017;&#x7684;&#x5F00;&#x9500;&#x7684;&#x4F18;&#x70B9;&#x3002;&#x4F46;&#x662F;&#x5728;&#x7EBF;&#x7A0B;&#x6C60;&#x7A7A;&#x95F2;&#x65F6;&#xFF0C;&#x5373;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x6CA1;&#x6709;&#x53EF;&#x8FD0;&#x884C;&#x4EFB;&#x52A1;&#x65F6;&#xFF0C;&#x5B83;&#x4E5F;&#x4E0D;&#x4F1A;&#x91CA;&#x653E;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#xFF0C;&#x8FD8;&#x4F1A;&#x5360;&#x7528;&#x4E00;&#x5B9A;&#x7684;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90;</p>
 <p><strong>newSingleThreadExecutor</strong></p>
-<pre><code>public static ExecutorService newSingleThreadExecutor() {
+<pre class="language-"><code>public static ExecutorService newSingleThreadExecutor() {
     return new FinalizableDelegatedExecutorService
         (new ThreadPoolExecutor(1, 1,
                                 0L, TimeUnit.MILLISECONDS,
-                                new LinkedBlockingQueue&lt;Runnable&gt;()));
+                                new LinkedBlockingQueue<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Runnable</span><span class="token punctuation">&gt;</span></span>()));
 }
 
 public static ExecutorService newSingleThreadExecutor(ThreadFactory threadFactory) {
     return new FinalizableDelegatedExecutorService
         (new ThreadPoolExecutor(1, 1,
                                 0L, TimeUnit.MILLISECONDS,
-                                new LinkedBlockingQueue&lt;Runnable&gt;(),
+                                new LinkedBlockingQueue<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Runnable</span><span class="token punctuation">&gt;</span></span>(),
                                 threadFactory));
 }
 </code></pre><p>&#x521D;&#x59CB;&#x5316;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x7EBF;&#x7A0B;&#x5F02;&#x5E38;&#x7ED3;&#x675F;&#xFF0C;&#x4F1A;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7EBF;&#x7A0B;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#xFF0C;&#x552F;&#x4E00;&#x7684;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x6240;&#x63D0;&#x4EA4;&#x4EFB;&#x52A1;&#x7684;&#x987A;&#x5E8F;&#x6267;&#x884C;&#xFF0C;&#x5185;&#x90E8;&#x4F7F;&#x7528;LinkedBlockingQueue&#x4F5C;&#x4E3A;&#x963B;&#x585E;&#x961F;&#x5217;</p>
 <p><strong>newCachedThreadPool</strong></p>
-<pre><code>public static ExecutorService newCachedThreadPool() {
+<pre class="language-"><code>public static ExecutorService newCachedThreadPool() {
     return new ThreadPoolExecutor(0, Integer.MAX_VALUE,
                                   60L, TimeUnit.SECONDS,
-                                  new SynchronousQueue&lt;Runnable&gt;());
+                                  new SynchronousQueue<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Runnable</span><span class="token punctuation">&gt;</span></span>());
 }
 
 public static ExecutorService newCachedThreadPool(ThreadFactory threadFactory) {
     return new ThreadPoolExecutor(0, Integer.MAX_VALUE,
                                   60L, TimeUnit.SECONDS,
-                                  new SynchronousQueue&lt;Runnable&gt;(),
+                                  new SynchronousQueue<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Runnable</span><span class="token punctuation">&gt;</span></span>(),
                                   threadFactory);
 }
 </code></pre><p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x53EF;&#x7F13;&#x5B58;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x9ED8;&#x8BA4;&#x5B58;&#x6D3B;&#x65F6;&#x95F4;60&#x79D2;&#xFF0C;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x53EF;&#x8FBE;&#x5230;Integer.MAX_VALUE&#xFF0C;&#x5373;2147483647&#xFF0C;&#x5185;&#x90E8;&#x4F7F;&#x7528;SynchronousQueue&#x4F5C;&#x4E3A;&#x963B;&#x585E;&#x961F;&#x5217;&#xFF1B;</p>
 <p>&#x5728;&#x6CA1;&#x6709;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5F53;&#x7EBF;&#x7A0B;&#x7684;&#x7A7A;&#x95F2;&#x65F6;&#x95F4;&#x8D85;&#x8FC7;keepAliveTime&#xFF0C;&#x5219;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x5C06;&#x4F1A;&#x7EC8;&#x6B62;&#xFF0C;&#x5F53;&#x63D0;&#x4EA4;&#x65B0;&#x4EFB;&#x52A1;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x7A7A;&#x95F2;&#x7EBF;&#x7A0B;&#xFF0C;&#x5219;&#x521B;&#x5EFA;&#x65B0;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x4E00;&#x5B9A;&#x7684;&#x7CFB;&#x7EDF;&#x5F00;&#x9500;</p>
 <p><strong>newScheduledThreadPool</strong></p>
-<pre><code>public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize) {
+<pre class="language-"><code>public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize) {
     return new ScheduledThreadPoolExecutor(corePoolSize);
 }
 
@@ -1358,7 +1358,7 @@ public static ScheduledExecutorService newScheduledThreadPool(
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ThreadPool(一)","level":"1.4.3.1","depth":3,"next":{"title":"ThreadPool(二)","level":"1.4.3.2","depth":3,"path":"android/java/threadpool2.md","ref":"android/java/threadpool2.md","articles":[]},"previous":{"title":"Java..","level":"1.4.3","depth":2,"path":"android/java/readme.md","ref":"android/java/readme.md","articles":[{"title":"ThreadPool(一)","level":"1.4.3.1","depth":3,"path":"android/java/threadpool1.md","ref":"android/java/threadpool1.md","articles":[]},{"title":"ThreadPool(二)","level":"1.4.3.2","depth":3,"path":"android/java/threadpool2.md","ref":"android/java/threadpool2.md","articles":[]},{"title":"ThreadPool(三)","level":"1.4.3.3","depth":3,"path":"android/java/threadpool3.md","ref":"android/java/threadpool3.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/java/threadpool1.md","mtime":"2018-06-15T03:07:49.634Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-07T03:45:47.849Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ThreadPool(一)","level":"1.4.3.1","depth":3,"next":{"title":"ThreadPool(二)","level":"1.4.3.2","depth":3,"path":"android/java/threadpool2.md","ref":"android/java/threadpool2.md","articles":[]},"previous":{"title":"Java..","level":"1.4.3","depth":2,"path":"android/java/readme.md","ref":"android/java/readme.md","articles":[{"title":"ThreadPool(一)","level":"1.4.3.1","depth":3,"path":"android/java/threadpool1.md","ref":"android/java/threadpool1.md","articles":[]},{"title":"ThreadPool(二)","level":"1.4.3.2","depth":3,"path":"android/java/threadpool2.md","ref":"android/java/threadpool2.md","articles":[]},{"title":"ThreadPool(三)","level":"1.4.3.3","depth":3,"path":"android/java/threadpool3.md","ref":"android/java/threadpool3.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters","prism","-highlight"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"ace":{},"toggle-chapters":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"search":{"maxIndexSize":1000000000},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/java/threadpool1.md","mtime":"2018-06-15T03:07:49.634Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-23T02:44:27.544Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

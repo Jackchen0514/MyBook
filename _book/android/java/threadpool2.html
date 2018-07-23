@@ -25,7 +25,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
                 
             
                 
@@ -1058,7 +1058,7 @@
 3&#x3001;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;corePoolSize&#xFF0C;&#x4E14;&#x961F;&#x5217;workQueue&#x5DF2;&#x6EE1;&#xFF0C;&#x4F46;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x5C0F;&#x4E8E;maximumPoolSize&#xFF0C;&#x5219;&#x4F1A;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x7EBF;&#x7A0B;&#x6765;&#x5904;&#x7406;&#x88AB;&#x6DFB;&#x52A0;&#x7684;&#x4EFB;&#x52A1;
 4&#x3001;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#x7B49;&#x4E8E;&#x4E86;maximumPoolSize&#xFF0C;&#x5C31;&#x7528;RejectedExecutionHandler&#x6765;&#x6267;&#x884C;&#x62D2;&#x7EDD;&#x7B56;&#x7565;</p>
 <h2 id="&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;">&#x7EBF;&#x7A0B;&#x6C60;&#x72B6;&#x6001;</h2>
-<pre><code>private final AtomicInteger ctl = new AtomicInteger(ctlOf(RUNNING, 0));
+<pre class="language-"><code>private final AtomicInteger ctl = new AtomicInteger(ctlOf(RUNNING, 0));
 private static final int COUNT_BITS = Integer.SIZE - 3;
 private static final int CAPACITY   = (1 &lt;&lt; COUNT_BITS) - 1;
 
@@ -1341,7 +1341,7 @@ private boolean addWorker(Runnable firstTask, boolean core) {
     firstTask&#xFF1A;    worker&#x7EBF;&#x7A0B;&#x7684;&#x521D;&#x59CB;&#x4EFB;&#x52A1;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;
     core&#xFF1A;           true&#xFF1A;&#x5C06;corePoolSize&#x4F5C;&#x4E3A;&#x4E0A;&#x9650;&#xFF0C;false&#xFF1A;&#x5C06;maximumPoolSize&#x4F5C;&#x4E3A;&#x4E0A;&#x9650;
 addWorker&#x65B9;&#x6CD5;&#x6709;4&#x79CD;&#x4F20;&#x53C2;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;</p>
-<pre><code>1&#x3001;addWorker(command, true)
+<pre class="language-"><code>1&#x3001;addWorker(command, true)
 
 2&#x3001;addWorker(command, false)
 
@@ -1911,7 +1911,7 @@ private void processWorkerExit(Worker w, boolean completedAbruptly) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ThreadPool(二)","level":"1.4.3.2","depth":3,"next":{"title":"ThreadPool(三)","level":"1.4.3.3","depth":3,"path":"android/java/threadpool3.md","ref":"android/java/threadpool3.md","articles":[]},"previous":{"title":"ThreadPool(一)","level":"1.4.3.1","depth":3,"path":"android/java/threadpool1.md","ref":"android/java/threadpool1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/java/threadpool2.md","mtime":"2018-06-15T06:05:46.634Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-07T03:45:47.849Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ThreadPool(二)","level":"1.4.3.2","depth":3,"next":{"title":"ThreadPool(三)","level":"1.4.3.3","depth":3,"path":"android/java/threadpool3.md","ref":"android/java/threadpool3.md","articles":[]},"previous":{"title":"ThreadPool(一)","level":"1.4.3.1","depth":3,"path":"android/java/threadpool1.md","ref":"android/java/threadpool1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters","prism","-highlight"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"ace":{},"toggle-chapters":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"search":{"maxIndexSize":1000000000},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/java/threadpool2.md","mtime":"2018-06-15T06:05:46.634Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-23T02:44:27.544Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
