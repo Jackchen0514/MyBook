@@ -25,7 +25,7 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="gitbook-plugin-prism/prism-okaidia.css">
                 
             
                 
@@ -1053,63 +1053,97 @@
                                 <h1 id="gitbook&#x642D;&#x5EFA;">GitBook&#x642D;&#x5EFA;</h1>
 <h2 id="centos--gitbook">CentOS + GitBook</h2>
 <h3 id="&#x5B89;&#x88C5;nodejs">&#x5B89;&#x88C5;Node.js</h3>
-<pre><code>wget https://nodejs.org/dist/v5.4.1/node-v5.4.1.tar.gz
-tar zxvf node-v5.4.1.tar.gz
-cd node-v5.4.1
+<pre class="language-"><code class="lang-bash"><span class="token function">wget</span> https://nodejs.org/dist/v5.4.1/node-v5.4.1.tar.gz
+<span class="token function">tar</span> zxvf node-v5.4.1.tar.gz
+<span class="token function">cd</span> node-v5.4.1
 ./configure
-sudo make
-sudo make install
-</code></pre><h3 id="&#x67E5;&#x770B;-nodejs-&#x662F;&#x5426;&#x5B89;&#x88C5;&#x6210;&#x529F;">&#x67E5;&#x770B; node.js &#x662F;&#x5426;&#x5B89;&#x88C5;&#x6210;&#x529F;</h3>
-<pre><code>node -v
-</code></pre><p>&#x6267;&#x884C; ./configure &#x9519;&#x8BEF;&#xFF1A;WARNING: failed to autodetect C++ compiler version (CXX=g++)
+<span class="token function">sudo</span> <span class="token function">make</span>
+<span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span>
+</code></pre>
+<h3 id="&#x67E5;&#x770B;-nodejs-&#x662F;&#x5426;&#x5B89;&#x88C5;&#x6210;&#x529F;">&#x67E5;&#x770B; node.js &#x662F;&#x5426;&#x5B89;&#x88C5;&#x6210;&#x529F;</h3>
+<pre class="language-"><code class="lang-bash">node -v
+</code></pre>
+<p>&#x6267;&#x884C; ./configure &#x9519;&#x8BEF;&#xFF1A;WARNING: failed to autodetect C++ compiler version (CXX=g++)
 &#x9700;&#x8981;&#x5B89;&#x88C5;gcc</p>
-<pre><code> sudo yum install gcc-c++
-</code></pre><h3 id="&#x5B89;&#x88C5;gitbook">&#x5B89;&#x88C5;GitBook</h3>
-<pre><code>npm install gitbook-cli -g
-</code></pre><h2 id="ubuntu--gitbook&#x642D;&#x5EFA;">Ubuntu + GitBook&#x642D;&#x5EFA;</h2>
+<pre class="language-"><code class="lang-bash"> <span class="token function">sudo</span> yum <span class="token function">install</span> gcc-c++
+</code></pre>
+<h3 id="&#x5B89;&#x88C5;gitbook">&#x5B89;&#x88C5;GitBook</h3>
+<pre class="language-"><code class="lang-bash"><span class="token function">npm</span> <span class="token function">install</span> gitbook-cli -g
+</code></pre>
+<h2 id="ubuntu--gitbook&#x642D;&#x5EFA;">Ubuntu + GitBook&#x642D;&#x5EFA;</h2>
 <h3 id="&#x5B89;&#x88C5;nodejs">&#x5B89;&#x88C5;Node.js</h3>
-<pre><code>wget https://nodejs.org/dist/v5.4.1/node-v5.4.1.tar.gz
-tar zxvf node-v5.4.1.tar.gz
-cd node-v5.4.1
+<pre class="language-"><code class="lang-bash"><span class="token function">wget</span> https://nodejs.org/dist/v5.4.1/node-v5.4.1.tar.gz
+<span class="token function">tar</span> zxvf node-v5.4.1.tar.gz
+<span class="token function">cd</span> node-v5.4.1
 ./configure
-sudo make
-sudo make install
-</code></pre><h3 id="&#x67E5;&#x770B;-nodejs-&#x662F;&#x5426;&#x5B89;&#x88C5;&#x6210;&#x529F;">&#x67E5;&#x770B; node.js &#x662F;&#x5426;&#x5B89;&#x88C5;&#x6210;&#x529F;</h3>
-<pre><code>node -v
-</code></pre><p>Install with NPM</p>
-<pre><code>$ npm install gitbook-cli -g
-</code></pre><h2 id="&#x5B89;&#x88C5;&#x63D2;&#x4EF6;">&#x5B89;&#x88C5;&#x63D2;&#x4EF6;</h2>
+<span class="token function">sudo</span> <span class="token function">make</span>
+<span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span>
+</code></pre>
+<h3 id="&#x67E5;&#x770B;-nodejs-&#x662F;&#x5426;&#x5B89;&#x88C5;&#x6210;&#x529F;">&#x67E5;&#x770B; node.js &#x662F;&#x5426;&#x5B89;&#x88C5;&#x6210;&#x529F;</h3>
+<pre class="language-"><code class="lang-bash">node -v
+</code></pre>
+<p>Install with NPM</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">npm</span> <span class="token function">install</span> gitbook-cli -g
+</code></pre>
+<h2 id="&#x5B89;&#x88C5;&#x63D2;&#x4EF6;">&#x5B89;&#x88C5;&#x63D2;&#x4EF6;</h2>
 <p>&#x5DE6;&#x4FA7;&#x7AE0;&#x8282;&#x76EE;&#x5F55;&#x53EF;&#x6298;&#x53E0;
 &#x63D2;&#x4EF6;&#x5730;&#x5740;&#xFF1A; <a href="https://plugins.gitbook.com/plugin/toggle-chapters" target="_blank">https://plugins.gitbook.com/plugin/toggle-chapters</a></p>
 <p>&#x5B89;&#x88C5;&#xFF1A;</p>
-<pre><code>$ npm install gitbook-plugin-toggle-chapters
-</code></pre><p>add this to book.json :</p>
-<pre><code>{
-   &quot;plugins&quot;: [&quot;toggle-chapters&quot;]
-}
-</code></pre><p>&#x4E3A;&#x6587;&#x5B57;&#x52A0;&#x4E0A;&#x5E95;&#x8272;
+<pre class="language-"><code class="lang-bash">$ <span class="token function">npm</span> <span class="token function">install</span> gitbook-plugin-toggle-chapters
+</code></pre>
+<p>add this to book.json :</p>
+<pre class="language-"><code class="lang-json"><span class="token punctuation">{</span>
+   <span class="token property">&quot;plugins&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;toggle-chapters&quot;</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4E3A;&#x6587;&#x5B57;&#x52A0;&#x4E0A;&#x5E95;&#x8272;
 &#x63D2;&#x4EF6;&#x5730;&#x5740;&#xFF1A; <a href="https://plugins.gitbook.com/plugin/emphasize" target="_blank">https://plugins.gitbook.com/plugin/emphasize</a></p>
 <p>add this to book.json :</p>
-<pre><code>&quot;plugins&quot;: [
-    &quot;emphasize&quot;
-]
-</code></pre><p>&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code>This text is {% em %}highlighted !{% endem %}
+<pre class="language-"><code class="lang-json"><span class="token property">&quot;plugins&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;emphasize&quot;</span>
+<span class="token punctuation">]</span>
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-python">This text <span class="token keyword">is</span> <span class="token punctuation">{</span><span class="token operator">%</span> em <span class="token operator">%</span><span class="token punctuation">}</span>highlighted !<span class="token punctuation">{</span><span class="token operator">%</span> endem <span class="token operator">%</span><span class="token punctuation">}</span>
 
-This text is {% em %}highlighted with **markdown**!{% endem %}
+This text <span class="token keyword">is</span> <span class="token punctuation">{</span><span class="token operator">%</span> em <span class="token operator">%</span><span class="token punctuation">}</span>highlighted <span class="token keyword">with</span> <span class="token operator">**</span>markdown<span class="token operator">**</span>!<span class="token punctuation">{</span><span class="token operator">%</span> endem <span class="token operator">%</span><span class="token punctuation">}</span>
 
-This text is {% em type=&quot;green&quot; %}highlighted in green!{% endem %}
+This text <span class="token keyword">is</span> <span class="token punctuation">{</span><span class="token operator">%</span> em type<span class="token operator">=</span><span class="token string">&quot;green&quot;</span> <span class="token operator">%</span><span class="token punctuation">}</span>highlighted <span class="token keyword">in</span> green!<span class="token punctuation">{</span><span class="token operator">%</span> endem <span class="token operator">%</span><span class="token punctuation">}</span>
 
-This text is {% em type=&quot;red&quot; %}highlighted in red!{% endem %}
+This text <span class="token keyword">is</span> <span class="token punctuation">{</span><span class="token operator">%</span> em type<span class="token operator">=</span><span class="token string">&quot;red&quot;</span> <span class="token operator">%</span><span class="token punctuation">}</span>highlighted <span class="token keyword">in</span> red!<span class="token punctuation">{</span><span class="token operator">%</span> endem <span class="token operator">%</span><span class="token punctuation">}</span>
 
-This text is {% em color=&quot;#ff0000&quot; %}highlighted with a custom color!{% endem %}
-</code></pre><p>&#x652F;&#x6301;ace</p>
+This text <span class="token keyword">is</span> <span class="token punctuation">{</span><span class="token operator">%</span> em color<span class="token operator">=</span><span class="token string">&quot;#ff0000&quot;</span> <span class="token operator">%</span><span class="token punctuation">}</span>highlighted <span class="token keyword">with</span> a custom color!<span class="token punctuation">{</span><span class="token operator">%</span> endem <span class="token operator">%</span><span class="token punctuation">}</span>
+</code></pre>
+<p>&#x652F;&#x6301;ace</p>
 <p>&#x63D2;&#x4EF6;&#x5730;&#x5740;&#xFF1A; <a href="https://plugins.gitbook.com/plugin/ace" target="_blank">https://plugins.gitbook.com/plugin/ace</a></p>
 <p>add this to book.json :</p>
-<pre><code>&quot;plugins&quot;: [
-    &quot;ace&quot;
-]
+<pre class="language-"><code class="lang-json"><span class="token property">&quot;plugins&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;ace&quot;</span>
+<span class="token punctuation">]</span>
 </code></pre>
+<p>&#x652F;&#x6301;prism</p>
+<p>&#x63D2;&#x4EF6;&#x5730;&#x5740;: <a href="https://plugins.gitbook.com/plugin/prism" target="_blank">https://plugins.gitbook.com/plugin/prism</a></p>
+<pre class="language-"><code class="lang-bash"><span class="token function">npm</span> <span class="token function">install</span> gitbook-plugin-prism
+</code></pre>
+<p>add this to book.json :</p>
+<pre class="language-"><code class="lang-json"><span class="token property">&quot;plugins&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string">&quot;ace&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;toggle-chapters&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;prism&quot;</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+<span class="token property">&quot;pluginsConfig&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">&quot;prism&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;css&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">&quot;prismjs/themes/prism-solarizedlight.css&quot;</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x652F;&#x6301;&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;highlight</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">npm</span> <span class="token function">install</span> gitbook-plugin-highlight
+</code></pre>
+
                                 
                                 </section>
                             
@@ -1152,7 +1186,7 @@ This text is {% em color=&quot;#ff0000&quot; %}highlighted with a custom color!{
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Gitbook各系统搭建","level":"1.2.1","depth":2,"next":{"title":"Gitbook基本使用","level":"1.2.2","depth":2,"path":"gitbook/use.md","ref":"gitbook/use.md","articles":[]},"previous":{"title":"Gitbook..","level":"1.2","depth":1,"path":"gitbook/README.md","ref":"gitbook/README.md","articles":[{"title":"Gitbook各系统搭建","level":"1.2.1","depth":2,"path":"gitbook/create.md","ref":"gitbook/create.md","articles":[]},{"title":"Gitbook基本使用","level":"1.2.2","depth":2,"path":"gitbook/use.md","ref":"gitbook/use.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"gitbook/create.md","mtime":"2018-06-06T12:00:44.772Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-07T03:45:47.849Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Gitbook各系统搭建","level":"1.2.1","depth":2,"next":{"title":"Gitbook基本使用","level":"1.2.2","depth":2,"path":"gitbook/use.md","ref":"gitbook/use.md","articles":[]},"previous":{"title":"Gitbook..","level":"1.2","depth":1,"path":"gitbook/README.md","ref":"gitbook/README.md","articles":[{"title":"Gitbook各系统搭建","level":"1.2.1","depth":2,"path":"gitbook/create.md","ref":"gitbook/create.md","articles":[]},{"title":"Gitbook基本使用","level":"1.2.2","depth":2,"path":"gitbook/use.md","ref":"gitbook/use.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters","prism","-highlight"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"ace":{},"toggle-chapters":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"search":{"maxIndexSize":1000000000},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"gitbook/create.md","mtime":"2018-07-23T02:36:48.435Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-23T02:44:27.544Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

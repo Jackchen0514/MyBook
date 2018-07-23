@@ -25,7 +25,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
                 
             
                 
@@ -1056,17 +1056,17 @@
 JSR&#x5373;Java Specification Requests&#xFF0C;&#x610F;&#x601D;&#x662F;java&#x89C4;&#x8303;&#x63D0;&#x8981;&#x3002;
 &#x4E3A;&#x4E86;&#x8FDB;&#x4E00;&#x6B65;&#x89E3;&#x8026;&#x548C;&#x65B9;&#x4FBF;&#x6D4B;&#x8BD5;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x4F7F;&#x7528;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x7684;&#x65B9;&#x5F0F;&#x6784;&#x5EFA;&#x5BF9;&#x8C61;&#x3002;</p>
 <h2 id="dagger2-api">Dagger2 API</h2>
-<pre><code>public @interface Component {
-    Class&lt;?&gt;[] modules() default {};
-    Class&lt;?&gt;[] dependencies() default {};
+<pre class="language-"><code>public @interface Component {
+    Class<span class="token prolog">&lt;?&gt;[] modules() default {};
+    Class&lt;?&gt;</span>[] dependencies() default {};
 }
 
 public @interface Subcomponent {
-    Class&lt;?&gt;[] modules() default {};
+    Class<span class="token prolog">&lt;?&gt;[] modules() default {};
 }
 
 public @interface Module {
-    Class&lt;?&gt;[] includes() default {};
+    Class&lt;?&gt;</span>[] includes() default {};
 }
 
 public @interface Provides {
@@ -1076,11 +1076,11 @@ public @interface MapKey {
     boolean unwrapValue() default true;
 }
 
-public interface Lazy&lt;T&gt; {
+public interface Lazy<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>T</span><span class="token punctuation">&gt;</span></span> {
     T get();
 }
 </code></pre><p>&#x8FD8;&#x6709;&#x5728;Dagger 2&#x4E2D;&#x7528;&#x5230;&#x7684;&#x5B9A;&#x4E49;&#x5728; JSR-330 &#xFF08;Java&#x4E2D;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x7684;&#x6807;&#x51C6;&#xFF09;&#x4E2D;&#x7684;&#x5176;&#x5B83;&#x5143;&#x7D20;&#xFF1A;</p>
-<pre><code>public @interface Inject {
+<pre class="language-"><code>public @interface Inject {
 }
 
 public @interface Scope {
@@ -1232,7 +1232,7 @@ public class MainActivity extends AppCompatActivity {
 &#x65B9;&#x6CD5;&#x6CE8;&#x5165;&#x548C;&#x5C5E;&#x6027;&#x6CE8;&#x5165;&#x57FA;&#x672C;&#x4E0A;&#x6CA1;&#x6709;&#x533A;&#x522B;&#xFF0C; &#x90A3;&#x4E48;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x6CE8;&#x5165;&#x5462;&#xFF1F;
 &#x6BD4;&#x5982;&#x8BE5;&#x4F9D;&#x8D56;&#x9700;&#x8981;this&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x6CE8;&#x5165;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x5B89;&#x5168;&#x7684;this&#x5BF9;&#x8C61;&#xFF0C;&#x56E0;&#x4E3A;&#x65B9;&#x6CD5;&#x6CE8;&#x5165;&#x662F;&#x5728;&#x6784;&#x9020;&#x5668;&#x4E4B;&#x540E;&#x6267;&#x884C;&#x7684;&#x3002;</p>
 <p>&#x6BD4;&#x5982;google mvp dagger2&#x4E2D;&#xFF0C;&#x7ED9;View&#x8BBE;&#x7F6E;Presenter&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x6CE8;&#x5165;&#x3002;</p>
-<pre><code>    @Inject
+<pre class="language-"><code>    @Inject
     void setupListeners() {
         mTasksView.setPresenter(this);
     }
@@ -1240,7 +1240,7 @@ public class MainActivity extends AppCompatActivity {
 <p><code>@Inject</code>&#x6CE8;&#x89E3;&#x53EA;&#x662F;JSR-330&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x6CE8;&#x89E3;&#xFF0C;&#x5728;javax.inject&#x5305;&#x4E2D;&#x3002;
 &#x8FD9;&#x4E2A;&#x6CE8;&#x89E3;&#x672C;&#x8EAB;&#x5E76;&#x6CA1;&#x6709;&#x4F5C;&#x7528;&#xFF0C;&#x5B83;&#x9700;&#x8981;&#x4F9D;&#x8D56;&#x4E8E;&#x6CE8;&#x5165;&#x6846;&#x67B6;&#x624D;&#x5177;&#x6709;&#x610F;&#x4E49;&#xFF0C;&#x7528;&#x6765;&#x6807;&#x8BB0;&#x9700;&#x8981;&#x88AB;&#x6CE8;&#x5165;&#x6846;&#x67B6;&#x6CE8;&#x5165;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5C5E;&#x6027;&#xFF0C;&#x6784;&#x9020;&#x3002;</p>
 <p>&#x800C;Dagger2&#x5219;&#x662F;&#x7528;<code>Component</code>&#x6765;&#x5B8C;&#x6210;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x7684;&#xFF0C;<code>@Component</code>&#x53EF;&#x4EE5;&#x8BF4;&#x662F;Dagger2&#x4E2D;&#x6700;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x4E2A;&#x6CE8;&#x89E3;&#x3002;</p>
-<pre><code>@Component
+<pre class="language-"><code>@Component
 public interface MainActivityComponent {
     void inject(MainActivity activity);
 }
@@ -1427,7 +1427,7 @@ public interface MainActivityComponent {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Dagger2(一)","level":"1.4.5.1","depth":3,"next":{"title":"Dagger2(二)","level":"1.4.5.2","depth":3,"path":"android/dagger/dagger2.md","ref":"android/dagger/dagger2.md","articles":[]},"previous":{"title":"Dagger..","level":"1.4.5","depth":2,"path":"android/dagger/readme.md","ref":"android/dagger/readme.md","articles":[{"title":"Dagger2(一)","level":"1.4.5.1","depth":3,"path":"android/dagger/dagger1.md","ref":"android/dagger/dagger1.md","articles":[]},{"title":"Dagger2(二)","level":"1.4.5.2","depth":3,"path":"android/dagger/dagger2.md","ref":"android/dagger/dagger2.md","articles":[]},{"title":"Dagger2(三)","level":"1.4.5.3","depth":3,"path":"android/dagger/dagger3.md","ref":"android/dagger/dagger3.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/dagger/dagger1.md","mtime":"2018-06-06T12:00:44.772Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-07T03:45:47.849Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Dagger2(一)","level":"1.4.5.1","depth":3,"next":{"title":"Dagger2(二)","level":"1.4.5.2","depth":3,"path":"android/dagger/dagger2.md","ref":"android/dagger/dagger2.md","articles":[]},"previous":{"title":"Dagger..","level":"1.4.5","depth":2,"path":"android/dagger/readme.md","ref":"android/dagger/readme.md","articles":[{"title":"Dagger2(一)","level":"1.4.5.1","depth":3,"path":"android/dagger/dagger1.md","ref":"android/dagger/dagger1.md","articles":[]},{"title":"Dagger2(二)","level":"1.4.5.2","depth":3,"path":"android/dagger/dagger2.md","ref":"android/dagger/dagger2.md","articles":[]},{"title":"Dagger2(三)","level":"1.4.5.3","depth":3,"path":"android/dagger/dagger3.md","ref":"android/dagger/dagger3.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters","prism","-highlight"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"ace":{},"toggle-chapters":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"search":{"maxIndexSize":1000000000},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"android/dagger/dagger1.md","mtime":"2018-06-06T12:00:44.772Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-23T02:44:27.544Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -25,7 +25,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
                 
             
                 
@@ -1344,7 +1344,7 @@ public class RegDetectActivity extends AppCompatActivity {
 <li><strong>&#x5DE5;&#x5177;&#x7C7B;</strong></li>
 </ul>
 <p>&#x77E5;&#x8BC6;&#x8865;&#x5145;&#xFF1A;</p>
-<pre><code>ARGB&#x6570;&#x636E;  &#x662F;&#x4E00;&#x79CD;&#x8272;&#x5F69;&#x6A21;&#x5F0F;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;RGB&#x8272;&#x5F69;&#x6A21;&#x5F0F;&#x9644;&#x52A0;&#x4E0A;Alpha&#xFF08;&#x900F;&#x660E;&#x5EA6;&#xFF09;&#x901A;&#x9053;&#xFF0C;&#x5E38;&#x89C1;&#x4E8E;32&#x4F4D;&#x4F4D;&#x56FE;&#x7684;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#x3002;
+<pre class="language-"><code>ARGB&#x6570;&#x636E;  &#x662F;&#x4E00;&#x79CD;&#x8272;&#x5F69;&#x6A21;&#x5F0F;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;RGB&#x8272;&#x5F69;&#x6A21;&#x5F0F;&#x9644;&#x52A0;&#x4E0A;Alpha&#xFF08;&#x900F;&#x660E;&#x5EA6;&#xFF09;&#x901A;&#x9053;&#xFF0C;&#x5E38;&#x89C1;&#x4E8E;32&#x4F4D;&#x4F4D;&#x56FE;&#x7684;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#x3002;
 
 RGB &#x8272;&#x5F69;&#x6A21;&#x5F0F;&#x662F;&#x5DE5;&#x4E1A;&#x754C;&#x7684;&#x4E00;&#x79CD;&#x989C;&#x8272;&#x6807;&#x51C6;&#xFF0C;&#x662F;&#x901A;&#x8FC7;&#x5BF9;&#x7EA2;(R)&#x3001;&#x7EFF;(G)&#x3001;&#x84DD;(B)&#x4E09;&#x4E2A;&#x989C;&#x8272;&#x901A;&#x9053;&#x7684;&#x53D8;&#x5316;&#x4EE5;&#x53CA;&#x5B83;&#x4EEC;&#x76F8;&#x4E92;&#x4E4B;&#x95F4;&#x7684;&#x53E0;&#x52A0;&#x6765;&#x5F97;&#x5230;&#x5404;&#x5F0F;&#x5404;&#x6837;&#x7684;&#x989C;&#x8272;&#x7684;&#xFF0C;RGB&#x5373;&#x662F;&#x4EE3;&#x8868;&#x7EA2;&#x3001;&#x7EFF;&#x3001;&#x84DD;&#x4E09;&#x4E2A;&#x901A;&#x9053;&#x7684;&#x989C;&#x8272;&#xFF0C;&#x8FD9;&#x4E2A;&#x6807;&#x51C6;&#x51E0;&#x4E4E;&#x5305;&#x62EC;&#x4E86;&#x4EBA;&#x7C7B;&#x89C6;&#x529B;&#x6240;&#x80FD;&#x611F;&#x77E5;&#x7684;&#x6240;&#x6709;&#x989C;&#x8272;&#xFF0C;&#x662F;&#x76EE;&#x524D;&#x8FD0;&#x7528;&#x6700;&#x5E7F;&#x7684;&#x989C;&#x8272;&#x7CFB;&#x7EDF;&#x4E4B;&#x4E00;&#x3002;
 
@@ -1620,15 +1620,16 @@ public class FaceDetectManager {
 
 
 <p>RegDetectActivity.java:</p>
-<pre><code>&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x5728;oncreate&#x4E2D;View.getWidth&#x548C;View.getHeight&#x65E0;&#x6CD5;&#x83B7;&#x5F97;&#x4E00;&#x4E2A;view&#x7684;&#x9AD8;&#x5EA6;&#x548C;&#x5BBD;&#x5EA6;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;View&#x7EC4;&#x4EF6;&#x5E03;&#x5C40;&#x8981;&#x5728;onResume&#x56DE;&#x8C03;&#x540E;&#x5B8C;&#x6210;&#x3002;
+<pre class="language-"><code>&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x5728;oncreate&#x4E2D;View.getWidth&#x548C;View.getHeight&#x65E0;&#x6CD5;&#x83B7;&#x5F97;&#x4E00;&#x4E2A;view&#x7684;&#x9AD8;&#x5EA6;&#x548C;&#x5BBD;&#x5EA6;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;View&#x7EC4;&#x4EF6;&#x5E03;&#x5C40;&#x8981;&#x5728;onResume&#x56DE;&#x8C03;&#x540E;&#x5B8C;&#x6210;&#x3002;
 &#x6240;&#x4EE5;&#x73B0;&#x5728;&#x9700;&#x8981;&#x4F7F;&#x7528;getViewTreeObserver().addOnGlobalLayoutListener()&#x6765;&#x83B7;&#x5F97;&#x5BBD;&#x5EA6;&#x6216;&#x8005;&#x9AD8;&#x5EA6;&#x3002;&#x8FD9;&#x662F;&#x83B7;&#x5F97;&#x4E00;&#x4E2A;view&#x7684;&#x5BBD;&#x5EA6;&#x548C;&#x9AD8;&#x5EA6;&#x7684;&#x65B9;&#x6CD5;&#x4E4B;&#x4E00;&#x3002;
 </code></pre><h2 id="&#x6CE8;&#x610F;&#x4E8B;&#x9879;">&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h2>
 <p>Application &#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019; apiKey,secretKey &#x8981;&#x5148;&#x6CE8;&#x518C;&#x8BA4;&#x8BC1;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x62A5;&#x5982;&#x4E0B;&#x9519;&#x8BEF;&#xFF1A;</p>
-<pre><code>java.lang.UnsatisfiedLinkError: No implementation found for int
+<pre class="language-"><code>java.lang.UnsatisfiedLinkError: No implementation found for int
 com.baidu.idl.facesdk.FaceSDK.getARGBFromYUVimg(byte[], int[], int, int, int, int) (tried
 Java_com_baidu_idl_facesdk_FaceSDK_getARGBFromYUVimg and
 Java_com_baidu_idl_facesdk_FaceSDK_getARGBFromYUVimg___3B_3IIIII)
-</code></pre>
+</code></pre><h1 id="">#</h1>
+
                                 
                                 </section>
                             
@@ -1667,7 +1668,7 @@ Java_com_baidu_idl_facesdk_FaceSDK_getARGBFromYUVimg___3B_3IIIII)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"百度人脸识别","level":"1.13.1","depth":2,"previous":{"title":"闸机","level":"1.13","depth":1,"path":"zhaji/readme.md","ref":"zhaji/readme.md","articles":[{"title":"百度人脸识别","level":"1.13.1","depth":2,"path":"zhaji/baiduface1.md","ref":"zhaji/baiduface1.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"zhaji/baiduface1.md","mtime":"2018-07-04T12:12:18.921Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-07T03:45:47.849Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"百度人脸识别","level":"1.13.1","depth":2,"previous":{"title":"闸机","level":"1.13","depth":1,"path":"zhaji/readme.md","ref":"zhaji/readme.md","articles":[{"title":"百度人脸识别","level":"1.13.1","depth":2,"path":"zhaji/baiduface1.md","ref":"zhaji/baiduface1.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ace","toggle-chapters","prism","-highlight"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"ace":{},"toggle-chapters":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"search":{"maxIndexSize":1000000000},"theme":"default","author":"jackchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"技术博客","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"一些学习记录"},"file":{"path":"zhaji/baiduface1.md","mtime":"2018-07-11T07:35:50.769Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-23T02:44:27.544Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
